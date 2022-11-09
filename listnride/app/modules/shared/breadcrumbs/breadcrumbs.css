@@ -1,0 +1,23 @@
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 16px;
+}
+
+.breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.breadcrumbs__item .fa {
+  margin: 0 14px;
+  font-size: 15px;
+}
+
+.breadcrumbs__item:last-child a {
+  pointer-events: none;
+  color: #555555;
+}
+

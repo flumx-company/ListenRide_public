@@ -1,0 +1,91 @@
+/*
+  BIKE EVENTS STYLES
+ */
+
+.booking-calendar .b-sch-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  cursor: default;
+}
+
+.booking-calendar .b-sch-event * {
+  font-weight: 300;
+}
+
+.booking-calendar .b-sch-event.pending {
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+    135deg,
+    #7ab2f8 25%,
+    #94c2fa 25%,
+    #94c2fa 50%,
+    #7ab2f8 50%,
+    #7ab2f8 75%,
+    #94c2fa 75%,
+    #94c2fa
+  ) !important;
+}
+
+.b-sch-style-plain.b-sch-color-green .b-sch-event:not(.b-milestone) {
+  border: 2px solid #fff!important;
+}
+
+
+.booking-calendar .b-sch-event.pending.changing-status {
+  opacity: 0.75;
+  animation: barberpole 3s linear infinite;
+}
+
+.booking-calendar .b-sch-event.accepted {
+  background-color: rgb(91, 191, 141) !important;
+}
+
+.booking-calendar .b-sch-event.not-available {
+  background-color: rgba(122, 178, 248, 0.5) !important;
+}
+
+.booking-calendar .b-sch-event.is-narrow > * {
+  display: none;
+}
+
+.booking-calendar .b-sch-event.cluster {
+  background-color: rgb(217, 222, 222) !important;
+  color: #212121;
+  cursor: pointer;
+}
+
+.booking-calendar .b-sch-event .event-status {
+  font-size: 12px;
+}
+
+.booking-calendar .b-sch-event .event-status.bikes-count {
+  text-transform: lowercase;
+}
+
+.booking-calendar .b-sch-event .event-status .fa {
+  margin-right: 3px;
+  font-size: 16px;
+}
+
+.booking-calendar .b-sch-event .ellipsis {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.booking-calendar .lowercase {
+  text-transform: lowercase;
+}
+
+@keyframes barberpole {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 50px;
+  }
+}

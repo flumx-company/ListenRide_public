@@ -1,0 +1,385 @@
+<md-tab class="account" label="{{ 'settings.account' | translate }}" layout="column">
+  <br>
+  <div class="tab-content md-padding" layout="column" layout-align="space-between none" layout-padding layout="column">
+
+    <!-- business block -->
+    <form name="businessForm" ng-submit="settingsAccount.parent.updateBusiness(businessForm)" ng-if="settingsAccount.parent.user.business">
+      <div layout="row" layout-xs="column">
+        <div flex-gt-xs layout-margin>
+          <div class="md-body-2">{{ 'settings.company-information' | translate }}</div>
+        </div>
+        <div flex-gt-xs="70" layout="column" layout-margin>
+          <div layout="row" layout-xs="column">
+            <md-input-container flex flex-gt-xs="45">
+              <label>{{ 'settings.company-name' | translate }}</label>
+              <input name="company_name" ng-model="settingsAccount.parent.business.company_name" required ng-minlength="2">
+              <div ng-messages="businessForm.company_name.$error" role="alert">
+                <div ng-message="required">{{ 'settings.errors.required-company-name' | translate }}</div>
+                <div ng-message="minlength">{{ 'settings.errors.minlength-company-name' | translate }}</div>
+              </div>
+            </md-input-container>
+
+            <span hide-xs flex></span>
+
+            <md-input-container flex flex-gt-xs="45">
+              <label>{{ 'settings.vat' | translate }}</label>
+              <input name="vat" ng-model="settingsAccount.parent.business.vat" required ng-minlength="2">
+              <div ng-messages="businessForm.vat.$error" role="alert">
+                <div ng-message="required">{{ 'settings.errors.required-vat' | translate}}</div>
+                <div ng-message="minlength">{{ 'settings.errors.minlength-vat' | translate}}</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout="row" layout-align="end">
+            <md-button class="md-raised md-primary" type="submit" ng-disabled="!businessForm.$valid">
+              {{ 'shared.update' | translate }}
+            </md-button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- END business block -->
+
+    <md-divider class="lnr-p-0 lnr-mt-x2 lnr-mb-x2"></md-divider>
+
+    <form name="settingsForm">
+
+      <!--NEW PAYMENT METHOD BLOCK-->
+      <div layout="row" layout-xs="column">
+        <div flex-gt-xs layout-margin>
+          <div class="md-body-2">{{ 'settings.payment-method' | translate }}</div>
+        </div>
+
+        <div flex-gt-xs="70" layout-margin>
+          <p>{{ 'settings.payment-method-description' | translate }}</p>
+          <p ng-if="!settingsAccount.parent.user.payment_method" class="md-body-2">
+            {{ 'settings.pick-payment-method' | translate }}
+          </p>
+          <p ng-if="settingsAccount.parent.user.payment_method">
+            <b>{{ 'settings.your-payment-method' | translate }}</b>&nbsp;
+            <span translate="{{ 'shared.payment-type.' + settingsAccount.parent.user.payment_method.payment_type }}"></span>, {{ settingsAccount.parent.paymentDescription }}
+            <md-icon ng-if="settingsAccount.parent.user.payment_method.card_type" class="md-color-black lnr-ml" md-svg-src="app/assets/ui_icons/lnr_logo_{{settingsAccount.parent.user.payment_method.card_type | lowercase}}.svg"></md-icon>
+          </p>
+
+          <div layout="column" class="lnr-mh-x2">
+            <div
+              class="lnr-color-primary lnr-link lnr-off-selection"
+              ng-click="settingsAccount.parent.showPaymentChangeForm()"
+              ng-hide="settingsAccount.parent.isPaymentChangeChecked">
+                <span>
+                  {{ settingsAccount.parent.user.payment_method
+                    ? 'settings.change-payment-method'
+                    : 'settings.set-payment-method' | translate }}
+                </span>
+            </div>
+            <md-radio-group
+              ng-if="settingsAccount.parent.isPaymentChangeChecked"
+              ng-model="settingsAccount.parent.paymentMethod"
+              layout="row"
+              class="lnr-mh lnr-mt-x2">
+              <md-radio-button value="credit-card">{{ 'shared.payment-type.credit-card' | translate }}</md-radio-button>
+              <md-radio-button value="paypal">{{ 'settings.paypal' | translate }}</md-radio-button>
+            </md-radio-group>
+            <ng-form name="settingsAccount.parent.paymentForm">
+              <div ng-show="settingsAccount.parent.isPaymentChangeChecked && settingsAccount.parent.paymentMethod == 'paypal'">
+                <p class="md-caption">{{ 'settings.enter-paypal-info' | translate }}</p>
+                <paypal-checkout-button on-success="settingsAccount.parent.onSuccessPaymentUpdate"></paypal-checkout-button>
+              </div>
+              <div ng-show="settingsAccount.parent.isPaymentChangeChecked && settingsAccount.parent.paymentMethod == 'credit-card'">
+                <credit-card-input data="settingsAccount.parent.creditCardData"></credit-card-input>
+                <md-button
+                  class="md-raised md-primary lnr-m-0"
+                  ng-click="settingsAccount.parent.tokenizeCard()"
+                  ng-disabled="!settingsAccount.parent.validCreditCard || settingsAccount.parent.paymentLoading">
+                  <div ng-if="settingsAccount.parent.paymentLoading" class="lnr-loader">
+                      <div class="lnr-loader__item1"></div>
+                      <div class="lnr-loader__item2"></div>
+                      <div class="lnr-loader__item3"></div>
+                      <div class="lnr-loader__item4"></div>
+                  </div>
+                  <span ng-if="!settingsAccount.parent.paymentLoading">{{ 'availability.submit-btn-save' | translate }}</span>
+                </md-button>
+              </div>
+            </ng-form>
+
+          </div>
+          <p class="md-caption lnr-mt-x2" data-ng-bind-html="'forms.privacy-policy' | translate"></p>
+        </div>
+
+      </div>
+      <!--End of NEW PAYMENT METHOD BLOCK-->
+
+      <md-divider class="lnr-p-0 lnr-mt-x2 lnr-mb-x2"></md-divider>
+
+      <div layout="row" layout-xs="column">
+        <div flex-gt-xs layout-margin>
+          <div class="md-body-2">{{ 'settings.payout-method' | translate }}</div>
+        </div>
+        <div flex-gt-xs="70" layout-margin>
+          <p>{{ 'settings.payout-method-description' | translate }}</p>
+          <p ng-if="!settingsAccount.parent.isPayoutExist()">{{ 'settings.no-payout-method' | translate }}</p>
+          <p class="md-body-2" ng-if="settingsAccount.parent.isPayoutExist()">
+            <span ng-if="settingsAccount.parent.user.payout_method.payment_type == 'bank-account'">
+              {{'settings.payout-bank' | translate }} {{ settingsAccount.parent.payoutMethod.short_iban }}
+            </span>
+          </p>
+          <div layout="column" class="lnr-mt-x2">
+            <div
+              class="lnr-color-primary lnr-link lnr-off-selection"
+              ng-click="settingsAccount.parent.showPayoutChangeForm = !settingsAccount.parent.showPayoutChangeForm">
+                <span ng-if="settingsAccount.parent.isPayoutExist()">{{ 'settings.change-payout-method' | translate }}</span>
+                <span ng-if="!settingsAccount.parent.isPayoutExist()">{{ 'settings.set-payout-method' | translate }}</span>
+            </div>
+            <div ng-if="settingsAccount.parent.showPayoutChangeForm">
+              <div class="lnr-mh-x2">{{ 'settings.payout.entity_type.label' | translate }}</div>
+              <md-radio-group class="lnr-mh-x2" ng-model="settingsAccount.parent.payoutMethod.entity_type" layout="row">
+                <md-radio-button value="NaturalPerson">{{ 'settings.payout.entity_type.natural_person' | translate }}</md-radio-button>
+                <md-radio-button value="Company">{{ 'settings.payout.entity_type.company' | translate }}</md-radio-button>
+              </md-radio-group>
+            </div>
+            <ng-form ng-if="settingsAccount.parent.showPayoutChangeForm" name="settingsAccount.parent.payoutForm">
+              <div ng-if="settingsAccount.parent.payoutMethod.entity_type == 'NaturalPerson'">
+                <div layout="row" layout-xs="column">
+                  <md-input-container class="lnr-gt-xs-mr" flex-gt-xs="50">
+                    <label>IBAN</label>
+                    <input required ng-model="settingsAccount.parent.payoutMethod.iban">
+                  </md-input-container>
+                  <md-input-container class="lnr-gt-xs-ml" flex-gt-xs="50">
+                    <label>BIC</label>
+                    <input required ng-model="settingsAccount.parent.payoutMethod.bic">
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-xs="column">
+                  <md-input-container class="lnr-gt-xs-mr" flex-gt-xs="50">
+                    <label>{{ 'forms.account_holder_name' | translate }}</label>
+                    <input required ng-model="settingsAccount.parent.payoutMethod.account_holder_name">
+                  </md-input-container>
+                  <md-input-container class="lnr-gt-xs-ml" flex-gt-xs="50">
+                    <label>{{ 'forms.bank_country' | translate }}</label>
+                    <md-select required ng-model="settingsAccount.parent.payoutMethod.country_code"
+                      class="md-no-underline payout-method-select" placeholder="{{'forms.select' | translate}}">
+                      <md-option ng-repeat="country_name in settingsAccount.parent.getCountryNames().sort()" value="{{settingsAccount.parent.getCountryCode(country_name)}}">
+                        {{country_name}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+                <div layout="row" class="lnr-mh">
+                  <md-input-container class="lnr-gt-xs-mr" flex-gt-xs="50">
+                    <label>{{ 'forms.first-name' | translate }}</label>
+                    <input required minlength="2" ng-model="settingsAccount.parent.payoutMethod.first_name">
+                  </md-input-container>
+                  <md-input-container class="lnr-gt-xs-ml" flex-gt-xs="50">
+                    <label>{{ 'forms.last-name' | translate }}</label>
+                    <input required minlength="2" ng-model="settingsAccount.parent.payoutMethod.last_name">
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-xs="column">
+                  <md-input-container class="lnr-gt-xs-mr settings-payout-method-input" flex-gt-xs="50">
+                    <label>{{ 'forms.dob' | translate }}</label>
+                    <input required type="text" placeholder="DD/MM/YYYY"
+                      class="settings-payout-method-input"
+                      ng-model="settingsAccount.parent.payoutMethod.date_of_birth"
+                      pattern="^([1-9]|(0)[1-9]|[1-2][0-9]|(3)[0-1])(\/|-|\.|\s)([1-9]|((0)[1-9])|((1)[0-2]))(\/|-|\.|\s)([1][9][0-9][0-9]|[2][0][0-2][0-9])$"/>
+                  </md-input-container>
+                  <md-input-container class="lnr-gt-xs-ml select-without-asterisk" flex-gt-xs="50">
+                    <label>{{ 'forms.gender' | translate }}</label>
+                    <md-select required ng-model="settingsAccount.parent.payoutMethod.gender"
+                      class="md-no-underline payout-method-select" placeholder="{{'forms.select' | translate}}">
+                      <md-option value="male">{{ 'forms.gender_select.male' | translate }}</md-option>
+                      <md-option value="female">{{ 'forms.gender_select.female' | translate }}</md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-xs="column">
+                  <md-input-container class="lnr-gt-xs-mr" flex-gt-xs="50">
+                    <label>{{ 'forms.nationality' | translate }}</label>
+                    <md-select required ng-model="settingsAccount.parent.payoutMethod.nationality"
+                      class="md-no-underline payout-method-select" placeholder="{{'forms.select' | translate}}">
+                      <md-option ng-repeat="country_name in settingsAccount.parent.getCountryNames().sort()" value="{{settingsAccount.parent.getCountryCode(country_name)}}">
+                        {{country_name}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                  <md-input-container class="lnr-gt-xs-ml" flex-gt-xs="50">
+                  </md-input-container>
+                </div>
+              </div>
+              <div ng-if="settingsAccount.parent.payoutMethod.entity_type == 'Company'">
+                <div layout="row" layout-xs="column">
+                  <md-input-container class="lnr-gt-xs-mr" flex-gt-xs="50">
+                    <label>IBAN</label>
+                    <input required ng-model="settingsAccount.parent.payoutMethod.iban">
+                  </md-input-container>
+                  <md-input-container class="lnr-gt-xs-ml" flex-gt-xs="50">
+                    <label>BIC</label>
+                    <input required ng-model="settingsAccount.parent.payoutMethod.bic">
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-xs="column">
+                  <md-input-container class="lnr-gt-xs-mr" flex-gt-xs="50">
+                    <label>{{ 'forms.account_holder_name' | translate }}</label>
+                    <input required ng-model="settingsAccount.parent.payoutMethod.account_holder_name">
+                  </md-input-container>
+                  <md-input-container class="lnr-gt-xs-ml" flex-gt-xs="50">
+                    <label>{{ 'forms.bank_country' | translate }}</label>
+                    <md-select required ng-model="settingsAccount.parent.payoutMethod.country_code"
+                      class="md-no-underline payout-method-select" placeholder="{{'forms.select' | translate}}">
+                      <md-option ng-repeat="country_name in settingsAccount.parent.getCountryNames().sort()" value="{{settingsAccount.parent.getCountryCode(country_name)}}">
+                        {{country_name}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+                <div layout="row" class="lnr-mh">
+                  <md-input-container class="lnr-gt-xs-mr" flex-gt-xs="50">
+                    <label>{{ 'forms.company-name' | translate }}</label>
+                    <input required minlength="2" ng-model="settingsAccount.parent.payoutMethod.last_name">
+                  </md-input-container>
+                  <md-input-container class="lnr-gt-xs-ml" flex-gt-xs="50">
+                    <label>{{ 'forms.nationality' | translate }}</label>
+                    <md-select required ng-model="settingsAccount.parent.payoutMethod.nationality"
+                      class="md-no-underline payout-method-select" placeholder="{{'forms.select' | translate}}">
+                      <md-option ng-repeat="country_name in settingsAccount.parent.getCountryNames().sort()" value="{{settingsAccount.parent.getCountryCode(country_name)}}">
+                        {{country_name}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+              </div>
+              <div layout="row" ng-if="settingsAccount.parent.payoutMethod.entity_type" layout-align="end">
+                <md-button  class="md-raised md-primary"
+                            ng-click="settingsAccount.parent.addPayoutMethod()"
+                            ng-disabled="!settingsAccount.parent.payoutForm.$valid || settingsAccount.parent.payoutMethod.loading">
+                  <div ng-if="settingsAccount.parent.payoutMethod.loading" class="lnr-loader">
+                    <div class="lnr-loader__item1"></div>
+                    <div class="lnr-loader__item2"></div>
+                    <div class="lnr-loader__item3"></div>
+                    <div class="lnr-loader__item4"></div>
+                  </div>
+                  <span ng-if="!settingsAccount.parent.payoutMethod.loading">{{ 'settings.save-payout-method' | translate }}</span>
+                </md-button>
+              </div>
+            </ng-form>
+          </div>
+          <p class="md-caption lnr-mt-x2" data-ng-bind-html="'forms.privacy-policy' | translate"></p>
+        </div>
+      </div>
+
+      <md-divider class="lnr-p-0 lnr-mt-x2 lnr-mb-x2"></md-divider>
+
+      <div layout="row" layout-xs="column">
+        <div flex-gt-xs layout-margin>
+          <div class="md-body-2">{{ 'settings.vouchers' | translate }}</div>
+        </div>
+        <div flex-gt-xs="70" layout-margin>
+          <p>
+            <span class="md-body-1">{{ 'settings.current-vouchers' | translate }}</span>
+            <span class="md-body-2">{{ settingsAccount.parent.user.balance | number : 0 }} €</span>
+          </p>
+          <div layout="row" layout-xs="column">
+            <md-input-container flex-gt-xs="45">
+              <label>{{ 'settings.voucher-code' | translate }}</label>
+              <input ng-model="settingsAccount.parent.voucherCode">
+            </md-input-container>
+            <span hide-xs flex></span>
+            <md-input-container layout="row" flex-gt-xs="45" flex="100">
+              <md-button flex ng-disabled="!settingsAccount.parent.voucherCode" class="md-raised md-primary lnr-btn-inline lnr-btn-mobile"
+                ng-click="settingsAccount.parent.addVoucher()">
+                {{ 'settings.add-voucher' | translate }}
+              </md-button>
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+
+      <md-divider ng-if="settingsAccount.parent.user.business" class="lnr-p-0 lnr-mt-x2 lnr-mb-x2"></md-divider>
+      <div ng-if="settingsAccount.parent.user.business" layout="row" layout-xs="column">
+
+        <div flex-gt-xs layout-margin>
+          <div class="md-body-2">{{ 'settings.notifications' | translate }}</div>
+        </div>
+
+        <div flex-gt-xs="70" layout-margin>
+          <div layout="row" layout-align="none center">
+            <md-switch
+              ng-model="settingsAccount.parent.isChecked"
+              ng-change="settingsAccount.parent.toggleNotifications()"
+              class="lnr-m-0"
+              ng-model-options='{ debounce: 500 }'
+            >
+            </md-switch>
+            <label class="lnr-mv-x2">
+              <b ng-show="settingsAccount.parent.isChecked">{{ 'settings.notification-preferences.receive-all' | translate }}</b>
+              <b ng-show="!settingsAccount.parent.isChecked">{{ 'settings.notification-preferences.receive-minimal' | translate }}</b>
+            </label>
+          </div>
+
+          <div class="lnr-mt-x2">
+            <p class="lnr-m-0" ng-show="settingsAccount.parent.isChecked">{{ 'settings.notification-preferences.receive-all-description' | translate }}</p>
+            <p class="lnr-m-0" ng-show="!settingsAccount.parent.isChecked">{{ 'settings.notification-preferences.receive-minimal-description' | translate }}</p>
+            <span class="lnr-color-primary lnr-link" ng-class="settings.detailsShown ? 'lnr-hidden' : ''" ng-click="settings.detailsShown = true">show details</span>
+          </div>
+
+          <ul class="lnr-list-no-style lnr-p-0" ng-show="settings.detailsShown" layout="row" flex-gt-xs="80" layout-wrap>
+            <li ng-repeat="(key, value) in settingsAccount.parent.selectedPreferences" flex="50" flex-xs="100" class="lnr-mb" layout="row" layout-align="start center">
+              <md-icon md-font-icon="fa--lh20 lnr-m-0" ng-class="settingsAccount.parent.isChecked ? 'fa text-success fa-check' : 'fa text-error fa-times'"></md-icon>
+              <span>{{ 'settings.notification-preferences.' + key | translate }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <md-divider class="lnr-p-0 lnr-mt-x2 lnr-mb-x2"></md-divider>
+
+      <div layout="row" layout-xs="column">
+        <div flex-gt-xs layout-margin>
+          <div class="md-body-2">{{ 'settings.newsletter' | translate }}</div>
+        </div>
+        <div flex-gt-xs="70" layout-margin>
+          <p>{{ 'settings.newsletter-description' | translate }}</p>
+          <div layout="row" layout-xs="column">
+            <div flex layout="row" layout-align="start center" class="lnr-mb">
+              <md-checkbox
+                ng-model="settingsAccount.parent.user.notification_preference.newsletter"
+                class="lnr-mb-0"
+                aria-label="terms">
+              </md-checkbox>
+              <div translate="settings.newsletter-subscribe"></div>
+            </div>
+            <div layout="row" flex-gt-xs="45" flex="100">
+              <md-button
+                flex
+                class="md-raised md-primary lnr-btn-mobile"
+                ng-click="settingsAccount.parent.updateNewsletter()">
+                {{ 'shared.update' | translate }}
+              </md-button>
+            </div>
+          </div>
+          <p class="md-caption" translate="forms.newsletter-privacy-policy"></p>
+        </div>
+      </div>
+
+      <md-divider class="lnr-p-0 lnr-mt-x2 lnr-mb-x2"></md-divider>
+
+      <div layout="row" layout-xs="column">
+        <div flex-gt-xs layout-margin>
+          <div class="md-body-2">{{ 'settings.delete-account' | translate }}</div>
+        </div>
+        <div flex-gt-xs="70" layout-margin>
+          <p>
+            <span class="md-body-1">{{ 'settings.delete-account-description' | translate }}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="navigation" layout="row" layout-align-xs="center stretch" layout-align="end center" layout-margin
+        flex-xs>
+        <md-button flex-xs class="md-raised md-primary md-warn" ng-click="settingsAccount.parent.deleteAccount()">
+          {{'settings.delete-account' | translate }}
+        </md-button>
+      </div>
+    </form>
+  </div>
+</md-tab>

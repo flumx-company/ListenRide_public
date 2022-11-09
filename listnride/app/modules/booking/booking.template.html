@@ -1,0 +1,126 @@
+<md-content id="scroll-body" class="single-column booking__body">
+  <div class="content" layout="column" layout-gt-sm="row">
+    <div flex-md="60" flex-gt-md="70" layout-padding class="booking__daterange-focus">
+      <md-tabs
+        md-no-pagination
+        md-dynamic-height
+        md-no-ink
+        lnr-md-focus-tabs="booking.selectedIndex"
+        md-selected="booking.selectedIndex"
+        class="lnr-progress-tabs booking"
+      >
+        <!-- calendar data tab -->
+        <calendar-tab></calendar-tab>
+
+        <!-- sign-in data tab -->
+        <signup-tab></signup-tab>
+
+        <!-- details data tab -->
+        <details-tab></details-tab>
+
+        <!-- payment tab -->
+        <payment-tab></payment-tab>
+
+        <!-- overview tab -->
+        <overview-tab></overview-tab>
+
+      </md-tabs>
+    </div>
+
+    <div flex-md="40" flex-gt-md="30" layout-padding layout="column"
+      ng-hide="booking.booked || booking.selectedIndex == booking.tabOrder['sign-in']"
+    >
+      <div class="spacer-xs"></div>
+      <div class="animate-if highlight-tile booking__receipt" layout="column">
+        <receipt
+          start-date="booking.startDate"
+          end-date="booking.endDate"
+          prices="booking.prices"
+          invalid-days="0"
+          user="booking.user"
+          without-calendar="true"
+          coverage-total="booking.coverageTotal"
+          country-code="booking.bike.country_code"
+          is-premium-coverage="booking.isPremium"
+          is-shop="booking.shopBooking"
+          set-custom-prices="booking.bike.custom_price"
+          insurance-allowed="booking.insuranceAllowed"
+          timeslots="booking.timeslots">
+        </receipt>
+        <div
+          class="booking__next-step lnr-mv lnr-mh-x2"
+          layout="column">
+          <div
+            layout="row"
+            layout-align="space-between center"
+            class="lnr-mv lnr-mh-x2 lnr-mb-0"
+            hide-gt-sm
+            ng-hide="booking.selectedIndex !== booking.tabOrder['overview']">
+            <span class="md-subhead">{{ 'shared.total' | translate }}</span>
+            <span class="md-subhead">{{ booking.total | currency:"€":2 }}</span>
+          </div>
+          <p
+            ng-hide="booking.selectedIndex !== booking.tabOrder['overview']"
+            class="md-body-1 lnr-mv lnr-mh-x2 lnr-mb-0 lnr-center booking__terms">
+             {{ (booking.bike.user.direct_booking_scheme ? 'booking.rent-bike-terms' : 'booking.agree-terms') | translate }}
+            <a ui-sref="terms" target="_blank">{{ 'booking.agree-terms-link' | translate }}</a>
+            <a ui-sref="privacy" target="_blank">{{ 'booking.and-agree-privacy' | translate }}</a>
+          </p>
+          <md-button
+            class="md-raised md-primary lnr-mv lnr-mh-x2"
+            ng-disabled="booking.nextDisabled()"
+            ng-click="booking.nextAction()"
+          >
+            <span ng-if="booking.selectedIndex !== booking.tabOrder['overview']">{{ 'shared.next' | translate }}</span>
+            <span ng-if="booking.selectedIndex === booking.tabOrder['overview'] && !booking.bookDisabled">
+              {{ (booking.bike.user.direct_booking_scheme ? 'calendar.rent-bike' : 'calendar.request-bike') | translate }}
+            </span>
+            <div ng-if="booking.selectedIndex === booking.tabOrder['overview'] && booking.bookDisabled" class="lnr-loader">
+              <div class="lnr-loader__item1"></div>
+              <div class="lnr-loader__item2"></div>
+              <div class="lnr-loader__item3"></div>
+              <div class="lnr-loader__item4"></div>
+            </div>
+          </md-button>
+        </div>
+      </div>
+      <div layout="row" layout-align="end center" class="lnr-mt lnr-p-0">
+        <img
+          class="md-card-image lnr-request__img-methods"
+          ng-src="app/assets/ui_icons/lnr_ico_lock.svg"
+          alt="Secure"
+        >
+        <div style="margin-left: 8px">
+          {{ 'booking.shopping' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" layout-padding ng-if="!booking.authentication.loggedIn()">
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <p class="md-subhead">{{ 'booking.pay-secure' | translate }}</p>
+      <div layout="row">
+        <img
+          class="md-card-image lnr-request__img-methods lnr-payment-image"
+          ng-src="app/assets/ui_icons/lnr_logo_paypal.svg"
+          alt="Paypal"
+        >
+        <img
+          class="md-card-image lnr-request__img-methods lnr-payment-image"
+          ng-src="app/assets/ui_icons/lnr_logo_mastercard.svg"
+          alt="Mastercard"
+        >
+        <img
+          class="md-card-image lnr-request__img-methods lnr-payment-image"
+          ng-src="app/assets/ui_icons/lnr_logo_visa.svg"
+          alt="Visa"
+        >
+      </div>
+    </div>
+  </div>
+
+  <lnr-support></lnr-support>
+
+  <footer></footer>
+</md-content>

@@ -1,0 +1,159 @@
+.lnr-verification-modal md-tabs {
+    width: 100%;
+    overflow: visible;
+    z-index: 1;
+}
+
+.lnr-verification-modal .verif-desktop {
+    min-height: 470px;
+    max-width: 726px;
+}
+
+.lnr-verification-modal .label {
+    color: white;
+    text-transform: uppercase;
+    height: 15px;
+    width: 43px;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 15px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.lnr-verification-modal .label-public {
+    background-color: #5FC693;
+}
+
+.lnr-verification-modal .label-private{
+    background-color: #FEB35B;
+}
+
+.lnr-verification-modal .md-tab.md-active{
+    color: #7ab2f8;
+    opacity: 1;
+}
+
+.lnr-verification-modal md-tab-content {
+    overflow: visible;
+}
+
+.lnr-verification-modal md-tab-item {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.lnr-verification-modal md-tab-data {
+    opacity: 1;
+    display: table;
+    right: 0;
+    left: initial;
+    z-index: 20;
+}
+
+.lnr-verification-modal .verif-close {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    min-height: 20px;
+}
+
+.lnr-verification-modal .verif-close .close-button{
+    height: 20px;
+    width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+.lnr-verification-modal .md-dialog-content {
+    overflow-x: hidden;
+}
+
+.lnr-verification-modal .iti-flag {
+    background-image: url(/app/assets/ui_images/flags.png);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .lnr-verification-modal .iti-flag {
+        background-image: url(/app/assets/ui_images/flags@2x.png);
+    }
+}
+
+.lnr-verification-modal .verification-icon {
+    width: 100px;
+    height: 102px;
+}
+
+.lnr-verification-modal .verif-1 .md-headline {
+    margin: 22px 0;
+}
+
+.lnr-verification-modal .md-body-1 {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.lnr-verification-modal .md-body-desktop {
+    width: 577px;
+    margin: 0.3rem 6rem;
+}
+
+.lnr-verification-modal .verif-1 .lnr-start {
+    margin-top: 5.5rem;
+    width: 10rem;
+}
+
+.lnr-verification-modal .verif-1 .under-text {
+    font-size: 12px;
+    line-height: 28px;
+    height: 28px;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.lnr-verification-modal .verif-2 .md-headline {
+    margin: 22px 0;
+}
+
+.lnr-verification-modal .verif-2 .md-body-1 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.lnr-verification-modal .verif-2 .lnr-profile-lrg {
+    margin-top: 80px;
+}
+
+.lnr-verification-modal .verif-2 .cropArea {
+    margin-top: 80px;
+}
+
+.lnr-verification-modal .verif-3 .verif-textarea-desktop textarea {
+    width: 500px;
+}
+
+.lnr-verification-modal .verif-3 .verif-textarea-mobile textarea {
+    width: 300px;
+}
+
+.lnr-verification-modal .verif-buttons {
+    margin: 20px;
+}
+
+.lnr-verification-modal .verif-buttons button{
+    width: 145px;
+}
+
+/* iPhone 5*/
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+    .lnr-verification-modal .md-button {
+        font-size: 12px;
+    }
+
+    body {
+        font-size: 13px;
+    }
+}

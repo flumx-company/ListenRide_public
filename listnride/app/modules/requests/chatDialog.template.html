@@ -1,0 +1,52 @@
+<md-dialog>
+  <md-toolbar class="md-accent">
+    <div class="md-toolbar-tools" layout-align="center center">
+      <md-button class="md-icon-button">
+        <md-icon></md-icon>
+      </md-button>
+      <span flex></span>
+      <h2
+        class="md-headline"
+        translate="requests.{{chatDialog.requests.request.chatFlow}}"
+        translate-values="chatDialog.requests.request"
+      ></h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="chatDialog.hide()">
+        <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+
+  <md-dialog-content style="height: 100vh" layout="column">
+    <md-progress-linear
+      class="md-accent"
+      ng-if="chatDialog.requests.loadingChat"
+      md-mode="query"
+    ></md-progress-linear>
+    <div flex="85" scroll-glue="chatDialog.requests.request.glued" class="chat">
+      <message
+        ng-repeat="message in chatDialog.requests.request.messages"
+        content="message.content"
+        sender="message.sender"
+        status="message.status"
+        request="chatDialog.requests.request"
+        message-time="message.created_at_readable"
+        time="message.created_at"
+        confirm-booking="chatDialog.requests.confirmBooking()"
+        accept-booking="chatDialog.requests.acceptBooking()"
+        show-rating-dialog="chatDialog.requests.showRatingDialog()">
+      </message>
+    </div>
+    <div class="lnr-message-form" flex="auto" layout-padding>
+      <md-input-container class="ap-chat lnr-m-0 lnr-block" md-no-float>
+        <textarea class="md-input" ng-model="chatDialog.requests.message" placeholder="{{ 'requests.write-message' | translate }}"></textarea>
+      </md-input-container>
+      <md-input-container class="lnr-m-0 lnr-block lnr-right">
+        <md-button class="md-raised md-primary lnr-m-0" ng-click="chatDialog.requests.sendMessage()">
+          Send
+        </md-button>
+      </md-input-container>
+    </div>
+  </md-dialog-content>
+</md-dialog>

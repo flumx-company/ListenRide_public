@@ -1,0 +1,112 @@
+<md-content class="single-column">
+
+  <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <!-- BRAND SLIDER -->
+    <ul class="cb-slideshow cb-slideshow--brand cb-slideshow--3">
+      <li ng-repeat="slide in unimoke.cbSlider track by $index">
+        <span style="background-image: url('{{slide}}')"></span>
+      </li>
+    </ul>
+    <!-- END BRAND SLIDER -->
+
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.unimoke.title' | translate }}</h1>
+      <h2 class="md-subhead" translate="brand-integration.unimoke.description"></h2>
+    </div>
+
+    <!-- BRAND PAGE FEATURES -->
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/unimoke/lnr_unimoke_top_columns_image_01.png" alt="unimoke feature 1">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.unimoke.item1-title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.unimoke.item1-description"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/unimoke/lnr_unimoke_top_columns_image_02.png" alt="unimoke feature 2">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.unimoke.item2-title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.unimoke.item2-description"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/unimoke/lnr_unimoke_top_columns_image_03.png" alt="unimoke feature 3">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.unimoke.item3-title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.unimoke.item3-description"></p>
+      </div>
+    </div>
+    <!-- END BRAND PAGE FEATURES -->
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <!-- BRAND BIKES -->
+    <!-- <h2 class="md-headline lnr-center">{{ 'brand-integration.unimoke.test-bike' | translate }}</h2> -->
+    <div ng-if="!unimoke.isEmpty(unimoke.cities)">
+      <h2 class="md-subhead lnr-center">{{ 'brand-integration.shared.choose-location' | translate }}</h2>
+
+      <div class="lnr-section-title" layout="column" layout-align="center center">
+        <md-menu md-position-mode="target bottom">
+          <md-button class="md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">
+            <p class="md-right-arrow md-headline lnr-m-0">&nbsp;&nbsp;{{ unimoke.currentShop.cityName }}</p>
+          </md-button>
+          <md-menu-content width="3">
+            <md-menu-item ng-repeat="(city, v) in unimoke.cities">
+              <md-button ng-disabled="!v.bikes.length" md-no-ink ng-click="unimoke.currentShop = unimoke.cities[city]">
+                <p class="md-subhead lnr-m-0">{{ v.cityName }}</p>
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+
+      <md-content ng-if="unimoke.currentShop.bikes && unimoke.currentShop.bikes.length !==0">
+        <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+          <bike-card ng-repeat="bike in unimoke.currentShop.bikes" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+        </div>
+      </md-content>
+
+
+      <div ng-if="!unimoke.currentShop.bikes.length">
+        <p class="md-subhead lnr-center">{{'shared.no-bikes-found' | translate}}</p>
+      </div>
+      <!-- END BRAND BIKES -->
+
+      <md-divider class="lnr-mv lnr-mh-x2"></md-divider>
+    </div>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.unimoke.find-out-more' | translate }}</h1>
+      <h2 class="md-subhead" translate="brand-integration.unimoke.order-online"></h2>
+    </div>
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-align-gt-sm="space-between start"
+      layout-padding layout-wrap>
+      <!-- LEFT COLUMN -->
+      <div class="lnr-sm-center lnr-sm-no-vertical-space" flex-gt-sm="45" layout="column" layout-margin>
+        <div ng-repeat="f in unimoke.faqs[1] track by $index">
+          <h3 class="md-body-2 lnr-clickable" ng-click="unimoke['faq-l'+$index] = !unimoke['faq-l'+$index]" translate="{{f.question}}"></h3>
+          <div ng-show="unimoke['faq-l'+$index]">
+            <p translate="{{f.answer}}"></p>
+          </div>
+        </div>
+      </div>
+      <!-- END LEFT COLUMN -->
+      <!-- RIGHT COLUMN -->
+      <div class="lnr-sm-center lnr-sm-no-vertical-space" flex-gt-sm="45" layout="column" layout-margin>
+        <div ng-repeat="f in unimoke.faqs[0] track by $index">
+          <h3 class="md-body-2 lnr-clickable" ng-click="unimoke['faq-r'+$index] = !unimoke['faq-r'+$index]" translate="{{f.question}}"></h3>
+          <div ng-show="unimoke['faq-r'+$index]">
+            <p translate="{{f.answer}}"></p>
+          </div>
+        </div>
+      </div>
+      <!-- END RIGHT COLUMN -->
+    </div>
+
+    <div class="lnr-mh-x2"></div>
+  </div>
+  <footer></footer>
+</md-content>

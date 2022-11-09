@@ -1,0 +1,72 @@
+ <md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/citypages/munich-heroshot.jpg')" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'cities.munich.title' | translate }}</h1>
+    </div>
+  </div>
+  <br>
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'cities.munich.subtitle' | translate }}</h2>
+      <h3 class="md-subhead">{{ 'cities.munich.description' | translate }}</h3>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center" layout-padding>
+      <div layout="column" flex-gt-xs="45">
+        <h3 class="md-subhead">{{ 'cities.munich.about' | translate }}</h3>
+        <p translate="cities.munich.about-content"></p>
+        <br>
+        <md-card class="lnr-bike-card">
+          <img class="md-card-image" src="app/assets/ui_images/citypages/munich-routes.jpg" alt="">
+        </md-card>
+        <br>
+        <h3 class="md-subhead">{{ 'cities.munich.bike-routes' | translate }}</h3>
+        <p translate="cities.munich.bike-routes-content"></p>
+      </div>
+      <div layout="row" flex-gt-xs="10" layout-align="center">
+        <md-divider></md-divider>
+      </div>
+      <div layout="column" flex-gt-xs="45">
+        <md-card class="lnr-bike-card">
+          <img class="md-card-image" src="app/assets/ui_images/citypages/munich-shops.jpg" alt="">
+        </md-card>
+        <br>
+        <h3 class="md-subhead">{{ 'cities.munich.bike-shops' | translate }}</h3>
+        <p translate="cities.munich.bike-shops-content"></p>
+        <br>
+        <md-card class="lnr-bike-card">
+          <img class="md-card-image" src="app/assets/ui_images/citypages/munich-cafes.jpg" alt="">
+        </md-card>
+        <br>
+        <h3 class="md-subhead">{{ 'cities.munich.cafes-bars' | translate }}</h3>
+        <p translate="cities.munich.cafes-bars-content"></p>
+      </div>
+    </div>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'cities.munich.search-title' | translate }}</h1>
+      <p class="md-subhead">{{ 'cities.munich.search-subtitle' | translate }}</p>
+    </div>
+
+    <md-grid-list id="city-pages" class="md-color-white lnr-m" md-cols="1" md-cols-gt-xs="3" md-gutter="16px" md-row-height="1.5:1">
+      <md-grid-tile class="munich-1">
+        <a ui-sref="search({ location: 'Munich', city: true })" target="_blank" layout="row" layout-align="center center">
+          <h3 class="md-title">{{ 'cities.shared.rent-city' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="munich-2">
+        <a ui-sref="search({ location: 'Munich', ebikes: true })" target="_blank" layout="row" layout-align="center center">
+          <h3 class="md-title">{{ 'cities.shared.rent-ebike' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="munich-3">
+        <a ui-sref="search({ location: 'Munich', allterrain: true })" target="_blank" layout="row" layout-align="center center">
+          <h3 class="md-title">{{ 'cities.shared.rent-terrain' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+    </md-grid-list>
+    <br>
+  </div>
+  <footer></footer>
+</md-content>

@@ -1,0 +1,88 @@
+<md-content class="single-column">
+
+  <!-- FAQs -->
+  <div class="content" layout-padding>
+
+    <div class="faq__mobile-select" hide-gt-sm layout="row">
+      <md-select
+        class="lnr-select-blue"
+        ng-model="faq.activeGroupIndex"
+        placeholder="{{ 'shared.please-select' | translate }}"
+      >
+        <md-option
+          ng-repeat="i in [].constructor(8) track by $index"
+          value="{{$index + 1}}"
+          class="lnr-select-blue__option"
+        >
+          <span translate="help-and-service.faq.group-{{$index+1}}.title"></span>
+        </md-option>
+      </md-select>
+    </div>
+
+    <div class="lnr-mh-x2" hide-xs hide-sm></div>
+
+    <div class="lnr-section-title lnr-sm-mb-0" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'faq-page.header' | translate }}</h2>
+      <p
+        class="md-title lnr-sm-mb-0"
+        hide-gt-sm
+        translate="help-and-service.faq.group-{{faq.activeGroupIndex}}.title">
+      </p>
+    </div>
+
+    <div class="lnr-mh-x2" hide-xs hide-sm></div>
+
+    <div layout="row" hide-xs hide-sm>
+      <a ui-sref="help">
+        <i class="fa fa-long-arrow-left"></i>
+        {{ 'jobs.go-back' | translate }}
+      </a>
+    </div>
+
+    <div layout="column" layout-gt-sm="row">
+      <div class="md-body-1" layout="column" hide-xs hide-sm flex-gt-sm="30">
+        <p>{{ 'faq-page.topics' | translate }}</p>
+        <div class="lnr-mh-x2"></div>
+        <a
+          ng-repeat="i in [].constructor(8) track by $index"
+          ui-sref="faq({group: $index+1})"
+          layout="row"
+          class="md-subhead lnr-ml-0 premium-insurance__adv lnr-mb faq__group-item"
+          ng-class="faq.activeGroupIndex == $index + 1 ? 'checked' : 'unchecked'"
+          ng-click="faq.activeGroupIndex = $index + 1"
+        >
+          <md-icon md-svg-src="app/assets/ui_icons/help/group-{{$index+1}}.svg" class="lnr-icn-sm"></md-icon>
+          <span translate="help-and-service.faq.group-{{$index+1}}.title"></span>
+        </a>
+      </div>
+      <div class="md-body-1" layout="column" flex-gt-sm="70">
+        <div
+          layout="column"
+          ng-repeat="group in faq.data"
+          ng-init="parentIndex = $index"
+          ng-if="faq.activeGroupIndex == $index + 1">
+          <p class="lnr-sm-text-center lnr-sm-mt-0" translate="help-and-service.faq.group-{{parentIndex+1}}.description"></p>
+          <div class="lnr-mh-x2"></div>
+          <div
+            class="faq__item"
+            ng-repeat="i in [].constructor(group.questionsCount) track by $index">
+            <h3
+              class="md-subhead lnr-clickable lnr-arrow-left"
+              ng-click="faq.toggleQuestion(parentIndex, $index)"
+              ng-class="faq.activeQuestion == parentIndex + '_' + $index ? 'accordion__tab--opened' : ''"
+              translate="help-and-service.faq.group-{{parentIndex+1}}.question-{{$index+1}}">
+            </h3>
+            <div ng-show="faq.activeQuestion == parentIndex + '_' + $index">
+              <p class="md-body-1 accordion__text" translate="help-and-service.faq.group-{{parentIndex+1}}.answer-{{$index+1}}"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end FAQs -->
+
+  <lnr-support></lnr-support>
+
+  <footer></footer>
+</md-content>

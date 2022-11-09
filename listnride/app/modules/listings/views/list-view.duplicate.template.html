@@ -1,0 +1,53 @@
+<md-dialog>
+  <div show-xs>
+    <div class="md-toolbar-tools" layout-align="center center">
+      <md-button class="md-icon-button">
+        <md-icon></md-icon>
+      </md-button>
+      <span flex></span>
+      <h2 class="md-headline">{{'listings.duplicate.header' | translate}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="duplicate.cancelDialog()">
+        <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </div>
+  <form name="duplicate_form">
+    <div class="md-dialog-content" layout="column">
+      <div class="tab-content" layout="column">
+        <div layout="row" layout-align="center center">
+          <form name="duplicate_form"></form>
+          <md-input-container flex>
+            <label>{{'listings.duplicate.how_many' | translate}}</label>
+            <input
+              type="number"
+              name="duplicate_number"
+              ng-model="duplicate.duplicate_number"
+              minlength="1"
+              maxlength="2"
+              ng-pattern="/^\d+$/"
+              min="1"
+              ng-model-options='{ debounce: 50 }'
+              placeholder="{{'listings.duplicate.number_bikes' | translate}}"
+              required>
+            <div ng-messages="duplicate_form.duplicate_number.$error" ng-show="duplicate_form.duplicate_number.$dirty">
+              <div ng-message="required">
+                {{'listings.duplicate.required' | translate}}
+              </div>
+              <div ng-message="maxlength">{{'listings.duplicate.maxlength' | translate}}</div>
+            </div>
+          </md-input-container>
+          <md-input-container layout="row" flex="45">
+            <md-button flex
+               ng-disabled="duplicate_form.duplicate_number.$error.required || duplicate_form.duplicate_number.$error.maxlength || duplicate_form.duplicate_number.$error.pattern || duplicate_form.duplicate_number.$error.min"
+               class="md-raised md-primary lnr-btn-inline"
+               ng-click="duplicate.closeDialog()">
+              <span>{{'listings.duplicate.duplicate' | translate}}</span>
+            </md-button>
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+  </form>
+  </md-dialog-content>
+</md-dialog>

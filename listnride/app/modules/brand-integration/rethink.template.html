@@ -1,0 +1,115 @@
+ <md-content class="single-column"> 
+ 
+   <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <ul class="cb-slideshow">
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+    </ul>
+
+    <div class="lnr-page-title md-color-white" layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'brand-integration.rethink.title' | translate }}</h1>    
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.rethink.description' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'brand-integration.rethink.subdescription' | translate }}</h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/rethink/bike_1.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.rethink.bike1-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.rethink.bike1-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/rethink/bike_2.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.rethink.bike2-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.rethink.bike2-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/rethink/bike_3.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.rethink.bike3-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.rethink.bike3-description' | translate }}"></p>
+      </div>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <h2 class="md-headline lnr-center">{{ 'brand-integration.rethink.test-bike' | translate }}</h2>
+
+<!--     <md-content>
+      <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+        <bike-card ng-repeat="bike in rethink.bikes" bike="bike" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+      </div>
+    </md-content> -->
+
+    <md-content>
+      <md-tabs md-no-pagination md-dynamic-height md-no-ink md-no-ink-bars md-center-tabs="on">
+        <md-tab label="{{ 'shared.munich' | translate }}">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding>
+              <bike-card ng-repeat="bike in rethink.bikes.munich" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="{{ 'shared.hamburg' | translate }}">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding>
+              <bike-card ng-repeat="bike in rethink.bikes.hamburg" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab style="font-size: 40px" label="Dresden">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding>
+              <bike-card ng-repeat="bike in rethink.bikes.dresden" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/rethink/feature_1.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.rethink.item1-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.rethink.item1-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/rethink/feature_2.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.rethink.item2-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.rethink.item2-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/rethink/feature_3.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.rethink.item3-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.rethink.item3-description' | translate }}"></p>
+      </div>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.rethink.find-out-more' | translate }}</h1>
+      <h2 class="md-subhead" translate="{{ 'brand-integration.rethink.order-online' | translate }}"></h2>
+    </div>
+    <br><br>
+  </div>
+ <footer></footer>
+</md-content>

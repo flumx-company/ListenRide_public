@@ -1,0 +1,171 @@
+<md-dialog class="lnr-user-modal">
+
+  <form
+    class="signup__form"
+    ng-cloak
+    name="signupForm"
+    ng-submit="signupDialog.signup(signupForm)"
+    novalidate
+  >
+
+    <div show-xs>
+      <div class="md-toolbar-tools" layout-align="center center">
+        <md-button class="md-icon-button">
+          <md-icon></md-icon>
+        </md-button>
+        <span flex></span>
+        <h2 ng-if="!signupDialog.requesting">{{ 'forms.sign-up' | translate }}</h2>
+        <h2 ng-if="signupDialog.requesting">{{ 'forms.sign-up-to-book' | translate }}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="signupDialog.hide()">
+          <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </div>
+
+    <md-dialog-content>
+      <div class="md-dialog-content" layout="column" style="padding-top: 0;">
+        <div class="sign-up-tip" ng-style="{'display': signupDialog.business ? '' : 'none'}">
+          {{ 'forms.company-contact-info' | translate }}
+        </div>
+
+        <md-input-container ng-style="{'display': signupDialog.business ? '' : 'none'}">
+          <label ng-class="{'text-error': signupDialog.businessError}">{{ 'forms.company-name' | translate }}</label>
+          <input
+            name="company_name"
+            ng-model="signupDialog.companyName"
+            ng-minlength="2"
+            ng-class="{'input-invalid': signupDialog.businessError}"
+            ng-required='signupDialog.business'>
+          <div ng-messages="signupForm.company_name.$error" role="alert">
+            <div ng-message="required">{{ 'forms.errors.empty-company-name' | translate }}</div>
+            <div ng-message="minlength">{{ 'forms.errors.min-size-company-name' | translate }}</div>
+          </div>
+        </md-input-container>
+
+        <div class="lnr-input-containers" layout="row">
+          <md-input-container flex>
+            <label>{{ 'forms.first-name' | translate }}</label>
+            <input
+              name="first_name"
+              ng-model="signupDialog.firstName"
+              required
+              ng-maxlength="20"
+              ng-disabled="signupDialog.businessError">
+            <div ng-messages="signupForm.first_name.$error" role="alert">
+              <div ng-message="required" ng-if="!signupDialog.xs">{{ 'forms.errors.empty-first-name' | translate }}</div>
+              <div ng-message="maxlength" ng-if="!signupDialog.xs">{{ 'forms.errors.max-size-first-name' | translate }}</div>
+              <div ng-message="required" ng-if="signupDialog.xs">{{ 'forms.errors.empty-first-name-xs' | translate }}</div>
+              <div ng-message="maxlength" ng-if="signupDialog.xs">{{ 'forms.errors.max-size-first-name-xs' | translate }}</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex>
+            <label>{{ 'forms.last-name' | translate }}</label>
+            <input
+              name="last_name"
+              ng-model="signupDialog.lastName"
+              required
+              ng-maxlength="30"
+              ng-disabled="signupDialog.businessError">
+            <div ng-messages="signupForm.last_name.$error" role="alert">
+              <div ng-message="required" ng-if="!signupDialog.xs">{{ 'forms.errors.empty-last-name' | translate }}</div>
+              <div ng-message="maxlength" ng-if="!signupDialog.xs">{{ 'forms.errors.max-size-last-name' | translate }}</div>
+              <div ng-message="required" ng-if="signupDialog.xs">{{ 'forms.errors.empty-last-name-xs' | translate }}</div>
+              <div ng-message="maxlength" ng-if="signupDialog.xs">{{ 'forms.errors.max-size-last-name-xs' | translate }}</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div class="lnr-input-containers" layout="row">
+          <md-input-container flex>
+            <label>{{ 'forms.email-address' | translate }}</label>
+            <input name="email" ng-model="signupDialog.email" type="email" required ng-pattern="/(?!^[.+&'_-]*@.*$)(^[_\w\d+&'-]+(\.[_\w\d+&'-]*)*@[\w\d-]+(\.[\w\d-]+)*\.(([\d]{1,3})|([\w]{2,}))$)/i"
+              ng-disabled="signupDialog.businessError">
+            <div ng-messages="signupForm.email.$error" role="alert">
+              <div ng-message="required" ng-if="!signupDialog.xs">{{ 'forms.errors.empty-email' | translate }}</div>
+              <div ng-message="required" ng-if="signupDialog.xs">{{ 'forms.errors.empty-email-xs' | translate }}</div>
+              <div ng-message="email" ng-if="!signupDialog.xs">{{ 'forms.errors.valid-email' | translate }}</div>
+              <div ng-message="email" ng-if="signupDialog.xs">{{ 'forms.errors.valid-email-xs' | translate }}</div>
+              <div ng-message="pattern" ng-if="!signupDialog.xs">{{ 'forms.errors.valid-email' | translate }}</div>
+              <div ng-message="pattern" ng-if="signupDialog.xs">{{ 'forms.errors.valid-email-xs' | translate }}</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex>
+            <label>{{ 'forms.password' | translate }}</label>
+            <input name="password" ng-model="signupDialog.password" type="password" required ng-minlength="6" ng-maxlength="30" ng-disabled="signupDialog.businessError">
+            <div ng-messages="signupForm.password.$error" role="alert">
+              <div ng-message="required" ng-if="!signupDialog.xs">{{ 'forms.errors.password-missing' | translate }}</div>
+              <div ng-message="minlength" ng-if="!signupDialog.xs">{{ 'forms.errors.password-length' | translate }}</div>
+              <div ng-message="maxlength" ng-if="!signupDialog.xs">{{ 'forms.errors.password-length' | translate }}</div>
+              <div ng-message="required" ng-if="signupDialog.xs">{{ 'forms.errors.password-missing-xs' | translate }}</div>
+              <div ng-message="minlength" ng-if="signupDialog.xs">{{ 'forms.errors.password-length-xs' | translate }}</div>
+              <div ng-message="maxlength" ng-if="signupDialog.xs">{{ 'forms.errors.password-length-xs' | translate }}</div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div class="md-dialog-buttons lnr-mb-x2" layout="column">
+          <div layout="column">
+            <md-tooltip ng-if="!signupDialog.terms" md-direction="top">{{ 'forms.agree-terms-and-policy' | translate }}</md-tooltip>
+            <md-button
+              type="submit"
+              class="md-accent md-raised"
+              ng-disabled="signupDialog.signingUp || !signupDialog.terms || !signupForm.$valid">
+              {{ 'forms.sign-up' | translate }}
+            </md-button>
+          </div>
+          <div ng-style="{'display': signupDialog.business ? 'none' : ''}" layout="column">
+            <div class="lnr-middle-divider lnr-mv-12">
+              {{ 'forms.or' | translate }}
+            </div>
+
+            <div layout="column">
+              <md-tooltip ng-if="!signupDialog.terms" md-direction="top">{{ 'forms.agree-terms-and-policy' | translate }}</md-tooltip>
+              <md-button
+                style="margin-top: 0"
+                ng-click="signupDialog.connectFb()"
+                class="md-primary md-lined lnr-btn-fb md-raised"
+                ng-disabled="!signupDialog.terms">
+                {{ 'forms.sign-up-with-facebook' | translate }}
+              </md-button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lnr-middle-divider lnr-mh-x2">{{ 'forms.sign-up-divider-text' | translate }}</div>
+
+        <div flex layout="row" layout-align="space-around start" class="lnr-mb" style="max-width: 544px; font-size:12px;">
+          <md-checkbox
+            ng-model="signupDialog.terms"
+            aria-label="terms"
+            style="margin-top: 3px"
+          >
+          </md-checkbox>
+          <div flex="90">
+            <div data-ng-bind-html="'forms.signing-up-accept-tac' | translate"></div>
+          </div>
+        </div>
+        <div flex layout="row" layout-align="space-around start" class="lnr-mb" style="max-width: 544px; font-size:12px;">
+          <md-checkbox
+            ng-model="signupDialog.newsletter"
+            aria-label="newsletter"
+            style="margin-top: 3px"
+          >
+          </md-checkbox>
+          <div flex="90">
+            <div data-ng-bind-html="'forms.signing-up-accept-newsletter' | translate"></div>
+          </div>
+        </div>
+
+        <div class="lnr-mt-x2" flex layout="row" layout-align="space-between center">
+          <a class="lnr-link" ng-click="signupDialog.showLogin()">{{ 'forms.member-already' | translate }}</a>
+          <a class="lnr-link" ng-click="signupDialog.business = !signupDialog.business">
+            {{ (signupDialog.business ? 'verification.private' : 'forms.business') | translate }}
+          </a>
+        </div>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>

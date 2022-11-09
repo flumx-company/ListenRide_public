@@ -1,0 +1,151 @@
+<md-tab
+  class="details"
+  label="{{ details.parent.tabOrder['details'] + 1 }}. {{ 'booking.details.tab' | translate }} {{ details.parent.tabCompleted('details') }}"
+  layout="row"
+  ng-disabled="details.parent.tabsDisabled"
+  md-on-select="details.parent.onTabChanged()"
+>
+  <div class="spacer-xs"></div>
+  <md-content layout="column" style="overflow: visible;">
+    <div class="tab-content" style="min-height: 400px;"
+         layout="row"
+         layout-align="space-between none"
+         layout-padding>
+      <div class="lnr-list-form"
+           layout="column"
+           flex="100">
+        <div layout="row" layout-align="space-between center">
+          <h2 class="md-title">{{ 'booking.details.invoice-address' | translate }}</h2>
+        </div>
+        <p class="md-body-1">{{ 'booking.details.subtitle' | translate }}</p>
+        <div class="spacer-xs"></div>
+        <form name="details.parent.detailsForm" novalidate class="md-body-desktop">
+          <!-- First name and Last name -->
+        </form>
+        <div class="lnr-input-containers">
+          <address-input address="details.parent.address" valid-address="details.parent.validAddress"></address-input>
+        </div>
+
+        <form name="details.parent.verificationForm" novalidate class="md-body-desktop">
+          <div class="spacer-xs"></div>
+          <h3 class="md-title">{{ 'booking.details.verification' | translate }}</h3>
+          <p class="lnr-m-0" ng-show="details.parent.showConfirmButton && details.parent.phoneConfirmed !== 'success'">
+            {{ 'booking.details.send-sms' | translate }}
+          </p>
+          <p class="lnr-m-0" ng-show="!details.parent.showConfirmButton && details.parent.phoneConfirmed !== 'success'">
+            {{ 'booking.details.check-phone' | translate }}
+          </p>
+          <p class="lnr-m-0 text-success" ng-show="details.parent.phoneConfirmed === 'success'">
+            {{ 'booking.details.success-code' | translate }}
+          </p>
+
+          <div class="spacer-xs"></div>
+          <!-- Phone Number and Send Button -->
+          <div class="lnr-input-containers"
+            layout="column"
+            layout-gt-xs="row"
+            ng-show="details.parent.showConfirmButton"
+          >
+            <md-input-container flex-gt-xs="60">
+              <label>{{ 'shared.phone-number' | translate }}</label>
+              <input
+                international-phone-number
+                ng-model="details.parent.phone_number"
+                ng-pattern="details.parent.phonePattern"
+                name="phone_number"
+                ng-pattern="/^\+(?:[0-9] ?){6,14}[0-9]$/"
+                ng-required="true"
+                placeholder=" "
+                preferred-countries="de, at, nl, fr, lv, es, it, ch, gb"
+                required
+                ng-disabled="details.parent.phoneConfirmed === 'success'"
+              >
+              <div ng-messages="details.parent.verificationForm.phone_number.$error" role="alert">
+                <div ng-message="pattern">{{ 'verification.5.enter-valid-phone-nr' | translate }}</div>
+                <div ng-message="required">{{ 'verification.5.enter-valid-phone-nr' | translate }}</div>
+                <div ng-message="internationalPhoneNumber">{{ 'verification.5.enter-valid-phone-nr' | translate }}</div>
+              </div>
+            </md-input-container>
+            <md-input-container flex-gt-xs="20">
+              <md-button
+                class="md-raised md-primary lnr-btn-inline details__send-code"
+                ng-click="details.parent.sendCode()"
+                ng-hide="details.parent.phoneConfirmed === 'success'"
+                flex="100"
+              >
+                <span>{{ 'booking.details.send-code' | translate }}</span>
+              </md-button>
+            </md-input-container>
+          </div>
+
+          <!-- Phone Confirmation -->
+          <!--TODO: Create directive for it-->
+          <div class="lnr-confirmation-containers"
+               ng-hide="details.parent.showConfirmButton"
+          >
+            <div layout="row" class="confirm-label">
+              <strong>{{ 'booking.details.confirm-code' | translate }}</strong>
+            </div>
+            <div layout="row" layout-align="start center">
+              <div class="lnr-sms-input" layout="row" layout-align="center center">
+                <md-input-container flex-gt-xs="20" class="lnr-sms-digit" lnr-focus>
+                  <input
+                    ng-model="details.parent.confirmation_0"
+                    maxlength="1"
+                    lnr-max-length
+                    ng-required="!details.parent.phoneConfirmed === 'success'"
+                    name="confirmation_0"
+                    ng-change="details.parent.confirmPhone()"
+                  >
+                </md-input-container>
+                <md-input-container flex-gt-xs="20" class="lnr-sms-digit" lnr-focus>
+                  <input
+                    ng-model="details.parent.confirmation_1"
+                    maxlength="1"
+                    lnr-max-length
+                    ng-required="!details.parent.phoneConfirmed === 'success'"
+                    name="confirmation_1"
+                    ng-change="details.parent.confirmPhone()"
+                  >
+                </md-input-container>
+                <md-input-container flex-gt-xs="20" class="lnr-sms-digit" lnr-focus>
+                  <input
+                    ng-model="details.parent.confirmation_2"
+                    maxlength="1"
+                    lnr-max-length
+                    ng-required="!details.parent.phoneConfirmed === 'success'"
+                    name="confirmation_2"
+                    ng-change="details.parent.confirmPhone()"
+                  >
+                </md-input-container>
+                <md-input-container flex-gt-xs="20" class="lnr-sms-digit" lnr-focus>
+                  <input
+                    ng-model="details.parent.confirmation_3"
+                    maxlength="1"
+                    lnr-max-length
+                    ng-required="!details.parent.phoneConfirmed === 'success'"
+                    name="confirmation_3"
+                    ng-change="details.parent.confirmPhone()"
+                  >
+                </md-input-container>
+              </div>
+              <div layout="row" flex="30" flex-xs="50" layout-align="start start" class="lnr-ml">
+                <div ng-show="details.parent.phoneConfirmed === 'progress'" class="text-default">
+                  {{ 'booking.details.enter-code' | translate }}
+                </div>
+                <div ng-show="details.parent.phoneConfirmed === 'error'" class="text-error">
+                  {{ 'booking.details.fail-code' | translate }}
+                </div>
+              </div>
+            </div>
+
+            <div class="lnr-mt" flex layout="row" layout-align="space-between center">
+              <a class="lnr-link" ng-click="details.parent.resendSms()">{{ 'booking.details.resend' | translate }}</a>
+            </div>
+          </div>
+          <p class="md-caption" data-ng-bind-html="'forms.privacy-policy' | translate"></p>
+        </form>
+      </div>
+    </div>
+  </md-content>
+</md-tab>

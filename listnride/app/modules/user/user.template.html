@@ -1,0 +1,155 @@
+<md-progress-linear class="md-accent" ng-if="!user.loaded" md-mode="query"></md-progress-linear>
+<md-content class="lnr-user single-column lnr-footer-bottom" ng-if="user.loaded">
+  <div class="content">
+
+    <div class="lnr-mv lnr-mh-x2" layout-xs="column" layout="row" layout-padding>
+      <div class="lnr-user__header" flex-gt-xs="70" layout="row">
+        <img class="lnr-profile-lrg" ng-src="{{user.picture}}">
+        <div class="lnr-user__info" layout="column" layout-align="center start" layout-padding>
+          <div layout="row">
+            <h1 class="md-headline">{{ user.display_name }}</h1>
+            <md-button
+              ng-if="user.user.me.admin && user.user.me.id != user.user.id"
+              class="md-raised md-primary"
+              ng-click="user.stealSession()"
+            >
+              <span>{{ 'user.become-this-user' | translate }}</span>
+            </md-button>
+          </div>
+          <input-stars class="lnr-user-rating rating" max="5" ng-model="user.rating" readonly></input-stars>
+          <span ng-if="user.user.city && user.user.country" class="md-body-1">{{user.user.city}}, {{user.user.country}}</span>
+        </div>
+      </div>
+
+      <md-divider hide-xs></md-divider>
+
+      <div class="lnr-user__verify" flex-gt-xs="30" flex-offset="5" layout="column" layout-align="center start" layout-padding>
+        <h3 class="md-subhead">{{ 'user.verified-through' | translate }}</h3>
+        <span class="md-body-1">
+          <md-icon class="lnr-icn-sm lnr-mr"
+          md-svg-src="app/assets/ui_icons/icn_verified.svg"
+          ng-class="user.user.confirmed_phone ? 'md-color-primary' : 'md-color-disabled'"></md-icon>
+          <md-tooltip ng-if="user.user.confirmed_phone" md-direction="left">{{ 'user.verified' | translate }}</md-tooltip>
+          {{ 'shared.phone-number' | translate }}
+        </span>
+        <span class="md-body-1">
+          <md-icon class="lnr-icn-sm lnr-mr"
+          md-svg-src="app/assets/ui_icons/icn_verified.svg"
+          ng-class="user.user.confirmed_email ? 'md-color-primary' : 'md-color-disabled'"></md-icon>
+          <md-tooltip ng-if="user.user.confirmed_email" md-direction="left">{{ 'user.verified' | translate }}</md-tooltip>
+          {{ 'forms.email-address' | translate }}
+        </span>
+        <span class="md-body-1">
+          <md-icon class="lnr-icn-sm lnr-mr"
+          md-svg-src="app/assets/ui_icons/icn_verified.svg"
+          ng-class="user.current_payment ? 'md-color-primary' : 'md-color-disabled'"></md-icon>
+          <md-tooltip ng-if="user.current_payment" md-direction="left">{{ 'user.verified' | translate }}</md-tooltip>
+          {{ 'settings.payment-method' | translate }}
+        </span>
+      </div>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div layout="column" flex-gt-sm="90" layout-padding>
+      <!-- description -->
+      <div layout="row" layout-xs="column">
+        <div flex-gt-xs="25">
+          <h3 class="md-body-2">{{ 'forms.description' | translate }}</h3>
+        </div>
+        <div flex-gt-xs>
+          <p class="md-body-1 lnr-ml">{{user.user.description}}</p>
+        </div>
+      </div>
+      <!-- end description -->
+
+      <!-- availability -->
+      <div layout="row" layout-xs="column" ng-style="{'display': user.openingHoursEnabled ? '' : 'none'}">
+        <div flex-gt-xs="25">
+          <h3 class="md-body-2">{{ 'user.availability' | translate }}</h3>
+        </div>
+        <div flex-gt-xs>
+          <div ng-repeat="day in user.weekDays">
+            <p class="md-body-1 lnr-ml">
+              <div layout="row">
+                <div class="lnr-ml" layout="row" flex="20">{{day}}</div>
+
+                <div layout="row" flex="30">
+                  <div ng-repeat="range in user.hours[day]" layout="row" layout-align="start center">
+                    <div ng-style="{'display': user.closedDay(range) ? 'none' : ''}">
+
+                      {{ range.start_at }}:00 - {{ range.end_at }}:00 {{ $last ? '' : ',&nbsp;' }}
+
+                    </div>
+                    <div ng-style="{'display': user.closedDay(range) ? '' : 'none'}">
+
+                      {{ 'user.not-available' | translate }}
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- end availability -->
+
+      <!-- listings -->
+      <div ng-if="user.user.rides.length !== 0">
+        <h3 class="md-body-2">{{ 'user.own-bikes' | translate }}</h3>
+        <div layout="row" layout-xs="column" class="lnr-mv-reset">
+          <div flex-gt-xs layout="row" layout-wrap layout-padding class="lnr-mv-reset">
+            <bike-card
+              ng-repeat="bike in user.bikes"
+              bike="bike"
+              flex="100"
+              flex-gt-xs="33"
+              show-labels="true">
+            </bike-card>
+          </div>
+        </div>
+        <div layout="row" layout-align="end center">
+          <md-button
+            ng-if="user.user.rides.length > user.bikesToShow && !user.showAllBikes"
+            class="md-no-focus"
+            ng-click="user.loadAllBikes()">
+            {{'shared.show-more' | translate}} {{'search.bikes' | translate}}
+          </md-button>
+        </div>
+      </div>
+      <!-- end listings -->
+
+      <!-- reviews -->
+      <div layout="row" layout-xs="column" ng-if="user.user.ratings.length !== 0">
+        <div flex-gt-xs="25">
+          <h3 class="md-body-2">{{ 'user.ratings' | translate }}</h3>
+        </div>
+
+        <div flex-gt-xs>
+          <div layout="column">
+            <rating ng-repeat="rating in user.user.ratings" data="rating" index="$index" show-all="user.showAll"></rating>
+            <div layout="row" layout-align="end center">
+              <md-button
+                class="md-no-focus"
+                ng-if="user.user.ratings.length > 3 && !user.showAll"
+                ng-click="user.showAll = true"
+              >
+                {{'shared.show-more' | translate}} {{'shared.reviews' | translate}}
+              </md-button>
+              <md-button
+                class="md-no-focus"
+                ng-if="user.user.ratings.length > 3 && user.showAll"
+                ng-click="user.showAll = false"
+              >
+                {{'shared.show-less' | translate}} {{'shared.reviews' | translate}}
+              </md-button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end reviews -->
+    </div>
+  </div>
+  <footer></footer>
+</md-content>

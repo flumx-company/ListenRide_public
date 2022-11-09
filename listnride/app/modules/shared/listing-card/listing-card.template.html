@@ -1,0 +1,132 @@
+<md-card
+  class="lnr-bike-card"
+  ng-class="{
+    'lnr-unavailable': !listingCard.bike.available,
+    'lnr-checked-card': listingCard.isChecked,
+    'lnr-check-mode': listingCard.isCheckModeOn
+  }">
+
+  <div
+    class="lnr-bike-card__backdrop"
+    ng-if="listingCard.isCheckModeOn"
+    ng-click="listingCard.checkBike($event, listingCard.bike)">
+  </div>
+
+  <div class="bg lnr-preload-bg">
+    <status-labels
+      ng-if="listingCard.showLabels"
+      bike="listingCard.bike">
+    </status-labels>
+    <md-checkbox
+      ng-if="listingCard.isSelectable"
+      ng-checked="listingCard.isChecked"
+      ng-click="listingCard.checkBike($event, listingCard.bike)"
+      md-no-ink
+      aria-label="Merging Mode"
+      class="lnr-bike-card__merge-checkbox md-checkbox__hide-label lnr-md-no-focused"
+    >
+    </md-checkbox>
+
+    <div class="lnr-card-overlay" ng-click="listingCard.view(listingCard.bikeId)">
+      <img
+        class="md-card-image lnr-block"
+        ng-src="{{ ::listingCard.imageUrl }}"
+        alt="{{ ::listingCard.brand }} - {{ ::listingCard.name }}">
+    </div>
+  </div>
+
+  <md-card-title layout="row">
+    <div
+      ng-if="::listingCard.category"
+      flex="15"
+      layout="row">
+      <md-icon
+        class="lnr-icn-lrg md-color-foreground"
+        md-svg-src="app/assets/ui_icons/biketype_{{ ::listingCard.category | limitTo: 1 }}.svg">
+      </md-icon>
+    </div>
+
+    <md-card-title-text
+      flex="70"
+      flex-gt-xs="60"
+      flex-gt-sm="50"
+      flex-gt-md="55"
+      ng-click="listingCard.view(listingCard.bikeId)"
+      class="lnr-ml lnr-bike-title"
+      layout="column"
+      layout-align="space-around start">
+      <span class="md-subhead">
+        {{ ::listingCard.brand }}, {{ ::listingCard.category | category | translate }}
+      </span>
+      <span>{{ ::listingCard.name }}</span>
+    </md-card-title-text>
+
+    <div layout="column" layout-align="space-around center" class="ml-auto">
+      <span class="md-headline">{{ ::listingCard.price | number }}€</span>
+      <span>{{ 'shared.per-day' | translate }}</span>
+    </div>
+  </md-card-title>
+
+  <md-divider></md-divider>
+
+  <div class="bike-actions" layout="row" layout-align="space-between center">
+    <md-button
+      md-no-ink
+      flex
+      class="md-icon-button md-primary"
+      ng-click="listingCard.edit(listingCard.bikeId)">
+      <md-tooltip>{{'listingCard.edit-bike' | translate}}</md-tooltip>
+      <md-icon md-svg-icon="app/assets/ui_icons/pencil-edit-button.svg"></md-icon>
+    </md-button>
+
+    <md-button
+      md-no-ink
+      flex
+      class="md-icon-button"
+      ng-disabled="listingCard.changeAvailableInProgress"
+      ng-click="listingCard.changeBikeAvailableTo()">
+      <md-tooltip>{{ listingCard.bike.available ? 'listingCard.deactivate' : 'listingCard.activate' | translate }}</md-tooltip>
+      <md-icon ng-if="listingCard.bike.available" md-svg-icon="app/assets/ui_icons/turn-visibility-off-button.svg"></md-icon>
+      <md-icon ng-if="!listingCard.bike.available" md-svg-icon="app/assets/ui_icons/visibility-button.svg"></md-icon>
+    </md-button>
+
+    <md-button
+      md-no-ink
+      flex
+      class="md-icon-button lnr-md-no-focused"
+      ng-disabled="listingCard.bike.is_cluster"
+      ng-click="listingCard.changeAvailability(listingCard.bike, $event)">
+      <md-tooltip>{{ 'availability.availability' | translate }}</md-tooltip>
+      <md-icon md-svg-icon="app/assets/ui_icons/lnr_access_time.svg"></md-icon>
+    </md-button>
+
+    <md-button
+      md-no-ink
+      flex
+      class="md-icon-button lnr-md-no-focused"
+      ng-if="!listingCard.bike.is_cluster"
+      ng-click="listingCard.duplicate(listingCard.bike, $event)">
+      <md-tooltip>{{'listings.duplicate.duplicate' | translate}}</md-tooltip>
+      <md-icon md-svg-icon="app/assets/ui_icons/duplicate-image.svg"></md-icon>
+    </md-button>
+
+    <md-button
+      md-no-ink
+      flex
+      class="md-icon-button"
+      ng-if="listingCard.bike.is_cluster"
+      ng-click="listingCard.unmerge(listingCard.bike, $event)">
+      <md-tooltip>{{ 'listings.unmerge' | translate }}</md-tooltip>
+      <md-icon md-svg-icon="app/assets/ui_icons/icn_unmerge.svg"></md-icon>
+    </md-button>
+
+    <md-button
+      class="md-icon-button md-primary"
+      md-no-ink flex class="md-warn"
+      ng-disabled="listingCard.disableDelete"
+      ng-click="listingCard.delete(listingCard.bike, $event)">
+      <md-tooltip>{{'listingCard.delete-bike' | translate}}</md-tooltip>
+      <md-icon md-svg-icon="app/assets/ui_icons/trash-can.svg"></md-icon>
+    </md-button>
+  </div>
+</md-card>

@@ -1,0 +1,65 @@
+ <md-content class="single-column"> 
+   <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <ul class="cb-slideshow">
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+    </ul>
+  </div>
+   <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.vello.title' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'brand-integration.vello.description' | translate }}</h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img ng-src="app/assets/ui_images/brand-integration/vello/lnr_vello_teaser_ebike.jpg"></img>
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.vello.item1-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.vello.item1-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img ng-src="app/assets/ui_images/brand-integration/vello/lnr_vello_teaser_fold.jpg"></img>
+
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.vello.item2-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.vello.item2-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img ng-src="app/assets/ui_images/brand-integration/vello/lnr_vello_teaser_modelle.jpg"></img>
+
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.vello.item3-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.vello.item3-description' | translate }}"></p>
+      </div>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+     <h2 class="md-headline lnr-center">{{ 'brand-integration.vello.available-cities' | translate }}</h2>
+     <div class="vello-bikes" layout="row" flex-gt-xs layout-wrap layout-padding layout-align="center start">
+       <div flex="100" flex-gt-xs="45" flex-gt-sm="33" layout="column">
+         <p class="md-subhead lnr-center">{{ 'shared.berlin' | translate }}</p>
+         <bike-card ng-repeat="bike in vello.bikes.berlin" bike="bike" show-labels="true"></bike-card>
+       </div>
+       <div layout="row" flex-gt-xs="10"></div>
+       <div flex="100" flex-gt-xs="45" flex-gt-sm="33" layout="column">
+         <p class="md-subhead lnr-center">{{ 'shared.munich' | translate }}</p>
+         <bike-card ng-repeat="bike in vello.bikes.munich" bike="bike" show-labels="true"></bike-card>
+       </div>
+     </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.vello.question' | translate }}</h1>
+      <h2 class="md-subhead" translate="{{ 'brand-integration.vello.faq-question' | translate }}"></h2>
+    </div>
+  </div>
+  <footer></footer>
+</md-content>

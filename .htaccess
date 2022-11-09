@@ -1,0 +1,24 @@
+RewriteEngine On  
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+
+RewriteRule ^ - [L]
+RewriteRule ^ /index.html [L]
+
+Redirect 301 /de /
+Redirect 301 /en /
+Redirect 301 /faq /help
+Redirect 301 /impress /imprint
+Redirect 301 /RaphaSuperCross /rapha-super-cross
+Redirect 301 /raphasupercross /rapha-super-cross
+Redirect 301 /rides /bikes
+Redirect 301 /bikes/map /search
+Redirect 301 /user/signup /
+Redirect 301 /velothon /search/berlin?race=true
+Redirect 301 /Velothon /search/berlin?race=true
+Redirect 301 /inveloveritas /
+Redirect 301 /InVeloVeritas /
+Redirect 301 /TemplinTriathlon /
+Redirect 301 /templintriathlon /
+Redirect 301 /8bar-crit /
+Redirect 301 /8bar-Crit /

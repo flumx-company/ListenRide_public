@@ -1,0 +1,106 @@
+ <md-content class="single-column"> 
+ 
+  <div id="hero-shot-large" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/static/lnr_trust_and_safety.jpg')" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'invest.description' | translate }}</h1>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline" translate="{{ 'invest.subdescription' | translate }}"></h2>
+      <p class="md-subhead" translate="{{ 'invest.subsubdescription' | translate }}"></p>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="content highlight-tile" layout="column" >
+      <div ng-hide="!invest.submitted" layout="column" layout-fill layout-align="center center">
+        <p class="md-headline lnr-center lnr-light">{{ 'invest.form-feedback' | translate }}</p>
+      </div>
+      <div ng-hide="invest.submitted">
+        <div layout="row" layout-padding layout-align="center none">
+          <md-input-container flex-gt-sm="30" flex="45">
+            <label>{{ 'forms.first-name' | translate }}</label>
+            <input ng-model="invest.user.first_name">
+          </md-input-container>
+          
+          <md-input-container flex-gt-sm="30" flex="45">
+            <label>{{ 'forms.last-name' | translate }}</label>
+            <input ng-model="invest.user.last_name">
+          </md-input-container>
+        </div>
+        <div layout="row" layout-padding layout-align="center none">
+          <md-input-container flex-gt-sm="30" flex="45">
+            <label>{{ 'forms.email-address' | translate }}</label>
+            <input ng-model="invest.user.email">
+          </md-input-container>
+          <md-input-container flex-gt-sm="30" flex="45">
+            <label>{{ 'invest.investment' | translate }}</label>
+            <md-select ng-model="invest.user.investment">
+              <md-option ng-repeat="value in invest.values" value="{{ value }}">
+                {{ value }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+        <div layout="row" style="padding: 0px 8px 0 0" layout-align="center center">
+          <div layout flex-gt-sm="60" flex="90" layout-align="end start">
+            <md-button ng-disabled="invest.submitting" class="md-primary md-raised" ng-click="invest.submit()">{{ 'invest.submit' | translate }}</md-button>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'invest.known-from' | translate }}</h1>
+    </div>
+    <div layout="row" layout-align="space-around center">
+      <img style="width: 16%" ng-src="/app/assets/ui_images/invest/logo1.png">
+      <img style="width: 16%" ng-src="/app/assets/ui_images/invest/logo2.png">
+      <img style="width: 16%" ng-src="/app/assets/ui_images/invest/logo3.png">
+      <img style="width: 16%" ng-src="/app/assets/ui_images/invest/logo4.png">
+      <img style="width: 16%" ng-src="/app/assets/ui_images/invest/logo5.png">
+    </div>
+
+    <div class="spacer"></div>
+    <md-divider></md-divider>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'invest.learn-more' | translate }}</h1>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-padding>
+      <div flex-gt-sm="45" layout="column" layout-margin>
+        <h3 class="md-body-2 lnr-clickable" ng-click="left1=!left1">{{ 'invest.faq-question-1' | translate }}</h3>
+        <div class="faq-answer" ng-show="left1"><p translate="{{ 'invest.faq-answer-1' | translate }}"></p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left2=!left2">{{ 'invest.faq-question-2' | translate }}</h3>
+        <div class="faq-answer" ng-show="left2"><p translate="{{ 'invest.faq-answer-2' | translate }}"></p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left3=!left3">{{ 'invest.faq-question-3' | translate }}</h3>
+        <div class="faq-answer" ng-show="left3"><p translate="{{ 'invest.faq-answer-3' | translate }}"></p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left4=!left4">{{ 'invest.faq-question-4' | translate }}</h3>
+        <div class="faq-answer" ng-show="left4"><p translate="{{ 'invest.faq-answer-4' | translate }}"></p></div>
+      </div>
+
+      <div flex-gt-sm="45" flex-gt-sm-offset="5" layout="column" layout-margin>
+        <h3 class="md-body-2 lnr-clickable" ng-click="left5=!left5">{{ 'invest.faq-question-5' | translate }}</h3>
+        <div class="faq-answer" ng-show="left5"><p translate="{{ 'invest.faq-answer-5' | translate }}"></p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="right1=!right1">{{ 'invest.faq-question-6' | translate }}</h3>
+        <div class="faq-answer" ng-show="right1"><p translate="{{ 'invest.faq-answer-6' | translate }}"></p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="right2=!right2">{{ 'invest.faq-question-7' | translate }}</h3>
+        <div class="faq-answer" ng-show="right2"><p translate="{{ 'invest.faq-answer-7' | translate }}"></p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="right3=!right3">{{ 'invest.faq-question-8' | translate }}</h3>
+        <div class="faq-answer" ng-show="right3"><p translate="{{ 'invest.faq-answer-8' | translate }}"></p></div>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</md-content>

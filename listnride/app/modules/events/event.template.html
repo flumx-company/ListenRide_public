@@ -1,0 +1,55 @@
+<md-content class="single-column lnr-{{event.name}}">
+    <div id="hero-shot"
+         class="lnr-preload-bg"
+         ngf="event.imagePath"
+         ngf-background="event.imagePath"
+         layout="row"
+         layout-align="center center">
+
+        <div ng-if="event.hasLogo"
+             class="event-logo lnr-page-title md-color-white"
+             layout="column"
+             layout-align="center center">
+            <div>
+                <img ng-src={{event.logoPath}} flex="30">
+            </div>
+        </div>
+        <!--<div  ng-if="event.hasCaption" class="lnr-page-title md-color-white" layout="column" layout-align="center center">-->
+            <!--<h1 class="md-display-1" translate="events.{{event.name}}.page-title"></h1>-->
+        <!--</div>-->
+    </div>
+
+    <div class="content" layout="column" layout-padding>
+
+        <div class="lnr-section-title" layout="column" layout-align="center center">
+            <h1 class="md-headline" translate="events.{{event.name}}.title"></h1>
+            <p class="md-body-1" translate="events.{{event.name}}.description"></p>
+            <div class="md-body-1 lnr-left" translate="events.{{event.name}}.text"></div>
+        </div>
+
+        <div ng-if="event.bikes.length">
+            <md-divider></md-divider>
+
+            <div flex layout="column" layout-fill>
+                <div layout="row" layout-padding>
+                    <md-input-container layout="column" class="lnr-pb-0">
+                        <label>{{ 'list.details.size' | translate }}</label>
+                        <md-select flex ng-model="filterSize" placeholder="{{ 'list.details.size' | translate }}">
+                            <md-option ng-repeat="option in event.sizes" value="{{option.value}}">
+                                {{option.label}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-wrap layout-padding>
+                    <bike-card
+                        ng-repeat="bike in event.bikes | filter : (filterSize != -1 || '') && {size : filterSize}"
+                        bike="bike" show-labels="true" booked="bike.booked" flex="100" flex-gt-xs="50" flex-gt-sm="33">
+                    </bike-card>
+                </div>
+            </div>
+        </div>
+        <div ng-if="!event.bikes.length" translate="shared.event-bikes-will-be-soon" class="lnr-center lnr-mb-x2 md-subhead"></div>
+    </div>
+    <footer></footer>
+</md-content>

@@ -1,0 +1,129 @@
+<md-content class="single-column">
+
+  <div class="content insurance__top" layout-padding-gt-sm>
+    <div layout="column" layout-gt-sm="row" layout-padding-gt-sm>
+      <div flex="35" class="lnr-sm-content-double-padding">
+        <h1 class="md-headline lnr-sm-text-center" translate="insurance.main.title"></h1>
+        <p class="md-body-1 lnr-gt-sm-pt-x2" translate="insurance.main.description"></p>
+      </div>
+      <div flex="5"></div>
+      <div flex="60" flex-order="-1" flex-order-gt-sm="1">
+        <div id="hero-shot" class="lnr-preload-bg insurance__top-img" style="background-image: url('app/assets/ui_images/static/lnr-landing-insurance.jpg')" layout="row"
+          layout-align="center center">
+          <div class="insurance__gothaer">
+            <span class="md-body-1">{{ 'insurance.main.logo-description' | translate }}</span>
+            <img ng-src="app/assets/ui_images/static/lnr-insurance-gothaer-blue@2x.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline lnr-sm-text-center">{{ 'insurance.facts.title' | translate }}</h2>
+    </div>
+    <div layout="column" layout-gt-xs="row"  layout-align="center none">
+      <div class="insurance__table">
+        <div class="insurance__thead">
+          <md-icon md-svg-src="app/assets/ui_icons/icn_insurance-white.svg" class="lnr-icn-mlrg lnr-m-0"></md-icon>
+          <p class="md-subhead">{{ 'insurance.facts.basic-insurance.title' | translate }}</p>
+        </div>
+        <div translate="insurance.facts.basic-insurance.description"></div>
+        <div class="insurance__tfoot">
+          <p class="md-headline">{{ 'insurance.facts.basic-insurance.price' | translate }}</p>
+          <p class="md-body-1">{{ 'insurance.facts.basic-insurance.price-description' | translate }}</p>
+        </div>
+      </div>
+      <div class="insurance__table">
+        <div class="insurance__thead">
+          <md-icon md-svg-src="app/assets/ui_icons/icn_insurance-white-premium.svg" class="lnr-icn-mlrg lnr-m-0"></md-icon>
+          <p class="md-subhead">{{ 'insurance.facts.premium-insurance.title' | translate }}</p>
+        </div>
+        <div translate="insurance.facts.premium-insurance.description"></div>
+        <div class="insurance__tfoot">
+          <p class="md-headline">{{ 'insurance.facts.premium-insurance.price' | translate }}</p>
+          <p class="md-body-1">{{ 'insurance.facts.premium-insurance.price-description' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lnr-middle-divider"></div>
+
+  <div class="content insurance__tabs" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline lnr-sm-text-center">{{ 'insurance.faqs.title' | translate }}</h2>
+    </div>
+    <md-tabs
+      flex
+      md-dynamic-height
+      md-no-ink
+      md-no-ink-bars
+      md-center-tabs="on"
+    >
+    <!-- FIRST_TAB LISTER -->
+    <md-tab label="{{'insurance.faqs.lister.tabname' | translate}}">
+      <md-content layout="column">
+        <div class="tab-content md-padding" layout="column" layout-gt-sm="row" layout-align="center none" layout-padding>
+          <div flex="45">
+            <p class="md-body-1 lnr-m-0" translate="insurance.faqs.description-lister"></p>
+          </div>
+          <div flex="5"></div>
+          <div flex="45">
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="lister1=!lister1" ng-class="lister1 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.lister.question-1' | translate }}</h3>
+            <div ng-show="lister1"><p class="md-body-1 accordion__text" translate="insurance.faqs.lister.answer-1"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="lister2=!lister2" ng-class="lister2 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.lister.question-2' | translate }}</h3>
+            <div ng-show="lister2"><p class="md-body-1 accordion__text" translate="insurance.faqs.lister.answer-2"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left lnr-arrow-left--noborder" ng-click="lister3=!lister3" ng-class="lister3 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.lister.question-3' | translate }}</h3>
+            <div ng-show="lister3"><p class="md-body-1 accordion__text" translate="insurance.faqs.lister.answer-3"></p></div>
+          </div>
+        </div>
+      </md-content>
+    </md-tab>
+    <!-- SECOND_TAB RIDER -->
+    <md-tab label="{{'insurance.faqs.rider.tabname' | translate}}">
+      <md-content layout="column">
+        <div class="tab-content md-padding" layout="column" layout-gt-sm="row" layout-align="center none" layout-padding>
+          <div flex="45">
+            <p class="md-body-1 lnr-m-0" translate="insurance.faqs.description-rider"></p>
+          </div>
+          <div flex="5"></div>
+          <div flex="45">
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="rider1=!rider1" ng-class="rider1 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-1' | translate }}</h3>
+            <div ng-show="rider1"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-1"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="rider2=!rider2" ng-class="rider2 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-2' | translate }}</h3>
+            <div ng-show="rider2"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-2"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="rider3=!rider3" ng-class="rider3 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-3' | translate }}</h3>
+            <div ng-show="rider3"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-3"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="rider4=!rider4" ng-class="rider4 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-4' | translate }}</h3>
+            <div ng-show="rider4"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-4"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="rider5=!rider5" ng-class="rider5 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-5' | translate }}</h3>
+            <div ng-show="rider5"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-5"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="rider6=!rider6" ng-class="rider6 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-6' | translate }}</h3>
+            <div ng-show="rider6"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-6"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="rider7=!rider7" ng-class="rider7 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-7' | translate }}</h3>
+            <div ng-show="rider7"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-7"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="rider8=!rider8" ng-class="rider8 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-8' | translate }}</h3>
+            <div ng-show="rider8"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-8"></p></div>
+            <h3 class="md-subhead lnr-clickable lnr-arrow-left lnr-arrow-left--noborder" ng-click="rider9=!rider9" ng-class="rider9 ? 'accordion__tab--opened' : ''">{{ 'insurance.faqs.rider.question-9' | translate }}</h3>
+            <div ng-show="rider9"><p class="md-body-1 accordion__text" translate="insurance.faqs.rider.answer-9"></p></div>
+          </div>
+        </div>
+      </md-content>
+    </md-tab>
+    <!-- THIRD_TAB FAQ -->
+    <md-tab label="{{'insurance.faqs.docs.tabname' | translate}}">
+      <md-content layout="column">
+        <div class="tab-content md-padding" layout="column" layout-gt-sm="row" layout-align="center center" layout-padding>
+          <p class="md-body-1 lnr-m-0" translate="insurance.faqs.all-docs"></p>
+        </div>
+      </md-content>
+    </md-tab>
+    </md-tabs>
+  </div>
+
+  <lnr-support></lnr-support>
+
+  <footer></footer>
+</md-content>

@@ -1,0 +1,89 @@
+list md-tabs,
+edit md-tabs {
+  padding: 0 !important;
+  width: 100%;
+}
+
+list .md-tab.md-disabled {
+  opacity: 1;
+}
+
+.lnr-list-title {
+  margin: 8px 0 24px 0;
+}
+
+list md-tabs .lnr-list-form,
+edit md-tabs .lnr-list-form {
+  min-height: 300px;
+}
+
+list md-tabs .img-preview,
+edit md-tabs .img-preview {
+  height: 100px;
+  width: 150px;
+  background-position: center;
+  background-size: cover;
+}
+
+list md-tabs .md-whiteframe-1dp {
+  background-color: white;
+}
+
+list md-icon.accessory-icon,
+edit md-icon.accessory-icon {
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+list md-icon.accessory-icon.checked svg path,
+list md-icon.accessory-icon.checked svg rect,
+list md-icon.accessory-icon.checked svg circle,
+edit md-icon.accessory-icon.checked svg path,
+edit md-icon.accessory-icon.checked svg rect,
+edit md-icon.accessory-icon.checked svg circle,
+list md-icon.accessory-icon.checked svg polygon,
+edit md-icon.accessory-icon.checked svg polygon {
+  fill: #FFFFFF;
+  color: #FFFFFF;
+}
+
+list md-radio-button.main-category .md-container,
+edit md-radio-button.main-category .md-container {
+  display: none;
+}
+
+list md-radio-button.main-category .md-label,
+edit md-radio-button.main-category .md-label {
+  margin-left: 0;
+}
+
+list .accessory-checkbox,
+edit .accessory-checkbox {
+  margin: 0 10px 16px 0;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+list .accessory-label,
+edit .accessory-label {
+  cursor: pointer;
+}
+
+/*LIST DETAILS TAB*/
+
+.lnr-details-step {
+  position: relative;
+  padding: 8px 30px 0;
+}
+
+.lnr-details-step.available-disabled {
+  background: rgba(177, 177, 177, 0.12);
+}
+
+.lnr-details-step .lnr-badge-default {
+  position: absolute;
+  left: 8px;
+  top: 33px;
+}

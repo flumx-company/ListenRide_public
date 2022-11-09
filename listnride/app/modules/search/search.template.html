@@ -1,0 +1,108 @@
+<div flex layout="row" layout-xs="column" layout-fill>
+
+  <div flex-xs="100" flex-gt-xs="70" flex-order-xs="2" layout="column">
+    <div layout="row" class="lnr-filter-container">
+      <filter
+        categorized-bikes="search.categorizedFilteredBikes"
+        bikes="search.filteredBikes"
+        initial-bikes="search.filteredDateBikes"
+        initial-values="search.initialValues"
+        update-state="search.updateState"
+        populate-bikes="search.populateBikes"
+        date-change="search.onDateChange"
+        limit="search.limit">
+      </filter>
+      <bike-sorter
+        style="align-self: center;"
+        bikes="search.filteredBikes"
+        categorized-bikes="search.categorizedFilteredBikes"
+        titles="search.titles"
+        location="search.latLng">
+      </bike-sorter>
+    </div>
+
+    <md-divider></md-divider>
+
+    <md-content flex layout="column" class="scroll-parent">
+      <div layout-margin>
+        <div class="lnr-mt-0" layout="row" layout-align="space-between center">
+          <!-- <p class="md-subhead">{{filterBikes.title}}</p> -->
+          <p class="md-subhead">
+            {{'search.bikes-found' | translate}}
+            {{ search.countBikes()}}</p>
+          <div>
+            <a ui-sref="multiBooking({location: search.location})">
+              {{'search.book-multiple-bikes' | translate}}
+            </a>
+          </div>
+        </div>
+
+        <md-divider></md-divider>
+
+        <!-- no bikes found placeholder -->
+        <div
+          ng-if="search.noResult"
+          layout="column"
+          flex="100"
+          layout-align="center center"
+          layout-padding
+        >
+          <div layout="row">
+            <h2 class="md-headline no-margin">Hey,</h2>
+          </div>
+          <div layout="row" layout-align="center center">
+            <p flex="80" class="md-subhead lnr-center" translate="search.no-bikes"></p>
+          </div>
+        </div>
+
+        <cardgrid
+          ng-repeat="filterBikes in search.categorizedFilteredBikes"
+          title=""
+          limit="search.limit"
+          on-bike-hover="search.onBikeHover"
+          add-more-items-limit="search.addMoreItemsLimit"
+          categorized-bikes="search.categorizedFilteredBikes"
+          uncategorized-bikes="search.filteredBikes"
+          bikes="filterBikes.bikes"
+          location="search.latLng"
+          titles="search.titles"
+          card-index="$index"
+          url-params="search.urlParams"
+          ng-hide="search.bikes !== undefined && search.bikes.length === 0"
+          class="lnr-m-0">
+        </cardgrid>
+      </div>
+
+      <!-- busy loader until bikes api resolves -->
+      <div ng-show="search.bikes === undefined" flex layout="column" layout-align="center center">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+    </md-content>
+  </div>
+
+  <div flex flex-order-xs="1" layout="column" class="map-column lnr-preload-bg" hide-xs>
+    <ng-map
+      ng-if="search.bikes !== undefined"
+      id="searchMap"
+      default-style="false"
+      center="[{{search.mapOptions.lat}},{{search.mapOptions.lng}}]"
+      zoom="{{search.mapOptions.zoom}}"
+      on-click="search.onMapClick(event)"
+      draggable="true"
+      map-type-control="false"
+      street-view-control="false"
+      styles="{{search.colorScheme}}"
+    >
+  <!-- on-dragend="search.centerChanged()" -->
+
+      <info-window id="searchMapWindow">
+        <div ng-non-bindable="">
+          <bike-card
+            bike="search.selectedBike"
+            url-params="search.urlParams"
+          ></bike-card>
+        </div>
+      </info-window>
+    </ng-map>
+  </div>
+</div>

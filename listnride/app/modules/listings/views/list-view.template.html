@@ -1,0 +1,186 @@
+<md-content>
+  <div layout="row" layout-align="space-between stretch">
+    <div flex="100">
+
+      <!-- header -->
+      <md-list class="lnr-p-0">
+        <div class="lnr-listing-header">
+          <md-list-item>
+            <div layout="column" flex="100">
+              <div layout="row" layout-align="start center">
+                <div flex="15"></div>
+                <div
+                  flex="10"
+                  ng-click="listView.order('id')"
+                  class="lnr-header-filter"
+                  ng-class="{'lnr-active' : listView.propertyName == 'id'}">
+                  ID
+                  <md-icon
+                    ng-class="{'fa-caret-up': !listView.reverse, 'fa-caret-down': listView.reverse}"
+                    class="fa">
+                  </md-icon>
+                </div>
+                <div
+                  flex="15"
+                  ng-click="listView.order('name')"
+                  class="lnr-header-filter"
+                  ng-class="{'lnr-active' : listView.propertyName == 'name'}">
+                  {{ 'list.details.name' | translate }}
+                  <md-icon
+                    ng-class="{'fa-caret-up': !listView.reverse, 'fa-caret-down': listView.reverse}"
+                    class="fa">
+                  </md-icon>
+                </div>
+                <div
+                  flex="15"
+                  ng-click="listView.order('brand')"
+                  class="lnr-header-filter"
+                  ng-class="{'lnr-active' : listView.propertyName == 'brand'}">
+                  {{ 'list.details.brand' | translate }}
+                  <md-icon
+                    ng-class="{'fa-caret-up': !listView.reverse, 'fa-caret-down': listView.reverse}"
+                    class="fa">
+                  </md-icon>
+                </div>
+                <div
+                  flex="15"
+                  ng-click="listView.order('city')"
+                  class="lnr-header-filter"
+                  ng-class="{'lnr-active' : listView.propertyName == 'city'}">
+                  {{ 'forms.city' | translate }}
+                  <md-icon
+                    ng-class="{'fa-caret-up': !listView.reverse, 'fa-caret-down': listView.reverse}"
+                    class="fa">
+                  </md-icon>
+                </div>
+                <div
+                  flex="10"
+                  ng-click="listView.order('size')"
+                  class="lnr-header-filter"
+                  ng-class="{'lnr-active' : listView.propertyName == 'size'}">
+                  {{'list.details.size' | translate}} <br>(cm)
+                  <md-icon
+                    ng-class="{'fa-caret-up': !listView.reverse, 'fa-caret-down': listView.reverse}"
+                    class="fa">
+                  </md-icon>
+                </div>
+                <div
+                  flex="10"
+                  ng-click="listView.order('price_from')"
+                  class="lnr-header-filter"
+                  ng-class="{'lnr-active' : listView.propertyName == 'price_from'}">
+                  {{'listings.listView.price' | translate}}
+                  <md-icon
+                    ng-class="{'fa-caret-up': !listView.reverse, 'fa-caret-down': listView.reverse}"
+                    class="fa">
+                  </md-icon>
+                </div>
+                <div flex></div>
+              </div>
+            </div>
+          </md-list-item>
+        </div>
+      </md-list>
+
+      <!-- table -->
+      <md-list>
+        <md-list-item
+          id="$index"
+          class="lnr-listing-list-item"
+          ng-click="listView.isCheckModeOn ? listView.onBikeTileCheck($event, bike) : listView.view(bike.id, $event)"
+          ng-repeat="bike in listView.bikes track by '['+bike.id+']'+'['+bike.is_cluster+']'"
+          ng-disabled="!bike.available"
+          ng-class="{
+                'lnr-unavailable': !bike.available,
+                'lnr-checked-card': listView.isChecked(bike.id)
+              }">
+          <div layout="column" flex="100">
+            <div
+              layout="row"
+              class="break-word"
+              layout-align="start center">
+              <div flex="15" layout="row" layout-align="start center">
+                <md-checkbox
+                  ng-if="listView.isSelectable"
+                  ng-checked="listView.isChecked(bike.id)"
+                  ng-click="listView.onBikeTileCheck($event, bike)"
+                  md-no-ink
+                  aria-label="Merging Mode"
+                  class="md-checkbox__hide-label lnr-md-no-focused lnr-m-0"
+                >
+                </md-checkbox>
+                <img hide-xs ng-src="{{bike.image_file}}" class="md-avatar lnr-ml" />
+              </div>
+              <div flex="10">
+                {{bike.bicycle_number}}
+              </div>
+              <div flex="15"> {{bike.name}}</div>
+              <div flex="15"> {{bike.brand}}</div>
+              <div flex="15"> {{bike.city}}</div>
+              <div flex="10"> {{bike.size}}</div>
+              <div flex="10"> {{bike.price_from | number : 0}}</div>
+              <status-labels
+                flex="5"
+                ng-if="listView.showLabels"
+                bike="bike"
+                minified-view="true">
+              </status-labels>
+              <md-menu flex md-position-mode="target bottom">
+                <md-button ng-disabled="listView.isCheckModeOn" class="md-icon-button md-primary" md-no-ink ng-click="$mdOpenMenu($event)" aria-label="Menu">
+                  <md-icon md-svg-icon="app/assets/ui_icons/menu.svg"></md-icon>
+                </md-button>
+                <md-menu-content width="2">
+                  <md-menu-item>
+                    <md-button
+                      md-no-ink
+                      ng-click="listView.edit(bike.id)">
+                      {{'listingCard.edit-bike' | translate}}
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item ng-if="bike.is_cluster">
+                    <md-button
+                      md-no-ink
+                      ng-click="listView.unmerge(bike, $event)">
+                      {{ 'listings.unmerge' | translate }}
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button
+                      md-no-ink
+                      ng-disabled="bike.is_cluster"
+                      ng-click="listView.duplicate(bike, $event)">
+                      {{'listings.duplicate.duplicate' | translate}}
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button
+                      md-no-ink
+                      ng-disabled="bike.is_cluster"
+                      ng-click="listView.changeAvailability(bike, $event)">
+                      {{ 'availability.availability' | translate }}
+                    </md-button>
+                    </md-menu-item>
+                  <md-menu-item>
+                    <md-button
+                      md-no-ink
+                      ng-click="listView.changeBikeAvailableTo(bike, !bike.available)">
+                      {{!bike.available ? 'listingCard.activate-bike' : 'listingCard.deactivate-bike' | translate}}
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-divider></md-menu-divider>
+                  <md-menu-item>
+                    <md-button
+                      md-no-ink
+                      ng-click="listView.delete(bike, $event)">
+                      {{'listingCard.delete-bike' | translate}}
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+            </div>
+          </div>
+        </md-list-item>
+      </md-list>
+    </div>
+  </div>
+</md-content>

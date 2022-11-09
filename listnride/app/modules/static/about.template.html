@@ -1,0 +1,149 @@
+<md-content class="single-column">
+  <div
+    id="hero-shot"
+    class="lnr-preload-bg"
+    style="background-image: url('app/assets/ui_images/static/lnr-about-us.jpg')"
+    layout="row"
+    layout-align="center center"
+  >
+    <h1 class="md-headline lnr-bold lnr-color-white">
+      {{ 'about-us.header' | translate }}
+    </h1>
+  </div>
+
+  <div class="content" layout-padding>
+    <div
+     class="lnr-section-title"
+     layout="column"
+     layout-align="center center">
+      <h1 class="md-headline lnr-bold">
+        {{'about-us.content-title' | translate}}
+      </h1>
+    </div>
+    <div class="about-us-content">
+      <div
+        class="md-body-1"
+        layout="column"
+        layout-gt-sm="row"
+        layout-align="center center"
+        layout-padding>
+        <div flex-gt-sm="50" layout="column"
+             class="lnr-display-none-xs"
+             layout-margin>
+          <img src="app/assets/ui_images/static/listnride_today.jpg" alt=""/>
+        </div>
+        <div flex-gt-sm="50" layout="column" layout-margin>
+          <h2  class="md-subhead lnr-bold lnr-color-blue">
+            {{ 'about-us.community.title' | translate }}
+          </h2>
+          <p>
+            {{ 'about-us.community.content' | translate }}
+          </p>
+          <p>
+            {{ 'about-us.community.content-paragraph' | translate }}
+          </p>
+        </div>
+      </div>
+      <div
+        class="md-body-1"
+        layout="column"
+        layout-gt-sm="row"
+        layout-align="center center"
+        layout-padding>
+        <div
+         flex-gt-sm="50"
+         flex-gt-sm-offset="5"
+         layout="column"
+         layout-margin>
+          <h2 class="md-subhead lnr-bold lnr-color-blue">
+            {{ 'about-us.future.title' | translate }}
+          </h2>
+          <p>
+            {{ 'about-us.future.content' | translate }}
+          </p>
+          <p>
+            {{'about-us.future.content-paragraph' | translate }}
+          </p>
+        </div>
+        <div flex-gt-sm="50" layout="column" layout-margin>
+          <img src="app/assets/ui_images/static/how_it_all_began.jpg" alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="about-showrooms-content lnr-gt-sm-center content"
+         layout-padding
+         layout-align="start start">
+      <h1 class="md-headline lnr-bold lnr-sm-center lnr-xs-center">
+        {{ 'brands.showroom.header' | translate }}
+      </h1>
+      <h4 class="lnr-font-normal lnr-xs-center lnr-sm-center" layout-align="center center">
+        {{ 'about-us.showroom.subtitle' | translate }}
+      </h4>
+
+      <div layout="column" layout-gt-sm="row" layout-padding>
+        <div class="brands__showroom" flex-gt-sm="50" layout="column">
+          <div class="lnr-tile-image"
+               style="background-image: url('app/assets/ui_images/static/berlin.jpg')"
+               layout="column"
+               layout-align="center center"
+          >
+            <h3 class="md-headline lnr-bold md-color-white">{{'shared.berlin' | translate}}</h3>
+          </div>
+          <div class="lnr-pv-x2 lnr-xs-p-0"></div>
+          <p class="md-body-1" translate="brands.showroom.berlin-description"></p>
+
+          <a class="lnr-tile-image lnr-d-block mt-auto m-t-24"
+             href="https://www.google.com/maps/place/List+and+Ride/@52.5237683,13.3992768,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851e3db8dd117:0x5603f6d72224e2b1!8m2!3d52.5237683!4d13.4014655" rel="nofollow" target="_blank"
+             style="height: 130px; background-image: url('/app/assets/ui_images/brands/map-berlin.jpg')">
+          </a>
+
+          <div class="lnr-pv-x2"></div>
+          <div class="wrap-showroom-address" layout-align="start start" layout="row">
+            <img src="app/assets/ui_icons/map-icon.svg"/>
+            &nbsp;
+            <address class="md-body-1" translate="brands.showroom.berlin-address"></address>
+          </div>
+          <div class="lnr-pv-x2"></div>
+        </div>
+
+        <div class="brands__showroom" flex-gt-sm="50" layout="column">
+          <div
+            class="lnr-tile-image"
+            layout="column"
+            layout-align="center center"
+            style="background-image: url('app/assets/ui_images/static/munich.jpg')"
+          >
+            <h3 class="md-headline md-color-white lnr-bold">{{'shared.munich' | translate}}</h3>
+          </div>
+          <div class="lnr-pv-x2 lnr-xs-p-0"></div>
+          <p class="md-body-1" translate="brands.showroom.munich-description"></p>
+          <a class="lnr-tile-image lnr-d-block m-t-24"
+             href="https://www.google.com/maps/place/Nymphenburger+Str.+86,+80636+M%C3%BCnchen/@48.150483,11.5465415,20z/data=!4m13!1m7!3m6!1s0x0:0x0!2zNDjCsDA5JzAxLjgiTiAxMcKwMzInNDEuMyJF!3b1!8m2!3d48.1505014!4d11.5447967!3m4!1s0x479e760ed065c633:0x679f8bd3c40ca9!8m2!3d48.1505014!4d11.5469854" rel="nofollow" target="_blank"
+             style="height: 130px; background-image: url('/app/assets/ui_images/brands/map-munich.jpg')">
+          </a>
+
+          <div class="lnr-pv-x2"></div>
+          <div class="wrap-showroom-address" layout-align="start start" layout="row">
+            <img src="app/assets/ui_icons/map-icon.svg"/>&nbsp;
+            <address class="md-body-1" translate="brands.showroom.munich-address"></address>
+          </div>
+          <div class="lnr-pv-x2"></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="lnr-section-title mt0" layout="column" layout-align="center center">
+      <p class="md-body-2" translate="booking.footer.call-us"></p>
+      <div class="lnr-row-images" layout="row" layout-align="center center">
+        <div class="lnr-row-images__item">
+          <img ng-src="app/assets/ui_images/request-flow/lnr_support_jean@2x.jpg" alt="Jean">
+          <span>Jean</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer></footer>
+</md-content>

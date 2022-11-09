@@ -1,0 +1,58 @@
+<md-content class="single-column">
+  <div
+      class="lnr-min-100vh lnr-pos-r lnr-a-gradient-bg-black"
+      style="background: url(app/assets/ui_images/events/black-friday/black-friday-bg.png) repeat;">
+      <div class="spacer"></div>
+    <div class="lnr-center lnr-w100 lnr-pos-r">
+      <div class="spacer"></div>
+      <h1 class="md-headline lnr-color-blue lnr-super-bold lnr-tt-u">{{'events.black-friday.title' | translate}}</h1>
+      <h2 ng-if="!blackFriday.isBlackFriday" class="md-display-3 lnr-color-white lnr-bold lnr-mt-x2 lnr-mb-x2 lnr-tt-u lnr-xs-fs-24" translate="events.black-friday.pre.subtitle"></h2>
+      <h2 ng-if="blackFriday.isBlackFriday" class="md-display-3 lnr-color-white lnr-bold lnr-mt-x2 lnr-mb-x2 lnr-tt-u lnr-xs-fs-24" translate="events.black-friday.subtitle"></h2>
+
+      <div ng-if="blackFriday.isBlackFriday" class="lnr-center lnr-color-white">
+        <p class="md-title lnr-font-normal">{{'events.black-friday.use-code' | translate}}</p>
+        <div class="voucher-block lnr-center">
+          blackfriday30
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="how-it-works">
+          <h2 class="md-headline" translate="events.black-friday.steps.header"></h2>
+          <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+            <div flex-gt-xs="33" layout="column"  layout-align="none center" layout-margin>
+              <md-icon class="lnr-icn-mlrg lnr-svg-p1-blue lnr-svg-p2-white" md-svg-src="app/assets/ui_icons/icn_rent_find.svg"></md-icon>
+              <p class="md-subhead lnr-center">{{ 'events.black-friday.steps.step1' | translate }}</p>
+            </div>
+
+            <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+              <md-icon class="lnr-icn-mlrg lnr-svg-p1-blue lnr-svg-p2-white" md-svg-src="app/assets/ui_icons/icn_list_bike.svg"></md-icon>
+              <p class="md-subhead lnr-center">{{ 'events.black-friday.steps.step2' | translate }}</p>
+            </div>
+
+            <div flex-gt-xs="33" layout="column" layout-wrap layout-align="none center" layout-margin>
+              <md-icon class="lnr-icn-mlrg lnr-svg-p1-blue lnr-svg-p2-white" md-svg-src="app/assets/ui_icons/icn_rent_request.svg"></md-icon>
+              <p class="md-subhead lnr-center">{{ 'events.black-friday.steps.step3' | translate }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+        <p class="lnr-color-white md-subhead" translate="events.black-friday.footer-text"></p>
+      </div>
+
+      <time ng-if="!blackFriday.isBlackFriday" class="md-headline lnr-color-blue lnr-super-bold" datetime="2018-11-23">23.11.2018</time>
+
+      <div class="spacer"></div>
+    </div>
+  </div>
+
+  <div ng-if="blackFriday.isStaging">
+    <p>Only for testing</p>
+    <md-switch
+      ng-model="blackFriday.isBlackFriday">
+    </md-switch>
+</div>
+
+  <footer></footer>
+</md-content>

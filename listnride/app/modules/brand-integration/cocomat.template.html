@@ -1,0 +1,103 @@
+ <md-content class="single-column"> 
+ 
+<div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <ul class="cb-slideshow">
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+    </ul>
+
+    <div class="lnr-page-title md-color-white" layout="column" layout-align="center center">
+      <div>
+        <img ng-src="app/assets/ui_images/brand-integration/cocomat/cocomat-logo.png" flex="65"></img><br><br>
+      </div>
+      <!-- <h1 class="md-display-1">{{ 'brand-integration.brompton.title' | translate }}</h1>     -->
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.cocomat.description' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'brand-integration.cocomat.subdescription' | translate }}</h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-xlrg--medium" md-svg-src="app/assets/ui_images/brand-integration/cocomat/feature_1.svg"></md-icon>
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.cocomat.feature1-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.cocomat.feature1-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-xlrg--medium" md-svg-src="app/assets/ui_images/brand-integration/cocomat/feature_2.svg"></md-icon>
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.cocomat.feature2-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.cocomat.feature2-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-xlrg--medium" md-svg-src="app/assets/ui_images/brand-integration/cocomat/feature_3.svg"></md-icon>
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.cocomat.feature3-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.cocomat.feature3-description' | translate }}"></p>
+      </div>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <!-- <h2 class="md-headline lnr-center">{{ 'brand-integration.cocomat.test-bike' | translate }}</h2> -->
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-subhead">{{ 'brand-integration.shared.choose-location' | translate }}</h2>
+      <md-menu md-position-mode="target bottom">
+        <md-button class="md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">
+          <h1 class="md-right-arrow md-headline">&nbsp;&nbsp;{{ cocomat.currentShop.name }}</h1>
+        </md-button>
+        <md-menu-content width="3">        
+          <md-menu-item ng-repeat="shop in cocomat.shops">
+            <md-button md-no-ink ng-click="cocomat.showBikesIn(shop.id)"><h1 class="md-subhead">{{ shop.name }}</h1></md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+
+    <md-content>
+      <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+        <bike-card ng-repeat="bike in cocomat.currentBikes" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+      </div>
+    </md-content>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.cocomat.find-out-more' | translate }}</h1>
+      <!-- <h2 class="md-subhead" translate="{{ 'brand-integration.cocomat.order-online' | translate }}"></h2> -->
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-padding>
+      <div flex-gt-sm="45" layout="column" layout-margin>
+        <h3 class="md-body-2 lnr-clickable" ng-click="left1=!left1">{{ 'brand-integration.cocomat.faq-question-1' | translate }}</h3>
+        <div ng-show="left1"><p >{{ 'brand-integration.cocomat.faq-answer-1' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left2=!left2">{{ 'brand-integration.cocomat.faq-question-2' | translate }}</h3>
+        <div ng-show="left2"><p >{{ 'brand-integration.cocomat.faq-answer-2' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left3=!left3">{{ 'brand-integration.cocomat.faq-question-3' | translate }}</h3>
+        <div ng-show="left3"><p >{{ 'brand-integration.cocomat.faq-answer-3' | translate }}</p></div>
+      </div>
+
+      <div flex-gt-sm="45" flex-gt-sm-offset="5" layout="column" layout-margin>
+        <h3 class="md-body-2 lnr-clickable" ng-click="right1=!right1">{{ 'brand-integration.cocomat.faq-question-4' | translate }}</h3>
+        <div ng-show="right1"><p >{{ 'brand-integration.cocomat.faq-answer-4' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="right2=!right2">{{ 'brand-integration.cocomat.faq-question-5' | translate }}</h3>
+        <div ng-show="right2"><p translate="brand-integration.cocomat.faq-answer-5"></p></div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+ <footer></footer>
+</md-content>

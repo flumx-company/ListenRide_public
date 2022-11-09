@@ -1,0 +1,168 @@
+<md-tab
+  class="categories"
+  label="{{ calendar.parent.tabOrder['calendar'] + 1 }}. {{ 'booking.calendar.tab' | translate }} {{ calendar.parent.tabCompleted('calendar') }}"
+  layout="row"
+  ng-disabled="calendar.parent.tabsDisabled"
+  md-on-select="calendar.parent.onTabChanged()">
+  <div class="spacer-xs"></div>
+  <md-content layout="column">
+    <div class="tab-content" style="min-height: 450px;" layout-align="space-between none" layout-padding>
+      <div class="lnr-list-form" layout="column">
+        <h2 class="md-title lnr-m-0">{{ 'booking.calendar.bike-rental' | translate }}</h2>
+        <p class="md-body-1">{{ 'booking.calendar.intro-description' | translate }}</p>
+        <div class="spacer-xs"></div>
+      	<div layout="row" layout-align="space-between none" layout-wrap>
+          <div flex="25" flex-xs="100">
+            <a ui-sref="bike({bikeId: calendar.parent.bike.id})" target="_blank">
+              <img flex="100" ng-src="{{ calendar.parent.bike.image_file }}" />
+            </a>
+          </div>
+          <div flex="70" flex-xs="100" layout="column">
+            <a class="md-subhead lnr-black" ui-sref="bike({bikeId: calendar.parent.bike.id})" target="_blank">
+              {{ calendar.parent.bike.brand }}, {{ calendar.parent.bikeCategory }}</a>
+            <br>
+
+            <div layout="row" layout-align="space-between none" class="lnr-mt">
+              <span flex="35" class="md-body-2">{{ 'list.details.brand' | translate }}</span>
+              <span flex="65" class="md-body-1 lnr-lh-body-2">{{ calendar.parent.bike.brand }}</span>
+            </div>
+
+            <div layout="row" layout-align="space-between none" class="lnr-mt">
+              <span flex="35" class="md-body-2">{{ 'booking.overview.model' | translate }}</span>
+              <span flex="65" class="md-body-1 lnr-lh-body-2">{{ calendar.parent.bike.name }}</span>
+            </div>
+
+            <div layout="row" layout-align="space-between none" class="lnr-mt">
+              <span flex="35" class="md-body-2">{{ 'booking.overview.location' | translate }}</span>
+              <span flex="65" class="md-body-1 lnr-lh-body-2">{{ calendar.parent.bike.city }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <md-divider></md-divider>
+        <br>
+        <h2 class="md-title lnr-m-0">{{ 'booking.calendar.choose-duration' | translate }}</h2>
+
+        <div
+          ng-if="calendar.parent.startDate && calendar.parent.dateRange.duration < 1 && calendar.parent.hasTimeSlots"
+          layout="column">
+          <p translate="calendar.ability-to-pick-half-day"></p>
+          <div class="lnr-mb-0 lnr-pt" ng-repeat="timeslot in calendar.parent.timeslots">
+            {{timeslot.start_time.hour}}:00 - {{timeslot.end_time.hour}}:00
+          </div>
+          <md-divider class="lnr-p-0 lnr-mh"></md-divider>
+        </div>
+
+        <br>
+        <div class="lnr-maxw-600">
+          <div layout="row" flex layout-xs="column">
+            <md-input-container flex-xs="100">
+              <label>{{ 'shared.duration' | translate }}</label>
+              <input-range
+                ng-if="calendar.parent.isOpeningHoursLoaded"
+                lnr-date-picker
+                lnr-single-input
+                data="calendar.parent.dateRange"
+                disabled-dates="calendar.parent.bike.availabilities"
+                opening-hours="calendar.parent.openingHours"
+                bike="calendar.parent.bike"
+                bike-cluster="calendar.parent.cluster"
+                requests="calendar.parent.bike.requests"
+                date-on-change="calendar.parent.updateDate"
+                date-container="'.booking__daterange-focus'"
+                date-scroll-container="'.booking__body'"
+                has-time-slots="calendar.parent.hasTimeSlots"
+                timeslots="calendar.parent.timeslots"
+              >
+              </input-range>
+            </md-input-container>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <div
+              id="timeRange"
+              ng-if="calendar.parent.startDate"
+              layout="row" layout-align="start center" flex="auto" flex-xs="100">
+              <md-input-container flex>
+                <label>{{ 'booking.calendar.pickup-time' | translate }}</label>
+                <md-select
+                  ng-disabled="calendar.parent.startDate == undefined"
+                  ng-change="calendar.parent.onTimeChange('start')"
+                  ng-model="calendar.parent.startTime"
+                  placeholder="{{ 'shared.from' | translate }}">
+                  <md-option
+                  ng-disabled="!calendar.parent.calendarHelper.isTimeAvailable($index, calendar.parent.openingHours, calendar.parent.startDate) || !calendar.parent.isTimeslotAvailable($index+6)"
+                  ng-repeat="i in [].constructor(17) track by $index"
+                  value="{{$index + 6}}"
+                  >
+                    {{ ($index + 6) + ":00" + calendar.availabilityMessage($index, calendar.startDate) }}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <md-input-container flex>
+                <label>{{ 'booking.calendar.return-time' | translate }}</label>
+                <md-select
+                  ng-disabled="calendar.parent.endDate === undefined"
+                  ng-change="calendar.parent.onTimeChange('end')"
+                  ng-model="calendar.parent.endTime"
+                  placeholder="{{ 'shared.to' | translate }}"
+                >
+                  <md-option
+                    ng-disabled="!calendar.parent.calendarHelper.isTimeAvailable($index, calendar.parent.openingHours, calendar.parent.endDate) || !calendar.parent.isTimeslotAvailable($index+6)"
+                    ng-repeat="i in [].constructor(17) track by $index"
+                    value="{{$index + 6}}"
+                  >
+                    {{ ($index + 6) + ":00" + calendar.availabilityMessage($index, calendar.endDate)}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+          </div>
+
+          <div ng-if="calendar.parent.cluster">
+            <div>
+              <div class="md-body-2">{{ calendar.parent.hasFrameSize ? 'shared.frame-size' : 'shared.pick-size' | translate }}</div>
+              <md-select
+                ng-model="calendar.parent.pickedBikeSize"
+                ng-change="calendar.parent.onSizeChange()"
+                placeholder="{{ 'shared.pick-size' | translate}}"
+                class="lnr-mt-0 lnr-mb-0">
+                <md-option
+                  ng-repeat="(key,option) in calendar.parent.bikeVariations"
+                  value="{{key}}"
+                  ng-disabled="option.notAvailable || !calendar.parent.isDateValid">
+                  {{ option.label }}
+                  <span ng-if="option.notAvailable">({{ 'user.not-available' | translate }})</span>
+                </md-option>
+              </md-select>
+            </div>
+            <div layout="row" layout-align="none center">
+              <span flex="35"></span>
+              <p
+                flex="65"
+                ng-if="!calendar.parent.isDateValid"
+                class="text-error"
+                translate="shared.firstly-pick-dates">
+              </p>
+            </div>
+          </div>
+
+          <div
+            ng-if="!calendar.parent.cluster"
+            layout="column"
+            layout-align="space-between none">
+            <div ng-if="calendar.parent.bike.frame_size && !calendar.parent.hasTimeSlots">
+              <span class="md-body-2">{{ 'list.details.size' | translate }}: </span>
+              <span class="md-body-1 lnr-lh-body-2"> {{ calendar.parent.humanReadableSize(calendar.parent.bike.size) }}</span>
+            </div>
+            <div ng-if="calendar.parent.bike.frame_size">
+              <span class="md-body-2">{{ 'list.details.frame_size' | translate }}: </span>
+              <span class="md-body-1 lnr-lh-body-2">{{ calendar.parent.bike.frame_size }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </md-content>
+</md-tab>

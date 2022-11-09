@@ -1,0 +1,93 @@
+<div class="booking-calendar" ng-show="bookingCalendar.isAvailable()">
+  <menu class="booking-calendar__controls">
+    <section class="booking-calendar__filters">
+      <!-- Filter by requests -->
+      <md-switch 
+        md-no-ink 
+        ng-model="bookingCalendar.filters.onlyWithEvents" 
+        ng-change="bookingCalendar.filterBikes()">
+        {{ 'booking-calendar.filter-by-requests' | translate }}
+      </md-switch>
+
+      <!-- Filter by location -->
+      <md-select 
+        ng-if="bookingCalendar.locationOptions.length > 1"
+        ng-model="bookingCalendar.filters.location"
+        ng-change="bookingCalendar.filterBikes()"
+        class="md-no-underline">
+        <md-option value="{{bookingCalendar.anyLocationKey}}">
+          {{ 'booking-calendar.any-location' | translate }}
+        </md-option>
+        <md-option ng-repeat="location in bookingCalendar.locationOptions" value="{{location}}">
+          {{location}}
+        </md-option>
+      </md-select>
+    </section>
+    
+    
+    <section class="booking-calendar__nav">
+      <!-- Go to the prev time span -->
+      <md-button class="md-icon-button" ng-click="bookingCalendar.shiftPrevious()">
+        <md-tooltip>
+          {{ bookingCalendar.getShiftButtonTooltip('prev') | translate }}
+        </md-tooltip>
+        <md-icon md-font-icon="fa-chevron-left" class="fa"></md-icon>
+      </md-button>
+  
+      <!-- Go to the next time span -->
+      <md-button class="md-icon-button" ng-click="bookingCalendar.shiftNext()">
+        <md-tooltip>
+          {{ bookingCalendar.getShiftButtonTooltip('next') | translate }}
+        </md-tooltip>
+        <md-icon md-font-icon="fa-chevron-right" class="fa"></md-icon>
+      </md-button>
+  
+      <!-- Go to today -->
+      <md-button class="md-lined" ng-click="bookingCalendar.gotoToday()">
+        {{ 'shared.today' | translate }}
+      </md-button>
+  
+      <!-- Switch between view presets -->
+      <section layout="row" class="view-presets-selector">
+        <md-button
+          ng-repeat="viewPreset in bookingCalendar.viewPresetOptions"
+          class="request-filter-switch "
+          ng-class="{
+            'request-filter-switch-active': bookingCalendar.scheduler.viewPreset.name === viewPreset.key,
+            'left': $first,
+            'middle': $middle,
+            'right': $last
+          }"
+          ng-click="bookingCalendar.setViewPreset(viewPreset.key)"
+          translate="{{ viewPreset.labels.option }}"></md-button>
+      </section>
+  
+      <!-- Go to date -->
+      <md-menu md-position-mode="target bottom">
+        <md-button 
+          class="md-icon-button go-to-date-button" 
+          ng-click="bookingCalendar.openDatepickerMenu($mdOpenMenu, $event)">
+          <md-icon md-font-icon="fa-calendar-o" class="fa"></md-icon>
+        </md-button>
+        <md-menu-content id="booking-calendar-datepicker"></md-menu-content>
+      </md-menu>
+    </section>
+  </menu>
+
+  <md-progress-linear
+    class="md-accent"
+    ng-if="bookingCalendar.isLoading"
+    md-mode="query"
+  >
+  </md-progress-linear>
+  <md-divider class="booking-calendar-divider"></md-divider>
+
+  <!-- Scheduler -->
+  <div class="scheduler-container"></div>
+</div>
+
+<div ng-show="!bookingCalendar.isAvailable()" class="not-available-message">
+  <h2 class="md-headline">
+    {{ 'booking-calendar.not-available-on-mobile' | translate }}
+  </h2>
+</div>

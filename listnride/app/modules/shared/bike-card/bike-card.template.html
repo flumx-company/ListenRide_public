@@ -1,0 +1,36 @@
+<a ui-sref="bike({bikeId: bikeCard.bike.id, size: bikeCard.urlParams.size, start_date: bikeCard.urlParams.start_date, duration: bikeCard.urlParams.duration})"
+   ng-attr-target="{{ bikeCard.isPhoneScreen ? '_self' : '_blank' }}"
+   ng-if="bikeCard.bike"
+   title="{{bikeCard.imageAlt}}"
+>
+  <md-card class="lnr-bike-card" ng-class="{'lnr-unavailable': bikeCard.booked}">
+    <div class="bg lnr-preload-bg">
+      <status-labels
+        ng-if="bikeCard.showLabels"
+        bike="bikeCard.bike">
+      </status-labels>
+      <img class="md-card-image"
+           title="{{bikeCard.imageAlt}}"
+           ng-src="{{bikeCard.bike.image_file}}"
+           alt="{{bikeCard.imageAlt}}">
+    </div>
+    <div class="after" ng-if="bikeCard.booked"><div>{{ 'shared.already-booked' | translate }}</div></div>
+    <md-card-title layout="row">
+      <div flex="20" layout-align="start center" ng-if="::bikeCard.showIcon">
+        <md-icon class="lnr-icn-lrg md-color-foreground" md-svg-src="app/assets/ui_icons/biketype_{{ ::bikeCard.bike.category | limitTo: 1 }}.svg"></md-icon>
+      </div>
+
+      <md-card-title-text flex="50" flex-gt-md="50" class="lnr-ml lnr-bike-title" layout="column" layout-align="space-around start">
+        <span class="md-subhead">{{ ::bikeCard.bike.brand }}</span>
+        <span ng-if="!bikeCard.home">{{ ::bikeCard.bike.name }}</span>
+        <span ng-if="bikeCard.home">in {{ ::bikeCard.bike.city }}</span>
+      </md-card-title-text>
+
+      <div flex="auto" layout="column" layout-align="space-around center">
+        <span>{{ 'shared.from2' | translate }}</span>
+        <span class="md-headline">{{ ::bikeCard.from | number }}€</span>
+      </div>
+    </md-card-title>
+
+  </md-card>
+</a>

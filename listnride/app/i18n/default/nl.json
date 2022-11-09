@@ -1,0 +1,1720 @@
+{
+  "shared": {
+    "learn-more": "Meer info",
+    "img-alt": "{{bikeBrand}} {{bikeName}} fietsverhuur {{bikeCity}}",
+    "request": "Request",
+    "non-availability-type": "Klassificering",
+    "event": "Event",
+    "events": "Events",
+    "frame-size": "Rider height | Framesize",
+    "show-all-bikes": "Toon alle fietsen",
+    "available": "beschikbaar",
+    "brands": "Merken",
+    "your-email": "Vul je e-mailadres in",
+    "label_new": "Nieuw",
+    "booking-calendar": "Boekingskalender",
+    "month": "Maand",
+    "id": "Fiets ID",
+    "event-bikes-will-be-soon": "Fietsen voor dit evenement zijn binnenkort beschikbaar",
+    "for-count-hours": "voor {{hoursSlot}} uur",
+    "rental-date": "Rental date",
+    "rental-time": "Rental time",
+    "choose-bike-size": "Kies je fietsmaat",
+    "please-choose-bike-count": "Selecteer het aantal fietsen",
+    "status-labels": {
+      "variants_available": "Varianten beschikbaar"
+    },
+    "summary": "Overzicht",
+    "pick-size": "Kies een maat",
+    "firstly-pick-dates": "Selecteer eerst een dag",
+    "remove": "verwijderen",
+    "basic-insurance-fee": "Verzekeringstoeslag",
+    "payment-type": {
+      "pay-pal-account": "Paypal",
+      "credit-card": "Kredietkaart",
+      "paypal-account": "Paypal rekening"
+    },
+    "change": "Aanpassen",
+    "local-business": "Zakelijke aanbieder",
+    "list": "List",
+    "map": "Kaart",
+    "bike-type": "Fietstype",
+    "filter-by": "Filteren op",
+    "search-placeholder": "Zoek naar bijvoorbeeld Berlijn, München",
+    "info": "Info",
+    "no-bikes-found": " Helaas! er worden nog geen fietsen op deze locatie aangeboden.",
+    "dresden": "Dresden",
+    "bolzano": "Bolzano",
+    "lake-garda": "Gardameer",
+    "sardinia": "Sardinië",
+    "sicily": "Sicilië",
+    "tuscany": "Toscane",
+    "please-select": "Ajb. selecteren",
+    "errors": {
+      "email-required": "Vul een geldig emailadres in",
+      "three-d-secure-failed": "3D-secure authenticatie mislukt",
+      "payment-cancelled": "Betaling geannuleerd",
+      "payment-paypal-error": "Sorry, your PayPal method is failed",
+      "unexpected-payment-type": "Ongeldige betalingsmethode ",
+      "email-not-valid": "Vul een geldig emailadres in",
+      "phone-not-valid": "Voer alstublieft een geldig telefoonnummer in",
+      "phone-required": "Voer je telefoonnummer in. "
+    },
+    "notifications": {
+      "404": "Pagina bestaat niet",
+      "406": "The information you entered is incorrect. please check your information and try again",
+      "422": "Verkeerd dataformaat ingevoerd",
+      "500": "Interne Server Fout",
+      "200": "gelukt! "
+    },
+    "basic-fee": "Servicekosten inclusief basisverzekering",
+    "how-it-works": "Hoe werkt het",
+    "list-a-bike": "Fiets verhuren",
+    "renting-a-bike": "Fiets huren",
+    "listing-a-bike": "Fiets plaatsen",
+    "trust-and-safety": "Vertrouwen & Zekerheid",
+    "journal": "Blog",
+    "later": "Later",
+    "next": "Volgende",
+    "requests": "Aanvragen",
+    "top-cities": "Favoriete Steden",
+    "berlin": "Berlijn",
+    "dortmund": "Dortmund",
+    "milan": "Milaan",
+    "munich": "München",
+    "nuremberg": "Neurenberg",
+    "amsterdam": "Amsterdam",
+    "vienna": "Wenen",
+    "hamburg": "Hamburg",
+    "dusseldorf": "Düsseldorf",
+    "ulm": "Ulm",
+    "tubingen": "Tübingen",
+    "zurich": "Zürich",
+    "freiburg": "Freiburg",
+    "paderborn": "Paderborn",
+    "utting": "Utting",
+    "heidelberg": "Heidelberg",
+    "marl": "Marl",
+    "frankfurt": "Frankfurt",
+    "usedom": "Usedom",
+    "lanzarote": "Lanzarote",
+    "mallorca": "Mallorca",
+    "sylt": "Sylt",
+    "stuttgart": "Stuttgart",
+    "per": "per",
+    "hour": "uur",
+    "hours": "uren",
+    "half-day": "halve dag",
+    "day": "dag",
+    "day-6h": "dag (> 6u)",
+    "days": "dagen",
+    "week": "week",
+    "weeks": "weken",
+    "discount": "Korting",
+    "discount-day": "vanaf 3 dagen",
+    "discount-week": "vanaf 1 week",
+    "single-day": "voor 1 dag",
+    "duration": "Duur",
+    "subtotal": "Subtotaal",
+    "lnr-fee": "Servicekosten",
+    "total": "Totaal",
+    "from": "Uit",
+    "from2": "vanaf",
+    "to": "Tot",
+    "as": "Als",
+    "all": "Alle",
+    "cancel": "Afbreken",
+    "send": "Sturen",
+    "search": "Zoeken",
+    "search-all": "Doorzoek alle fietsen",
+    "search-all-in": "Doorzoek alle fietsen in",
+    "search-bikes": "Zoek je fietsen",
+    "from-place": "uit",
+    "contact": "Help & Support",
+    "show-more": "Toon meer",
+    "show-less": "Toon minder",
+    "phone-number": "Telefoonnummer",
+    "wait": "Je fiets wordt nu online geplaatst, dit kan een moment duren..",
+    "lister": "Aanbieder",
+    "rider": "Huurder",
+    "reviews": "Recensies",
+    "for": "voor",
+    "per-day": "pro dag",
+    "pd": "p.d.",
+    "Monday": "Maandag",
+    "Tuesday": "Dinsdag",
+    "Wednesday": "Woensdag",
+    "Thursday": "Donderdag",
+    "Friday": "Vrijdag",
+    "Saturday": "Zaterdag",
+    "Sunday": "Zondag",
+    "Mon": "Mon",
+    "Tue": "Tue",
+    "Wed": "Wed",
+    "Thu": "Thu",
+    "Fri": "Fri",
+    "Sat": "Sat",
+    "Sun": "Sun",
+    "join": "Join",
+    "voucher": "Voucher",
+    "download": "Download",
+    "Jan": "Jan",
+    "Feb": "Feb",
+    "Mar": "Maart",
+    "Apr": "Apr",
+    "May": "Mei",
+    "Jun": "Juni",
+    "Jul": "Juli",
+    "Aug": "Aug",
+    "Sep": "Sept",
+    "Oct": "Okt",
+    "Nov": "Nov",
+    "Dec": "Dec",
+    "testimonials-header": "Wat zeggen onze gebruikers?",
+    "balance": "Saldo",
+    "tac": "gebruiksvoorwaarden",
+    "privacy-policy": "privacybeleid",
+    "booking-accept-tac": "Bij het bevestigen van de boeking accepteer ik de",
+    "already-booked": "al geboekt",
+    "for-shops": "Zakelijke aanbieders",
+    "contact-us": "Neem contact met ons op per ",
+    "required": "Dit is verplicht",
+    "update": "Bijwerken",
+    "load-more": "Load more",
+    "confirm": "Bevestigen",
+    "loading": "Het laden",
+    "clear": "Clear",
+    "clear-all": "Clear All",
+    "today": "Vandaag",
+    "yesterday": "Gisteren",
+    "press": {
+      "title": "Bekend van TV & Print"
+    },
+    "find-your-bike": {
+      "header": "Vind de perfecte fiets",
+      "subheader": "Plan je je volgende trip?",
+      "button": "Fiets zoeken"
+    },
+    "rent-your-bike": {
+      "header": "Verhuur je fiets!",
+      "subheader": "Ontmoet gelijkgestemden. Verdien wat erbij."
+    }
+  },
+  "invoice": {
+    "settlement_history": "Geschiedenis van nederzetting "
+  },
+  "request": {
+    "payment-failed": "Oops.. Helaas is je betaling mislukt. Check nog eens de gegevens die je hebt ingevoerd alsook de betalingsinstellingen bij je betalingsprovider!",
+    "waiting_for_capture": "Bedankt voor je boekingsaanvraag! De betaling wordt momenteel verwerkt. Je ontvangt een e-mail, zodra deze is bevestigd.",
+    "payment-failed-lister": "Uh-oh, de betaling van de Rider is mislukt. Een ogenblik geduld. De Rider probeert de betaling opnieuw.",
+    "waiting_for_capture_lister": "Bedankt voor het accepteren van de boekingsaanvraag! De betaling wordt nu verwerkt, je ontvangt een e-mail, zodra deze is bevestigd.",
+    "payment-failed-after-accept": "Je boekingsaanvraag is (nog) niet verzonden, omdat de betaling is mislukt! \n\nControleer je betalingsgegevens en probeer het opnieuw. Zodra de betaling is geslaagd, wordt je boeking bevestigd!"
+  },
+  "about-us": {
+    "community": {
+      "content-paragraph": "We hadden ons echter afgevraagd: waarom kunnen we niet altijd de juiste fiets huren waar en wanneer we die nodig hebben? Moet het altijd één van die gebruikte en verwaarloosde huurfietsen zijn van bike-sharing stations? Het idee van listnride was geboren.",
+      "content-munich-showroom": "Centraal gelegen in Maxvorstadt, presenteren wij in ons <a href=\"users/6511\" target=\"_blank\">München Experience Center</a> fietsen van merken als 8bar, Bonvelo, Rossignol, Urwahn en Yuba. We bieden ook de nieuwste Felt racefietsen en urban e-bikes van BZEN, Cowboy, Leaos en Vello aan. Klik <a href=\"brands\">hier</a> om meer te weten te komen over onze testfietsen en merken in München.",
+      "content-berlin-showroom": "In het hart van Berlin-Mitte, tegenover de Hackescher Markt, bieden wij in ons <a href=\"users/7351\" target=\"_blank\">Berlin Experience Center</a>testritten aan voor fietsen van merken als Argon18, Bonvelo, Brompton, BZEN en Cowboy. Wij organiseren regelmatig evenementen, zoals <a href=\"http://www.facebook.com/pg/listnride/events/?ref=page_internal\" target=\"_blank\">social rides</a> elke vrijdagochtend. Klik <a href=\"brands\" target=\"_blank\">hier</a> om meer te weten te komen over onze beschikbare testfietsen en merken in Berlijn."
+    },
+    "future": {
+      "content-paragraph": "Wij zijn trots op onze partners die hun fietsen bij ons aanbieden - of het nu gaat om professionele retailers, eigenaren van een fietsenpark of particulieren. Tenslotte kan je op bepaalde locaties in Europa kennismaken met innovatieve merken die samen met ons exclusieve testritten aanbieden."
+    },
+    "showroom": {
+      "subtitle": "Leer ons kennen in Berlijn of München en ervaar de nieuwste modieuze fietsen en meer!"
+    },
+    "content-title": "Wij helpen je bij het vinden van de perfecte huurfiets voor elke gelegenheid, altijd en overal"
+  },
+  "testimonials": {
+    "jetske-amsterdam": "Op listnride verhuur ik mijn fietsen om gezinnen een simpele oplossing te bieden om mijn woonplaats te leren kennen. Naast het ontmoeten van aardige mensen verdien ik wat extra zakgeld ☺",
+    "john-potsdam": "Ik heb een aantal fietsen rond staan en ik vind het leuk om ze te verhuren en bezoekers van mijn eigen stad een coole fiets aan te bieden. Tot dusver hebben we altijd geweldige huurders gehad!",
+    "cornelia-basel": "We waren in Berlijn en wilden dit keer een mooie e-bike proberen. We vonden Ampler e-bikes op listnride en huurden er twee. Het bleek perfect te werken en ook voor een goede prijs!",
+    "rider-1": "Een bezoek aan Wenen en we wilden actief de stad en het omliggende natuurgebied ontdekken. We vonden 2 geweldige huurfietsen op listnride, we hadden een geweldige tijd. simpelweg een geweldige ontdekking!\n",
+    "rider-2": "Ik was op bezoek bij een vriendin in Berlijn en wilde mijn eigen fiets niet meenemen. In plaats daarvan heb ik een mooie fiets gehuurd - vlakbij haar vandaan. Het heeft perfect gefunctioneerd en ook nog eens voor een goede prijs.",
+    "rider-3": "In München hebben we listnride ontdekt en vonden we twee elegante stadsfietsen voor een passende prijs. De eigenaar was een vriendelijke man die ons uitnodigde voor een kopje koffie. Hij gaf een aantal leuke tips, echt superleuk!",
+    "rider-4": "Ik werk regelmatig in Berlijn. Sinds ik listnride heb ontdekt, huur ik vaak een mooie fiets. De keuze is goed en het is eenvoudig en veilig.",
+    "lister-1": "Onlangs ontdekte listnride, plaatste 3 racefietsen online en verhuur ze nu regelmatig. Het mooie is dat ik leuke mensen ontmoet, met wie ik ook soms een ritje maak.",
+    "lister-2": "Ik ben een grote lijstnride fan. Als ik naar wielerkoersen ga, huur ik de optimale fiets. Thuis verhuur ik mijn fietsen aan mijn Airbnb gasten. Super gemakkelijk en gemakkelijk verdiend."
+  },
+  "countries": {
+    "title": "Alle Landen",
+    "country_title": "Alle steden en regio's in {{country_name}}"
+  },
+  "prepositions": {
+    "in": " in "
+  },
+  "cyclingworld": {
+    "event": {
+      "calendar-title": "Testbikes voor de Cyclingworld",
+      "calendar-subtitle": "Voor de Gravel-rit op zondag en tijdens het hele weekend van de Cyclingworld kun je een 2 uur durende proefrit boeken."
+    }
+  },
+  "long-term": {
+    "header": "Kies uw huurfiets voor je verblijf",
+    "subheader": "listnride biedt een breed scala aan hoogwaardige huurfietsen voor je langere verblijf. Vind de juiste mobiliteitsoplossing.",
+    "how-to": {
+      "step-1-title": "1. Full Service",
+      "step-1-content": "Jij bepaalt waar en wanneer je welke fietsen nodig heeft. Geef ons de details door en wij nemen contact met je op.",
+      "step-2-title": "2. Aantrekkelijke Aanbiedingen",
+      "step-2-content": "Pakketprijzen voor enkele of meerdere fietsen\nEen Fiets die past bij jouw behoefte en stijl (eBikes, vracht, kinderen)\nPassende accessoires, b.v. Kindertrailer, slot, helm\nVerzekering tegen schade en diefstal",
+      "step-3-title": "3. Eenvoudige boekingsprocedure",
+      "step-3-content": "Ons efficiënte boekingsproces verloopt vanaf je aanvraag tot de betaling is verwerkt. Een factuur en boekingsbevestiging worden verstrekt."
+    },
+    "meta-title": "Als je een langer verblijf plant, dan kan listnride u een huurfiets aanbieden die bij u past en stijl biedt. Vind de juiste mobiliteitsoplossing.",
+    "meta-description": "listnride, je lokale expert voor fietshuur",
+    "opengraph": {
+      "description": "De juiste huurfiets in jouw stijl."
+    },
+    "title": "Huurfietsen voor je langdurig verblijf"
+  },
+  "imprint": {
+    "germany-address": "Steinstraße 17<br>10119 Berlijn<br>Duitsland",
+    "contacts": "E-Mail: <a href=\"mailto:contact@listnride.com?Subject=Press%20Contact\" target=\"_top\">contact@listnride.com</a><br>\nWeb: <a href=\"//listnride.com\">www.listnride.com</a><br>\nTelefoon: +49 (0)30-120870330"
+  },
+  "events": {
+    "berlin-triathlon": {
+      "description": "Wat: <b>Berlin Triathlon</b> | Waar: <b>Berlin</b> | Wanneer: <b>6-7 Juni 2020</b>",
+      "meta-title": "Huur een racefiets voor de Berlin Triathlon 2020 | listnride",
+      "meta-description": "Huur een racefiets online gemakkelijk en veilig met listnride voor de Berlin Triathlon 2020. Kies de perfecte fiets die bij je past!"
+    },
+    "la-chouffe": {
+      "title": "Huur een racefiets voor La Chouffe Classic!",
+      "description": "Wat: <b>La Chouffe Classic</b>| Waar: <b>Houffalize, België</b> | Wanneer: <b>16 mei 2020</b>",
+      "text": "<p>Maak kennis met de Waalse regio van België, een regio rijk aan fietsgeschiedenis en ongerepte natuur! De<a href=\"https://www.lachouffeclassic.be/nl/\" target=\"_blank\">Proximus La Chouffe Classic</a>is een fantastisch evenement voor liefhebbers van steile beklimmingen! Er zijn drie afstanden beschikbaar (85 km, 120 km en 157 km), waardoor dit evenement zo toegankelijk of uitdagend is als je wilt!\n\nHaal het meeste uit dit evenement met een van onze eersteklas racefietsen, die aan de startlijn kunnen worden gehuurd! </p>\n\n<p>Bespaar jezelf tijd, moeite en geld door eenvoudig een fiets te huren. Ze zijn klaar voor vertrek aan de startlijn in Houffalize. Het enige dat jij moet meenemen, is je helm, pedalen en natuurlijk: jezelf! </p>\n\n<a href=\"https://www.listnride.com/multi-booking?location=Houffalize\" target=\"_blank\">Groepsboekingen hier beschikbaar!</a>",
+      "meta-title": "Racefiets huren voor La Chouffe Classic | listnride",
+      "meta-description": "Huur een high-end racefiets voor La Chouffe Classic met listnride! De goed gespecificeerde fietsen staan voor je klaar aan de startlijn. Verken de Belgische heuvels met onze fantastische selectie huurfietsen!"
+    },
+    "gent-wevelgem": {
+      "title": "Huur een racefiets voor de Gent-Wevelgem Cyclo!",
+      "description": "Wat: <b>Gent-Wevelgem Cyclo</b>| Waar: <b>Wevelgem, België</b> | Wanneer: <b>28 maart 2020</b>",
+      "text": "<p>Raak vertrouwd met de Vlaamse regio België, een regio rijk aan fietsgeschiedenis, met iconische steile en geplaveide wegen! De <a href=\"https://www.gentwevelgemcyclo.be/en/\" target=\"_blank\">Gent-Wevelgem Cyclo</a> is een fantastisch evenement voor liefhebbers van steile beklimmingen! Er zijn vier afstanden beschikbaar (65 km, 95 km, 140 km en 220 km), waardoor dit evenement zo toegankelijk of uitdagend is als je wilt!\n\nHaal het meeste uit dit evenement met een van onze eersteklas racefietsen, die aan de startlijn kunnen worden gehuurd!\n</p>\n\n<p>Bespaar jezelf tijd, moeite en geld door eenvoudig een fiets te huren. Ze zijn klaar voor vertrek aan de startlijn in Houffalize. Het enige dat jij moet meenemen is je helm, pedalen en natuurlijk: jezelf!</p>\n\n<a href=\"https://www.listnride.com/multi-booking?location=Wevelgem\" target=\"_blank\">Groepsboekingen hier beschikbaar!</a>",
+      "meta-title": "Racefiets huren voor de Gent-Wevelgem Cyclo | listnride",
+      "meta-description": "Huur een high-end racefiets voor de Gent-Wevelgem Cyclo met listnride! De uitstekend gespecificeerde fietsen staan voor je klaar aan de startlijn. Verken de Belgische heuvels met onze fantastische selectie huurfietsen!"
+    },
+    "msr": {
+      "meta-title": "Road bike rental for the Mecklenburger Seenrunde 2020 | listnride",
+      "meta-description": "Rent a road bike online easy and secure with listnride for the Mecklenburger Seenrunde 2020. Choose the perfect bike that fits your needs."
+    },
+    "frankfurt-city-triathlon": {
+      "meta-title": "Road bike rental for the Frankfurt City Triathlon | listnride",
+      "meta-description": "Rent a racing bike with listnride for the Frankfurt City Triathlon. Choose the perfect bike for your next race!"
+    },
+    "cwd": {
+      "calendar-title": "Testbikes for Cyclingworld",
+      "calendar-subtitle": "For the Gravel ride on Sunday and during the whole weekend of the cyclingworld you can book a 2 hour test ride."
+    },
+    "velocity-bikerental": {
+      "description": "Wat: <b0>VeloCity Berlin 2020 </b0>| Waar: <b1>Berlijn </b1>| Wanneer: <b2>13-14 juni 2020 </b2>"
+    },
+    "radfahren-neu-entdecken-eschborn": {
+      "title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren  | listnride",
+      "description": "Was: <b>Radfahren neu entdecken  |  Where: <b></b>In deiner Kommune</b>  |  When: <b>1.6. - 31.08. 2019</b>",
+      "text": "Vielen Dank für Ihre Registrierung auf radfahren-neu-entdecken.de. Bitte suchen Sie sich nun Ihr Wunschrad sowie einen für Sie passenden Termin aus.</br>\nDie Räder stehen in Ihrer Kommune im Zeitraum vom 01. Juni bis zum 31. August 2019 zur Verfügung.</br>\nSie können die Räder insgesamt zwei Wochen gratis testen und erfahren, wie angenehm es ist, mit elektrischem Rückenwind unterwegs zu sein.\nTesten Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!</br>\nWeitere Informationen zu den Übergabeorten, etc. erhalten Sie ein paar Tage vor dem gewünschten Testzeitraum von uns per E-Mail.",
+      "calendar-title": "E-Bikes einfach um sonst probefahren.",
+      "calendar-subtitle": "Wähle den gewünschten Zeitraum aus und frage das Rad an.",
+      "meta-title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren  | listnride",
+      "meta-description": "esten Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!"
+    },
+    "radfahren-neu-entdecken-kassel": {
+      "title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren  | listnride",
+      "description": "Was: <b>Radfahren neu entdecken</b>  |  Where: <b>In deiner Kommune</b>  |  When: <b>1.9. - 30.11. 2019</b>",
+      "text": "Vielen Dank für Ihre Registrierung auf radfahren-neu-entdecken.de. Bitte suchen Sie sich nun Ihr Wunschrad sowie einen für Sie passenden Termin aus.</br>\nDie Räder stehen in Ihrer Kommune im Zeitraum vom 01. September bis zum 30. November 2019 zur Verfügung.</br>\nSie können die Räder insgesamt zwei Wochen gratis testen und erfahren, wie angenehm es ist, mit elektrischem Rückenwind unterwegs zu sein.\nTesten Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!</br>\nWeitere Informationen zu den Übergabeorten, etc. erhalten Sie ein paar Tage vor dem gewünschten Testzeitraum von uns per E-Mail.",
+      "calendar-title": "E-Bikes einfach um sonst probefahren.",
+      "calendar-subtitle": "Wähle den gewünschten Zeitraum aus und frage das Rad an.",
+      "meta-title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren  | listnride",
+      "meta-description": "Testen Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!"
+    },
+    "radfahren-neu-entdecken-hofheim": {
+      "title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren  | listnride",
+      "description": "Was: <b>Radfahren neu entdecken</b>  |  Where: <b>In deiner Kommune</b>  |  When: <b>1.6. - 31.08. 2019</b>",
+      "text": "Vielen Dank für Ihre Registrierung auf radfahren-neu-entdecken.de. Bitte suchen Sie sich nun Ihr Wunschrad sowie einen für Sie passenden Termin aus.</br>\nDie Räder stehen in Ihrer Kommune im Zeitraum vom 01. Juni bis zum 31. August 2019 zur Verfügung.</br>\nSie können die Räder insgesamt zwei Wochen gratis testen und erfahren, wie angenehm es ist, mit elektrischem Rückenwind unterwegs zu sein.\nTesten Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!</br>\nWeitere Informationen zu den Übergabeorten, etc. erhalten Sie ein paar Tage vor dem gewünschten Testzeitraum von uns per E-Mail.\n",
+      "calendar-title": "E-Bikes einfach um sonst probefahren.",
+      "calendar-subtitle": "Wähle den gewünschten Zeitraum aus und frage das Rad an.",
+      "meta-title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren  | listnride",
+      "meta-description": "Testen Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!"
+    },
+    "paris-brest-paris": {
+      "meta-title": "Huur een racefiets voor Parijs-Brest-Parijs 2019 | listnride",
+      "meta-description": "Huur een racefiets online, gemakkelijk en veilig met listnride voor Parijs-Brest-Parijs 2019. Kies de perfecte fiets die bij u past."
+    },
+    "8bar-clubride": {
+      "meta-title": "Rent a road bike for the 8bar club ride",
+      "meta-description": "Join us on our weekly club ride and test one the latest 8bar road bikes for free. Simply book here and pick up at our showroom.",
+      "calendar-title": "Test bikes for 8bar club ride",
+      "calendar-subtitle": "Boek je gratis fiets voor de 8bar club-ride"
+    },
+    "cyclingworld": {
+      "meta-title": "Huur een Gravelbike voor de Cyclingworld Düsseldorf!",
+      "meta-description": "Verleid tijdens een test op een gravelfiets? Huur de jouwe bij 8bar, Salsa of Veloheld voor een epische gravelrit bij Cyclingworld!"
+    },
+    "black-friday": {
+      "banner": {
+        "title": "Black Friday",
+        "description": "Krijg een enorme korting op je volgende fietshuur. Alleen vandaag !",
+        "check-it": "Bekijk het hier"
+      }
+    },
+    "epicgrancanaria": {
+      "meta-title": "Rent a road bike for Epic Gran Canaria | listnride",
+      "meta-description": "The aim of the Epic Gran Canaria is to deliver a professional experience on bike for amateur riders"
+    },
+    "velorace-dresden": {
+      "meta-title": "Rent a road bike for Velorace Dresden 2019 | listnride",
+      "meta-description": "With listnride you can securely rent a road bike online for Velorace Dresden 2019. Choose the perfect bike that fits your needs!"
+    },
+    "berlin-triathlon-xl": {
+      "meta-description": "Huur een racefiets online gemakkelijk en veilig met listnride voor de Berlin Triathlon 2020. Kies de perfecte fiets die bij je past!",
+      "meta-title": "Huur een racefiets voor Berlin Triathlon XL 2019 | listnride"
+    },
+    "vatternrundan": {
+      "meta-title": "Huur een top racefiets voor Vätternrundan 2020 | listnride",
+      "meta-description": "Met listnride huur je eenvoudig een top racefiets voor de Vätternrundan 2020. Kies de perfecte fiets die bij je past!"
+    },
+    "lardita-arezzo": {
+      "meta-title": "Huur een vintage racefiets voor l'Ardita, alleen op listnride!",
+      "meta-description": "Met listnride kunt u eenvoudig online een vintage racefiets huren voor l'Ardita dell'Alpe di Poti. Kies de perfecte fiets voor deze ongelooflijke race in het hart van Toscane!"
+    },
+    "granfondo-via-del-sale": {
+      "meta-title": "Huur een racefiets voor de Granfondo Via del Sale 2020 | listnride",
+      "meta-description": "Fietsverhuur voor de Granfondo Via del Sale 2020 | Kies de perfecte racefiets die bij u past!"
+    },
+    "giro-sardegna": {
+      "meta-title": "Huur een racefiets voor de Giro Sardegna | listnride",
+      "meta-description": "Fietsverhuur voor de Giro Sardegna | Huur een racefiets die het beste bij u past op listnride!"
+    }
+  },
+  "lister": {
+    "chat": "De boeking van je huurfiets is geannuleerd."
+  },
+  "veletage": {
+    "event": {
+      "calendar-title": "veletage POP-UP SALON",
+      "select-day": "1. Selecteer de datum",
+      "select-slot": "2. Selecteer het tijdslot",
+      "day-error": "Selecteer eerst een dag",
+      "select-return": "3. Select return time",
+      "time-error": "Please select a pickup time first",
+      "calendar-subtitle": "Van 22 tot 30 september 2018 vinden in Innsbruck-Tirol (Oostenrijk) de UCI-wereldkampioenschappen op de weg plaats. Test en huur de perfecte racefiets voor je ride "
+    }
+  },
+  "brand-integration": {
+    "leaos": {
+      "subdescription-not-used": "Design. Art. Passion.",
+      "subdescription-not-use": "Design. Art. Passion."
+    },
+    "matebikes": {
+      "title": "Maak kennis met MATE: de coolste opvouwbare e-bike!",
+      "description": "<a href=\"https://mate.bike/\" target=\"_blank\">Mate.bike</a> is een in Kopenhagen gevestigde startup die in 2016 is opgericht door de broers en zussen Christian Adel Michael en Julie Kronstrøm Carton, die de huidige uitdagingen van dichtbevolkte verkeersopstoppingen, klimaatverandering en gezondheidskwesties in het algemeen willen aangaan door het creëren van unieke, leuke en betaalbare elektrische fietsen.",
+      "item1-title": "'s Werelds coolste opvouwbare e-bikes",
+      "item1-description": "Wij geloven dat MATE en MATE X 's werelds coolste, opvouwbare elektrische fietsen zijn. Ze zijn bedacht en ontwikkeld met niets anders dan trapliefde in de fietshoofdstad van de wereld, Kopenhagen Denemarken.",
+      "item2-title": "Vermogen naar de pedalen: tot 750W!",
+      "item2-description": "Onze fietsen hebben krachtige elektromotoren, variërend van 250W tot 750W en we hebben de fietsen voorzien van topklasse specificaties zoals Shimano versnellingen, Tektro schijfremmen, USB-poorten en LED-schermen voor het beheer van de instellingen. ",
+      "item3-description": "Elke gedachte achter het ontwerp, upgrades en extra details zijn gemaakt, terwijl we ervoor blijven zorgen dat onze eBikes zowel betaalbaar blijven en er geweldig uitzien. Men draait zich om wanneer deze fiets voorbij komt en tegelijkertijd bieden de fietsen een soepele rit. Alleen het beste voor onze MATE's.",
+      "find-out-more": "Boek vandaag nog een testrit en ervaar de Mate.bike zelf! ",
+      "order-online": "We willen de beste en coolste eBikes maken voor elke rijder, elke reis en elke situatie. Door het maken van coole, sexy, praktische en betaalbaare eBikes, willen wij fietsen wereldwijd als de voorkeurswijze voor transport voor meer mensen in stedelijke gebieden, mogelijk maken. Onze missie is eenvoudig: Meer kilometers op de fiets. Meer informatie op <a href=\"https://mate.bike/\" target=\"_blank\">mate.bike.</a>",
+      "item3-title": "Betaalbaar, leuk en geweldig...",
+      "optional": "1) Optionele gasklepupgrade. Prijs op aanvraag. <br> 2) Standaard beperkte maximum snelheid. Voor het deblokkeren van de maximum snelheid is het kleurendisplay <br> 3) nodig. Optionele upgrade naar een 48V 17,5 AmpH batterij. Prijs op aanvraag <br>"
+    },
+    "urwahn": {
+      "item2-description": "Organic design with<br>\nhigh recognition value<br>\nand an elastic rear triangle<br>\nfor more driving comfort"
+    },
+    "bzen": {
+      "item1-description": "Lichtgewicht, slechts 14,4 k <br>\nBatterij en slimme elektronica zijn volledig geïntegreerd <br>\nComfortabele geometrie, zadel en handgrepen <br>\nMakkelijk om naar binnen te dragen"
+    }
+  },
+  "faq": {
+    "meta-title": "Vaak gestelde vragen",
+    "meta-description": "De meest gestelde vragen van huurders en verhuurders worden hier beantwoord, zodat je direct aan de slag kunt gaan.  Of je nu op zoek bent naar de perfecte huurfiets, of om die zeer speciale fiets van je online te plaatsen voor de verhuur.\n"
+  },
+  "multi-booking": {
+    "meta-title": "Groepsboeking",
+    "opengraph": {
+      "description": "Huur een fiets naar jouw smaak en gebruik."
+    },
+    "no-accessories": "Geen accessoires",
+    "meta-description": "Boek uw fietsen met ons groepsboekingsformulier",
+    "title": "Groepsreserveringen voor fietsverhuur",
+    "header": "We helpen u graag met uw groepsboeking",
+    "subheader": "Laat ons je helpen om je voor te bereiden op je volgende fietsvakantie. Geef ons jouw voorkeuren door en wij doen de rest, zodat je maximaal van het fietsen kunt genieten.",
+    "how-to": {
+      "step-1-title": "Voor kleine groepen",
+      "step-1-content": "Voor groepsboekingen van twee-drie huurfietsen is het eenvoudiger en sneller om de fietsen direct op listnride te zoeken en te boeken.",
+      "step-2-title": "Voor grotere groepen",
+      "step-2-content": "Voor 4+ huurfietsen, vertel ons wat voor soort fietsen en accessoires u wilt huren en wij nemen contact met u op!",
+      "step-3-title": "Aanbod accepteren & online boeken",
+      "step-3-content": "Zodra we de link voor groepsboekingen hebben opgezet, kunt u eenvoudig en veilig online betalen!"
+    },
+    "your-booking-details": "Uw boekingsgegevens",
+    "what-bike-kind": "Wat voor soort fiets?",
+    "where-to-rent": "Waar wil je huren?",
+    "rental-period": "Huurperiode",
+    "how-many-bikes": "Hoeveel fietsen?",
+    "do-you-need-accessories": "Welke accessoires heb je nodig?",
+    "your-contact-details": "Je contactgegevens",
+    "thanks-for-request": "Bedankt voor je fietsverhuuraanvraag",
+    "we-will-back-shortly": "We komen spoedig bi je terug",
+    "take-back-to-search": "Breng me terug naar mijn zoekopdracht",
+    "accessories": "Accessoires"
+  },
+  "insurance": {
+    "facts": {
+      "basic-insurance": {
+        "price-description": "inbegrepen bij elke verhuur in Duitsland en Oostenrijk"
+      }
+    },
+    "meta-title": "Fietsverzekering voor elke verhuur in Duitsland en Oostenrijk",
+    "meta-description": "Elke fietshuur in Duitsland en Oostenrijk zijn automatisch via listnride verzekerd. "
+  },
+  "meta": {
+    "cities": {
+      "berlin": {
+        "meta-title": "Explore Berlin by bike with listnride",
+        "meta-description": "Discover Berlin by bike. With listnride, you can find a bike for rent in Berlin that matches your needs and your style."
+      },
+      "munich": {
+        "meta-title": "Explore Munich by bike with listnride",
+        "meta-description": "Discover Munich by bike. With listnride, you can find a bike for rent in Munich that matches your needs and your style."
+      },
+      "amsterdam": {
+        "meta-title": "Explore Amsterdam by bike with listnride",
+        "meta-description": "Discover Amsterdam by bike. With listnride, you can find a bike for rent in Amsterdam that matches your needs and your style."
+      },
+      "vienna": {
+        "meta-title": "Explore Vienna by bike with listnride",
+        "meta-description": "Discover Vienna by bike. With listnride, you can find a bike for rent in Vienna that matches your needs and your style."
+      }
+    },
+    "brands": {
+      "meta-title": "Ontdek en ervaar buitengewone fietsen!",
+      "meta-description": "Ontdek en test de beste fietsen. Probeer E-bikes, Urban Bikes, Fixies, Single Speed Bikes, E-MTB's, Trekking Bikes, Gravel- en Cyclocross-Bikes, MTB's, Road- en Cargo-Bikes en ontvang deskundig advies over de fiets voordat u een aankoopbeslissing neemt."
+    },
+    "seo": {
+      "city-title": "Huur de perfecte fiets in {{location}} | listnride",
+      "city-description": "Kies de fiets die aan uw wensen voldoet online, vanaf {{ minPrice }}€. Geniet van {{location}} op de fiets, die zeker en vast is geboekt op listnride.",
+      "category-title": "Huur de perfecte {{category}} fiets in {{location}} | listnride",
+      "category-description": "Kies de fiets die aan uw wensen voldoet online, vanaf {{ minPrice }}€. Geniet van {{location}} op een {{category}}, die zeker en vast is geboekt op listnride!"
+    },
+    "business-community": {
+      "meta-title": "De listnride business community",
+      "meta-description": "Doe je voordeel met het zakelijke fietsverhuur via listnride"
+    },
+    "events": {
+      "rapha-super-cross": {
+        "meta-title": "In Rapha Super Cross - Rent a bike with listnride"
+      },
+      "black-friday": {
+        "meta-title": "Black Friday 2018 fietshuur korting | listnride",
+        "meta-description": "Black Friday-korting bij listnride! Enorme korting op  je volgende fietshuur, alleen dit weekend."
+      },
+      "eroica-gaiole": {
+        "meta-title": "Eroica vintage wielertocht",
+        "meta-description": "Huur een vintage racefiets voor de Eroica on listnride"
+      },
+      "toros-de-gravel": {
+        "meta-title": "Huur de perfecte fiets voor Toros de Gravel",
+        "meta-description": "Op listnride vind je een selectie van gravel- en mountainbikes te huur voor dit speciale gravel evenement in Sineu, Mallorca."
+      },
+      "in-velo-veritas": {
+        "meta-title": "Huur een vintage fiets voor l'Eroica in Oostenrijk: in Velo Veritas! | listnride",
+        "meta-description": "Huur een vintage racefiets voor In Velo Veritas! listnride heeft een prachtige selectie klassieke fietsen te huur voor deze prachtige tour door het Oostenrijkse wijnland."
+      },
+      "velocity-bikerental": {
+        "meta-title": "Huur een racefiets voor de Berlin Triathlon 2020!",
+        "meta-description": "We leveren racefietsverhuur voor de VeloCity Berlin 2020! Huur een racefiets van de listnride community en doe mee!"
+      },
+      "constance-spin": {
+        "meta-title": "Rent the perfect road bike during Eurobike",
+        "meta-description": "Get out and ride your bike at Eurobike with listnride and Katusha"
+      },
+      "velosoph": {
+        "meta-title": "Autumn ride, a local riders' favourite route through Holledau.",
+        "meta-description": "A local riders' favourite route through Holledau. listnride pays a visit to Velosoph, the Cycling Café in Freising."
+      },
+      "cyclassics-hamburg": {
+        "meta-title": "Huur een racefiets voor de EuroEyes Cyclassics in Hamburg! | listnride",
+        "meta-description": "Huur de perfecte racefiets voor de EuroEyes Cyclassics in Hamburg en kies uit merken zoals Specialized, Ridley, Cervelo en Bianchi!"
+      },
+      "triathlon-hamburg": {
+        "meta-title": "Huur een racefiets voor de Hamburg Wasser World Triathlon | listnride",
+        "meta-description": "Huur de perfecte racefiets voor de Hamburg Wasser World Triathlon en kies uit merken zoals Specialized, Ridley, Cervelo en Bianchi!"
+      },
+      "riderman-rothaus": {
+        "meta-title": "Rent a road bike for the RiderMan in Bad Duerrheim",
+        "meta-description": "Rent the perfect road bike for the RiderMan in Bad Duerrheim easily online and choose from brands such as Siplon, Specialized, Ridley, Cervelo and Bianchi"
+      },
+      "depart": {
+        "meta-title": "Rent a road bike for the Grand Départ on listnride",
+        "meta-description": "Ga mee met listnride en Schicke Mütze voor een sociale rit ter ere van het Grand Départ. Huur een high-end racefiets bij listnride."
+      },
+      "supercross-munich": {
+        "meta-title": "Rent the perfect cyclocross Bike for the Supercross Munich on listnride",
+        "meta-description": "Rent the perfect cyclocross bike for the Supercross in Munich easily online. Choose from brands such as BMC, Votec, Ridley, SRAM, Specialized, Bianchi, Pasculli, Focus and other brands."
+      },
+      "cape-argus": {
+        "meta-title": "Rent a road bike for the Cape Town Cycle Tour on listnride",
+        "meta-description": "Rent the perfect road bike for the  Cape Town Cycle Tour easily online and choose from brands such as Specialized, Ridley, Cervelo and Bianchi"
+      },
+      "common": {
+        "meta-title": "Huur een fiets op de listnride",
+        "meta-description": "Huur een fiets op de listnride"
+      }
+    },
+    "brand-integration": {
+      "ampler": {
+        "meta-title": "E-Bike Test Ride Program",
+        "meta-descr": "Test een elektrische fiets vandaag! De elektrische fietsen van Ampler zijn nu direkt beschikbaar op listnride. Huur er één in Amsterdam, Berlijn, Düsseldorf, München of Zürich."
+      },
+      "rossignol": {
+        "meta-title": "Rent and test ride Rossignol bikes. Rossignol bikes are available to rent on listnride.",
+        "meta-description": "Test ride a Rossignol bike today! Rossignol bikes are available to rent on listnride. The newest mountain bikes from Rossignol will help you hit the trail. "
+      },
+      "yuba": {
+        "meta-title": "Rent and test ride Yuba bikes. Yuba bikes are available to rent on listnride.",
+        "meta-description": "Yuba Cargo Bicycles are cargo Utility bikes for carrying 1 to 3 kids by bike. A Perfect solution for carrying cargo and doing deliveries. Yuba bikes are available to rent and test ride on listnride."
+      },
+      "cowboybikes": {
+        "meta-title": "Rent and test ride Cowboy bikes, the electric Bike for Urban Riders | listnride",
+        "meta-description": "Test ride a Cowboy smart electric urban bike today! The smart electric Bike for Urban Riders. Rent it on listnride!"
+      },
+      "argon18": {
+        "meta-title": "Rent and test ride Argon 18 road bikes and gravel bikes! World leader in high-end bicycle manufacturing",
+        "meta-description": "In our Berlin Experience Center you can rent and test ride Argon 18 road bikes and gravel bikes! World leader in high-end bicycle manufacturing! Simply book online and visit our showroom for pick-up."
+      },
+      "urwahn": {
+        "meta-title": "Rent and test a Urwahn Stadtfuchs in Munich| listnride",
+        "meta-description": "Book a test drive for the Urwahn Stadtfuchs today! The stylish urban bike you can easily book and test drive in Munich!"
+      },
+      "bzen": {
+        "meta-title": "Huur en test BZEN, de slimme elektrische stadsfiets in heel Duitsland | listnride",
+        "meta-description": "Test vandaag nog een slimme elektrische stadsfiets! De slimme elektrische stadsfietsen van BZEN zijn te huur op listnride in heel Duitsland!"
+      },
+      "unimoke": {
+        "meta-title": "Rent and test ride UNI Moke bikes all across Germany | listnride",
+        "meta-description": "Test ride an UNI Moke E-City Bike today! The E-City Bikes from UNI Moke are available to test and rent on listnride all across Germany!"
+      },
+      "whyte": {
+        "meta-title": "Rent and test ride Whyte bikes in Berlin en Zell am Ziller (AT)| listnride",
+        "meta-description": "Test ride a Whyte bike today! The gravel bikes and mountain bikes from Whyte are available to rent on listnride in Berlin!"
+      },
+      "felt": {
+        "meta-title": "Rent and test ride Felt Bicycles in Munich | listnride",
+        "meta-description": "Test ride a Felt bike today! The road bikes from Felt Bicycles are available to rent on listnride in Munich. "
+      },
+      "swytch": {
+        "meta-title": "Rent and test ride Swytch eBike Kit in Berlin and Cologne| listnride",
+        "meta-description": "Test ride a Swytch ebike today! The ebikes from Swytch are available to rent on listnride in Berlin!"
+      },
+      "leaos": {
+        "meta-title": "Huur en test de Leaos E-bikes in München, Berlijn en Bolzano",
+        "meta-descr": "De Design Ebike - Leaos"
+      },
+      "brompton": {
+        "meta-title": "Maak een proefrit met de Brompton vouwfiets via listnride",
+        "meta-description": "Test ride a Brompton bike today! These urban folding bikes are available on listnride. Rent one in Berlin, Munich, Hamburg, Düsseldorf or Frankfurt."
+      },
+      "veloheld": {
+        "meta-title": "Huur en test de fietsen van veloheld in München en Dresden | listnride",
+        "meta-keywords": "-",
+        "meta-description": "Test de fietsen van veloheld en ervaar de pure esthetiek en functionele eigenschappen van een op maat gemaakte stalen fiets: racefiets, cyclocrossfiets of stadsfiets!"
+      },
+      "muli": {
+        "meta-title": "Rent a Muli cargo bike with listnride",
+        "meta-description": "Test ride a Muli cargo bike today! These urban cargo bikes are available on listnride. Rent one in Berlin or Munich."
+      },
+      "vello": {
+        "meta-title": "Rent and test VELLO E-Bikes in Berlin & Munich",
+        "meta-description": "VELLO BIKE+ The First Self-Charging Electric Folding Bike. The VELLO BIKE is a high-performance folding bike developed for the perfect urban cycling experience."
+      },
+      "veletage": {
+        "meta-title": "VELETAGE Salon für Radkultur",
+        "meta-descr": "VELETAGE Salon für Radkultur - Custom made racing bikes, clothing, wheelsets, bike fittings"
+      },
+      "bonvelo": {
+        "meta-title": "Rent and Test Bonvelo Singlespeed Bikes in Berlin & Munich",
+        "meta-description": "The singlespeed \"bonvelo BLIZZ\" is available to rent and test ride in Berlin in four frame sizes. Book one on listnride today!"
+      },
+      "motoparilla": {
+        "meta-title": "Rent and Test the Moto Parilla Carbon SUV E-Bike in Munich",
+        "meta-description": "The Carbon SUV E-Bike from Moto Parilla can be tested in Munich. Simply book online and enjoy the ride!"
+      },
+      "votec": {
+        "meta-title": "Rent and Test the newest Votec Bikes",
+        "meta-descr": "VOTEC - Fusion of Functionality, Design and Quality"
+      },
+      "vanmoof": {
+        "meta-title": "Rent and test the Electrified S E-Bikes in Berlin, Munich and Hamburg",
+        "meta-descr": "The perfect city bike - VanMoof"
+      },
+      "moeve": {
+        "meta-title": "Huur en test een Moeve fiets in München en Amsterdam",
+        "meta-descr": "De fiets met de meest innovatieve fietstransmissie - Cyfly van Möve"
+      },
+      "rethink": {
+        "meta-title": "Rent and test rethink E-Bikes in Munich, Hamburg and Dresden",
+        "meta-descr": "Your rethink e-bike. Clear. Robust. Distinct Character."
+      },
+      "cocomat": {
+        "meta-title": "Rent Coco-Mat bikes | listnride",
+        "meta-descr": "Rent and testour wooden bikes in Athens, Greece and visit the historical center and the Athenian sea side."
+      }
+    },
+    "about-us": {
+      "meta-title": "listnride - over ons",
+      "meta-description": "listnride - hoe we het online platform voor fietsverhuur hebben ontwikkeld"
+    },
+    "contact-and-help": {
+      "meta-title": "listnride - We zijn er voor jou!",
+      "meta-description": "Contact us if you have special questions or need help solving a problem"
+    },
+    "press": {
+      "meta-title": "listnride press",
+      "meta-description": "We houden van huur fietsen. En we beantwoorden met plezier al je vragen."
+    },
+    "invest": {
+      "meta-title": "listnride is crowdfunding! Maak er deel van uit en investeer in de bouw van het toonaangevende fietsverhuurplatform van Europa.",
+      "meta-description": "Visit Seedrs to learn more about investing in listnride."
+    },
+    "terms-and-conditions": {
+      "meta-title": "listnride | Website Terms & Conditions",
+      "meta-description": "De voorwaarden van listnride zijn van toepassing op het gebruik van het online platform."
+    },
+    "trust-and-safety": {
+      "meta-title": "Fietsverhuur met verzekering"
+    },
+    "how-it-works": {
+      "meta-title": "Fietsverhuur eenvoudig gemaakt.",
+      "meta-description": "Using listnride is as easy as meeting up for coffee. Try for yourself!"
+    },
+    "jobs": {
+      "meta-title": "Work for listnride",
+      "meta-description": "Kom werken bij het listnride team in Berlijn of München en bouw mee aan de wereldwijde fietscommunity"
+    },
+    "shop-landing": {
+      "meta-title": "listnride Shop Plugin - Get your bike rental online",
+      "meta-description": "listnride now offers a free plug-in to easily integrate a bike rental booking engine on your website."
+    },
+    "imprint": {
+      "meta-title": "listnride | Imprint",
+      "meta-description": "Rent your perfect bike from the listnride community. Find one that suits your style and needs."
+    },
+    "privacy": {
+      "meta-title": "Privacybeleid van listnride",
+      "meta-description": "Het privacybeleid van listnride is van toepassing op het gebruik van het online platform.",
+      "use-opt-in": "Om u met listnride een optimale service te bieden, gebruiken wij cookies in conform ons <a target=\"_blank\" href=\"/#/privacy\">Cookie-beleid</a>.",
+      "use-opt-in-button": "Ik heb het begrepen."
+    }
+  },
+  "booking": {
+    "shopping": "Secure Shopping",
+    "rent-bike-terms": "Met 'Nu boeken' gaat u akkoord met de",
+    "and-agree-privacy": "en ons privacy beleid",
+    "pay-secure": "Veilig betalen met",
+    "agree-terms": "Met 'Fiets aanvragen' gaat u akkoord met de",
+    "agree-terms-link": "algemene voorwaarden van listnride",
+    "footer": {
+      "questions": "Heb je vragen bij het boeken van een fiets?",
+      "call-us": "Heeft u vragen? Bel ons:\n<a href=\"tel:+49030120870330\">+49 (0) 30 120870330 </a>\nOf\n<a href=\"mailto:contact@listnride.com\">mail ons </a>.",
+      "email-us": "Of stuur ons een email",
+      "support": "listnride Support"
+    },
+    "sign-in": {
+      "tab": "Aanmelden",
+      "new": "Nieuw bij listnride?",
+      "login": "Login bij listnride",
+      "register-facebook": "Aanmelden met Facebook",
+      "login-facebook": "Login met Facebook",
+      "already-member": "Al geregistreerd?",
+      "register": "Aanmelden",
+      "not-member": "Nog niet aangemeld?"
+    },
+    "details": {
+      "tab": "Persoonlijke gegevens",
+      "sms-confirmation-message": "Een SMS met een bevestigingscode is zojuist naar u verzonden.",
+      "invoice-address": "Factuuradres",
+      "subtitle": "Vul alstublieft uw adres in om een fiets aan te vragen.",
+      "verification": "Gaarne bevestigen",
+      "send-sms": "We sturen je een SMS aan je mobiele telefoon.",
+      "check-phone": "Controleer je mobiele telefoon.",
+      "send-code": "Versturen",
+      "confirm-code": "Confirmation code",
+      "enter-code": "Voer de PIN in",
+      "success-code": "Perfekt! Je bent er klaar voor.",
+      "fail-code": "Je hebt een onjuiste PIN ingevoerd.",
+      "resend": "Nogmaals versturen"
+    },
+    "payment": {
+      "tab": "Betaalgegevens",
+      "current-method": "Huidige betaalmethode",
+      "getting-saved": "Betaalmethode wordt opgeslagen",
+      "select-method": "Selecteer je betaalmethode",
+      "subtitle": "We incasseren de huur nadat de verhuurder je aanvraag accepteerd",
+      "credit-card": "Kredietkaart",
+      "card-name": "Kaarthouder",
+      "invalid-name": "Geef een geldige naam op",
+      "card-number": "Nummer Kredietkaart",
+      "invalid-card": "Geef een geldig kaartnummer op",
+      "invalid-card-number": "kaartnummer niet geldig",
+      "exp-month": "Vervaldatum",
+      "invalid-month": "Maand niet geldig",
+      "invalid-year": "Jaar niet geldig",
+      "invalid-date": "Datum niet geldig",
+      "exp-year": "Vervaljaar",
+      "exp-date": "Vervaldatum",
+      "invalid-cvc": "CVV niet geldig",
+      "cvc": "CVV-nummer",
+      "pay-paypal": "Betaal met PayPal"
+    },
+    "overview": {
+      "tab": "Samenvatting",
+      "direct": {
+        "success-header": "Gefeliciteerd, je hebt een fiets gehuurd!"
+      },
+      "model": "Model",
+      "bike-rental": "Je gekozen fiets",
+      "size": "Grootte",
+      "location": "Locatie",
+      "invoice-address": "Factuuradres",
+      "premium-insurance": "Premium insurance",
+      "premium-insurance-title": "Premium verzekering ",
+      "premium-insurance-subtitle": "Pick our premium insurance for your ride to be on the safe side",
+      "thats-included": "Naast de basisverzekering is het onderstaande mede inbegrepen",
+      "premium-feature-1": "Diefstal bescherming",
+      "premium-feature-2": "Vervangende fiets na schade, ongeval of diefstal",
+      "premium-feature-3": "Retourtransport van de huurfiets na een ongeval of schade",
+      "premium-feature-4": "Geen eigen risiko",
+      "premium-feature-5": "24/7 noodnummer",
+      "payment": "Betaling",
+      "redeem-voucher": "Voucher verzilveren",
+      "add": "Voeg toe",
+      "success-header": "Gefeliciteerd, de boekingsaanvraag is verstuurd!",
+      "success-subheader": "We've sent you a confirmation email. Feel free to book more other bikes, too."
+    },
+    "calendar": {
+      "tab": "Periode",
+      "bike-rental": "Je fietshuur",
+      "choose-duration": "Kies de huurperiode",
+      "pickup-time": "Ophaal tijd",
+      "return-time": "Tijd van terruggave",
+      "intro-description": "Uw boeking wordt veilig verwerkt door listnride, de grootste community voor het delen van fietsen in Europa."
+    }
+  },
+  "toasts": {
+    "update-profile-success": "Je profiel is geactualiseerd.",
+    "confirm-email-success": "Bedankt, je hebt je emailadres bevestigd!",
+    "confirmation-successful": "Bevestiging succesvol",
+    "change-successful": "De wijzigingen zijn opgeslagen.",
+    "change-password-success": "Bedankt, je hebt met succes je wachtwoord veranderd!",
+    "password-not-match": "Wachtwoorden komen niet overeen",
+    "verification-code-error": "Fout: de verificatiecode is ongeldig.",
+    "address-save-error": "Het adres kon niet worden opgeslagen",
+    "request-create-rider": "Maak je geen zorgen, er wordt niks in rekening gebracht: de betaling vindt alleen plaats indien je aanvraag wordt geaccepteerd!",
+    "request-created": "De boekingsaanvraag is succesvol verzonden!",
+    "request-failed": "Oeps, er is iets mis gegaan.",
+    "request-failed-rider": "Er is iets misgegaan met de betaling. Controleer of de betaalgegevens correct zijn ingevoerd en probeer het opnieuw!",
+    "btns": {
+      "go-to-request": "Open de aanvraag",
+      "go-to-settings": "Instellingen",
+      "retry": "Opnieuw proberen"
+    },
+    "profile-verified": "Gefeliciteerd, je profiel is nu geverifieerd!",
+    "profile-updated": "Beschrijving is bijgewerkt",
+    "error-upload-profile-picture": "Fout bij uploaden profielfoto",
+    "sms-was-sent": "Een sms met een bevestigingscode is zojuist naar je verzonden.",
+    "phone-verified": "Telefoonnummer is nu geverifieerd.",
+    "cluster-deleted": "Fietskluster succesvol verwijderd",
+    "cluster-unmerged": "Fietscluster is succesvol ontkoppelt",
+    "cluster-merged": "Fietsen zijn succesvol samengevoegd in cluster",
+    "add-payment-success": "Betaalmethode is opgeslagen",
+    "_add-payment-success.comment": "Payment method successfully saved on the backend.",
+    "is-invalid": "Het huidige wachtwoord is ongeldig.",
+    "bike-edit-successful": "De aanpassingen zijn succesvol opgeslagen",
+    "error": "Er is een fout opgetreden. Check of je internetverbinding werkt en probeer het nogmaals.",
+    "add-payout-success": "Je uitbetaalmethode is toegevoegd aan je profiel.",
+    "add-voucher-success": "Gefeliciteerd, het tegoed is aan je account toegevoegd.",
+    "add-voucher-error": "De ingevoerde code is niet geldig.",
+    "verification-email-sent": "een email met activeringslink is aan je e-mailadres verstuurd. De ontvangst kan een paar minuten duren, indien je niks in je inbox ziet verschijnen, kijk dan even in je spamfolder.",
+    "could-not-sign-up": "Aanmelden mislukt. Het lijkt erop dat het ingegeven emailadres al in gebruik is.",
+    "successfully-sign-up": "Je hebt je succesvol aangemeld. Welkom!",
+    "successfully-logged-in": "Met succes ingelogd. Welkom terug!",
+    "successfully-logged-out": "Je bent uitgelogd.",
+    "could-not-log-in": "Inloggen mislukt. Check of je je al hebt geregistreerd en je inloggegevens correct zijn.",
+    "reset-password-success": "We hebben zojuist een nieuw wachtwoord naar je toegemaild! Deze kan elk ogenblik aankomen.",
+    "opening-hours-success": "De openingstijden zijn succesvol gewijzigd.",
+    "opening-hours-error": "Kan openingstijden niet opslaan.",
+    "uniq-phone": "Telefoonnummer is al geregistreerd in ons systeem.",
+    "pending-requests": "Er is een open aanvraag voor deze fiets heeft. Voordat u de fiets kunt verwijderen, moet u deze accepteren of annuleren.",
+    "account-deleted": "Uw account is gedeactiveerd",
+    "enter-email": "Vul alstublieft uw e-mailadres in",
+    "duplicate-start": "Duplicatieproces gestart",
+    "duplicate-finish": "Duplicatieproces voltooid. Kopieën zijn met succes aangemaakt.",
+    "bike-deleted": "Fiets succesvol verwijderd",
+    "range-success-delete": "Periode succesvol verwijderd",
+    "availability-success-saved": "Wijziging succesvol opgeslagen"
+  },
+  "settings": {
+    "settings": "Instellingen",
+    "payout": {
+      "entity_type": {
+        "label": "Geef aan of je een particuliere- of zakelijke bankrekening hebt:",
+        "natural_person": "particuliere rekening",
+        "company": "Zakelijke rekening"
+      }
+    },
+    "accept_request_reminder": {
+      "subscribe": "Herinneringsmeldingen"
+    },
+    "booking_overview_lister": "Boekingsinformatie verhuurder",
+    "confirm_return": "Bevestig retourberichten",
+    "return_reminder": "Herinnering",
+    "request_created": "Request created (SMS)",
+    "notifications": "Notifications",
+    "notification-preferences": {
+      "receive-all": "Receive all notifications",
+      "receive-minimal": "Receive minimal notifications",
+      "receive-all-description": "You will receive all transaction related messages, including reminders",
+      "receive-minimal-description": "You will receive only a notification for a new booking request, cancellations and privates messages",
+      "accept_request_reminder": "Accept request reminder",
+      "confirm_return": "Confirm return messages",
+      "request_created": "Boeking gerelateerde herinneringen (SMS)",
+      "booking_overview_lister": "Booking overview Info",
+      "return_reminder": "Return reminder messages"
+    },
+    "newsletter-subscribe": "Ja, stuur me alsjeblieft de maandelijkse nieuwsbrief",
+    "newsletter-description": "Schrijf je in en ontvang onze nieuwsbrief vers in je inbox. Onze nieuwsbrief informeert je over de nieuwste merken, nuttige en nieuwe features op listnride.com, wat er in de community gebeurt, maar ook over reisbestemmingen met fietsen en fietsevenementen. Hebben we al verteld dat dit met veel liefde en toewijding wordt gemaakt? Dat is namelijk zo. Je kunt je natuurlijk op elk moment afmelden.",
+    "newsletter": "Newsletter",
+    "errors": {
+      "required-company-name": "Vul hier je bedrijfsnaam in.",
+      "minlength-company-name": "Bedrijfsnaam moet langer zijn dan 2 tekens.",
+      "required-vat": "Voer hier je btw-nummer in.",
+      "minlength-vat": "Het btw-nummer moet langer zijn dan 2 tekens"
+    },
+    "pick-payment-method": "Kies een betaalmethode",
+    "change-payment-method": "Betaalmethode wijzigen",
+    "your-payment-method": "Je betaalmethode:",
+    "pay-pal-account": "PayPal",
+    "pick-payment-method-new": "Kies een nieuwe betaalmethode",
+    "change-payout-method": "Uitbetaalmethode wijzigen",
+    "set-payment-method": "Stel betaalmethode in",
+    "set-payout-method": "Stel de uitbetalingsmethode in",
+    "profile": "Profiel",
+    "invite": "Vrienden uitnodigen",
+    "account": "Account",
+    "delete-account": "account deactiveren",
+    "delete-account-description": "Hier kunt u uw listnride-account deactiveren. Deze stap kan niet ongedaan worden gemaakt.",
+    "delete-account-sure": "Weet je het zeker?",
+    "delete-account-sure-description": "Deze stap kan niet ongedaan worden gemaakt.",
+    "delete-account-yes": "Ja, deactiveren",
+    "delete-account-no": "Nee",
+    "availability": "Openingstijden",
+    "availability-description": "U kunt uw beschikbaarheidstijden instellen voor het huren van fietsen.",
+    "business": "Fietswinkel",
+    "from": "From",
+    "to": "To",
+    "mark-as-closed": "Marked all days as closed",
+    "change-address-info": "Bij het updaten van uw adres wordt het adres van uw fietsen niet bijgewerkt.",
+    "payment-method": "Betaalmethoden",
+    "payout-method": "uitbetaalmethoden",
+    "add-payout-method": "Uitbetaalmethode toevoegen",
+    "payment-method-description": "Je betaalmethode wordt gebruikt om de kosten van de fietshuur af te boeken.",
+    "payout-method-description": "Op de aangegeven uitbetaalmethode wordt de huuropbrengst aan je overgemaakt. Therefore you have to add it latest when accepting a request as a lister.",
+    "add-payment-method": "Betaalmiddel toevoegen",
+    "vouchers": "Vouchers",
+    "payment-credit-card": "Je aktuele betaalmiddel is creditkaart ",
+    "payment-paypal": "Je aktuele betaalmiddel is Paypal met het bijbehorende e-mailadres",
+    "no-payment-method": "Je hebt nog geen betaalmiddel opgeslagen.",
+    "no-payout-method": "Je hebt nog geen uitbetaalmiddel opgeslagen.",
+    "paypal": "Paypal",
+    "bank-account": "Bankrekening",
+    "enter-paypal-info": "Voer het emailadres van je Paypalrekening in",
+    "enter-bank-info": "Voer de voor- en achternaam van de rekeninghouder in, als ok het IBAN en BIC nummer",
+    "save-payout-method": "Uitbetaalmethode opslaan",
+    "payout-paypal": "Je uitbetaalmethode is Paypal met volgend e-mailadres",
+    "payout-bank": "Je uitbetaalmethode is per bankrekening die eindigt op",
+    "voucher-code": "voucher-code",
+    "current-vouchers": "Je aktuele tegoedsaldo bedraagt",
+    "add-voucher": "Voucher inwisselen",
+    "meta-title": "Profiel instellingen",
+    "meta-description": "Pas je profiel- en of betaalgegevens aan",
+    "company-name": "Bedrijfsnaam",
+    "company-information": "Bedrijfsgegevens",
+    "vat": "VAT",
+    "payment-info": "Aktuele betaalmethode tonen",
+    "add-invoice-address": "factuuradres toevoegen",
+    "delete-invoice-address": "Factuuradres verwijderen",
+    "invoice-address": "Factuuradres",
+    "invoice-name": "Bedrijfsnaam"
+  },
+  "verification": {
+    "lets-start": "Aan de slag",
+    "lets-start-description": "Het duurt slechts 3 minuten",
+    "verify-profile": "Voltooi je profiel",
+    "resend-email": "Stuur e-mail opnieuw",
+    "public": "Publiek",
+    "private": "Privé",
+    "private-tip": "Deze informatie is niet zichbaar voor het publiek",
+    "public-tip": "Deze informatie is openlijk zichtbaar op je profielpagina",
+    "1": {
+      "text1": "Welkom bij listnride!",
+      "text-invited": "Aangezien je door een vriend bent uitgenodigd, hebben we voucher van 10€ aan je account toegevoegd. Deze kan je direct bij je eerste fietshuur verzilveren.",
+      "text2": "Wij zijn een hechte gemeenschap, dus het vertrouwen en de veiligheid van jou en de andere gebruikers hebben de hoogste prioriteit. We vragen je daarom vriendelijk om uw profiel te verifiëren door middel van een paar eenvoudige stappen. Hoe meer informatie je invoert, hoe groter de kans dat uw huuraanvragen worden geaccepteerd."
+    },
+    "2": {
+      "title": "Foto toevoegen",
+      "description": "Voeg een pasfoto toe, het is zeer belangrijk een persoonlijk beeld bij een profiel te hebben.",
+      "business-description": "Met een duidelijk logo ontvang je meer vertrouwen en aanvragen",
+      "business-title": "Logo toevoegen"
+    },
+    "3": {
+      "title": "Vertel iets over jezelf / je winkel",
+      "label": "omschrijving (min. 50 tekens)"
+    },
+    "4": {
+      "description": "Bevestig je emailadres, door op de aktiveringslink te klicken in de toegestuurde bevestigingsmail. Deze heb je direkt na je aanmelding ontvangen. Indien je deze mail niet meer kan vinden, kan je de mail nogmaals aanvragen. Verschijnt de mail niet direct in je postvak, wacht dan nog een paar minuten of check de spamfolder.",
+      "email-verified": "emailadres met succes geverifieerd"
+    },
+    "5": {
+      "title": "Wat is je telefoonnummer",
+      "description": "Bevestig je telefoonnummer, zodat we je per SMS kunnen informeren als er een nieuwe aanvraag voor je is. Voer uw telefoonnummer in en klik op \"Bevestiging versturen\". Je ontvangt dan een sms met een code die je hieronder kunt invoeren.",
+      "enter-valid-phone-nr": "Voer een geldig telefoonnummer in",
+      "send-confirmation-sms": "Bevestigings versturen",
+      "send-confirmation-sms-mobile": "Code versturen",
+      "resend-confirmation-sms": "Bevestiging versturen",
+      "resend-confirmation-sms-mobile": "Bevestiging versturen",
+      "sms-verification-code": "SMS-Verificatie-Code",
+      "sms-verification-code-mobile": "Verificatie-Code",
+      "confirm-code": "Code Bevestigen",
+      "confirm-code-mobile": "Bevestigen",
+      "phone-nr-verified": "Je telefoonnummer is met succes geverifieerd!"
+    },
+    "6": {
+      "title": "Wat is je adres"
+    },
+    "7": {
+      "title": "Bedrijfsgegevens"
+    }
+  },
+  "bike": {
+    "rent-bike": "Fiets huren",
+    "for-free": "Gratis testrijden",
+    "two-hours": "voor 2 uur",
+    "view-pictures": "Foto's bekijken",
+    "meta-title": "Huur de {{name}} - {{category}} van {{brand}} in {{location}}",
+    "meta-description": "{{description}}",
+    "per-day": "1 dag",
+    "from-2-days": "vanaf 2 dagen",
+    "from-week": "van een week"
+  },
+  "user": {
+    "verified-through": "geverifieerd door",
+    "become-this-user": "Become this user",
+    "own-bikes": "Huurfietsen",
+    "ratings": "Recensies",
+    "meta-title": "{{name}}'s profiel",
+    "meta-description": "Fiets huren op listnride van {{name}}.",
+    "company-meta-title": "{{company}}",
+    "company-meta-description": "Fiets huren op listnride van {{company}}.",
+    "availability": "Openingstijden",
+    "not-available": "Niet Beschikbaar",
+    "verified": "geverifieerd"
+  },
+  "requests": {
+    "booking-overview": "Bookingsoverzicht",
+    "cancelation_modal": {
+      "title": "Annulering",
+      "body": "Weet je zeker dat je het verzoek wilt annuleren? Dit kan niet ongedaan worden gemaakt.",
+      "cancel_btn": "Annuleer verzoek",
+      "keep_btn": "Verzoek bewaren"
+    },
+    "booking-failed": "Boeking mislukt",
+    "booking": "Boeking",
+    "price": "Prijs",
+    "book": "Boeken",
+    "rating": "Recensie",
+    "listChat": "Boekingsaanvraag van {{user.first_name}}",
+    "rideChat": "Aanvraag aan {{lister.first_name}}",
+    "ratings": {
+      "title": "Hoe vond je de algehele ervaring?",
+      "description": "Vertrouwen en Veiligheid zijn voor ons het belangrijkste. Met een korte recensie help je de gehele community.",
+      "1": "onacceptabel",
+      "2": "Slecht",
+      "3": "Acceptabel",
+      "4": "Goed",
+      "5": "uitstekend",
+      "rating_text_rider": "Schrijf een paar zinnen over de fietshuur ervaring. De verhuurder zal dit ook doen.",
+      "rating_text_lister": "Schrijf een paar zinnen over uw fietshuur ervaring. De huurder zal dit ook doen omtrent zijn ervaringen."
+    },
+    "write-message": "schrijf een bericht...",
+    "complete-profile": "maak je profiel compleet",
+    "complete-profile-description": "Om de fiets te boeken, vul je betaalgegevens in. Alle gegevens worden via een versleutelde, zekere verbinding verstuurd.",
+    "no-requests-yet": "Op het moment, dat je een aanvraag doet of ontvangt, vind je de aanvragen hier.",
+    "filters": {
+      "all-requests": "Alle Aanvragen",
+      "current-rentals": "Actueel Verhuur",
+      "pending-requests": "Openstaande Aanvragen",
+      "upcoming-rentals": "Aankomend Verhuur",
+      "past-rentals": "Afgelopen Verhuur",
+      "expired-requests": "Verlopen Aanvragen"
+    }
+  },
+  "message": {
+    "accept": "Accepteren",
+    "retry-payment": "Retry payment",
+    "go-to-calendar": "Naar de boekingskalender",
+    "reject": "Afwijzen",
+    "rate": "Beoordelen",
+    "confirm": "Bevestigen",
+    "confirm_return": "Bevestig teruggave",
+    "documents-title": "Verzekeringscertificaten",
+    "documents-description": "Hier kan je jouw verzekeringscertificaten downloaden. Deze zijn ook per E-mail aan je verstuurd.",
+    "insurance-bike": "Fietsverzekeringscertificaat",
+    "insurance-bike-assist": "Bike Assist-verzekeringscertificaat"
+  },
+  "listChat": {
+    "1": "{{user.first_name}} {{user.last_name}} uit {{user.city}} wil je <a href=\"/#/bikes/{{ride.id}}\">{{ride.name}} huren</a>.<br><br>Bike ID: {{ride.bicycle_number}}<br>Periode: {{timespan_short}}<br>Fietsmaat: {{ride.frame_size ? ride.frame_size : 'not specified'}}.<br><br> <br>Accepteer de boeking en spreek verdere details via de onderstaande chat af. Indien je de boeking niet kan aannemen, gelieve deze te annuleren.",
+    "direct": {
+      "3": "Gefeliciteerd! Je gaat je <a href=\"/#/bikes/{{ride.id}}\">{{ride.brand}}{{ride.name}} verhuren</a> !<br> Huurperiode: {{timespan_short}}.<br>Bike ID: {{ride.bicycle_number}}.<br>Grootte: {{ride.frame_size ? ride.frame_size : 'not specified'}}.<br><br>Rider's naam: {{user.first_name}} {{user.last_name}} <br>Rider's telefoonnummer: {{user.pretty_phone_number}}<br> Rider's adres: <a href=\"//www.google.com/maps/search/?api=1&amp;query={{user.street}}+{{user.city}}+{{user.zip}}+{{user.country}}\" target=\"_blank\">{{user.street}}, {{user.zip}} {{user.city}}, {{user.country}}</a> "
+    },
+    "11": "De boeking is geannuleerd",
+    "3": "Je hebt de boeking bevestigd. Je fiets is nu verhuurd voor de periode {{timespan}}! De contactgegevens zijn als volgt, alle gegevens worden je ook per e-mail toegestuurd.\n<br>\nNaam: {{user.first_name}} {{user.last_name}} \n<br>Nummer: {{user.pretty_phone_number}} \n<br>Adres: <a href=\"//www.google.com/maps/search/?api=1&amp;query={{user.street}}+{{user.city}}+{{user.zip}}+{{user.country}}\" target=\"_blank\">{{user.street}}, {{user.zip}}  {{user.city}}, {{user.country}}</a>",
+    "5": "Bedankt voor het bevestigen van de teruggave van de fiets als ook jouw recensie van {{user.first_name}}. De transactie is nu afgerond en het geld wordt binnen 7 werkdagen op de door jou aangegeven rekening uitbetaald. <br><br>Bij vragen en of opmerkingen stuur ons gerust een e-mail aan <a mailto:=\"hello@listnride.com\">hello@listnride.com</a>",
+    "8": "Je hebt de aanvraag afgewezen. Schrijf de aanvrager kort een berichtje waarom het niet lukt.",
+    "9": "Helaas heeft de huurder zijn aanvraag geannuleerd.",
+    "10": "Je boeking is geannuleerd door systeem."
+  },
+  "rideChat": {
+    "1": "Je hebt de <a style=\"pointer-events: auto;\" href=\"/#/bikes/{{ride.id}}\"> {{ride.name}} </a>van {{lister.display_name}} voor {{timespan}} aangevraagd. Je kan met {{lister.display_name}} via de chat onderaan contact opnemen. Zodra hij je aanvraag accepteert, wordt betaald en is de fiets geboekt.",
+    "direct": {
+      "3": "Gefeliciteerd! U huurt de <a href=\"/#/bikes/{{ride.id}}\">{{ride.brand}} {{ride.name}}</a>. <br>Huurperiode: {{timespan_short}}. <br>Bike ID: {{ride.bicycle_number}}. <br>Grootte: {{ride.frame_size ? ride.frame_size : 'not specified'}}. <br> <br> Naam van de Lister: {{lister.first_name}} {{lister.last_name}} <br> Lister's telefoonnummer: {{lister.pretty_phone_number}}<br> Ophaallocatie: <a href=\"//www.google.com/maps/search/?api=1&amp;query={{ride.street}}+{{ride.city}}+{{ride.zip}}+{{ride.country}}\" target=\"_blank\">{{ride.street}}, {{ride.zip}} {{ride.city}}, {{ride.country}}</a>"
+    },
+    "11": "De boeking is geannuleerd.",
+    "3": "Gefeliciteerd, {{lister.first_name}} heeft je aanvraag geaccepteerd, je boeking is hiermee bevestigd. De contactgegevens zijn de volgende, alle details worden je ook per email toegestuurd.<br><br>Naam: {{lister.first_name}} {{lister.last_name}}<br>Nummer: {{lister.pretty_phone_number}}<br>Adres: <a href=\"//google.com/maps/search/?api=1&amp;query={{ride.street}}+{{ride.city}}+{{ride.zip}}+{{ride.country}}\" target=\"_blank\">{{ride.street}}, {{ride.zip}} {{ride.city}}, {{ride.country}}</a>",
+    "5": "Heb je een geweldige ervaring gehad op de fiets van {{lister.first_name}}. Deel ons je ervaring middels een korte recensie. Dit zal toekomstige fietsers helpen beter te begrijpen wat ze kunnen verwachten.",
+    "7": "Bedankt voor je recensie. De verhuur is succesvol verlopen.",
+    "8": "Helaas heeft de verhuurder je aanvraag afgewezen. Gelukkig zijn er genoeg andere mooie fietsen die je kan aanvragen.",
+    "9": "Je hebt de aanvraag afgewezen. Stuur de verhuuder kort een berichtje, waarom je aanvraag niet geboekt hebt.",
+    "10": "De aanvraag is geannuleerd."
+  },
+  "forms": {
+    "first-name": "Voornaam",
+    "account_holder_name": "Naam rekeninghouder",
+    "bank_country": "Land",
+    "dob": "Geboortedatum",
+    "gender": "Wat is je geslacht?",
+    "nationality": "Wat is je nationaliteit?",
+    "gender_select": {
+      "male": "Man",
+      "female": "Vrouw"
+    },
+    "select": "Selecteer a.u.b",
+    "newsletter-privacy-policy": "Je kan ten aller tijde je voor de nieuwsletter afmelden. Het privacybeleid van listnride is van toepassing",
+    "sign-up-today": "Meld je nu aan",
+    "already-registered": "Je bent al geregistreerd",
+    "check-inbox": "Controleer ajb je inbox",
+    "security-text": "Veiligheid is echt belangrijk voor ons. En dit is niet zomaar een uitspraak die we gebruiken om je tot rust te brengen. Met het oog op de veiligheid van je account willen we je vragen om je wachtwoord nu te wijzigen.<br><br><b>Klik op de link in de e-mail die we je zojuist hebben gestuurd.</b>",
+    "confirm-password": "Bevestig wachtwoord",
+    "please-change-password": "Please change your password",
+    "save-new-password": "Bewaar nieuw wachtwoord",
+    "your-name": "Je naam",
+    "your-email-address": "Emailadres",
+    "your-phone-number": "Mobiele nummer",
+    "comments": "Opmerkingen",
+    "last-name": "Achternaam",
+    "email-address": "Emailadres",
+    "update-password": "Wachtwoord updaten",
+    "old-password": "Huidig Wachtwoord",
+    "new-password": "Nieuw Wachtwoord",
+    "password": "Wachtwoord",
+    "forgot-password": "Wachtwoord vergeten?",
+    "or": "of",
+    "log-in": "Inloggen",
+    "log-out": "Uitloggen",
+    "sign-up": "Aanmelden",
+    "sign-up-to-book": "Meld je aan om de fiets te huren.",
+    "sign-up-with-facebook": "Met Facebook aanmelden",
+    "sign-up-divider-text": "accepteer onze Algemene voorwaarden",
+    "agree-terms-and-policy": "Ga akkoord met de alg. voorwaarden en het privacybeleid.",
+    "member-already": "Al geregistreerd?",
+    "business": "Zakelijke gebruiker?",
+    "description": "Beschrijving",
+    "description_min_100": "Beschrijvingstekst moet min. 100 tekens lang zijn",
+    "address": "Adres",
+    "profile-picture": "Profielfoto",
+    "profile-picture-info": "Upload alleen bestanden in formats als jpg, jpeg, png. Maximale grootte is 20 MB. Minimale dimensie is 100 px x 100 px.",
+    "profile-picture-info-policy": "Door een profielfoto te uploaden, ga ik ermee akkoord dat listnride de afbeelding opslaat zoals beschreven in het <a style=\"pointer-events: auto;\" href=\"/#/privacy\" target=\"_blank\">Privacybeleid </a>. Ik kan de foto op elk moment verwijderen.",
+    "profile-picture-pattern-error": "Your picture format is wrong",
+    "profile-picture-size-error": "Je fotoformaat is meer dan de toegestane maximale grootte",
+    "profile-picture-dimension-error": "Your picture dimension is lower than minimum",
+    "general": "Algemeen",
+    "street": "Straat",
+    "zip": "Postcode",
+    "city": "Plaats",
+    "country": "Land",
+    "company-name": "Bedrijfsnaam",
+    "update-contact": "Wijzig mobiele nummer",
+    "update-contact-mobile": "Mobiele nummer",
+    "company-contact-info": "Vul uw Bedrijfsnaam en naam van de contact persoon in",
+    "signing-up-accept-tac": "Ik ga hierbij akkoord met de <a target=\"_blank\" style=\"pointer-events: auto;\" href=\"/#/terms\">Gebruiksvoorwaarden</a> en ga akkoord met het verzamelen, verwerken en gebruiken van mijn persoonsgegevens zoals verder beschreven in het <a target=\"_blank\" style=\"pointer-events: auto;\" href=\"/#/privacy\">Privacybeleid</a>.",
+    "signing-up-accept-newsletter": "Ik wil graag de listnride e-mailnieuwsbrief ontvangen met interessante informatie over fietsen, community updates en exclusieve aanbiedingen. Het <a target=\"_blank\" style=\"pointer-events: auto;\" href=\"/#/privacy\">Privacybeleid</a> van listnride is van toepassing. Ik kan mijn toestemming te allen tijde intrekken.",
+    "privacy-policy": "Het <a style=\"pointer-events: auto;\" href=\"/#/privacy\">Privacybeleid</a> van listnride is van toepassing.",
+    "errors": {
+      "password-length": "Wachtwoord dient 6-30 karakters lang te zijn",
+      "password-length-xs": "6-30 tekens",
+      "password-missing": "Wachtwoord aanmaken",
+      "password-missing-xs": "Wachtwoord aanmaken",
+      "valid-email": "Vul een geldig emailadres in",
+      "valid-email-xs": "Ongeldige e-mail",
+      "empty-email": "Vul uw emailadres in",
+      "empty-email-xs": "E-mail vereist",
+      "empty-last-name": "Vul uw achternaam in",
+      "empty-last-name-xs": "Achternaam verplicht",
+      "empty-first-name": "Vul uw voornaam in",
+      "empty-first-name-xs": "Voornaam vereist",
+      "max-size-last-name": "Achternaam mag maximaal 30 karakters lang zijn",
+      "max-size-last-name-xs": "Overtreft 30 tekens",
+      "max-size-first-name": "Voornaam mag maximaal 20 karakters lang zijn",
+      "max-size-first-name-xs": "Overtreft 20 tekens",
+      "empty-company-name": "Vul alstublieft uw bedrijfsnaam in",
+      "empty-company-name-xs": "Bedrijfsnaam vereist",
+      "min-size-company-name": "Bedrijfsnaam dient meer dan 2 karakters te hebben",
+      "min-size-company-name-xs": "Ten minste 3 tekens"
+    }
+  },
+  "home": {
+    "landing-section-header": "De perfekte fiets. Gewoon huren.",
+    "see-all-brands-and-bikes": "Bekijk alle merken en fietsen",
+    "insurance": {
+      "description": "Of het nu een minimalistische fixie of een high-end triathlonfiets is: Elke listnride verhuur in Duitsland of Oostenrijk is verzekerd! Eenvoudig. Flexible. Altijd.",
+      "header": "Verzekering voor je fietshuur op listnride",
+      "logo-description": "In samenwerking met hepster en verzekerd door"
+    },
+    "landing-section-subheader": "Huur een fiets via listnride naar eigen smaak en gebruik.",
+    "featured-bikes-header": "Fietsverhuur: De favorieten van onze Community",
+    "featured-bikes-subheader": "of je nu een racefiets, mountainbike, stadsfiets of e-bike wilt, je huurt ze hier. Dit zijn de favorieten van onze Community.",
+    "featured-tiles-header": "Maak een Testrit",
+    "featured-tiles-subheader": "We werken samen met innovatieve fietsmerken, die hun nieuwste modellen aanbieden om te testen.  De fietsen zijn op verschillende locaties exclusief te testen of te huur. Perfect voor een gefundeerde aankoopbeslissing. ",
+    "featured-cities-header": "Met listnride ben je altijd met de perfecte fiets onderweg",
+    "featured-cities-subheader": "De fietsverhuurservice van listnride is beschikbaar in meer en meer steden en vakantieregio’s in Europa. Hier zijn enkele tips voor je:",
+    "list-a-bike-header": "Je fiets is te mooi om stil te staan?",
+    "list-a-bike-subheader": "biedt je fiets te huur aan, ontmoet leuke nieuwe mensen en spek je banksaldo.",
+    "newsletter-header": "Subscribe to our newsletter and stay in the loop",
+    "newsletter-subheader": "Receive our email about new bikes, tours and discounts for your rides.",
+    "meta-title": "Fietsverhuur: huur een racefiets, MTB of e-bike | listnride",
+    "meta-description": "Huur de perfecte fiets die bij je stijl en behoeften past. Boek eenvoudig online, veilig en zeker."
+  },
+  "autocomplete": {
+    "default-placeholder": "Waar wil je een fiets huren?"
+  },
+  "search": {
+    "no-bikes": "Er zijn helaas nog geen fietsen op deze locatie. Omdat we snel groeien, zal dat waarschijnlijk snel gebeuren! Als je wilt, kun je zelf een fiets een lijst laten maken of zoek je naar een andere stad of specifieke locatie in de buurt.\n<br><br>\nHelp anderen om geweldige fietsen te vinden door je eigen fiets te adverteren, of neem contact op met je lokale fietsenwinkel om ze bij ons aan boord te krijgen! ",
+    "unisize": "Unisize",
+    "book-multiple-bikes": "Groepsboekingen",
+    "bikes-found": "Aantal fietsen:",
+    "all-sizes": "Alle Maten",
+    "bikes-in": "fietsen in",
+    "meta-title": "Huur de perfekte fiets in {{location}}.",
+    "meta-description": "listnride biedt een grote veelvoud aan perfekte huurfietsen in {{location}}.",
+    "number-of-bikes": "Aantal fietsen",
+    "bike": "Fiets",
+    "bikes": "Fietsen",
+    "pick-body-size": "Grootte",
+    "timespan": "Periode",
+    "category": "Type fiets",
+    "clear-filters": "Filters wissen",
+    "all-brands": "Alle merken",
+    "all-bikes": "Alle fietsen"
+  },
+  "calendar": {
+    "invalid-date": "Ingevulde Datums zijn niet correct",
+    "rent-bike": "Nu boeken",
+    "ability-to-pick-half-day": "Je kunt deze fiets een 1/2 dag boeken. <br>\nSelecteer het tijdvak :",
+    "status-closed": "Gesloten",
+    "status-in-past": "in het verleden",
+    "booked": "geboekt",
+    "info-service-fee-insurance": "Dit helpt om ons platform te laten draaien en<br>een uitstekende klantenservice aan te bieden. <br>Inclusief btw. Niet te restitueren.",
+    "basic-insurance-included": "Inclusief basisverzekering ",
+    "request-bike": "Fiets aanvragen",
+    "to-request-bike-please": "om een fiets aan te vragen, eerst",
+    "own-bike": " Je kan niet je eigen fiets aanvragen",
+    "log-in-to-request-title": "log-in of meld je aan",
+    "log-in-to-request-description": "log-in om de fiets aan te vragen. Indien je je nog niet hebt aangemeld, doe dit dan eerst.",
+    "select-timespan": "Kies eerst de huurperiode",
+    "info-subtotal": "Dit zijn de normale dagelijkse<br>prijslijsten, het aantal dagen dat<br> u de fiets wilt huren.",
+    "info-discount": "Gemiddelde dagelijkse korting<br>krijgt u per dag door voor<br>een langere periode te huren.",
+    "info-service-fee": "Dit helpt om ons platform te laten draaien en<br>een uitstekende klantenservice aan te bieden. <br>Inclusief btw. Niet te restitueren.",
+    "info": "Klik eerst in de bovenstaande<br> kalender op de dag waarop u de fiets<br>wilt huren en op de tweede<br>dag dat u het wenst te retourneren.",
+    "info-without-calendar": "Klik eerst de dag aan waarop u de fiets wilt huren en dan op de dag dat u het wenst te retourneren. Selecteer vervolgens de starttijd en eindtijd."
+  },
+  "list": {
+    "edit-bike": "Fiets bewerken",
+    "half-day-price": "1/2 dag",
+    "save-changes": "Opslaan",
+    "list-your-bike": "Fiets plaatsen",
+    "back": "Terug",
+    "next": "Verder",
+    "list-bike": "Fiets plaatsen",
+    "category": {
+      "header": "Welke type fiets heb je?",
+      "event": "Eventfietsen",
+      "hint": "Kies allereerst de categorie van je fiets. Kies daarna de juiste subcategorie.",
+      "label": "Categorie",
+      "city": "Stad",
+      "race": "Race",
+      "all-terrain": "All-terrain",
+      "kids": "Kids",
+      "electro": "Elektrisch",
+      "special": "Uniek",
+      "urban": "Urban",
+      "e-bike": "Elektrische fiets",
+      "road": "Racefiets - Tourfiets",
+      "transport": "Bakfiets"
+    },
+    "details": {
+      "header": "Welke naam geef je jouw fiets en welk Merk en grootte is het?",
+      "variations-add": "Voeg varianten toe",
+      "variations-header": "Hoeveel varianten wil je toevoegen?",
+      "hint": "Vul het merk, de naam en beschrijving van je fiets in. De naam is vrij te kiezen en kan bijvoorbeeld het model zijn. Bijv. Gazelle, Tour Populair, 2013. Kies de passende lichaamslengte voor het rijden van de fiets.",
+      "label": "Details",
+      "brand": "Merk",
+      "name": "Naam",
+      "description": "Beschrijving (min. 100 tekens)",
+      "min-length-warning": "Minimaal 100 tekens",
+      "size": "Grootte",
+      "frame-size": "Frame hoogte",
+      "bicycle-number": "Fiets Nr.",
+      "frame-number": "Rasternummer",
+      "custom-fields": "Extra velden",
+      "notes": "Notes",
+      "frame_size": "Frame hoogte",
+      "bicycle_number": "Bicycle number",
+      "frame_number": "Frame number"
+    },
+    "accessories": {
+      "header": "Welke accessoires bied je aan?",
+      "hint": "Kies de accessoires die je bij de fiets aanbiedt.",
+      "label": "Accessoires",
+      "lock": "Slot",
+      "helmet": "Helm",
+      "lights": "Licht",
+      "basket": "Mandje",
+      "trailer": "Aanhanger",
+      "childseat": "Kinderzitje",
+      "gps": "GPS"
+    },
+    "pictures": {
+      "header": "Kies een aantal mooie foto's van je fiets",
+      "hint": "Kies een paar mooie foto's uit. Hier zijn een paar fototips om je fiets optimaal te presenteren.",
+      "how-to": "Voor een optimale presentatie, lees hier onze fototips",
+      "label": "Foto's",
+      "select-images": "Foto's kiezen",
+      "remove": "verwijderen",
+      "upload-bike-header": "Voeg een paar scherpe foto's toe",
+      "under-min-size": "Sommige foto's zijn kleiner dan 1500x1000:",
+      "invalid-images": "Afmetingen foto ontoereikend"
+    },
+    "location": {
+      "header": "Waar kan de fiets worden opgehaald?",
+      "hint": "Op welk adres staat je fiets? Maak je geen zorgen, het exacte adres wordt pas na de boeking aan de huurder doorgegeven en is dus niet openbaar zichtbaar.",
+      "label": "Locatie van de fiets",
+      "street-number": "Straat en huisnr.",
+      "zip": "Postcode",
+      "city": "Plaats",
+      "country": "Land"
+    },
+    "insurance": {
+      "label": "Verzekering",
+      "info": "Informatie over verzekering",
+      "hint-part-1": "Uw fiets is verzekerd wanneer hij wordt gehuurd. Om u de juiste bescherming te bieden, is het noodzakelijk dat je de waarde van je fiets vastlegd.",
+      "hint-part-2": "Houd er rekening mee dat je een bewijs moet kunnen overleggen van de waarde van je fiets in het geval van een claim",
+      "hint-link-label": "Meer informatie over verzekeringen",
+      "header": "Wat is de actuele waarde van uw fiets?",
+      "tip": "Extra premie voor de huuder is {{fee}} per dag",
+      "up-to-value": "Tot {{value}}",
+      "select-value": "Selecteer uw de waarde van uw fiets",
+      "no-insurance": "Sorry, de verzekering wordt nog niet in je land aangeboden.\nDe verzekering is alleen van toepassing op verhuur in Duitsland en Oostenrijk."
+    },
+    "pricing": {
+      "info": "Je dagprijs is je basis prijs bij 1 dag huur.",
+      "info-description": "Informatie over de huurprijs",
+      "header": "Dagprijs",
+      "description": "Je dagprijs is je basis prijs bij 1 dag huur.",
+      "hint-para-1": "Je bepaalt zelf de prijs die je vraagt voor je fiets. De prijs moet gebaseerd zijn op de fiets en de uitrusting. Om een ​​idee te krijgen van marktprijzen, kunt u vergelijkbare aanbiedingen bekijken.",
+      "hint-para-2": "Een duur tot een lengte van 6 uren is een halve dag, 6-24 uren staat voor een dag huur.",
+      "hint-para-3": "Om langere verblijven aan te moedigen, stellen sommige verhuurders een dag of wekelijkse korting in.",
+      "label": "Prijs",
+      "discount": "Korting",
+      "discount-description-initial": "Voor een wekelijkse korting van ",
+      "discount-description-mid": " krijgt u ",
+      "discount-description-ending": " per week.",
+      "set_custom_price": "Prijs in €",
+      "custom-prices": "Aangepaste prijs",
+      "half-daily-price": "Halve dag",
+      "daily-price": "Hele dag",
+      "daily-price-placeholder": "Prijs in €",
+      "daily-discount-placeholder": "Korting in %",
+      "daily-discount-tooltip": "Korting als de fiets meer dan een dag gehuurd wordt.",
+      "weekly-discount-placeholder": "Korting in %",
+      "weekly-discount-tooltip": "Korting als de fiets voor een week of langer verhuurd wordt.",
+      "weekly-price": "Een week",
+      "daily-discount": "Dag korting",
+      "weekly-discount": "Wekelijkse korting",
+      "price_2_days": "2 dagen",
+      "price_3_days": "3 dagen",
+      "price_4_days": "4 dagen",
+      "price_5_days": "5 dagen",
+      "price_6_days": "6 dagen",
+      "price_7_days": "7 dagen (1 week)",
+      "price_8_days": "vanaf 8 dagen",
+      "price_8_days_long": "vanaf 8 dagen (elke dag)",
+      "price_30_days": "28 dagen",
+      "price_30_days_long": "28 dagen (1 Monaat)",
+      "reset-prices": "Zurücksetzen",
+      "validations": {
+        "required": {
+          "daily_price": "Dagprijs is required",
+          "price": "Prijs is required"
+        }
+      }
+    },
+    "subcategory": {
+      "1": {
+        "dutch-bike": "Omafiets",
+        "touring-bike": "Touringfiets",
+        "fixie": "Fixie",
+        "single-speed": "Single Speed Fiets",
+        "city-bike": "Stadsfiets"
+      },
+      "2": {
+        "road-bike": "Racefiets",
+        "triathlon": "Triathlon",
+        "indoor": "Baanfiets",
+        "e-city-bike": "E-stadsfiets",
+        "e-touring-bike": "E-Touring Fiets",
+        "e-cargo-bike": "E-Bakfiets",
+        "e-mountain-bike": "E-mountainbike",
+        "e-road-bike": "E-racefiets",
+        "e-folding-bike": "E-vouwfiets",
+        "e-scooter": "E-Step"
+      },
+      "3": {
+        "tracking": "Trekking",
+        "enduro": "Enduro",
+        "freeride": "Freeride",
+        "cross-country": "Cross Country",
+        "downhill": "Downhill",
+        "cyclocross": "Cyclocross",
+        "road-bike": "Racefiets",
+        "triathlon-bike": "Triatlonfiets",
+        "touring-bike": "Touringfiets",
+        "fixed-gear-bike": "Baanfiets"
+      },
+      "4": {
+        "city": "Stad",
+        "all-terrain": "All-terrain",
+        "road": "race",
+        "mtb-hardtail": "MTB Hardtail",
+        "mtb-fullsuspension": "MTB Fullsuspension",
+        "cyclocross-bike": "CX-fiets",
+        "gravel-bike": "Gravel Bike"
+      },
+      "5": {
+        "pedelec": "Speed Pedelec",
+        "event-bike": "Evenementfiets",
+        "e-bike": "Elektrische fiets",
+        "cargo-bike": "Bakfiets",
+        "bike-trailer": "Fietsaanhanger",
+        "bike-child-seat": "kinderzitje",
+        "bike-car-rack": "Fietsendragers",
+        "bike-travel-bag": "Fietskoffer"
+      },
+      "6": {
+        "folding-bike": "vouwfiets",
+        "tandem": "Tandem",
+        "cruiser": "Cruiser",
+        "cargo-bike": "transportfiets",
+        "recumbent": "Ligfiets",
+        "mono-bike": "Eenwieler",
+        "trailer": "Aanhangwagen",
+        "city-bike": "Stadsfiets",
+        "all-terrain-bike": "ATB-fiets",
+        "road-bike": "Racefiets",
+        "bogie-wheel": "Monofiets"
+      },
+      "7": {
+        "folding-bike": "vouwfiets",
+        "recumbent-bike": "Ligfiets",
+        "tandem-bike": "Tandemfiets",
+        "longtail-bike": "Longtail-fiets",
+        "scooter": "Step"
+      }
+    }
+  },
+  "listings": {
+    "my-bikes": "Mijn fietsen",
+    "merge-title": "Weet je het zeker dat je {{bikes_count}} fietsen in 1 cluster wilt samenvoegen?",
+    "unmerge-title": "Weet je zeker dat je {{bikes_count}}fietsen wilt ontkoppelen?",
+    "merge-yes": "Ja",
+    "merge-no": "Nee, liever niet",
+    "merge": "samenvoegen",
+    "unmerge": "Ontkoppel fietsen",
+    "no-bikes": "Je hebt nog geen fietsen online geplaatst.",
+    "list-a-bike": "Fiets plaatsen",
+    "show-as-list": "Toon als lijst",
+    "duplicate": {
+      "duplicate": "Duplicaat",
+      "duplication-status": "Duplicatiestatus",
+      "how_many": "Hoeveel fietsen?",
+      "header": "Dubbele fiets",
+      "number_bikes": "Aantal fietsen",
+      "maxlength": "Werkt voor maximaal 99 fietsen",
+      "required": "Aantal fietsen is verplicht"
+    },
+    "listView": {
+      "price": "Prijs (€)"
+    }
+  },
+  "listingCard": {
+    "activate-bike": "Activeren",
+    "deactivate": "deactiveren",
+    "activate": "Activeren",
+    "deactivate-bike": "deactiveren",
+    "edit-bike": "bewerken",
+    "delete-bike": "verwijderen",
+    "cancel": "annuleren",
+    "delete": "verwijderen",
+    "duplicate": "Duplicate",
+    "dialog-title": "Wil je daadwerkelijk je fiets verwijderen?",
+    "dialog-subtitle": "Het wordt onherroepelijk verwijderd van het platform, actieve aanvragen blijven gehandhaafd."
+  },
+  "rent-a-bike": {
+    "meta-title": "Huur een fiets via listnride!",
+    "meta-description": "Huur uit ons grote aanbod aan racefietsen, e-bikes, mountainbikes en bakfietsen! Eenvoudig zoeken en online boeken.",
+    "title": "Fiets huren. Niet zomaar één. Maar één, als ware het je eigen fiets.",
+    "info-section": {
+      "header": "Huur de perfecte fiets",
+      "subheader": "Naar jouw smaak en gebruik. Van mensen zoals jij en ik.",
+      "choice-title": "Fietsverhuur eenvoudig gemaakt.",
+      "choice-content": "Zoek en boek een fiets in enkele seconden.\nGeen contant geld, telefoontjes of e-mails meer nodig!",
+      "price-title": "Wij vinden kwaliteit belangrijk.",
+      "price-content": "Hoogwaardige racefietsen, betrouwbare e-bikes en robuuste stadsfietsen - wij zijn meer dan een eenvoudige fietsverhuurservice!",
+      "easy-title": "Veelzijdige keuze, overal en altijd",
+      "easy-content": "We zijn er trots op duizenden huurfietsen aan te bieden in Duitsland, Italië, Spanje, Nederland en Oostenrijk!",
+      "covered-content": "Als u een fiets huurt in Duitsland of Oostenrijk, is de verzekering inbegrepen in de huurprijs. Met \n<a href=\"http://www.hepster.com\" target=\"_blank\">hepster</a> \nen de \n<a href=\"http://www.gothaer.de\" target=\"_blank\">Gothaer Group</a> \nhebben wij twee sterke partners aan onze zijde om u te helpen in noodgevallen."
+    },
+    "search-section": {
+      "header": "Waar gaan we heen?",
+      "subheader": "listnride's fietsverhuur service wordt op steeds meer locaties beschikbaar."
+    },
+    "testmonials-section": {
+      "header": "Wat zeggen onze gebruikers?",
+      "subheader": "Steeds meer mensen ontdekken de voordelen van fietsverhuur via listnride. Bekijk enkele van hun getuigenissen:"
+    }
+  },
+  "list-a-bike": {
+    "meta-title": "Verhuur je fiets!",
+    "meta-description": "Ontmoet interessante mensen en verdien tegelijkertijd wat extra geld.",
+    "title": "Fiets verhuren, rekening spekken",
+    "subtitle": "Leer leuke mensen kennen en verdien bijkomstig wat geld om bijvoorbeeld je nieuwe droomfiets te financeren.",
+    "calculator-section": {
+      "header": "Laat je fiets voor je werken",
+      "subheader": "een paar keer klikken en onze rekenhulp laat je zien hoeveel je met het verhuren van je fiets via listnride kunt verdienen.",
+      "market-price": "Dagwaarde van je fiets,",
+      "days-per-month": "Aantal dagen per maand, dat de fiets is verhuurd",
+      "could-earn": "Je verdient",
+      "per-year": "per jaar"
+    },
+    "info-section": {
+      "header": "Safety first!",
+      "subheader": "listnride ondersteunt je.",
+      "precautions-title": "Wij zorgen voor.",
+      "precautions-content": "Je wilt je fiets verhuren, maar niet zomaar aan een wildvreemde? Wij verifiëren de identiteit van alle huurders.  En de recensies geven je inzicht in de integriteit van degene aan wie je je fiets verhuurt.",
+      "control-title": "Jij behoudt de controle.",
+      "control-content": "Jij bepaalt de huurprijs voor het verhuren van je fiets. Daarnaast beslis je zelf of je de huuraanvragen accepteert of juist afwijst (bijv. omdat je fiets op dat moment niet beschikbaar is).",
+      "covered-title": "Je bent verzekerd.",
+      "covered-content": "In geval van schade of diefstal kunt u een beroep doen op onze verzekering. Met <a href=\"http://www.hepster.com\" target=\"_blank\">hepster</a> en de <a href=\"http://www.gothaer.de\" target=\"_blank\">Gothaer Group</a> hebben we twee sterke partners aan onze zijde.",
+      "help-title": "Wij laten je niet alleen.",
+      "help-content": "Indien je een bepaald probleem niet met een huurder direct kan oplossen, zijn wij er ook voor jou om je te ondersteunen of het probleem zelfs voor je op te lossen"
+    },
+    "list-section": {
+      "header": "Ben je klaar om je fiets te verhuren?",
+      "subheader": "Ontmoet interessante mensen die jouw passie voor fietsen delen en spek tegelijkertijd je rekening.",
+      "sign-up": "Meld je aan, om je fiets te huur aan te bieden!"
+    },
+    "testmonials-section": {
+      "header": "fietsverhuur: wat zeggen onze verhuurders over ons?",
+      "subheader": "Veel mensen maken al deel uit van de listnride community. Lees hier hun persoonlijke ervaringen."
+    }
+  },
+  "invoices": {
+    "request_id": "Boeking ID",
+    "invoice_number": "Factuur nr.",
+    "payout_date": "Uitbetaald op",
+    "date": "Datum",
+    "batch": "Partij",
+    "credit-notes": "Creditnota's",
+    "bike": "Fiets",
+    "start_date": "Start datum",
+    "end_date": "Eind datum",
+    "payout": "Uitbetaald",
+    "you_paid": "Betaald",
+    "invoice": "Factuur",
+    "billing": "Facturen",
+    "download-csv": "Download CSV",
+    "download-pdf": "Download PDF",
+    "no-rentals": "Nog geen verhuurtransacties gerealiseerd",
+    "as-lister": "Als Verhuurder",
+    "as-rider": "Als huurder",
+    "no-rides": "Nog geen huurtransacties gerealiseerd"
+  },
+  "invite-landing": {
+    "meta-title": "listnride | 10€ voor jou!",
+    "meta-description": "Deel het genot van het fietsen! nodig je vrienden uit, en schenk ze 10 euro tegoed bij aanmelding. Als zij en fiets huren of een fiets plaatsen, ontvangt u ook een 10 euro tegoed!",
+    "header": "heeft je 10€ geschenkt!",
+    "subheader": "Welkom bij List and Ride, het platform voor fietsverhuur",
+    "subsubheader": "listnride is een Community die fietsvrienden bij elkaar brengt en zich wederzijds ondersteunen. Heb je een fiets voor een bepaald doeleinde nodig? Die vind je zeker hier! Wil je jouw fiets verhuren? Plaats je fiets en verdien wat extra zakgeld.",
+    "subsubsubheader": "Je bent uitgenodigd door {{ name }}. Meld je eenvoudig aan en ontvang een 10 € toegoed op je account bijgeschreven. Bij de eerste fietshuur kan je deze direk gebruiken.",
+    "sign-up-get-voucher": "Sign up to get the Voucher",
+    "how-lnr-works": "Fietsverhuur zonder gedoe",
+    "explanation-1-title": "1. Zoeken en aanvragen",
+    "explanation-1-description": "vind de fiets naar wens en vraag het aan.",
+    "explanation-2-title": "2. Boeken en ophalen",
+    "explanation-2-description": "Boek de fiets en spreek af voor de overdracht.",
+    "explanation-3-title": "3. Daar gaat ie dan!",
+    "explanation-3-description": "Geniet van je fietstocht."
+  },
+  "invite": {
+    "meta-title": "listnride Voucher Codes - Invite your friends",
+    "meta-description": "Deel het geschenk van het fietsen! nodig je vrienden uit, en schenk ze 10 euro tegoed bij aanmelding. Als zij en fiets huren of een fiets plaatsen, ontvangt u ook een 10 euro tegoed!",
+    "title": "Nodig vrieden uit en verdien 10€",
+    "login": "log in en ontvang je persoonlijke link",
+    "info-section": {
+      "header": "Hoe meer, hoe beter op listnride!",
+      "subheader": "Help onze beweging om fietsverhuur gemakkelijker te maken door uw vrienden en lokale fietswinkels uit te nodigen voor ons platform. Deel eenvoudig uw uitnodigingscode en als ze een fiets huren, ontvangt u van ons een tegoedbon van € 10!",
+      "invite-friends": "Deel je uitnodigingscode",
+      "community": "Help je vriend aan de slag met listnride",
+      "earn-credit": "Zodra je vriend of vriendin een fiets huurt, ontvang je een voucher van 10 euro voor je volgende huurperiode! "
+    },
+    "invite-form": {
+      "header": "Deel jouw persoonlijke link",
+      "subheader": "Stuur deze link aan je vrienden en ontvang 10€ tegoed na een eerste aktiviteit.",
+      "copy": "Copy",
+      "copied": "Copied!"
+    },
+    "invite-dialog": {
+      "rider": {
+        "header": "Mooie fiets ervaring gehad?",
+        "subheader": "Zou je ons willen aanbevelen? Je ontvangt €10 tegoed, zodra je uitnodiging wordt aangenomen. Degene die je uitnodigt ontvangt ook €10 tegoed bij het aannemen van je uitnodiging. Een mooie Win-Win!"
+      },
+      "lister": {
+        "header": "Dat verliep gemakkelijk, toch?",
+        "subheader": "Zou je ons aan je vrienden willen aanbevelen? Je ontvangt 10€ tegoed, zodra je uitnodiging wordt aangenomen. Degene die je uitnodigt ontvangt ook €10 tegoed bij het aannemen van je uitnodiging. Een mooie Win-Win!"
+      }
+    },
+    "invitations": {
+      "header": "Your friends have earned you {{ credit }}€",
+      "status": {
+        "1": "Signed up but has not listed or rented a bike",
+        "2": "Signed up and rented a bike",
+        "3": "Signed up and listed a bike"
+      }
+    },
+    "share": {
+      "email-subject": "{{full_name}} nodigt je uit om je bij listnride aan te melden!",
+      "email-body": "{{first_name}} heeft jou 10€ tegoed geschenkt voor je eerste fietsavontuur naar keuze! Meld je nu aan bij listnride, de snelst groeiende bikesharing community, en krijg toegang tot talloze verschillende fietsen! Meld je aan en ontvangt onmiddellijk een 10 € toegoed. {{voucher_url}} Wil je {{first_name}} bedanken? Op het moment dat je een fiets huurt of je eigen fiets aanbied, ontvangt {{first_name}} ook een 10€ tegoed! Veel plezier en geniet van het fietsen! "
+    }
+  },
+  "error-404": {
+    "title": "404 pagina niet gevonden",
+    "details": "De gezochte pagina bestaat niet!",
+    "home-link": "Terug naar de Homepage"
+  },
+  "footer": {
+    "language": "Taal",
+    "top-countries": "Meest Populaire Landen",
+    "subscribe-title": "Meld je aan voor onze nieuwsbrief",
+    "recapcha-text": "Beveiligd door reCAPTCHA",
+    "keep-in-touch": "Neem contact op met ons!",
+    "term-of-service": "Algemene Voorwaarden",
+    "privacy-policy": "Privacybeleid",
+    "newsletter-subscribe-success": "Bedankt voor het inschrijven!",
+    "sitemap": "Sitemap",
+    "languages": {
+      "dutch": "Nederlands",
+      "french": "Frans",
+      "italian": "Italiaans",
+      "spanish": "Spaans",
+      "german": "Duits",
+      "english": "Engels"
+    },
+    "insurance-partner": "Verzekeringspartner",
+    "insurance": "Verzekering",
+    "company": "Bedrijf",
+    "legal": "Colofon",
+    "terms-and-conditions": "Algemene voorwaarden",
+    "privacy-statement": "Privacybeleid",
+    "imprint": "Bedrijfsgegevens",
+    "about": "Over ons",
+    "press": "Pers",
+    "jobs": "Werken bij",
+    "get-the-app": "https://itunes.apple.com/de/app/list-n-ride/id992114091?l=nl"
+  },
+  "seo": {
+    "header": "Huur de beste fietsen in",
+    "header-2": "Huur de beste fietsen op",
+    "rent-the-best": "Huur de beste",
+    "bikes": "fietsen",
+    "rent-perfect-bikes-in": "huur perfecte fietsen in",
+    "rent-category-bikes-in": "Een groot aanbod aan huurfietsen",
+    "bike-shops-in": "Bike Shops in",
+    "city": "stad fietsen",
+    "race": "race fietsen",
+    "all-terrain": "all-terrain fietsen",
+    "kids": "kinder fietsen",
+    "electro": "elektrisch fietsen",
+    "special": "speciaal fietsen"
+  },
+  "availability": {
+    "availability": "Openingstijden",
+    "modal-title": "Wanneer is je fiets niet beschikbaar?",
+    "start-from": "Beginnend vanaf",
+    "end-at": "Eindigend op",
+    "add-another-date": "Voeg een andere datum toe",
+    "submit-btn": "Ok",
+    "submit-btn-save": "Opslaan",
+    "choose-range": "Kies de periode"
+  },
+  "booking-calendar": {
+    "event": {
+      "accepted": "Geaccepteerd",
+      "request-waiting": "Openstaande Aanvraag",
+      "not-available": "Niet Beschikbaar",
+      "waiting": "Waiting",
+      "not-available-header": "De fiets is niet beschikbaar",
+      "not-available-text": "De fiets is niet beschikbaar voor deze periode. Je kan de beschikbaarheid onder uw fietsinstellingen wijzigen.",
+      "see-settings": "Ga naar Instellingen",
+      "date": "Datum",
+      "pickup": "Ophalen om",
+      "booking-id": "Boekings-nr.",
+      "rider": "Huurder",
+      "contact": "Telefoonnummer",
+      "view-booking": "Boeking bekijken"
+    },
+    "add-non-availability": "Boeking toevoegen",
+    "remove-non-availability": "Boeking verwijderen",
+    "reasons": {
+      "booked-in-store": "In de winkel geboekt",
+      "service-repair": "Service / reparatie",
+      "event-other": "Evenement / overig"
+    },
+    "reason": "Reason",
+    "previous-month": "Vorige maand",
+    "next-month": "Volgende maand",
+    "previous-week": "Vorige week",
+    "next-week": "Volgende week",
+    "filter-by-requests": "Alleen met aanvragen weergeven",
+    "no-bikes-to-display": "Geen fietsen om weer te geven",
+    "any-location": "Alle locaties",
+    "bike-variants": "Aantal fietsen",
+    "meta-title": "Boekingkalender",
+    "meta-description": "Kalenderweergave voor eenvoudig boekingsmanagement en voorraadbeheer",
+    "not-available-on-mobile": "Sorry, Booking Calendar isn't available on mobile"
+  }
+}

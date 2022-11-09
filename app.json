@@ -1,0 +1,67 @@
+{
+  "name": "Start on Heroku: Node.js",
+  "description": "A barebones Node.js app using Express 4",
+  "repository": "https://github.com/heroku/node-js-getting-started",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs",
+  "env": {
+    "LNR_WEBAPP_URL": {
+      "required": true
+    },
+    "LNR_API_ENDPOINT": {
+      "required": true
+    },
+    "LNR_USER_ENDPOINT": {
+      "required": true
+    },
+    "LNR_HTML_5_MODE": {
+      "required": true
+    },
+    "LNR_API_BRAINTREE_ENV": {
+      "required": true
+    },
+    "LNR_API_KEY_BRAINTREE": {
+      "required": true
+    },
+    "LNR_API_KEY_GOOGLE_MAPS": {
+      "required": true
+    },
+    "LNR_API_KEY_FACEBOOK_PIXEL": {
+      "required": true
+    },
+    "LNR_API_KEY_FACEBOOK_PLATFORM": {
+      "required": true
+    },
+    "LNR_API_KEY_GOOGLE_ANALYTICS": {
+      "required": true
+    },
+    "LNR_API_KEY_COVIEW": {
+      "required": true
+    },
+    "LNR_API_RECAPTCHA_V3_PUBLIC": {
+      "required": true
+    },
+    "LNR_ADYEN_ENV": {
+      "required": true
+    },
+    "LNR_ADYEN_ORIGIN_KEY": {
+      "required": true
+    },
+    "LNR_ADYEN_ORIGIN_KEY_DE": {
+      "required": true
+    },
+    "LNR_ADYEN_ORIGIN_KEY_NL": {
+      "required": true
+    },
+    "LNR_ADYEN_ORIGIN_KEY_ES": {
+      "required": true
+    },
+    "LNR_ADYEN_ORIGIN_KEY_IT": {
+      "required": true
+    },
+    "LNR_ADYEN_ORIGIN_KEY_FR": {
+      "required": true
+    }
+  }
+}

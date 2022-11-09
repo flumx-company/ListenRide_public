@@ -1,0 +1,1738 @@
+{
+  "shared": {
+    "learn-more": "Learn More",
+    "img-alt": "{{bikeBrand}} {{bikeName}} bike rental in {{bikeCity}}",
+    "request": "Request",
+    "non-availability-type": "Type of unavailability ",
+    "event": "Event",
+    "events": "Events",
+    "frame-size": "Rider height | Framesize",
+    "show-all-bikes": "Show all bikes",
+    "available": "available",
+    "brands": "Brands",
+    "your-email": "Enter your email address ",
+    "label_new": "New",
+    "booking-calendar": "Booking Calendar",
+    "month": "Month",
+    "id": "Bike ID",
+    "event-bikes-will-be-soon": "Bikes for this event will be available soon",
+    "for-count-hours": "for {{hoursSlot}} hours",
+    "rental-date": "Rental date",
+    "rental-time": "Rental time",
+    "choose-bike-size": "Please, pick a bike size",
+    "please-choose-bike-count": "Select number of bikes ",
+    "status-labels": {
+      "variants_available": "Variants available"
+    },
+    "summary": "Overview",
+    "pick-size": "Pick a size",
+    "firstly-pick-dates": "Please, select your rental dates first.",
+    "remove": "Remove",
+    "basic-insurance-fee": "Insurance Fee",
+    "payment-type": {
+      "pay-pal-account": "Paypal",
+      "credit-card": "Credit card",
+      "paypal-account": "Paypal account"
+    },
+    "change": "Change",
+    "local-business": "Local Business",
+    "list": "List",
+    "map": "Map",
+    "bike-type": "Bike type",
+    "filter-by": "Filter by",
+    "search-placeholder": "Search for e.g. Berlin, Munich",
+    "info": "Info",
+    "no-bikes-found": "No bikes found",
+    "dresden": "Dresden",
+    "bolzano": "Bolzano",
+    "lake-garda": "Lake Garda",
+    "sardinia": "Sardinia",
+    "sicily": "Sicily",
+    "tuscany": "Tuscany",
+    "please-select": "Please select",
+    "errors": {
+      "email-required": "Please enter your email address, email is required",
+      "three-d-secure-failed": "3D secure authentication failed",
+      "payment-cancelled": "Payment cancelled",
+      "payment-paypal-error": "Sorry, your PayPal payment failed",
+      "unexpected-payment-type": "Payment type not valid",
+      "email-not-valid": "Please, enter a valid email address",
+      "phone-not-valid": "Please, enter a valid phone number",
+      "phone-required": "Please enter your phone number, this field is required"
+    },
+    "notifications": {
+      "404": "Page doesn't exist",
+      "406": "The information you entered is incorrect. Please check your information and try again",
+      "422": "Wrong data format entered",
+      "500": "Internal server error",
+      "200": "Success"
+    },
+    "basic-fee": "Service Fee including Basic Insurance",
+    "how-it-works": "How it works",
+    "list-a-bike": "List a Bike",
+    "renting-a-bike": "Renting a Bike",
+    "listing-a-bike": "Listing a Bike",
+    "trust-and-safety": "Trust & Safety",
+    "journal": "Blog",
+    "later": "Later",
+    "next": "Next",
+    "previous": "Previous",
+    "requests": "Requests",
+    "top-cities": "Top Cities",
+    "berlin": "Berlin",
+    "dortmund": "Dortmund",
+    "milan": "Milan",
+    "munich": "Munich",
+    "nuremberg": "Nuremberg",
+    "amsterdam": "Amsterdam",
+    "vienna": "Vienna",
+    "hamburg": "Hamburg",
+    "dusseldorf": "Düsseldorf",
+    "ulm": "Ulm",
+    "tubingen": "Tubingen",
+    "zurich": "Zurich",
+    "freiburg": "Freiburg",
+    "paderborn": "Paderborn",
+    "utting": "Utting",
+    "heidelberg": "Heidelberg",
+    "marl": "Marl",
+    "frankfurt": "Frankfurt",
+    "usedom": "Usedom",
+    "lanzarote": "Lanzarote",
+    "mallorca": "Mallorca",
+    "sylt": "Sylt",
+    "stuttgart": "Stuttgart",
+    "per": "per",
+    "hour": "hour",
+    "hours": "hours",
+    "half-day": "half day",
+    "day": "day",
+    "day-6h": "day (> 6h)",
+    "days": "day(s)",
+    "week": "week",
+    "weeks": "weeks",
+    "discount": "discount",
+    "discount-day": "from 3 days",
+    "discount-week": "from a week",
+    "single-day": "for one day",
+    "duration": "Duration",
+    "subtotal": "subtotal",
+    "lnr-fee": "Service fee",
+    "total": "Total",
+    "from": "From",
+    "from2": "from",
+    "to": "To",
+    "as": "As",
+    "all": "All",
+    "cancel": "Cancel",
+    "send": "Send",
+    "search": "Search",
+    "search-all": "Search all bikes",
+    "search-all-in": "Search all bikes in",
+    "search-bikes": "Search your bikes",
+    "from-place": "from",
+    "contact": "Help & Support",
+    "show-more": "show more",
+    "show-less": "show less",
+    "phone-number": "Phone Number",
+    "wait": "Uploading, this may take a moment...",
+    "lister": "Lister",
+    "rider": "Rider",
+    "reviews": "Reviews",
+    "for": "for",
+    "per-day": "per day",
+    "pd": "p.d.",
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday",
+    "Saturday": "Saturday",
+    "Sunday": "Sunday",
+    "Mon": "Mon",
+    "Tue": "Tue",
+    "Wed": "Wed",
+    "Thu": "Thu",
+    "Fri": "Fri",
+    "Sat": "Sat",
+    "Sun": "Sun",
+    "join": "Join",
+    "voucher": "Voucher",
+    "download": "Download",
+    "Jan": "Jan",
+    "Feb": "Feb",
+    "Mar": "Mar",
+    "Apr": "Apr",
+    "May": "May",
+    "Jun": "Jun",
+    "Jul": "Jul",
+    "Aug": "Aug",
+    "Sep": "Sep",
+    "Oct": "Oct",
+    "Nov": "Nov",
+    "Dec": "Dec",
+    "testimonials-header": "What are people saying?",
+    "balance": "Balance",
+    "tac": "Terms and Conditions",
+    "privacy-policy": "Privacy Policy",
+    "booking-accept-tac": "By booking I accept the",
+    "already-booked": "Already booked",
+    "for-shops": "For Business",
+    "contact-us": "Please get in touch with us via ",
+    "required": "This is required",
+    "update": "Update",
+    "load-more": "Load more",
+    "confirm": "Confirm",
+    "confirmation": "Confirmation",
+    "confirmation-text": "Are you sure?",
+    "loading": "Loading",
+    "clear": "Clear",
+    "clear-all": "Clear All",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "press": {
+      "title": "Known from TV & Print",
+      "logo-1": "Insert Logo here",
+      "logo-2": "Insert Logo here",
+      "logo-3": "Insert Logo here",
+      "logo-4": "Insert Logo here"
+    },
+    "find-your-bike": {
+      "header": "Find your perfect bike",
+      "subheader": "Planning your next trip?",
+      "button": "Find your bike"
+    },
+    "rent-your-bike": {
+      "header": "Rent your bike",
+      "subheader": "Meet like-minded and make some pocket money"
+    }
+  },
+  "invoice": {
+    "settlement_history": "Settlement History"
+  },
+  "request": {
+    "payment-failed": "Uh-oh. Unfortunately, your payment failed. Please double check the data you have entered, as well as the payment settings of your payment provider!",
+    "waiting_for_capture": "Thank you for your booking request! The payment is currently being processed, you'll receive an email when it is confirmed.",
+    "payment-failed-lister": "Uh-oh, the payment of the Rider failed. Please wait while the Rider tries the payment again.",
+    "waiting_for_capture_lister": "Thank you for accepting the booking request! The payment is now being processed, you'll receive an email when it is confirmed.",
+    "payment-failed-after-accept": "Your booking request is on hold as the payment failed!\n\nPlease check your payment details and try again. As soon as the payment has succeeded, your booking will be confirmed!"
+  },
+  "about-us": {
+    "community": {
+      "content-paragraph": "However, we asked ourselves: why can't we always have just the right rental bike whenever and wherever we need it? Does it always have to be one of the used-and-abused from bike-sharing stations? The idea of listnride was born.",
+      "content-munich-showroom": "Centrally located in Maxvorstadt, our <a href=\"users/6511\" target=\"_blank\">Munich Experience Center</a> presents bicycles from brands such as Bonvelo, Rossignol, Urwahn, and Yuba. We also offer the latest Felt road bikes and urban e-bikes from Cowboy, Leaos, and Vello. Click <a href=\"brands\">here</a> to find out more about our test bikes and brands in Munich.",
+      "content-berlin-showroom": "In the heart of Berlin-Mitte, opposite the Hackescher Markt, our <a href=\"users/7351\" target=\"_blank\">Berlin Experience Center</a> offers test rides with bikes from brands such as Argon18, Bonvelo, Brompton and Cowboy.. We regularly organise events, such as <a href=\"http://www.facebook.com/pg/listnride/events/?ref=page_internal\" target=\"_blank\">social rides</a> every Friday morning. Click <a href=\"brands\" target=\"_blank\">here</a> to find out more about our available test bikes and brands in Berlin."
+    },
+    "future": {
+      "content-paragraph": "We are proud of our partners who have listed their bikes - be they professional retailers, bike fleet owners, or individuals. Finally, you can discover at selected locations throughout Europe ground-breaking brands that have partnered up with us to offer exclusive test ride services."
+    },
+    "showroom": {
+      "subtitle": "Get to know us in Berlin or Munich, and experience the latest fashionable bikes and more!"
+    },
+    "content-title": "We help you find the perfect rental bike for every occasion, anytime and everywhere"
+  },
+  "testimonials": {
+    "jetske-amsterdam": "On listnride I rent out my bikes providing families a simple solution to discover my home town. Besides meeting nice people I make some extra pocket money ☺",
+    "john-potsdam": "I have a few bikes standing around and think it's great to rent them out and offer a cool bike to the visitors of my city. We have always had great renters so far!",
+    "cornelia-basel": "We visited Berlin and wanted to try out a nice e-bike this time. We found Ampler e-bikes on listnride and rented two of them. It turned out perfectly and at a good price!",
+    "rider-1": "Visited Vienna and wanted to actively discover the city and country side. We found 2 great rental bikes on listnride, we had an awesome time, a great discovery!",
+    "rider-2": "I was visiting a friend in Berlin and didn't want to bring my own bike with me. Instead I rented a nice bike with listnrdie - very close to her. It worked out perfectly and at a good price.",
+    "rider-3": "In Munich we came across listnride and found two elegant city bikes for an appropriate price. The owner was a friendly guy inviting us on a coffee. He gave some cool tips, really nice!",
+    "rider-4": "I work regularly in Berlin. Since I discovered listnride, I often rent a nice bike. The selection of bikes is great and it is easy and safe.",
+    "lister-1": "I recently discovered listnride, listed 3 road bikes and now regularly rent them out. The great thing about it is meeting nice people, with whom I also go for a ride sometimes.",
+    "lister-2": "I'm a big listnride fan. When I go to races, I hire myself an excellent bike. At home I offer my bikes to my Airbnb guests. Super easy and good money."
+  },
+  "countries": {
+    "title": "All countries",
+    "country_title": "All cities and regions in {{country_name}}"
+  },
+  "prepositions": {
+    "in": " in "
+  },
+  "cyclingworld": {
+    "event": {
+      "calendar-title": "Testbikes for Cyclingworld",
+      "calendar-subtitle": "For the Gravel ride on Sunday and during the whole weekend of the cyclingworld you can book a 2 hour test ride."
+    }
+  },
+  "long-term": {
+    "header": "Choose your rental bike for your long-term stay",
+    "subheader": "listnride offers a wide range of high quality rental bikes for your long-term stay. Find the right mobility solution for you.",
+    "how-to": {
+      "step-1-title": "1. Full Service",
+      "step-1-content": "You decide where and when you need which bicycles. Just provide us the details below and we'll get back to you.",
+      "step-2-title": "2. Attractive Packages",
+      "step-2-content": "Package prices for single or multiple bikes, \nbikes that fits your need and style (eBikes, cargo, children's), appropriate accessories, e.g. Child trailer, lock, helmet, insurance against damage and theft\n",
+      "step-3-title": "3. Simple Booking Procedure",
+      "step-3-content": "Our efficient booking process starts from the your inquiry you made until the payment is processed. A booking confirmation and invoice will be provided to you."
+    },
+    "meta-title": "If you’re planning a long-term stay, then listnride can provide you with a rental bike that fits you needs and style. Find the right mobility solution.",
+    "meta-description": "listnride, your local expert for bike rental",
+    "opengraph": {
+      "description": "The rental bike that fits you needs and style."
+    },
+    "title": "Rental bikes for your long-term stay"
+  },
+  "test": {
+    "delete-me": "TEST TEXT"
+  },
+  "imprint": {
+    "germany-address": "Steinstraße 17<br>\n10119 Berlin<br>\nGermany",
+    "contacts": "E-Mail: <a href=\"mailto:contact@listnride.com?Subject=Press%20Contact\" target=\"_top\">contact@listnride.com</a><br>\nWeb: <a href=\"//listnride.com\">www.listnride.com</a><br>\nPhone: +49 (0)30-120870330"
+  },
+  "events": {
+    "berlin-triathlon": {
+      "description": "What: <b>Berlin Triathlon</b> | Where: <b>Berlin</b> | When: <b>6-7 June 2020</b>",
+      "meta-title": "Rent a road bike for the Berlin Triathlon 2020 | listnride",
+      "meta-description": "Rent a road bike with listnride for the Berlin Triathlon 2020. Choose a high-quality racing bike that fits you best!"
+    },
+    "la-chouffe": {
+      "title": "Rent a road bike for La Chouffe Classic!",
+      "description": "What: <b>La Chouffe Classic</b> | Where: <b>Houffalize, Belgium</b> | When: <b>May 16th, 2020</b>",
+      "text": "<p>Get familiar with the Wallonian region of Belgium, a region rich in cycling history as well as untouched nature! The <a href=\"https://www.lachouffeclassic.be/nl/\" target=\"_blank\">Proximus La Chouffe Classic</a> is a fantastic event for those who love steep climbs! There are three distances available (85km, 120km, and 157km), making this event as accessible or challenging as you fancy!\n\nMake the most out of this event with one of our top-of-the-range road bikes, which can be rented at the starting line!</p> \n\n<p>Save yourself time, trouble, and money by simply renting a bike. They will be ready-to-go at the starting line in Houffalize. All you need to bring is your helmet, pedals, and of course: you!</p>\n\n<a href=\"https://www.listnride.com/multi-booking?location=Houffalize\" target=\"_blank\">Group bookings available here!</a>",
+      "meta-title": "Rent a road bike for La Chouffe Classic | listnride",
+      "meta-description": "Rent a high-end racing bike for La Chouffe Classic with listnride! The well-specced bikes will be in ready for you at the starting line. Explore the Belgian hills with our fantastic selection of rental bikes!"
+    },
+    "gent-wevelgem": {
+      "title": "Rent a road bike for Gent-Wevelgem Sportive!",
+      "description": "What: <b>Gent-Wevelgem Sportive</b> | Where: <b>Wevelgem, Belgium</b> | When: <b>March 28th, 2020</b>",
+      "text": "<p>Get familiar with the Flanders region of Belgium, a region rich in cycling history, with iconic steep & cobblestoned roads! The <a href=\"https://www.gentwevelgemcyclo.be/en/\" target=\"_blank\">Gent-Wevelgem Sportive</a> is a fantastic event for those who love steep climbs! There are four distances available (65km, 95km, 140km, and 220km), making this event as accessible or challenging as you fancy!\n\nMake the most out of this event with one of our top-of-the-range road bikes, which can be rented at the starting line!\n</p> \n\n<p>Save yourself time, trouble, and money by simply renting a bike. They will be ready-to-go at the starting line in Houffalize. All you need to bring is your helmet, pedals, and of course: you!</p>\n\n<a href=\"https://www.listnride.com/multi-booking?location=Wevelgem\" target=\"_blank\">Group bookings available here!</a>",
+      "meta-title": "Rent a road bike for the Gent-Wevelgem Sportive | listnride",
+      "meta-description": "Rent a high-end racing bike for the Gent-Wevelgem sportive with listnride! The well-specced bikes will be in ready for you at the starting line. Explore the Belgian hills with our fantastic selection of rental bikes!"
+    },
+    "msr": {
+      "meta-title": "Road bike rental for the Mecklenburger Seenrunde 2020 | listnride",
+      "meta-description": "Rent a road bike online easy and secure with listnride for the Mecklenburger Seenrunde 2020. Choose the perfect bike that fits your needs."
+    },
+    "frankfurt-city-triathlon": {
+      "meta-title": "Road bike rental for the Frankfurt City Triathlon | listnride",
+      "meta-description": "Rent a racing bike with listnride for the Frankfurt City Triathlon. Choose the perfect bike for your next race!"
+    },
+    "cwd": {
+      "calendar-title": "Testbikes for Cyclingworld",
+      "calendar-subtitle": "For the Gravel ride on Sunday and during the whole weekend of the cyclingworld you can book a 2 hour test ride."
+    },
+    "velocity-bikerental": {
+      "description": "What: <b0>VeloCity Berlin 2020</b0> | Where: <b1>Berlin</b1> | When: <b2>13-14 June 2020</b2>"
+    },
+    "radfahren-neu-entdecken-eschborn": {
+      "title": "Rent and test great bikes in Eschborn",
+      "description": "What: <b>Radfahren neu entdecken</b>  |  Where: <b>In Eschborn</b>  |  When: <b>1.6. - 31.08. 2019</b>",
+      "text": "Vielen Dank für Ihre Registrierung auf radfahren-neu-entdecken.de. Bitte suchen Sie sich nun Ihr Wunschrad sowie einen für Sie passenden Termin aus.</br>\nDie Räder stehen in Ihrer Kommune im Zeitraum vom 01. Juni bis zum 31. August 2019 zur Verfügung.</br>\nSie können die Räder insgesamt zwei Wochen gratis testen und erfahren, wie angenehm es ist, mit elektrischem Rückenwind unterwegs zu sein.\nTesten Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!</br>\nWeitere Informationen zu den Übergabeorten, etc. erhalten Sie ein paar Tage vor dem gewünschten Testzeitraum von uns per E-Mail.",
+      "calendar-title": "E-Bikes einfach kostenlos Probefahren",
+      "calendar-subtitle": "Wähle den gewünschten Zeitraum aus und frage das Rad an.",
+      "meta-title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren",
+      "meta-description": "esten Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!"
+    },
+    "radfahren-neu-entdecken-kassel": {
+      "title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren",
+      "description": "Was: <b>Radfahren neu entdecken</b>  |  Wo: <b>In Kassel</b>  |  Wann: <b>1.6. - 31.08. 2019</b>",
+      "text": "Vielen Dank für Ihre Registrierung auf radfahren-neu-entdecken.de. Bitte suchen Sie sich nun Ihr Wunschrad sowie einen für Sie passenden Termin aus.</br>\nDie Räder stehen in Ihrer Kommune im Zeitraum vom 01. Juni bis zum 31. August 2019zur Verfügung.</br>\nSie können die Räder insgesamt zwei Wochen gratis testen und erfahren, wie angenehm es ist, mit elektrischem Rückenwind unterwegs zu sein.\nTesten Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!</br>\nWeitere Informationen zu den Übergabeorten, etc. erhalten Sie ein paar Tage vor dem gewünschten Testzeitraum von uns per E-Mail.",
+      "calendar-title": "E-Bikes einfach kostenlos Probefahren",
+      "calendar-subtitle": "Wähle den gewünschten Zeitraum aus und frage das Rad an.",
+      "meta-title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren",
+      "meta-description": "Testen Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!"
+    },
+    "radfahren-neu-entdecken-hofheim": {
+      "title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren!",
+      "description": "Was: <b>Radfahren neu entdecken</b>  |  Wo: <b>In Hofheim</b>  |  Wann: <b>1.6. - 31.08. 2019</b>",
+      "text": "Vielen Dank für Ihre Registrierung auf radfahren-neu-entdecken.de. Bitte suchen Sie sich nun Ihr Wunschrad sowie einen für Sie passenden Termin aus.</br>\nDie Räder stehen in Ihrer Kommune im Zeitraum vom 01. Juni bis zum 31. August 2019 zur Verfügung.</br>\nSie können die Räder insgesamt zwei Wochen gratis testen und erfahren, wie angenehm es ist, mit elektrischem Rückenwind unterwegs zu sein.\nTesten Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!</br>\nWeitere Informationen zu den Übergabeorten, etc. erhalten Sie ein paar Tage vor dem gewünschten Testzeitraum von uns per E-Mail.\n",
+      "calendar-title": "E-Bikes einfach kostenlos Probefahren",
+      "calendar-subtitle": "Wähle den gewünschten Zeitraum aus und frage das Rad an.",
+      "meta-title": "Testen attraktive Räder in Ihrem Alltag auf Herz und Nieren",
+      "meta-description": "Testen Sie attraktive Räder in Ihrem Alltag auf Herz und Nieren. Erfahren Sie die Vorteile dieser Art der Mobilität!"
+    },
+    "paris-brest-paris": {
+      "meta-title": "Rent a road bike for Paris-Brest-Paris 2019 | listnride",
+      "meta-description": "Rent a road bike online easy and secure with listnride for Paris-Brest-Paris 2019. Choose the perfect bike that fits your need."
+    },
+    "8bar-clubride": {
+      "meta-title": "Rent a road bike for the 8bar club ride",
+      "meta-description": "Join our 8bar Clubride and try out one of our 8bar bikes.\nFor only 8€ you can test ride the bike during the Clubride and receive a 8bar bike bottle for free!",
+      "calendar-title": "Test bikes for the 8bar club ride",
+      "calendar-subtitle": "Book your free 8bar bike for our weekly Club Ride"
+    },
+    "cyclingworld": {
+      "meta-title": "Rent a gravel bike for Cyclingworld Düsseldorf!",
+      "meta-description": "Tempted in test riding a gravel bike? Rent yours from 8bar, Salsa or Veloheld for an epic gravel ride at Cyclingworld!"
+    },
+    "black-friday": {
+      "banner": {
+        "title": "Black Friday",
+        "description": "Get huge discount for your next rental. Only today! ",
+        "check-it": "Check it out"
+      }
+    },
+    "epicgrancanaria": {
+      "meta-title": "Rent a road bike for Epic Gran Canaria | listnride",
+      "meta-description": "The aim of the Epic Gran Canaria is to deliver a professional experience on bike for amateur riders"
+    },
+    "velorace-dresden": {
+      "meta-title": "Rent a road bike for Velorace Dresden 2019 | listnride",
+      "meta-description": "With listnride you can securely rent a road bike online for Velorace Dresden 2019. Choose the perfect bike that fits your needs!"
+    },
+    "berlin-triathlon-xl": {
+      "meta-description": "Rent a road bike with listnride for the Berlin Triathlon 2020. Choose a high-quality racing bike that fits you best!",
+      "meta-title": "Rent a road bike for the Berlin Triathlon XL 2019 | listnride"
+    },
+    "vatternrundan": {
+      "meta-title": "Rent a road bike for Vätternrundan 2020 | listnride",
+      "meta-description": "Rent a road bike online for Vätternrundan 2020. Choose the bike that fits your needs!"
+    },
+    "lardita-arezzo": {
+      "meta-title": "Rent a vintage road bike for L'Ardita, only on listnride!",
+      "meta-description": "With listnride you can easily rent a vintage road bike online for l'Ardita dell'Alpe di Poti. Choose the perfect bike for this incredible race in the heart of Tuscany!"
+    },
+    "granfondo-via-del-sale": {
+      "meta-title": "Rent a road bike for the Granfondo Via del Sale 2020|listnride",
+      "meta-description": "Bike rental for the Granfondo Via del Sale 2020 | Rent a race bike that fits you best on listnride!"
+    },
+    "giro-sardegna": {
+      "meta-title": "Rent a road bike for the Giro Sardegna | listnride",
+      "meta-description": "Bike rental for the Giro Sardegna | Rent a race bike that fits you best on listnride!"
+    }
+  },
+  "lister": {
+    "chat": "Your booked bike was cancelled."
+  },
+  "veletage": {
+    "event": {
+      "calendar-title": "veletage POP-UP SALON",
+      "select-day": "1. Select the Rental Date ",
+      "select-slot": "2. Select the rental time",
+      "day-error": "Please select a day first",
+      "select-return": "3. Select return time",
+      "time-error": "Please select a pickup time first",
+      "calendar-subtitle": "The UCI Road World Championships will take place in Innsbruck-Tirol (Austria) from 22nd to 30th September 2018. Test and rent the perfect road bike for your ride. "
+    }
+  },
+  "brand-integration": {
+    "leaos": {
+      "subdescription-not-used": "Design. Art. Passion.",
+      "subdescription-not-use": "Design. Art. Passion."
+    },
+    "matebikes": {
+      "title": "Meet MATE: the coolest foldable e-bike!",
+      "description": "<a href=\"https://mate.bike/\" target=\"_blank\">Mate.bike</a> is a Copenhagen-based startup founded in 2016 by the siblings Christian Adel Michael and Julie Kronstrøm Carton who want to engage today’s challenges of dense traffic congestion, climate change and health issues in general by creating unique, fun and affordable electric bicycles.",
+      "item1-title": "World’s coolest foldable e-bikes",
+      "item1-description": "We believe that MATE and MATE X are the world’s coolest, foldable electric bikes. They are envisioned and developed with nothing but pedal-love in the cycling capital of the world, Copenhagen Denmark.",
+      "item2-title": "Power to the pedals: up to 750W!",
+      "item2-description": "Our bikes boast powerful electric motors ranging from 250W to 750W and we’ve geared the bicycles with top-tier specs like Shimano gears, Tektro disc brakes, USB ports and LED screens for managing the settings. ",
+      "item3-description": "Every thought behind design, upgrades and additional details have been made while continuing to ensure that our eBikes are both affordable, fun and awesome looking. They turn heads wherever they go and at the same time offer a smooth ride. Only the best for our MATEs.",
+      "find-out-more": "Rent and test ride the Mate.bike today!",
+      "order-online": "We want to make the best and coolest eBikes for any rider, any journey, any situation. By making eBikes cool, sexy, practical and affordable, we wish to take bicycling global as the preferred mode of transportation for more people in urban areas. Our mission is simple: More miles on bikes.\nLearn more on <a href=\"https://mate.bike/\" target=\"_blank\"> Mate.bike</a>\n",
+      "item3-title": "Affordable, fun, and awesome",
+      "optional": "1) Optional throttle upgrade. Price available on request. <br> 2) Standard limited maximum speed. Unlocking the max speed requires the color display <br> 3) Optional upgrade to a 48V 17.5 AmpH battery. Price available on request <br>"
+    },
+    "urwahn": {
+      "item2-description": "Organic design with<br>\nhigh recognition value<br>\nand an elastic rear triangle<br>\nfor more driving comfort"
+    },
+    "bzen": {
+      "item1-description": "Lightweight, Only 14.4 k<br>\nBattery & smart electronics all hidden inside<br> \nComfort geometry, saddle and handgrips<br>\nEasy to carry up stairs\n"
+    }
+  },
+  "faq": {
+    "meta-title": "Frequently Asked Questions",
+    "meta-description": "The most frequently asked questions by Listers and Riders are answered here to help you get started."
+  },
+  "multi-booking": {
+    "meta-title": "Group booking",
+    "opengraph": {
+      "description": "The rental bike that fits you needs and style."
+    },
+    "no-accessories": "No accessories",
+    "meta-description": "Book your bikes with our group booking form",
+    "title": "Group bookings for bike rental",
+    "header": "We are happy to help you with your group booking",
+    "subheader": "Let us help you to get your bike rental organized for your next cycling trip. Provide us with your preferences and we'll do the rest, so you can focus on enjoying the ride.",
+    "how-to": {
+      "step-1-title": "For small groups",
+      "step-1-content": "For group bookings of two-three rental bikes, it is easier and quicker to search and book the bikes directly on listnride.",
+      "step-2-title": "For larger groups",
+      "step-2-content": "For 4+ rental bikes, tell us what kind of bicycles and accessories you'd like to rent and we will get back to you with an offer!",
+      "step-3-title": "Accept offer & book online",
+      "step-3-content": "Once we set up the group booking link, you can simply and safely pay online!"
+    },
+    "your-booking-details": "Your booking details",
+    "what-bike-kind": "What kind of bike?",
+    "where-to-rent": "Where do you want to rent?",
+    "rental-period": "Rental period",
+    "how-many-bikes": "How many bikes?",
+    "do-you-need-accessories": "Do you need accessories?",
+    "your-contact-details": "Your contact details",
+    "thanks-for-request": "Thanks for your bike rental request",
+    "we-will-back-shortly": "We will get back to you shortly",
+    "take-back-to-search": "Take me back to my search",
+    "accessories": "Accessories"
+  },
+  "insurance": {
+    "facts": {
+      "basic-insurance": {
+        "price-description": "included in every rental in Germany and Austria"
+      }
+    },
+    "meta-title": "Insurance for every rental in Germany and Austria",
+    "meta-description": "Every rental in Germany and Austria through listnride is automatically insured."
+  },
+  "meta": {
+    "cities": {
+      "berlin": {
+        "meta-title": "Explore Berlin by bike with listnride",
+        "meta-description": "Bike rental in Berlin. With listnride, you can rent a bike in Berlin that matches your needs and your style."
+      },
+      "munich": {
+        "meta-title": "Explore Munich by bike with listnride",
+        "meta-description": "Bike rental in Munich. With listnride, you can rent a bike in Munich that matches your needs and your style."
+      },
+      "amsterdam": {
+        "meta-title": "Explore Amsterdam with a rental bike from listnride",
+        "meta-description": "Bike rental in Amsterdam. With listnride, you can rent a bike in Amsterdam that matches your needs and your style."
+      },
+      "vienna": {
+        "meta-title": "Explore Vienna with a rental bike from listnride",
+        "meta-description": "Bike rental in Vienna. With listnride, you can rent a bike in Vienna that matches your needs and your style."
+      }
+    },
+    "brands": {
+      "meta-title": "Test and experience extraordinary bikes",
+      "meta-description": "Discover and testride e-bikes, road bikes, mountain bikes, city bikes and more! Get expert advice on the bike before you make a purchase decision."
+    },
+    "seo": {
+      "city-title": "Bike rental in {{location}} | listnride",
+      "city-description": "Rent the bike that fits you best, starting from {{ minPrice }}€. Enjoy {{location}} with a bike securely hired on listnride.",
+      "category-title": "Rent a {{category}} bike in {{location}} | listnride",
+      "category-description": "Rent a {{category}}, starting from {{ minPrice }}€. Enjoy {{location}} with listnride!"
+    },
+    "business-community": {
+      "meta-title": "The listnride business community",
+      "meta-description": "Join the listnride business community for bike rental"
+    },
+    "events": {
+      "rapha-super-cross": {
+        "meta-title": "Rapha Super Cross - Rent a bike with listnride"
+      },
+      "black-friday": {
+        "meta-title": "Black Friday bike rental discount | listnride",
+        "meta-description": "Black Friday discount on listnride! Huge discount on your next bike rental, only this weekend!"
+      },
+      "eroica-gaiole": {
+        "meta-title": "Rent a vintage road bike for L'Eroica",
+        "meta-description": "Rent your vintage road bike for Eroica on listnride"
+      },
+      "toros-de-gravel": {
+        "meta-title": "Rent a bike for Toros de Gravel",
+        "meta-description": "On listnride you'll find a selection of gravel and mountainbikes for you to rent for this special gravel event in Sineu on Mallorca. "
+      },
+      "in-velo-veritas": {
+        "meta-title": "Rent a vintage bike for Austria's l'Eroica: In Velo Veritas! | listnride",
+        "meta-description": "Rent a vintage road bike for In Velo Veritas! listnride has a beautiful selection of classic bikes to rent for this beautiful tour of the Austrian wine country."
+      },
+      "velocity-bikerental": {
+        "meta-title": "Rent a road bike for the VeloCity Berlin 2020!",
+        "meta-description": "We're delivering road bike rental for the VeloCity Berlin 2020! Rent a road bike from the listnride community and join in on the fun!"
+      },
+      "constance-spin": {
+        "meta-title": "Rent a road bike during Eurobike",
+        "meta-description": "Come ride with listnride and Katusha at Eurobike!"
+      },
+      "velosoph": {
+        "meta-title": "Rent a road bike with Velosoph",
+        "meta-description": "A local riders' favourite route through Holledau. listnride pays a visit to Velosoph, the Cycling Café in Freising."
+      },
+      "cyclassics-hamburg": {
+        "meta-title": "Rent a road bike for the EuroEyes Cyclassics in Hamburg! | listnride",
+        "meta-description": "Rent the perfect road bike for the EuroEyes Cyclassics in Hamburg and choose from brands such as Specialized, Ridley, Cervelo and Bianchi!"
+      },
+      "triathlon-hamburg": {
+        "meta-title": "Rent a racing bike for the Hamburg Wasser World Triathlon | listnride",
+        "meta-description": "Rent the perfect road bike for the Hamburg Wasser World Triathlon and choose from brands such as Specialized, Ridley, Cervelo and Bianchi!"
+      },
+      "riderman-rothaus": {
+        "meta-title": "Rent a road bike for the RiderMan in Bad Duerrheim",
+        "meta-description": "Rent the perfect road bike for the RiderMan in Bad Duerrheim easily online and choose from brands such as Siplon, Specialized, Ridley, Cervelo and Bianchi"
+      },
+      "depart": {
+        "meta-title": "Rent a road bike for the Grand Départ on listnride",
+        "meta-description": "Join listnride and Schicke Mütze for a social road ride in celebration of the Grand Départ. Rent a high-end road bike from the listnride community."
+      },
+      "supercross-munich": {
+        "meta-title": "Rent the perfect cyclocross Bike for the Supercross Munich on listnride",
+        "meta-description": "Rent the perfect cyclocross bike for the Supercross in Munich easily online. Choose from brands such as BMC, Votec, Ridley, SRAM, Specialized, Bianchi, Pasculli, Focus and other brands."
+      },
+      "cape-argus": {
+        "meta-title": "Rent a road bike for the Cape Town Cycle Tour on listnride",
+        "meta-description": "Rent the perfect road bike for the  Cape Town Cycle Tour easily online and choose from brands such as Specialized, Ridley, Cervelo and Bianchi"
+      },
+      "common": {
+        "meta-title": "Rent a bike on listnride",
+        "meta-description": "Rent a bike on listnride"
+      }
+    },
+    "brand-integration": {
+      "ampler": {
+        "meta-title": "E-Bike Test Ride Program",
+        "meta-descr": "Test ride an e-bike today! The ebikes from Ampler are available on listnride. Rent one in Amsterdam, Berlin, Düsseldorf,  Munich or Zurich."
+      },
+      "rossignol": {
+        "meta-title": "Rent and test ride Rossignol bikes. Rossignol bikes are available to rent on listnride.",
+        "meta-description": "Test ride a Rossignol bike today! Rossignol bikes are available to rent on listnride. The newest mountain bikes from Rossignol will help you hit the trail. "
+      },
+      "yuba": {
+        "meta-title": "Yuba: Bikes that carry more. Test ride Yuba bikes at listnride.",
+        "meta-description": "Yuba Cargo Bicycles are cargo Utility bikes for carrying 1 to 3 kids by bike. A Perfect solution for carrying cargo and doing deliveries. Yuba bikes are available to rent and test ride on listnride."
+      },
+      "cowboybikes": {
+        "meta-title": "Rent and test ride Cowboy bikes, the electric Bike for Urban Riders | listnride",
+        "meta-description": "Test ride a Cowboy smart electric urban bike today! The smart electric Bike for Urban Riders. Rent it on listnride!"
+      },
+      "argon18": {
+        "meta-title": "Rent and test ride Argon 18 road bikes and gravel bikes! ",
+        "meta-description": "In our Berlin Experience Center you can rent and test ride Argon 18 road bikes and gravel bikes! World leader in high-end bicycle manufacturing! Simply book online and visit our showroom for pick-up."
+      },
+      "urwahn": {
+        "meta-title": "Rent and test a Urwahn Stadtfuchs in Munich| listnride",
+        "meta-description": "Book a test drive for the Urwahn Stadtfuchs today! The stylish urban bike you can easily book and test drive in Munich!"
+      },
+      "bzen": {
+        "meta-title": "Test ride the newest BZEN smart e-bikes all across Germany | listnride",
+        "meta-description": "Test ride a smart electric city bike today! The smart electric city bikes from BZEN are available to rent on listnride all across Germany!"
+      },
+      "unimoke": {
+        "meta-title": "Rent and test ride UNI Moke bikes | listnride",
+        "meta-description": "Test ride a UNI Moke electric bike today. Build for fun, family and work by Urban Drivestyle in Berlin, Germany. "
+      },
+      "whyte": {
+        "meta-title": "Rent and test Whyte bikes in Berlin and Zell am Ziller (AT) | listnride",
+        "meta-description": "Test ride a Whyte bike today! The gravel bikes and mountain bikes from Whyte are available to rent on listnride in Berlin!"
+      },
+      "felt": {
+        "meta-title": "Rent and test ride Felt Bicycles in Munich | listnride",
+        "meta-description": "Test ride a Felt bike today! The road bikes from Felt Bicycles are available to rent on listnride in Munich. "
+      },
+      "swytch": {
+        "meta-title": "Rent and test ride Swytch eBike Kit in Berlin and Cologne| listnride",
+        "meta-description": "Test ride a Swytch ebike today! The ebikes from Swytch are available to rent on listnride in Berlin!"
+      },
+      "leaos": {
+        "meta-title": "Rent and test the Leaos E-Bikes in Munich, Berlin and Bolzano",
+        "meta-descr": "The design e-bike - Leaos"
+      },
+      "brompton": {
+        "meta-title": "Rent a Brompton bike with listnride",
+        "meta-description": "Test ride a Brompton bike today! These urban folding bikes are available on listnride. Rent one in Berlin, Munich, Hamburg, Düsseldorf or Frankfurt."
+      },
+      "veloheld": {
+        "meta-title": "Rent and test veloheld bikes in Munich and Dresden | listnride",
+        "meta-keywords": "-",
+        "meta-description": "Test veloheld bikes and experience the pure aesthetics and functional features of a custom made steel bike: road bike, cyclocross bike or city bike!"
+      },
+      "muli": {
+        "meta-title": "Rent a Muli cargo bike with listnride",
+        "meta-description": "Test ride a Muli cargo bike today! These urban cargo bikes are available on listnride. Rent one in Berlin or Munich."
+      },
+      "vello": {
+        "meta-title": "Rent and test VELLO E-Bikes in Berlin & Munich",
+        "meta-description": "VELLO BIKE+ The First Self-Charging Electric Folding Bike. The VELLO BIKE is a high-performance folding bike developed for the perfect urban cycling experience."
+      },
+      "veletage": {
+        "meta-title": "VELETAGE Salon für Radkultur",
+        "meta-descr": "VELETAGE Salon für Radkultur - Custom made racing bikes, clothing, wheelsets, bike fittings"
+      },
+      "bonvelo": {
+        "meta-title": "Rent and Test Bonvelo Singlespeed Bikes in Berlin & Munich",
+        "meta-description": "The singlespeed \"bonvelo BLIZZ\" is available to rent and test ride in Berlin in four frame sizes. Book one on listnride today!"
+      },
+      "motoparilla": {
+        "meta-title": "Rent and Test the Moto Parilla Carbon SUV e-Bike in Munich",
+        "meta-description": "The Carbon SUV E-Bike from Moto Parilla can be tested in Munich. Simply book online and enjoy the ride!"
+      },
+      "votec": {
+        "meta-title": "Rent and Test the newest Votec Bikes",
+        "meta-descr": "VOTEC - Fusion of Functionality, Design and Quality"
+      },
+      "vanmoof": {
+        "meta-title": "Rent and test the Electrified S E-Bikes in Berlin, Munich and Hamburg",
+        "meta-descr": "The perfect city bike - VanMoof"
+      },
+      "moeve": {
+        "meta-title": "Rent and test Moeve bikes in Munich and Amsterdam",
+        "meta-descr": "The bike with the unique drive system - Cyfly by Moeve."
+      },
+      "rethink": {
+        "meta-title": "Rent and test rethink E-Bikes in Munich, Hamburg and Dresden",
+        "meta-descr": "Your rethink e-bike. Clear. Robust. Distinct Character."
+      },
+      "cocomat": {
+        "meta-title": "Rent COCO-MAT.bike | listnride",
+        "meta-descr": "Rent and test our wooden bikes in Athens, Greece and visit the historical center and the Athenian sea side."
+      }
+    },
+    "about-us": {
+      "meta-title": "listnride - about us",
+      "meta-description": "listnride - how we created the online platform for bike rental"
+    },
+    "contact-and-help": {
+      "meta-title": "listnride is here for you",
+      "meta-description": "Contact us if you have special questions or need help solving a problem"
+    },
+    "press": {
+      "meta-title": "listnride press",
+      "meta-description": "We love bike rentals. And we’ll gladly answer all your questions."
+    },
+    "invest": {
+      "meta-title": "listnride is crowdfunding! Be part of it and invest in building Europe’s leading bike rental community.",
+      "meta-description": "Visit Seedrs to learn more about investing in listnride."
+    },
+    "terms-and-conditions": {
+      "meta-title": "listnride | Website Terms & Conditions",
+      "meta-description": "The Terms and Conditions of listnride apply to the use of the online platform."
+    },
+    "trust-and-safety": {
+      "meta-title": "Bicycle rental with insurance"
+    },
+    "how-it-works": {
+      "meta-title": "Bike rental made easy",
+      "meta-description": "Using listnride is as easy as meeting up for coffee. Try for yourself!"
+    },
+    "jobs": {
+      "meta-title": "Work for listnride",
+      "meta-description": "Join the listnride team in Berlin or Munich to build the global bike rental platform"
+    },
+    "shop-landing": {
+      "meta-title": "listnride Shop Plugin - Get your bike rental online",
+      "meta-description": "listnride now offers a free plug-in to easily integrate a bike rental booking engine on your website."
+    },
+    "imprint": {
+      "meta-title": "listnride | Imprint",
+      "meta-description": "Bike rental on listnride. Rent a bike that suits your style and needs."
+    },
+    "privacy": {
+      "meta-title": "Privacy Policy of listnride",
+      "meta-description": "The Privacy Policy of listnride applies to the use of the online platform.",
+      "use-opt-in": "To provide you with the perfect service with listnride, we use cookies in accordance with our <a target=\"_blank\" href=\"/#/privacy\">Cookie Policy</a>.",
+      "use-opt-in-button": "I understood."
+    }
+  },
+  "booking": {
+    "shopping": "Secure Payments",
+    "rent-bike-terms": "With 'Book now' you agree to the",
+    "and-agree-privacy": "and our data protection regulations",
+    "pay-secure": "Pay securely with",
+    "agree-terms": "With 'Request Bike' you agree to the",
+    "agree-terms-link": "listnride Terms",
+    "footer": {
+      "questions": "Do you have questions about booking a bike?",
+      "call-us": "Need help? Call us:\n<a href=\"tel:+49030120870330\">+49 (0)30 120870330</a>\nOr\n<a href=\"mailto:contact@listnride.com\">write us</a>.",
+      "email-us": "Or write us an email",
+      "support": "listnride Support"
+    },
+    "sign-in": {
+      "tab": "Sign in",
+      "new": "New at listnride?",
+      "login": "Log in to listnride",
+      "register-facebook": "Register with Facebook",
+      "login-facebook": "Log in with Facebook",
+      "already-member": "Already a member?",
+      "register": "Register",
+      "not-member": "No member yet?"
+    },
+    "details": {
+      "tab": "Personal Details",
+      "sms-confirmation-message": "A SMS with a confirmation code was sent to you just now.",
+      "invoice-address": "Invoice Address",
+      "subtitle": "Please fill in your invoice address in order to request a bike.",
+      "verification": "Verification",
+      "send-sms": "We'll send you an sms to your phone.",
+      "check-phone": "Please check your phone.",
+      "send-code": "Send Code",
+      "confirm-code": "Confirmation code",
+      "enter-code": "Enter the pin that we just sent to your phone",
+      "success-code": "Great. You are set.",
+      "fail-code": "The code you entered is not correct. Try again, or resend the SMS",
+      "resend": "Resend"
+    },
+    "payment": {
+      "tab": "Payment Method",
+      "current-method": "Current payment method",
+      "getting-saved": "Your payment details are being saved",
+      "select-method": "Select your Payment Method",
+      "subtitle": "Please select your favorite payment method. We only charge you after the lister accepted your request.",
+      "credit-card": "Credit Card",
+      "card-name": "Name on Card",
+      "invalid-name": "Please provide valid name",
+      "card-number": "Card Number",
+      "invalid-card": "Please provide a valid Card Number",
+      "invalid-card-number": "Card Number not valid",
+      "exp-month": "Exp. month",
+      "invalid-month": "Month not valid",
+      "invalid-year": "Year not valid",
+      "invalid-date": "Date not valid",
+      "exp-year": "Exp. year",
+      "exp-date": "Exp. date",
+      "invalid-cvc": "CVC not valid",
+      "cvc": "CVC Number",
+      "pay-paypal": "Pay with Paypal"
+    },
+    "overview": {
+      "tab": "Overview",
+      "direct": {
+        "success-header": "Congratulations, you've just rented a bike!"
+      },
+      "model": "Model",
+      "bike-rental": "Your bike rental",
+      "size": "Size",
+      "location": "Location",
+      "invoice-address": "Invoice Address",
+      "premium-insurance": "Premium insurance",
+      "premium-insurance-title": "Premium Insurance Protection",
+      "premium-insurance-subtitle": "Pick our premium insurance to be on the safe side",
+      "thats-included": "On top of basic insurance, these features are additionally included",
+      "premium-feature-1": "Theft protection",
+      "premium-feature-2": "Replacement bike after accident or damage",
+      "premium-feature-3": "Return transport of the bike after accident or damage",
+      "premium-feature-4": "No Retention fee",
+      "premium-feature-5": "24/7 emergency phone number",
+      "payment": "Payment",
+      "redeem-voucher": "Redeem Voucher",
+      "add": "Add",
+      "success-header": "Congratulations, you have just requested a bike!",
+      "success-subheader": "We've sent you a confirmation email. Feel free to book more bikes, afterwards."
+    },
+    "calendar": {
+      "tab": "Duration",
+      "bike-rental": "Your bike rental",
+      "choose-duration": "Choose your rental duration",
+      "pickup-time": "Pickup time",
+      "return-time": "Return at",
+      "intro-description": "Your booking gets safely processed by listnride, Europe's biggest bike rental platform."
+    }
+  },
+  "toasts": {
+    "update-profile-success": "Your profile has been successfully updated",
+    "confirm-email-success": "Great, you've successfully confirmed your email address!",
+    "confirmation-successful": "Confirmation successful",
+    "change-successful": "The changes were saved.",
+    "change-password-success": "Great, you've successfully changed your password!",
+    "password-not-match": "Passwords do not match",
+    "verification-code-error": "Error: the verification code is invalid.",
+    "address-save-error": "The address could not be saved",
+    "request-create-rider": "Don't worry, we haven't charged yet: the payment only takes place if and when your request gets accepted!",
+    "request-created": "The booking request was successfully sent! ",
+    "request-failed": "Oops, something's wrong.",
+    "request-failed-rider": "Something went wrong with the payment. Please check that you entered your payment details correctly, and try again!",
+    "btns": {
+      "go-to-request": "Open the request",
+      "go-to-settings": "Settings",
+      "retry": "Retry"
+    },
+    "profile-verified": "Congratulations, your profile was successfully verified!",
+    "profile-updated": "Your description was updated.",
+    "error-upload-profile-picture": "There was an error in uploading your profile picture",
+    "sms-was-sent": "We sent you an SMS with a confirmation code.",
+    "phone-verified": "Your phone number was successfully verified.",
+    "cluster-deleted": "The bike cluster was successfully deleted",
+    "cluster-unmerged": "Bike cluster successfully unmerged",
+    "cluster-merged": "Bikes successfully merged into cluster",
+    "add-payment-success": "Payment method has been saved",
+    "_add-payment-success.comment": "Payment method successfully saved on the backend.",
+    "is-invalid": "The current password is invalid.",
+    "bike-edit-successful": "Your changes have been saved",
+    "error": "An error occured. Please make sure your internet connection works and try again.",
+    "add-payout-success": "Your payout method was successfully added.",
+    "add-voucher-success": "Congratulations, the voucher was added to your account.",
+    "add-voucher-error": "Unfortunately, the voucher code is not valid.",
+    "verification-email-sent": "An email with a confirmation link was sent to your email address. This may take a few minutes. If you didn't receive anything, please have a look in your spam folder.",
+    "could-not-sign-up": "Could not sign up. It seems the email address provided is already in use.",
+    "successfully-sign-up": "You have successfully signed up. Welcome!",
+    "successfully-logged-in": "Successfully logged in. Welcome back!",
+    "successfully-logged-out": "You're logged out.",
+    "could-not-log-in": "Could not log in. Please make sure you're signed up already and your credentials are valid.",
+    "reset-password-success": "We've just sent you a new password to your email address! It should arrive in the next few minutes.",
+    "opening-hours-success": "Opening hours successfully changed.",
+    "opening-hours-error": "Could not save opening hours.",
+    "uniq-phone": "Phone number already registered in our system.",
+    "pending-requests": "Looks like you have an open request for this bike. Before you can delete the bike you need to accept/reject the request, or make sure that its return has been confirmed.",
+    "account-deleted": "Your account has been deactivated",
+    "enter-email": "Please enter your email",
+    "duplicate-start": "Duplication process started",
+    "duplicate-finish": "Duplication process finished. Copies created successfully",
+    "bike-deleted": "Bike successfully deleted",
+    "range-success-delete": "The unavailability times were successfully deleted",
+    "availability-success-saved": "Availability successfully saved"
+  },
+  "settings": {
+    "settings": "Settings",
+    "payout": {
+      "entity_type": {
+        "label": "Please select if you have a private or business bank account:",
+        "natural_person": "Private account",
+        "company": "Business account"
+      }
+    },
+    "accept_request_reminder": {
+      "subscribe": "Reminder notifications"
+    },
+    "booking_overview_lister": "Booking information",
+    "confirm_return": "Confirm return messages",
+    "return_reminder": "Return reminder messages",
+    "request_created": "Booking related SMS",
+    "notifications": "Notifications",
+    "notification-preferences": {
+      "receive-all": "Receive all notifications",
+      "receive-minimal": "Receive minimal notifications",
+      "receive-all-description": "You will receive all transaction related messages, including reminders",
+      "receive-minimal-description": "You will receive only a notification for a new booking request, cancellations and privates messages",
+      "accept_request_reminder": "Accept request reminder",
+      "confirm_return": "Confirm return messages",
+      "request_created": "Booking related reminders (SMS)",
+      "booking_overview_lister": "Booking overview information",
+      "return_reminder": "Return reminder messages"
+    },
+    "newsletter-subscribe": "Yes, please send me the monthly listnride newsletter",
+    "newsletter-description": "Subscribe and receive our newsletter freshly to your inbox. Our newsletter informs you about newest brands, useful and new features on listnride.com, what's happening in the community, as well as travel destinations with listed bikes and cycling events.\nDid we mention it's crafted with a lot of love and dedication? Because it is.\nYou can unsubscribe at any time, of course.",
+    "newsletter": "Newsletter",
+    "errors": {
+      "required-company-name": "Please enter your company name.",
+      "minlength-company-name": "Company name should be longer than 2 characters",
+      "required-vat": "Please enter your VAT number.",
+      "minlength-vat": "The VAT number should be longer than 2 characters"
+    },
+    "pick-payment-method": "Please pick a payment method",
+    "change-payment-method": "Change payment method",
+    "your-payment-method": "Your payment method:",
+    "pay-pal-account": "PayPal",
+    "pick-payment-method-new": "Please pick a new method",
+    "change-payout-method": "Change payout method",
+    "set-payment-method": "Set payment method",
+    "set-payout-method": "Set payout method",
+    "profile": "Profile",
+    "invite": "Invite Friends",
+    "account": "Account",
+    "contact-to-update": "To change your name or email address please contact us via e-mail at: contact@listnride.com",
+    "delete-account": "Deactivate Account",
+    "delete-account-description": "Here you can deactivate your listnride account. This step can not be undone.",
+    "delete-account-sure": "Are you really sure?",
+    "delete-account-sure-description": "This step can not be undone.",
+    "delete-account-yes": "Yes, deactivate",
+    "delete-account-no": "No",
+    "availability": "Availability",
+    "availability-description": "You can set your availability times for renting out bikes.",
+    "business": "Business",
+    "from": "From",
+    "to": "To",
+    "mark-as-closed": "Mark all days as closed",
+    "change-address-info": "Updating your home address doesn't update the address of your bikes.",
+    "payment-method": "Payment Method",
+    "payout-method": "Payout Method",
+    "add-payout-method": "Add a Payout Method",
+    "payment-method-description": "Your payment method is used to pay for your rentals. It can be a credit card or paypal account.",
+    "payout-method-description": "Your payout method is where we send you your rental income. Therefore you have to add it latest when accepting a request as a lister.",
+    "add-payment-method": "Add Payment Method",
+    "vouchers": "Vouchers",
+    "payment-credit-card": "Your current payment method is a credit card ",
+    "payment-paypal": "Your current payment method is through a paypal account",
+    "no-payment-method": "You didn't enter any payment method so far.",
+    "no-payout-method": "You didn't enter any payout method so far.",
+    "paypal": "Paypal",
+    "bank-account": "Bank Account",
+    "enter-paypal-info": "Please enter the email address of your paypal account",
+    "enter-bank-info": "Please enter the accountholder's first and last name as well as IBAN and BIC",
+    "save-payout-method": "Save Payout Method",
+    "payout-paypal": "Your payout method is a paypal account",
+    "payout-bank": "Your payout method is a bank account ending with",
+    "voucher-code": "Voucher Code",
+    "current-vouchers": "Your current balance is",
+    "add-voucher": "Add Voucher",
+    "meta-title": "Profile Settings",
+    "meta-description": "Change your profile and payment settings",
+    "company-name": "Company name",
+    "company-information": "Company information",
+    "vat": "VAT",
+    "payment-info": "Show current Payment",
+    "add-invoice-address": "Add Invoice address",
+    "delete-invoice-address": "Delete Invoice address",
+    "invoice-address": "Invoice address",
+    "invoice-name": "Company name"
+  },
+  "verification": {
+    "lets-start": "Let's start!",
+    "lets-start-description": "It only takes 3 minutes",
+    "verify-profile": "Verify your Profile",
+    "resend-email": "Resend email",
+    "public": "Public",
+    "private": "Private",
+    "private-tip": "This information will not be open to the public",
+    "public-tip": "This information will be visible on your profile page",
+    "1": {
+      "text1": "Welcome to our passionate bike rental platform, featuring lots of bikes and bike enthusiasts all over the world.",
+      "text-invited": "As you've got invited by a friend, we've just put a voucher in your account. It gets redeemed automatically for your first rental!",
+      "text2": "We're a close-knit community, so the trust and safety of you and the other users have highest priority. We therefore kindly ask you to verify your profile through a few simple steps. The more information you enter, the higher are chances for your rental requests to be accepted."
+    },
+    "2": {
+      "title": "Upload your profile picture",
+      "description": "Upload a photo, to show others who you are.",
+      "business-description": "Having your logo shown on listnride is a great way to attract more request",
+      "business-title": "Upload your Shop Logo"
+    },
+    "3": {
+      "title": "Tell something about yourself or your shop",
+      "label": "Description (min. 50 Characters)"
+    },
+    "4": {
+      "description": "Validate your email address by clicking on the link in the confirmation email that we've sent to you after signup. If you can't find it, you can resend the email. If you still can't find it, make sure to look in your spam folder.",
+      "email-verified": "Email address successfully verified"
+    },
+    "5": {
+      "title": "What is your phone number",
+      "description": "Verify your phone number, so that you can receive SMS notifications for future requests. Simply enter your number and click 'Send Confirmation'. You'll receive a code via SMS that you can then enter below.",
+      "enter-valid-phone-nr": "Enter a valid phone number",
+      "send-confirmation-sms": "Send Confirmation",
+      "send-confirmation-sms-mobile": "Send SMS Code",
+      "resend-confirmation-sms": "Resend confirmation",
+      "resend-confirmation-sms-mobile": "Resend",
+      "sms-verification-code": "SMS Verification Code",
+      "sms-verification-code-mobile": "Verification Code",
+      "confirm-code": "Confirm code",
+      "confirm-code-mobile": "Confirm",
+      "phone-nr-verified": "Your number was successfully verified!"
+    },
+    "6": {
+      "title": "What is your address"
+    },
+    "7": {
+      "title": "Company information"
+    }
+  },
+  "bike": {
+    "rent-bike": "Rent Bike",
+    "for-free": "Test for Free",
+    "two-hours": "for 2 hours",
+    "view-pictures": "View pictures",
+    "for": "for",
+    "meta-title": "Rent the {{name}} - {{category}} by {{brand}} in {{location}}.",
+    "meta-description": "{{description}}",
+    "per-day": "1 day",
+    "from-2-days": "from 2 days",
+    "from-week": "from 1 week"
+  },
+  "user": {
+    "verified-through": "Verified through",
+    "become-this-user": "Become this user",
+    "own-bikes": "Rental Bikes",
+    "ratings": "Ratings",
+    "meta-title": "{{name}}'s profile",
+    "meta-description": "Rent bikes on listnride from {{name}}.",
+    "company-meta-title": "{{company}}",
+    "company-meta-description": "Rent bikes on listnride from {{company}}.",
+    "availability": "Availability",
+    "not-available": "Not available",
+    "verified": "verified"
+  },
+  "requests": {
+    "booking-overview": "Booking Overview",
+    "cancelation_modal": {
+      "title": "Cancellation",
+      "body": "Are you sure you want to cancel the request? This cannot be undone.",
+      "cancel_btn": "Cancel request",
+      "keep_btn": "Keep request"
+    },
+    "booking-failed": "Booking failed",
+    "booking": "Booking",
+    "price": "Price",
+    "book": "Book",
+    "rating": "Rating",
+    "listChat": "Booking request by {{user.first_name}}",
+    "rideChat": "Request to {{lister.first_name}}",
+    "ratings": {
+      "title": "How did you like the overall experience?",
+      "description": "Trust and Safety are our paramount concern. By writing a short review, you'll help the whole community.",
+      "1": "Unacceptable",
+      "2": "Bad",
+      "3": "Acceptable",
+      "4": "Good",
+      "5": "Excellent",
+      "rating_text_rider": "Please summarize your rental experience in a few sentences. The lister will do the same",
+      "rating_text_lister": "Please summarize your rental experience in a few sentences. The rider will do the same"
+    },
+    "write-message": "Write a message...",
+    "complete-profile": "Complete your Profile",
+    "add-payment": "Payment Method",
+    "complete-profile-description": "To book the bike, please enter your payment information. All informations are transmitted over a secure connection.",
+    "no-requests-yet": "As soon as there are requests, they'll show up here.",
+    "filters": {
+      "all-requests": "All Requests",
+      "current-rentals": "Current Rentals",
+      "pending-requests": "Pending Requests",
+      "upcoming-rentals": "Upcoming Rentals",
+      "past-rentals": "Past Rentals",
+      "expired-requests": "Expired Requests"
+    }
+  },
+  "message": {
+    "accept": "Accept",
+    "retry-payment": "Try again your payment now",
+    "go-to-calendar": "Go to Booking Calendar",
+    "reject": "Reject",
+    "rate": "Rate",
+    "confirm": "Confirm",
+    "confirm_return": "Confirm return",
+    "documents-title": "Insurance Certificates",
+    "documents-description": "Here you can download your insurance certificates. These documents have also been sent to you by email.",
+    "insurance-bike": "Bike Insurance Certificate",
+    "insurance-bike-assist": "Bike Assist Insurance Certificate"
+  },
+  "listChat": {
+    "1": "{{user.first_name}} {{user.last_name}} from {{user.city}} would like to rent your <a href=\"/#/bikes/{{ride.id}}\">{{ride.name}}</a>.<br><br>Bike ID: {{ride.bicycle_number}}.<br>Bike size:  {{ride.frame_size ? ride.frame_size : 'not specified'}}.<br>Period: {{timespan_short}}.<br><br><br>Please accept the booking and agree on further details using the chat below. If not possible, please reject.",
+    "direct": {
+      "3": "Congratulations! You will be renting out your <a href=\"/#/bikes/{{ride.id}}\">{{ride.brand}} {{ride.name}}</a> !<br> Rental period: {{timespan_short}}.<br>Bike ID: {{ride.bicycle_number}}.<br>Bike size: {{ride.frame_size ? ride.frame_size : 'not specified'}}.<br><br>Rider's name: {{user.first_name}} {{user.last_name}}<br>Rider's phone number: {{user.pretty_phone_number}}<br>Rider's address: <a href=\"//www.google.com/maps/search/?api=1&amp;query={{user.street}}+{{user.city}}+{{user.zip}}+{{user.country}}\" target=\"_blank\">{{user.street}}, {{user.zip}} {{user.city}}, {{user.country}}</a> "
+    },
+    "11": "The booking was cancelled. ",
+    "3": "You've accepted the request and so the bike is booked. You'll rent it out from {{timespan}}! Contact Details are as follows, we've also sent them to you via email.\n<br>\nName: {{user.first_name}} {{user.last_name}}\n<br>\nPhone: {{user.pretty_phone_number}}\n<br>Address: <a href=\"//www.google.com/maps/search/?api=1&amp;query={{user.street}}+{{user.city}}+{{user.zip}}+{{user.country}}\" target=\"_blank\">{{user.street}}, {{user.zip}} {{user.city}}, {{user.country}} </a> ",
+    "5": "Thanks for confirming the return of your bike and rating {{user.first_name}}. The rental was successful and the money will get transferred to the bank account you provided during the next 7 working days.<br><br>In case of any further questions or feedback, we’d love to receive them under <a mailto:=\"hello@listnride.com\">hello@listnride.com</a>.",
+    "8": "You've rejected the booking request. Please tell the rider why you can't rent him the bike.",
+    "9": "Unfortunately, the rider cancelled the request.",
+    "10": "Your booking was cancelled by the system"
+  },
+  "rideChat": {
+    "1": "You have requested the <a style=\"pointer-events: auto;\" href=\"/#/bikes/{{ride.id}}\">{{ride.name}}</a> from  {{lister.display_name}} from {{timespan}}. You can chat with  {{lister.display_name}} below. Only when your request is accepted, payment is done and the bike is booked.",
+    "direct": {
+      "3": "Congratulations! You will be renting the <a href=\"/#/bikes/{{ride.id}}\">{{ride.brand}} {{ride.name}}</a>.<br>Rental period: {{timespan_short}}.<br>Bike ID: {{ride.bicycle_number}}.<br>Bike size: {{ride.frame_size ? ride.frame_size : 'not specified'}}.<br><br>Lister's name: {{lister.first_name}} {{lister.last_name}}<br>Lister's phone number: {{lister.pretty_phone_number}}<br>Pick up address: <a href=\"//www.google.com/maps/search/?api=1&amp;query={{ride.street}}+{{ride.city}}+{{ride.zip}}+{{ride.country}}\" target=\"_blank\">{{ride.street}}, {{ride.zip}} {{ride.city}}, {{ride.country}}</a>"
+    },
+    "11": "The booking was cancelled.",
+    "3": "Congratulation, {{lister.first_name}} has accepted your request, so the bike was successfully booked. Meet the lister as agreed and pick up the bike. Contact details are as follows, we've also sent them to you via email.<br><br>Name: {{lister.first_name}} {{lister.last_name}},<br>Phone: {{lister.pretty_phone_number}},<br>Address: <a href=\"//google.com/maps/search/?api=1&amp;query={{ride.street}}+{{ride.city}}+{{ride.zip}}+{{ride.country}}\" target=\"_blank\">{{ride.street}}, {{ride.zip}} {{ride.city}}, {{ride.country}}</a>",
+    "5": "Did you have a great experience on the bike you rented from {{lister.first_name}}? Share your experience by leaving a short review. This will help future riders better understand what to expect. ",
+    "7": "Thanks for rating, the rental was successfully completed.",
+    "8": "Unfortunately, the lister couldn't accept your request. Don't lose faith, please request another bike.",
+    "9": "The request was cancelled. Please feel free to tell the lister why you're not able to rent the bike.",
+    "10": "The request got cancelled."
+  },
+  "forms": {
+    "first-name": "First Name",
+    "account_holder_name": "Account holder name",
+    "bank_country": "Country",
+    "dob": "Date of birth",
+    "gender": "What is your gender?",
+    "nationality": "What is your nationality?",
+    "gender_select": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "select": "Please select",
+    "newsletter-privacy-policy": "Privacy Policy Newsletter",
+    "sign-up-today": "Sign up today ",
+    "already-registered": "You have already signed up",
+    "check-inbox": "Please check your inbox",
+    "security-text": "Security is really important for us. And this is not just a phrase that we use to make you calm. In order to keep your account secure, we would like to ask you to change your password.<br><br><b>Please click the link in the email that we just sent you.</b>",
+    "confirm-password": "Confirm password",
+    "please-change-password": "Please change your password",
+    "save-new-password": "Save new password",
+    "your-name": "Your name",
+    "your-email-address": "Your email address",
+    "your-phone-number": "Your phone number",
+    "comments": "Comments",
+    "last-name": "Last Name",
+    "email-address": "Email Address",
+    "update-password": "Update password",
+    "old-password": "Current password",
+    "new-password": "New password",
+    "password": "Password",
+    "forgot-password": "Forgot password?",
+    "or": "or",
+    "log-in": "Log in",
+    "log-out": "Log out",
+    "sign-up": "Sign up",
+    "sign-up-to-book": "Sign up to book the bike",
+    "sign-up-with-facebook": "Sign up with Facebook",
+    "sign-up-divider-text": "Accept our Terms and Conditions",
+    "agree-terms-and-policy": "Agree to our Terms and Conditions and Privacy Policy",
+    "member-already": "Already signed up?",
+    "business": "Are you managing a bike shop?",
+    "description": "Description",
+    "description_min_100": "Description should be min. 100 characters",
+    "address": "Address",
+    "profile-picture": "Profile Picture",
+    "profile-picture-info": "Please upload only formats as jpg, jpeg, png. Maximum size is 20mb. Minimum dimension is 100px x 100px.",
+    "profile-picture-info-policy": "By uploading a picture, I agree that listnride saves the picture as described in the <a style=\"pointer-events: auto;\" href=\"/#/privacy\" target=\"_blank\">Privacy Policy</a>. I can delete it at any time.",
+    "profile-picture-pattern-error": "Your picture format is wrong",
+    "profile-picture-size-error": "Your picture size is more than the allowed maximum size",
+    "profile-picture-dimension-error": "Your picture dimension is lower than minimum",
+    "general": "General",
+    "street": "Street",
+    "streetnumber": "Number",
+    "zip": "Zip Code",
+    "city": "City",
+    "country": "Country",
+    "company-name": "Company name",
+    "update-contact": "Change Phone number",
+    "update-contact-mobile": "Phone number",
+    "company-contact-info": "Please fill form with company contact person information.",
+    "signing-up-accept-tac": "I hereby agree to the <a target=\"_blank\" style=\"pointer-events: auto;\" href=\"/#/terms\">Terms and Conditions</a> and agree to the collection, processing and use of my personal data as further described in the <a target=\"_blank\" style=\"pointer-events: auto;\" href=\"/#/privacy\">Privacy Policy</a>.",
+    "signing-up-accept-newsletter": "I would like to receive the listnride e-mail newsletter with interesting content on cycling, community updates and exclusive benefits. The <a target=\"_blank\" style=\"pointer-events: auto;\" href=\"/#/privacy\">Privacy Policy</a>  of listnride applies. I can revoke my consent at any time.",
+    "privacy-policy": "The <a style=\"pointer-events: auto;\" href=\"/#/privacy\">Privacy Policy </a> of listnride applies.",
+    "errors": {
+      "password-length": "Password should be 6-30 characters",
+      "password-length-xs": "6-30 characters",
+      "password-missing": "Please provide a password",
+      "password-missing-xs": "Password required",
+      "valid-email": "Please enter a valid email address",
+      "valid-email-xs": "Invalid email",
+      "empty-email": "Please enter your email address",
+      "empty-email-xs": "Email required",
+      "empty-last-name": "Enter your last name",
+      "empty-last-name-xs": "Last name required",
+      "empty-first-name": "Enter your first name",
+      "empty-first-name-xs": "First name required",
+      "max-size-last-name": "Last name shouldn't exceed 30 characters",
+      "max-size-last-name-xs": "Exceeds 30 characters",
+      "max-size-first-name": "First name shouldn't exceed 20 characters",
+      "max-size-first-name-xs": "Exceeds 20 characters",
+      "empty-company-name": "Please enter your company name",
+      "empty-company-name-xs": "Company name required",
+      "min-size-company-name": "Company name should be longer than 2 characters ",
+      "min-size-company-name-xs": "At least 3 characters "
+    }
+  },
+  "home": {
+    "landing-section-header": "The perfect bike. Simply rent it.",
+    "see-all-brands-and-bikes": "See all brands and bikes",
+    "insurance": {
+      "description": "No matter if it's a cheap city bike or high-end triathlon bike: Every listnride bike rental in Germany or Austria is insured!",
+      "header": "Insurance for your rental on listnride",
+      "logo-description": "In cooperation with hepster and insured by"
+    },
+    "landing-section-subheader": "Join listnride and find the bike that is right for you.",
+    "featured-bikes-header": "Bike Rental: Our Community’s Favorites",
+    "featured-bikes-subheader": "Whether it’s road bikes, mountain bikes, cargo bikes, city bikes or e-bikes, you can rent them all. These are the current favorite rental bikes of the community.",
+    "featured-tiles-header": "Test & Ride",
+    "featured-tiles-subheader": "We are partnering with innovative bike brands, which offer their latest models for testing.  The bikes can be test driven or rented exclusively at various locations. Perfect for a well-considered buying decision. ",
+    "featured-cities-header": "With listnride you are never without a perfect bike ",
+    "featured-cities-subheader": "listnride’s bike rental service is becoming available in more cities and holiday regions around Europe. Here are some tips for you: ",
+    "list-a-bike-header": "Do you own a nice bike, but it's gathering dust?",
+    "list-a-bike-subheader": "Rent out your bike, meet new people, and earn some extra cash.",
+    "newsletter-header": "Subscribe to our newsletter and stay in the loop",
+    "newsletter-subheader": "Receive our email about new events we're supporting, new features on our site, and rental discounts!",
+    "meta-title": "Bike rental: Hire a road bike, MTB or e-bike| listnride",
+    "meta-description": "Rent the perfect bike that suits your style and needs. Simply book online, safe and secure. "
+  },
+  "autocomplete": {
+    "default-placeholder": "Where would you like to rent a bike?"
+  },
+  "search": {
+    "no-bikes": "Unfortunately, there are no bikes in this location yet. As we're growing fast, please check again soon, we may have bikes registered here by then! Alternatively, try searching for another location nearby. <br> <br>\n\nHelp others find great bikes by listing your own bicycle, or contacting your local bike shop to onboard them with us! ",
+    "unisize": "Unisize",
+    "book-multiple-bikes": "Bike rental for large groups",
+    "bikes-found": "Bikes found:",
+    "all-sizes": "All sizes",
+    "bikes-in": "Bikes in",
+    "meta-title": "Rent the perfect bike in {{location}}.",
+    "meta-description": "listnride offers a wide variety of great bikes for rent in {{location}}.",
+    "number-of-bikes": "Number of bikes",
+    "bike": "Bike",
+    "bikes": "Bikes",
+    "pick-body-size": "Size",
+    "timespan": "Time span",
+    "category": "Bike type",
+    "clear-filters": "Clear filters",
+    "all-brands": "All Brands",
+    "all-bikes": "All bikes"
+  },
+  "calendar": {
+    "invalid-date": "The dates are invalid",
+    "rent-bike": "Book now",
+    "unavailable": "This bike is booked ",
+    "ability-to-pick-half-day": "You can book this bike for a half-day. <br>\nPlease select your time slot: ",
+    "status-closed": "closed",
+    "status-in-past": "in the past",
+    "booked": "booked",
+    "info-service-fee-insurance": "helps us run our platform and <br> allows us to offer first-class customer service.<br>VAT included. Non-refundable.",
+    "basic-insurance-included": "Basic insurance included",
+    "request-bike": "Request the bike",
+    "to-request-bike-please": "to request a bike please",
+    "own-bike": "You can't request your own bike",
+    "log-in-to-request-title": "Log in or Sign up",
+    "log-in-to-request-description": "Log in to request the bike. If you don't have an account yet, please sign up.",
+    "select-timespan": "Choose rental time span first",
+    "select-timespan-description": "Before you can make a request, please set the time span of your rental. In the above calendar, simply click on the date, and select the time for pickup and drop off.",
+    "info-subtotal": "This is the regular daily price<br>multiplied by the amount of rental days<br>.",
+    "info-discount": "Average daily discount you<br>offer per day by renting out<br>for a longer period of time.",
+    "info-service-fee": "helps us run our platform and<br>allows us to offer first-class customer service.<br>VAT included. Non-refundable.",
+    "info": "In the calendar, select first<br> the day you wish to rent<br>out the bike, and second <br>the day you want to return it.",
+    "info-without-calendar": "In the calendar, select first the start date of your rental then the return date.  Secondly select start time and end time."
+  },
+  "list": {
+    "edit-bike": "Edit Bike",
+    "half-day-price": "1/2 day",
+    "save-changes": "Save changes",
+    "list-your-bike": "List your bike",
+    "back": "Back",
+    "next": "Next",
+    "list-bike": "List my bike",
+    "category": {
+      "header": "What type of bike is it?",
+      "event": "Event bikes",
+      "hint": "First, select the category of your bike. Then select the right subcategory.",
+      "label": "Category",
+      "city": "City",
+      "race": "Race",
+      "all-terrain": "All Terrain",
+      "kids": "Kids",
+      "electro": "E-Bikes",
+      "special": "Special",
+      "urban": "Urban",
+      "e-bike": "E-Bike",
+      "road": "Road",
+      "transport": "Cargo"
+    },
+    "details": {
+      "header": "What is the brand, model, and size of your bike?",
+      "variations-add": "Add variants",
+      "variations-header": "How many variants would you like to add?",
+      "hint": "Enter the bike brand, model, and a description of your bike. Then select the height range that fits a rider best.",
+      "label": "Details",
+      "brand": "Brand",
+      "name": "Model",
+      "description": "Description (min. 100 characters)",
+      "min-length-warning": "At least 100 characters",
+      "size": "Rider height",
+      "frame-size": "Frame size",
+      "bicycle-number": "Bicycle number",
+      "frame-number": "Frame number",
+      "custom-fields": "Additional fields",
+      "notes": "Notes",
+      "frame_size": "Frame size",
+      "bicycle_number": "Bicycle number",
+      "frame_number": "Frame number"
+    },
+    "accessories": {
+      "header": "What accessories does your bike have?",
+      "hint": "Edit accessories. Select the accessories, which you can provide with your bike.",
+      "label": "Accessories",
+      "lock": "Lock",
+      "helmet": "Helmet",
+      "lights": "Lights",
+      "basket": "Basket",
+      "trailer": "Trailer",
+      "childseat": "Child seat",
+      "gps": "GPS"
+    },
+    "pictures": {
+      "header": "Upload some pictures of your bike",
+      "hint": "Now select some nice pictures of your bike. Below is a guide on how to make your listing look even better.",
+      "how-to": "Photo tips for making your listing stand out",
+      "label": "Pictures",
+      "select-images": "Select images",
+      "remove": "Remove",
+      "upload-bike-header": "Upload some pictures of your bike",
+      "under-min-size": "Some of your images size is less than the allowable minimum 1500x1000:",
+      "invalid-images": "Invalid images"
+    },
+    "location": {
+      "header": "Where can the bike be picked up?",
+      "hint": "Where is your bike located? Don’t worry, the exact location of your bike will ONLY be forwarded when you have confirmed a rental request.",
+      "label": "Location",
+      "street-number": "Street and Number",
+      "zip": "Zip Code",
+      "city": "City",
+      "country": "Country"
+    },
+    "insurance": {
+      "label": "Insurance",
+      "info": "Information about insurance",
+      "hint-part-1": "Your bike is insured whenever it is rented. In order to provide you with the right protection it's necessary that you enter the value of your bike.",
+      "hint-part-2": "Please note that your have to provide proof of your bike's value in case of any claim ",
+      "hint-link-label": "Learn more about insurance",
+      "header": "Please tell us the value of your bike",
+      "tip": "Additional fee for the rider is {{fee}} per day",
+      "up-to-value": "Up to {{value}}",
+      "select-value": "Please select your bike value",
+      "no-insurance": "Sorry, your country is not yet covered by our insurance.\nThe insurance only applies to rentals in Germany and Austria."
+    },
+    "pricing": {
+      "info": "Your daily price is your base price for 1 day.",
+      "info-description": "Information about the rental price",
+      "header": "Daily Price",
+      "description": "Your daily price is your base price for 1 day.",
+      "hint-para-1": "The price you charge for your bike is up to you. The price should be based on the bike and equipment. To get an idea of market prices, you can view comparable listings. ",
+      "hint-para-2": "The rental period is calculated by 24 hours.",
+      "hint-para-3": "To encourage longer rentals, some listers set a daily or weekly discount.",
+      "label": "Pricing",
+      "discount": "Discount",
+      "discount-description-initial": "With a weekly discount of ",
+      "discount-description-mid": " you'll get ",
+      "discount-description-ending": " per week.",
+      "set_custom_price": "Price in €",
+      "custom-prices": "Individual pricing",
+      "half-daily-price": "Half-daily Price",
+      "daily-price": "Daily Price",
+      "daily-price-placeholder": "Price in €",
+      "daily-discount-placeholder": "Discount in %",
+      "daily-discount-tooltip": "Discount if the bike is rented for more than a day.",
+      "weekly-discount-placeholder": "Discount in %",
+      "weekly-discount-tooltip": "Discount if the bike is rented for a week or more.",
+      "weekly-price": "Weekly Price",
+      "daily-discount": "Daily Discount",
+      "weekly-discount": "Weekly Discount",
+      "price_2_days": "2 days",
+      "price_3_days": "3 days",
+      "price_4_days": "4 days",
+      "price_5_days": "5 days",
+      "price_6_days": "6 days",
+      "price_7_days": "7 days (1 week)",
+      "price_8_days": "8 days onwards",
+      "price_8_days_long": "8 days onwards (per day)",
+      "price_30_days": "28 days",
+      "price_30_days_long": "28 days (1 month)",
+      "reset-prices": "Reset",
+      "validations": {
+        "required": {
+          "daily_price": "Daily price is required",
+          "price": "Price is required"
+        }
+      }
+    },
+    "subcategory": {
+      "1": {
+        "dutch-bike": "Dutch Bike",
+        "touring-bike": "Touring Bike",
+        "fixie": "Fixed Gear Bike",
+        "single-speed": "Single Speed Bike",
+        "city-bike": "City Bike"
+      },
+      "2": {
+        "road-bike": "Road Bike",
+        "triathlon": "Triathlon",
+        "indoor": "Indoor",
+        "e-city-bike": "E-City Bike",
+        "e-touring-bike": "E-Touring Bike",
+        "e-cargo-bike": "E-Cargo Bike",
+        "e-mountain-bike": "E-Mountain Bike",
+        "e-road-bike": "E-Road Bike",
+        "e-folding-bike": "E-Folding Bike",
+        "e-scooter": "E-Scooter"
+      },
+      "3": {
+        "tracking": "Trekking",
+        "enduro": "Enduro",
+        "freeride": "Freeride",
+        "cross-country": "Cross Country",
+        "downhill": "Downhill",
+        "cyclocross": "Cyclocross",
+        "road-bike": "Road Bike",
+        "triathlon-bike": "Triathlon Bike",
+        "touring-bike": "Touring Bike",
+        "fixed-gear-bike": "Fixed Gear Bike"
+      },
+      "4": {
+        "city": "City",
+        "all-terrain": "All Terrain",
+        "road": "Road",
+        "mtb-hardtail": "MTB Hardtail",
+        "mtb-fullsuspension": "MTB Fullsuspension",
+        "cyclocross-bike": "Cyclocross Bike",
+        "gravel-bike": "Gravel Bike"
+      },
+      "5": {
+        "pedelec": "Pedelec",
+        "event-bike": "Event Bike",
+        "e-bike": "E-Bike",
+        "cargo-bike": "Cargo Bike",
+        "bike-trailer": "Bike Trailer",
+        "bike-child-seat": "Bike Child Seat",
+        "bike-car-rack": "Bike Car Rack",
+        "bike-travel-bag": "Bike Travel Bag"
+      },
+      "6": {
+        "folding-bike": "Folding Bike",
+        "tandem": "Tandem",
+        "cruiser": "Cruiser",
+        "cargo-bike": "Cargo Bike",
+        "recumbent": "Recumbent",
+        "mono-bike": "Uniycle",
+        "trailer": "Trailer",
+        "city-bike": "City Bike",
+        "all-terrain-bike": "All Terrain Bike",
+        "road-bike": "Road Bike",
+        "bogie-wheel": "Bogie Wheel"
+      },
+      "7": {
+        "folding-bike": "Folding Bike",
+        "recumbent-bike": "Recumbent Bike",
+        "tandem-bike": "Tandem Bike",
+        "longtail-bike": "Longtail Bike",
+        "scooter": "Scooter"
+      }
+    }
+  },
+  "listings": {
+    "my-bikes": "My Bikes",
+    "merge-title": "Are you sure you want to merge {{bikes_count}} bikes into 1 cluster?",
+    "unmerge-title": "Are you sure you want to unmerge {{bikes_count}} bikes?",
+    "merge-yes": "Yes",
+    "merge-no": "No, rather not",
+    "merge": "Merge bikes",
+    "unmerge": "Unmerge bikes",
+    "no-bikes": "You haven't listed any bikes yet.",
+    "list-a-bike": "List a Bike",
+    "show-as-list": "Show as List",
+    "duplicate": {
+      "duplicate": "Duplicate",
+      "duplication-status": "Duplication status",
+      "how_many": "How many additional bikes?",
+      "header": "Duplicate Bike",
+      "number_bikes": "Number of bikes",
+      "maxlength": "Works for maximum 99 bikes",
+      "required": "Number of bikes is required"
+    },
+    "listView": {
+      "price": "Price (€)"
+    }
+  },
+  "listingCard": {
+    "activate-bike": "Activate",
+    "deactivate": "Deactivate",
+    "activate": "Activate",
+    "deactivate-bike": "Deactivate",
+    "edit-bike": "Edit",
+    "delete-bike": "Delete",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "duplicate": "Duplicate",
+    "dialog-title": "Are you sure you want to delete your bike?",
+    "dialog-subtitle": "The bike will get permanently removed from the platform. Current requests are not affected by this."
+  },
+  "rent-a-bike": {
+    "meta-title": "Rent a bike with listnride!",
+    "meta-description": "Rent from our great selection of road bikes, e-bikes, mountain bikes and cargo bikes! Simply search, select and book online.",
+    "title": "Don’t just rent any old bike. Rent one that feels like your own.",
+    "info-section": {
+      "header": "Rent a bike that is perfect for you",
+      "subheader": "One that complements your style and meets your needs. From people like you and me.",
+      "choice-title": "Bike rental, made easy.",
+      "choice-content": "Search and rent a bike in mere seconds.\nNo more phone calls or emails needed!",
+      "price-title": "We care about quality.",
+      "price-content": "Premium road bikes, reliable e-bikes, and sturdy city bikes - we're more than just a simple bike rental service!",
+      "easy-title": "Variety of choice, everywhere.",
+      "easy-content": "We're proud to offer thousands of rental bikes across Germany, Italy, Spain, Netherlands, and Austria!",
+      "covered-content": "If you rent a bike in Germany or Austria, insurance is included in the rent. With \n<a href=\"http://www.hepster.com\" target=\"_blank\">hepster</a>\nand the \n<a href=\"http://www.gothaer.de\" target=\"_blank\">Gothaer Group</a> \nwe have two strong partners at our side to help you in case of emergency."
+    },
+    "search-section": {
+      "header": "Where would you like to go?",
+      "subheader": "listnride’s bike rental service is becoming available in more and more locations."
+    },
+    "testmonials-section": {
+      "header": "What do our Riders say about us?",
+      "subheader": "More and more people are discovering the benefits of bike rental via listnride. Check out some of their testimonials:"
+    }
+  },
+  "list-a-bike": {
+    "meta-title": "Rent out your bike!",
+    "meta-description": "Meet new people and make some extra money.",
+    "title": "Rent out a bike, earn some extra cash",
+    "subtitle": "Meet great new people and earn some money on the side.",
+    "calculator-section": {
+      "header": "Let your bike work for you",
+      "subheader": "Just a few clicks and our slider will show you how much you can earn by renting out a bike via listnride",
+      "market-price": "Market value of your bike",
+      "days-per-month": "Days per month your bike is rented",
+      "could-earn": "You could earn",
+      "per-year": "per year"
+    },
+    "info-section": {
+      "header": "Safety first!",
+      "subheader": "listnride has your back.",
+      "precautions-title": "We take the necessary precautions.",
+      "precautions-content": "You want to rent out your bike – but not to just anybody. That’s why we verify the identity of all our users for you. And our user ratings help you find out whether they play fair in the bike rental scene.",
+      "control-title": "You stay in control.",
+      "control-content": "You decide the daily or weekly rate for your bike(s). It’s completely up to you whether you want to accept a rental request or simply reject it because you can’t or don’t want to lend someone your bike at the moment.",
+      "covered-title": "You're covered.",
+      "covered-content": "In case of damage and/or theft, our insurance will help you. With \n<a href=\"http://www.hepster.com\" target=\"_blank\">hepster</a>\n and the \n<a href=\"http://www.gothaer.de\" target=\"_blank\">Gothaer Group</a>\n we have two strong partners at our side.",
+      "help-title": "We’re there to help.",
+      "help-content": "If you and a renter (rider) encounter a problem and can’t find a solution, we’re there for you – to support you or even resolve the entire issue."
+    },
+    "list-section": {
+      "header": "Ready to list your bike?",
+      "subheader": "Meet great new people and earn some money on the side.",
+      "sign-up": "Sign up to rent out your bike!"
+    },
+    "testmonials-section": {
+      "header": "Renting out bikes: what do our listers say about us?",
+      "subheader": "Many people have already become a part of our listnride community. Read about their personal experiences:"
+    }
+  },
+  "invoices": {
+    "request_id": "Booking ID",
+    "invoice_number": "Invoice No",
+    "payout_date": "Payout date",
+    "date": "Date",
+    "batch": "Batch",
+    "credit-notes": "Credit notes",
+    "bike": "Bike",
+    "start_date": "Start date",
+    "end_date": "End date",
+    "lister": "Lister",
+    "rider": "Rider",
+    "payout": "Payout",
+    "you_paid": "You paid",
+    "invoice": "Invoice",
+    "billing": "Invoices",
+    "download-csv": "Download CSV",
+    "download-pdf": "Download PDF",
+    "no-rentals": "You had no rentals yet",
+    "as-lister": "As lister",
+    "as-rider": "As rider",
+    "no-rides": "You had no rides yet"
+  },
+  "invite-landing": {
+    "meta-title": "listnride | 10€ for you!",
+    "meta-description": "Give the gift of cycling! When you invite a friend to listnride, they’ll get a 10€ voucher as soon as they join. When they rent a bike or list their own, you’ll get 10€ too!",
+    "header": "sent you 10€",
+    "subheader": "Welcome to List and Ride, the bike rental platform",
+    "subsubheader": "listnride is the bike rental platform that brings together cycling enthusiasts of all sorts. Members can rent out their own bikes via our website or app, or rent a bike that suits their style and needs.",
+    "subsubsubheader": "You've been invited by {{ name }}. Sign up now and you'll get a 10€ voucher added to your account. It can be used for your next bike rental. ",
+    "sign-up-get-voucher": "Sign up to get the Voucher",
+    "how-lnr-works": "Bike rental without the hassle",
+    "explanation-1-title": "1. Find and request",
+    "explanation-1-description": "Find the right bike near you and request it.",
+    "explanation-2-title": "2. Book and pick it up",
+    "explanation-2-description": "Book the bike and meet the lister to pick it up.",
+    "explanation-3-title": "3. Enjoy the ride",
+    "explanation-3-description": "Ride safe, have fun!"
+  },
+  "invite": {
+    "meta-title": "listnride | Invite your friends",
+    "meta-description": "Give the gift of cycling! When you invite a friend to listnride, they’ll get a 10€ voucher as soon as they join. When they rent a bike or list their own, you’ll get 10€ too!",
+    "title": "Invite your friends to listnride and get a 20€ credit!",
+    "login": "Log in to get your invite link",
+    "info-section": {
+      "header": "The more the merrier on listnride!",
+      "subheader": "Help our movement in making bike rental easier by inviting your friends and local bike shops to our platform. Simply share your invite code, and when they rent a bike, you’ll get a €10 voucher from us!",
+      "invite-friends": "Share your invite code",
+      "community": "Help your friend get started with listnride",
+      "earn-credit": "Once your friend rents a bike you will receive a €10 voucher for your next rental! "
+    },
+    "invite-form": {
+      "header": "Share your personal link",
+      "subheader": "Send this link to your friends and they can activate the voucher. You'll get rewarded with a 10€ credit as soon they list or rent a bike.",
+      "copy": "Copy",
+      "copied": "Copied!"
+    },
+    "invite-dialog": {
+      "rider": {
+        "header": "Did you enjoy the ride?",
+        "subheader": "Recommend your friends to listnride! We add € 10 for their first booking! And if your friend makes use of it, there is another €10 credit for you. A nice Win-Win!"
+      },
+      "lister": {
+        "header": "That was easy, right?",
+        "subheader": "Would you recommend us to your friends? We’ll add €10 for their first booking! And if your friend makes use of it, there is another 10€ credit for your next rental. A nice Win-Win!"
+      }
+    },
+    "invitations": {
+      "header": "Your friends have earned you {{ credit }}€",
+      "status": {
+        "1": "Signed up but has not listed or rented a bike",
+        "2": "Signed up and rented a bike",
+        "3": "Signed up and listed bike"
+      }
+    },
+    "share": {
+      "email-subject": "{{full_name}} has invited you to join listnride!",
+      "email-body": "{{first_name}} has given you 10€ for your first adventure on the bike of your choice!  Join listnride, the fastest growing bike rental platform, and get access to countless bikes for every purpose! Sign up and immediately receive a 10€ credit. {{voucher_url}} Do you want to thank {{first_name}}? Rent a bike or list your bike and {{first_name}} receives a 10€ credit, too! Have fun, and enjoy the ride!"
+    }
+  },
+  "error-404": {
+    "title": "404 Page not found",
+    "details": "The page you are looking for does not exist!",
+    "home-link": "Back to the homepage"
+  },
+  "footer": {
+    "language": "Language",
+    "top-countries": "Top countries",
+    "subscribe-title": "Subscribe to our newsletter",
+    "recapcha-text": "Protected by reCAPTCHA",
+    "keep-in-touch": "Keep in touch with us!",
+    "term-of-service": "Terms and Conditions",
+    "privacy-policy": "Privacy Policy",
+    "newsletter-subscribe-success": "Thank you for subscribing! ",
+    "sitemap": "Sitemap",
+    "languages": {
+      "dutch": "Dutch",
+      "french": "French",
+      "italian": "Italian",
+      "spanish": "Spanish",
+      "german": "German",
+      "english": "English"
+    },
+    "insurance-partner": "Insurance Partners",
+    "insurance": "Insurance",
+    "company": "Company",
+    "legal": "Legal",
+    "terms-and-conditions": "Terms",
+    "privacy-statement": "Privacy",
+    "imprint": "Imprint",
+    "about": "About",
+    "press": "Press",
+    "jobs": "Jobs",
+    "get-the-app": ""
+  },
+  "seo": {
+    "header": "Rent the best bikes in",
+    "header-2": "Rent the best bikes on",
+    "rent-the-best": "Rent the best",
+    "bikes": "bikes",
+    "rent-perfect-bikes-in": "Rent perfect bikes in",
+    "rent-category-bikes-in": "A large choice of rental bikes",
+    "bike-shops-in": "Bike Shops in",
+    "city": "city bikes",
+    "race": "race bikes",
+    "all-terrain": "all terrain bikes",
+    "kids": "kids bikes",
+    "electro": "electric bikes",
+    "special": "special bikes"
+  },
+  "availability": {
+    "availability": "Availability",
+    "modal-title": "When is your bike not available?",
+    "start-from": "Starting from",
+    "end-at": "Ending",
+    "add-another-date": "Add another date",
+    "submit-btn": "Ok",
+    "submit-btn-save": "Save",
+    "choose-range": "Choose your date range"
+  },
+  "booking-calendar": {
+    "event": {
+      "accepted": "Accepted",
+      "request-waiting": "Pending request",
+      "not-available": "Not available",
+      "waiting": "Pending",
+      "not-available-header": "The bike is not available",
+      "not-available-text": "The bike is unavailable for this period. You can change the availability in your bike settings.",
+      "see-settings": "Go to settings",
+      "date": "Date",
+      "pickup": "Pickup at",
+      "booking-id": "Booking Nr.",
+      "rider": "Rider",
+      "contact": "Phone number",
+      "view-booking": "View booking"
+    },
+    "add-non-availability": "Add event",
+    "remove-non-availability": "Remove event",
+    "reasons": {
+      "booked-in-store": "Booked in store",
+      "service-repair": "Service / Repair",
+      "event-other": "Event / other"
+    },
+    "reason": "Reason",
+    "previous-month": "Previous month",
+    "next-month": "Next month",
+    "previous-week": "Previous week",
+    "next-week": "Next week",
+    "filter-by-requests": "Display with requests only",
+    "no-bikes-to-display": "No bikes to display",
+    "any-location": "All locations",
+    "bike-variants": "Nr. of Bikes",
+    "meta-title": "Booking Calendar",
+    "meta-description": "Calendar view for easy booking- and inventory management",
+    "not-available-on-mobile": "Sorry, Booking Calendar isn't available on mobile"
+  }
+}

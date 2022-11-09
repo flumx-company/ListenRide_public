@@ -1,0 +1,108 @@
+<md-content class="single-column">
+
+  <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <ul class="cb-slideshow">
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+    </ul>
+
+    <div class="lnr-page-title md-color-white" layout="column" layout-align="center center">
+      <div>
+        <img ng-src="app/assets/ui_images/brand-integration/muli/muli_logo.png" flex="40"></img><br><br>
+      </div>
+      <h1 class="md-display-1">{{ 'brand-integration.muli.title' | translate }}</h1>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.muli.description' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'brand-integration.muli.subdescription' | translate }}</h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="50" layout="column" layout-align="none center" layout-margin>
+        <div layout layout-align="center center">
+          <img ng-src="app/assets/ui_images/brand-integration/muli/muli_col_left.png" flex="90"></img>
+        </div>
+        <p class="lnr-center" translate="{{ 'brand-integration.muli.item1-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="50" layout="column" layout-align="none center" layout-margin>
+        <div layout layout-align="center center">
+          <img ng-src="app/assets/ui_images/brand-integration/muli/muli_col_right.png" flex="90"></img>
+        </div>
+        <p class="lnr-center" translate="{{ 'brand-integration.muli.item2-description' | translate }}"></p>
+      </div>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+    <h2 class="md-headline lnr-center">{{ 'brand-integration.muli.available-cities' | translate }}</h2>
+
+    <md-content>
+      <md-tabs md-no-pagination md-dynamic-height md-no-ink md-no-ink-bars md-center-tabs="on">
+        <md-tab label="{{ 'shared.berlin' | translate }}">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+              <bike-card
+                ng-repeat="bike in muli.bikes.berlin"
+                bike="bike"
+                show-labels="true"
+                flex="100"
+                flex-gt-xs="50"
+                flex-gt-sm="33"
+              >
+              </bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="{{ 'shared.munich' | translate }}">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+              <bike-card
+                ng-repeat="bike in muli.bikes.munich"
+                bike="bike"
+                show-labels="true"
+                flex="100"
+                flex-gt-xs="50"
+                flex-gt-sm="33"
+              >
+              </bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab style="font-size: 40px" label="Pfaffstatten">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+              <bike-card
+                ng-repeat="bike in muli.bikes.pfaffstatten"
+                bike="bike"
+                show-labels="true"
+                flex="100"
+                flex-gt-xs="50"
+                flex-gt-sm="33"
+              >
+              </bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.muli.find-out-more' | translate }}</h1>
+      <h2 class="md-subhead" translate="{{ 'brand-integration.muli.find-out-more-description' | translate }}"></h2>
+    </div>
+    <br>
+    <br>
+  </div>
+  <footer></footer>
+</md-content>

@@ -1,0 +1,227 @@
+<div class="lnr-right" ng-if="message.sentMessage()">
+  <div class="lnr-message sent-message lnr-message--inlined" layout-margin>
+     <p class="message-time">{{message.localTime}}</p>
+    <p class="message-text">{{message.content}}</p>
+  </div>
+</div>
+
+<div ng-if="message.receivedMessage()">
+  <div class="lnr-message received-message lnr-message--inlined" layout-margin>
+     <p class="message-time">{{message.localTime}}</p>
+    <p class="message-text">{{message.content}}</p>
+  </div>
+</div>
+
+<div
+    ng-if="message.displayableNotification() && message.displayPicture() && message.request.rideChat"
+    layout="column"
+    layout-align="center center">
+  <img
+      class="lnr-profile-lrg lnr-clickable"
+      ng-click="message.closeDialog()"
+      ui-sref="user({userId: message.request.lister.id})"
+      ng-src="{{message.request.lister.picture}}">
+  </img>
+  <input-stars
+        class="rating"
+        max="5"
+        ng-model="message.request.rating"
+        readonly>
+  </input-stars>
+</div>
+
+<div
+    ng-if="!message.request.rideChat && message.displayPicture()"
+    layout="column"
+    layout-align="center center">
+  <img
+      class="lnr-profile-lrg lnr-clickable"
+      ng-click="message.closeDialog()"
+      ui-sref="user({userId: message.request.user.id})"
+      ng-src="{{message.request.user.profile_picture.profile_picture.url}}">
+  </img>
+  <input-stars
+      class="rating"
+      max="5"
+      ng-model="message.request.rating"
+      readonly>
+  </input-stars>
+</div>
+
+<p
+  ng-if="!message.request.rideChat && message.status == message.STATUSES.REQUESTED"
+  class="lnr-center">
+  <a ui-sref="bookingCalendar({ goToDate: message.request.start_date })">
+    {{ 'message.go-to-calendar' | translate }}
+  </a>
+</p>
+
+<!-- WAITING FOR CAPTURE (FROM BANK) -->
+<div
+  ng-if="message.request.payment_status === message.PAYMENT_STATUSES.WAITING_FOR_CAPTURE && message.status == message.STATUSES.WAITING_FOR_CAPTURE"
+  layout="row" layout-align="center end">
+  <div
+    class="lnr-message status-message"
+    flex="40"
+    flex-sm="60"
+    flex-xs="60"
+    layout="column"
+    layout-margin>
+    <p class="message-time">{{message.localTime}}</p>
+    <p class="lnr-center" ng-if="message.request.rideChat" translate="request.waiting_for_capture"></p>
+    <p class="lnr-center" ng-if="!message.request.rideChat" translate="request.waiting_for_capture_lister"></p>
+  </div>
+</div>
+
+<!-- PAYMENT FAILED AFTER LISTER ACCEPTED -->
+<div
+  ng-if="message.isPaymentFailed(message.request.payment_status) && message.status == message.STATUSES.ACCEPTED"
+  layout="row"
+  layout-align="center end">
+  <div
+    class="lnr-message status-message"
+    flex="40"
+    flex-sm="60"
+    flex-xs="60"
+    layout="column"
+    layout-margin>
+    <p class="message-time">{{message.localTime}}</p>
+    <p>{{ message.request.rideChat ? 'request.payment-failed-after-accept' : 'request.payment-failed-lister' | translate }}</p>
+  </div>
+</div>
+
+<div ng-if="message.displayableNotification()" layout="row" layout-align="center end">
+  <div
+      class="lnr-message status-message"
+      flex="40"
+      flex-sm="60"
+      flex-xs="60"
+      layout="column"
+      layout-margin>
+     <p class="message-time">{{message.localTime}}</p>
+    <p
+      class="lnr-center"
+      translate="{{message.request.chatFlow}}{{message.isDirectBooking && message.status == message.STATUSES.CONFIRMED ? '.direct' : '' }}.{{message.status}}"
+      translate-values="message.request"
+      ng-click="message.closeDialog()"
+      >
+    </p>
+    <!-- Insurance Certificates Download -->
+    <div ng-if="message.request.rideChat && message.status == message.STATUSES.CONFIRMED && message.request.insurance.items_uid">
+      <md-divider></md-divider>
+      <p class="lnr-center">
+        <b>{{ 'message.documents-title' | translate }}</b>
+        <br>{{ 'message.documents-description' | translate }}<br>
+        <div ng-if="message.request.insurance.items_uid.thing" class="lnr-center">
+          <br><a ng-click="message.downloadDocument(message.request.insurance.items_uid.thing)" target="_BLANK" class="lnr-link">{{ 'message.insurance-bike' | translate }}</a>
+        </div>
+        <div ng-if="message.request.insurance.items_uid.person" class="lnr-center">
+          <br><a ng-click="message.downloadDocument(message.request.insurance.items_uid.person)" target="_BLANK" class="lnr-link">{{ 'message.insurance-bike-assist' | translate }}</a>
+        </div>
+      </p>
+    </div>
+    <!-- END -->
+
+    <div ng-if="!message.request.rideChat && message.status == message.STATUSES.REQUESTED">
+      <div layout-gt-sm="row" layout="column" layout-align="space-around center" layout-align-gt-xs="center center">
+        <confirmation
+            button-class="'message-button md-raised md-warn lnr-m-0 md-button md-ink-ripple'"
+            button-text="'message.reject'"
+            button-disable="message.request.status != 1 || message.buttonClicked"
+            on-submit="message.handleRejectionSubmission(promise)"
+            request="message.request"
+            modal-title="'requests.cancelation_modal.title'"
+            modal-body="'requests.cancelation_modal.body'"
+            modal-ok-btn-text="'requests.cancelation_modal.cancel_btn'"
+            modal-cancel-btn-text="'requests.cancelation_modal.keep_btn'"
+            button-cancel-class="'message-button md-raised md-primary lnr-m-0 md-button md-ink-ripple'">
+        </confirmation>
+        <md-button
+          class="message-button md-raised md-primary lnr-m-0 md-button md-ink-ripple"
+          ng-disabled="message.request.status != 1 || message.buttonClicked"
+          ng-click="message.book()"
+        >
+          {{ 'message.accept' | translate }}
+        </md-button>
+      </div>
+    </div>
+
+    <div ng-if="message.showReturnButton()">
+      <div layout-gt-xs="row" layout="column" layout-align="space-around center" layout-align-gt-xs="center center">
+        <md-button
+          class="message-button md-raised md-primary lnr-m-0 md-button md-ink-ripple"
+          ng-disabled="message.userAlreadyRated()"
+          ng-click="message.showRatingDialog()"
+        >
+          {{ 'message.confirm_return' | translate }}
+        </md-button>
+      </div>
+    </div>
+
+    <div ng-if="message.request.rideChat && message.status == message.STATUSES.REQUESTED && !message.paymentFailed">
+      <div layout-gt-xs="row" layout="column" layout-align="space-around center" layout-align-gt-xs="center center">
+        <confirmation
+            button-class="'message-button md-raised lnr-m-0 md-button md-ink-ripple md-warn'"
+            button-text="'shared.cancel'"
+            button-disable="message.request.status != message.STATUSES.REQUESTED"
+            on-submit="message.handleRejectionSubmission(promise)"
+            request="message.request"
+            modal-title="'requests.cancelation_modal.title'"
+            modal-body="'requests.cancelation_modal.body'"
+            modal-ok-btn-text="'requests.cancelation_modal.cancel_btn'"
+            modal-cancel-btn-text="'requests.cancelation_modal.keep_btn'"
+            button-cancel-class="'message-button md-raised md-primary lnr-m-0 md-button md-ink-ripple'">
+        </confirmation>
+      </div>
+    </div>
+
+    <div ng-if="message.request.rideChat && message.status == message.STATUSES.ACCEPTED">
+      <div layout-gt-sm="row" layout="column" layout-align="space-around center" layout-align-gt-xs="center center">
+        <md-button
+          class="message-button md-raised lnr-m-0 md-button md-ink-ripple md-warn"
+          ng-disabled="message.request.status != message.STATUSES.ACCEPTED"
+          ng-click="message.updateStatus(message.STATUSES.RIDER_CANCELED)"
+        >
+          {{ 'shared.cancel' | translate }}
+        </md-button>
+        <md-button
+          class="message-button md-raised md-primary lnr-m-0 md-button md-ink-ripple"
+          ng-disabled="message.request.status != message.STATUSES.ACCEPTED"
+          ng-click="message.confirmBooking()"
+        >
+          {{ 'message.confirm' | translate }}
+        </md-button>
+      </div>
+    </div>
+
+    <div ng-if="message.isReturnable() && message.request.rideChat">
+      <div layout-gt-xs="row" layout="column" layout-align="space-around center" layout-align-gt-xs="center center">
+        <md-button
+          class="message-button md-raised md-primary lnr-m-0 md-button md-ink-ripple"
+          ng-disabled="message.userAlreadyRated()"
+          ng-click="message.showRatingDialog()"
+        >
+          {{ 'message.rate' | translate }}
+        </md-button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- RETRY FLOW -->
+<div
+  ng-if="message.request.rideChat && message.isPaymentFailed(message.request.payment_status) && message.status ==
+  message.STATUSES.PAYMENT_FAILED && message.request.status < message.STATUSES.CONFIRMED"
+  layout="column" layout-align="center center">
+  <p ng-if="message.request.status == message.STATUSES.REQUESTED || message.isDirectBooking">
+    {{ 'request.payment-failed' | translate }}
+  </p>
+  <md-button
+    ng-if="message.request.rideChat"
+    class="message-button md-raised md-primary lnr-m-0 md-button md-ink-ripple"
+    ng-disabled="message.retryClicked"
+    ng-click="message.retryPayment()">
+    {{ 'message.retry-payment' | translate }}
+  </md-button>
+</div>

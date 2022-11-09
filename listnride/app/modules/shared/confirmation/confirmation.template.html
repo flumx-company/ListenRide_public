@@ -1,0 +1,29 @@
+<md-dialog>
+  <div show-xs>
+    <div class="md-toolbar-tools" layout-align="center center">
+      <h2 class="md-headline">{{(confirmation.modalTitle || 'shared.confirmation') | translate}}</h2>
+      <md-button
+        ng-hide="confirmation.buttonCancelClass && confirmation.modalCancelBtnText"
+        class="md-icon-button"
+        ng-click="confirmation.cancel()">
+        <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </div>
+  <md-dialog-content>
+    <div class="md-dialog-content" layout="column">{{(confirmation.modalBody || 'shared.confirmation-text') | translate}}</div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button
+      ng-if="confirmation.buttonCancelClass && confirmation.modalCancelBtnText"
+      class="{{confirmation.buttonCancelClass}}"
+      ng-click="confirmation.cancel()">
+      {{confirmation.modalCancelBtnText | translate}}
+    </md-button>
+    <md-button
+      class="{{confirmation.buttonClass}}"
+      ng-click="confirmation.confirm()">
+      {{(confirmation.modalOkBtnText || 'shared.confirm') | translate}}
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,26 @@
+<md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/events/in-velo-veritas.jpg');" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <!-- <h1 class="md-display-1">{{ 'cities.berlin.title' | translate }}</h1> -->
+    </div>
+  </div>
+  <div class="content" layout="column" layout-align="center center" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'events.in-velo-veritas.title' | translate }}</h1>
+      <p class="md-body-1" translate="events.in-velo-veritas.description"></p>
+      <div class="md-body-1"><p translate="events.in-velo-veritas.text"></p></div>
+    </div>
+
+    <!-- <div class="lnr-bike-listings" name="listBike" layout="row" layout-wrap layout-align="start start" layout-padding>
+      <bike-card ng-repeat="bike in inVeloVeritas.bikes" bike="bike" flex-sm="50" flex-gt-sm="33">
+      </bike-card>
+    </div> -->
+    <div layout-xs="column" layout="row">
+      <div layout="row" layout-wrap layout-padding>
+        <bike-card ng-repeat="bike in inVeloVeritas.bikes" bike="bike" flex="100" flex-gt-xs="50" flex-gt-sm="33">
+        </bike-card>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</md-content>

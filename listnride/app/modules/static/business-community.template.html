@@ -1,0 +1,71 @@
+ <md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/static/lnr_shop_landing_hero.jpg'); background-position: 50% 50%;" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'business-community.title' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'business-community.subtitle' | translate }}</h2>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="spacer"></div>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <p class="md-subhead">{{ 'business-community.description' | translate }}</p>
+    </div>
+  </div>
+
+  <!-- start features -->
+  <div class="content" layout-padding>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_choice.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'business-community.feature-1.title' | translate }}</p>
+        <p class="lnr-center">{{ 'business-community.feature-1.description' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_id.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'business-community.feature-2.title' | translate }}</p>
+        <p class="lnr-center">{{ 'business-community.feature-2.description' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_notalone.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'business-community.feature-3.title' | translate }}</p>
+        <p class="lnr-center">{{ 'business-community.feature-3.description' | translate }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- end features -->
+
+  <div class="content" layout-padding>
+    <br><br>
+    <md-divider></md-divider>
+    <br><br><br>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'business-community.text-2.title' | translate }}</h2>
+      <p class="md-subhead" translate="business-community.text-2.description"></p>
+      <br>
+      <md-button class="md-raised md-primary md-lrg" ng-click="staticPage.sayHello()">{{ 'forms.sign-up' | translate }}{{ staticPage.foo }}</md-button>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <br><br>
+    <md-divider></md-divider>
+    <br><br><br>
+    <md-card class="lnr-image-card">
+      <img ng-src="app/assets/ui_images/static/lnr_shop_landing_preview.jpg">
+    </md-card>
+  </div>
+
+  <div class="content" layout-padding>
+    <div layout="row">
+
+    </div>
+    <p class="md-body-1">{{ 'business-community.text-3.description' | translate }}</p>
+  </div>
+
+  <div class="spacer"></div>
+  <footer></footer>
+</md-content>

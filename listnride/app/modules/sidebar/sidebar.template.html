@@ -1,0 +1,32 @@
+<md-sidenav class="md-sidenav-right" md-disable-scroll-target="body" md-component-id="right" layout="column" layout-align="center none"
+  md-theme="lnr-dark">
+  <md-content layout="column" layout-align="start stretch" class="full-height">
+    <div layout="row" layout-margin layout-align="start start">
+        <md-button class="md-icon-button" ng-click="sidebar.toggle()">
+            <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+    </div>
+    <div layout="column" layout-align="center center" class="full-height">
+      <div layout="row" layout-margin layout-align="center center">
+        <a ui-sref="user({userId: sidebar.userId})" ng-click="sidebar.toggle()" ng-if="sidebar.authentication.loggedIn()">
+          <img class="lnr-profile-md" ng-src="{{sidebar.authentication.profilePicture()}}">
+        </a>
+      </div>
+      <md-button ng-if="sidebar.authentication.loggedIn()" ui-sref="requests" ng-click="sidebar.toggle()">{{ 'shared.requests' | translate }}</md-button>
+      <md-button ng-if="sidebar.authentication.loggedIn() && sidebar.isUserBusiness()" ui-sref="bookingCalendar" ng-click="sidebar.toggle()">{{ 'shared.booking-calendar' | translate }}</md-button>
+      <md-button ng-if="sidebar.authentication.loggedIn()" ui-sref="listings" ng-click="sidebar.toggle()">{{ 'listings.my-bikes' | translate }}</md-button>
+      <md-button ng-if="!sidebar.authentication.loggedIn()" ng-click="sidebar.toggle(); sidebar.authentication.showSignupDialog()">{{ 'forms.sign-up' | translate }}</md-button>
+      <md-button ng-if="!sidebar.authentication.loggedIn()" ng-click="sidebar.toggle(); sidebar.authentication.showLoginDialog()">{{ 'forms.log-in' | translate }}</md-button>
+      <md-button ui-sref="listingABike" ng-click="sidebar.toggle()">{{ 'shared.list-a-bike' | translate }}</md-button>
+      <md-divider ng-if="!sidebar.authentication.loggedIn()"></md-divider>
+      <md-button ng-if="!sidebar.authentication.loggedIn()" ui-sref="howItWorks" ng-click="sidebar.toggle()">{{ 'shared.how-it-works' | translate }}</md-button>
+      <md-button ng-if="!sidebar.authentication.loggedIn()" ui-sref="trustAndSafety" ng-click="sidebar.toggle()">{{ 'shared.trust-and-safety' | translate }}</md-button>
+      <md-divider ng-if="sidebar.authentication.loggedIn()"></md-divider>
+      <md-button ng-if="sidebar.authentication.loggedIn()" ui-sref="settings" ng-click="sidebar.toggle();">{{ 'settings.settings' | translate }}</md-button>
+      <md-button ng-if="sidebar.authentication.loggedIn()" ui-sref="invite" ng-click="sidebar.toggle();">{{ 'settings.invite' | translate }}</md-button>
+      <md-button ng-if="sidebar.authentication.loggedIn()" ui-sref="invoices" ng-click="sidebar.toggle();">{{ 'invoices.billing' | translate }}</md-button>
+      <md-divider ng-if="sidebar.authentication.loggedIn()"></md-divider>
+      <md-button ng-if="sidebar.authentication.loggedIn()" ui-sref="home" ng-click="sidebar.toggle(); sidebar.authentication.logout()">{{ 'forms.log-out' | translate }}</md-button>
+    </div>
+  </md-content>
+</md-sidenav>

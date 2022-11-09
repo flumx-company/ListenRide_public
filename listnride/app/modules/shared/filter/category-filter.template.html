@@ -1,0 +1,53 @@
+<div class="filter__category" layout="column" ng-repeat="category in categoryFilter.categories track by $index">
+  <div
+    ng-click="categoryFilter.toggle(category.catId, categoryFilter.openSubs, $event)"
+    md-prevent-menu-close
+    class="lnr-p-x2 lnr-clickable cat-filter__parent-box"
+    layout="row"
+    layout-align="space-between start"
+  >
+    <div layout="row" layout-align="space-between center">
+      <md-checkbox
+        ng-if="!categoryFilter.hideCategoryCheckbox"
+        class="lnr-m-0"
+        aria-label="{{category.name}}"
+        ng-checked="categoryFilter.isChecked(category.catId)"
+        md-indeterminate="categoryFilter.isIndeterminate(category.catId)"
+        ng-click="categoryFilter.toggleAll($event, category.catId)"
+        md-prevent-menu-close
+        flex-15
+      >
+      </md-checkbox>
+      <!--md-indeterminate="categoryFilter.parent.isIndeterminate(category.catId)"-->
+
+      <div
+        flex-85
+        md-prevent-menu-close
+      >
+        {{category.name}}
+      </div>
+    </div>
+    <div flex-10>
+      <md-icon
+        md-svg-src="app/assets/ui_icons/{{category.iconFileName}}"
+        class="lnr-icn-sm md-color-foreground accessory-icon"
+      >
+      </md-icon>
+    </div>
+  </div>
+
+  <div layout="row" layout-wrap flex ng-show="categoryFilter.showSubs(category.catId)" layout-align="start center" class="lnr-ml">
+    <div flex="33" ng-repeat="subcategory in category.subcategories" class="lnr-pl-x2">
+      <md-checkbox
+        ng-checked="categoryFilter.exists(subcategory.id, categoryFilter.currentCategories)"
+        ng-click="categoryFilter.toggle(subcategory.id, categoryFilter.currentCategories)"
+        md-prevent-menu-close
+        ng-disabled="categoryFilter.checkDisabled(subcategory.id)"
+      >
+        {{ subcategory.name }}
+      </md-checkbox>
+    </div>
+  </div>
+
+  <md-divider ng-if="$index !== categoryFilter.categories.length - 1 "></md-divider>
+</div>

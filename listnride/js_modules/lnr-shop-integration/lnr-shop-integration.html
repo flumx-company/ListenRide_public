@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<!-- ***** styles for local testing ***** -->
+<!-- <script type="text/javascript" src="styles/lnr-shop-integration.vendor.css"></script> -->
+
+<!-- ***** S3 script for production ***** -->
+<!-- <script type="text/javascript" src="https://s3.eu-central-1.amazonaws.com/listnride-cdn/lnr-shop-integration.min.js"></script> -->
+<!-- ***** S3 script for staging ***** -->
+<!-- <script type="text/javascript" src="https://s3.eu-central-1.amazonaws.com/listnride-cdn/lnr-shop-integration_staging.min.js"></script> -->
+<!--  ***** Local un-minified scripts ***** -->
+<script src="scripts/lnr-shop-integration.constants.js"></script>
+<script src="scripts/lnr-shop-integration.helper.js"></script>
+<script type="text/javascript" src="scripts/lnr-shop-integration.js"></script>
+<script type="text/javascript" src="scripts/lnr-shop-integration.vendor.js"></script>
+<!-- -->
+
+<!-- ***** local minified scripts *****
+<script src="dist/lnr-shop-integration.min.js"></script>
+<!-->
+
+<!-- used for demo. user id and language can be provided manually for testing -->
+<!-- <div style="margin:12px;">
+    <form>
+      <input placeholder="user id" name="user_id" id="user_demo_id">
+      <input placeholder="user lang" name="user_lang" id="user_demo_lang">
+      <button type="button" onclick="lnrHelper.renderBikes(0, 0, true)">Go</button>
+    </form>
+</div> -->
+
+<!-- single user mode -->
+<!-- <div id="listnride" data-user="1869" data-lang="en"></div> -->
+
+<div id="listnride" data-user="1002" data-lang="nl"></div>
+
+<!-- multi user mode (we don't use this mode)-->
+ <!-- <div id="listnride" > -->
+  <!-- Unisize bikes only -->
+  <!-- <div data-user=6707 data-lang="en"></div> -->
+  <!-- All bikes sizes -->
+  <!-- <div data-user="2203" data-lang="en"></div> -->
+  <!-- With city filter -->
+  <!-- <div data-user="1536" data-lang="de"></div> -->
+<!-- </div> -->
+</body>

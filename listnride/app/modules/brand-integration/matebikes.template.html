@@ -1,0 +1,110 @@
+<md-content class="single-column">
+
+    <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+        <!-- BRAND SLIDER -->
+        <ul class="cb-slideshow cb-slideshow--brand cb-slideshow--3">
+            <li ng-repeat="slide in matebikes.cbSlider track by $index">
+                <span class="brand-slider-image" style="background-image: url('{{slide}}')">
+                    <img src="https://s3.eu-central-1.amazonaws.com/cdn.listnride.com/brands/lnr_matebikes_logo.png"/>
+                </span>
+            </li>
+        </ul>
+        <!-- END BRAND SLIDER -->
+
+    </div>
+
+    <div class="content" layout-padding>
+        <div class="lnr-section-title" layout="column" layout-align="center center">
+            <h1 class="md-headline">{{ 'brand-integration.matebikes.title' | translate }}</h1>
+            <h2 class="md-subhead" translate="brand-integration.matebikes.description"></h2>
+        </div>
+
+        <!-- BRAND PAGE FEATURES -->
+        <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+            <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+                <img class="md-card-image"
+                     src="https://s3.eu-central-1.amazonaws.com/cdn.listnride.com/brands/lnr_matebikes_top_columns_image_01.jpg"
+                     alt="matebikes feature 1">
+                <h3 class="md-subhead lnr-center">{{ 'brand-integration.matebikes.item1-title' | translate }}</h3>
+                <p class="lnr-center" translate="brand-integration.matebikes.item1-description"></p>
+            </div>
+
+            <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+                <img class="md-card-image"
+                     src="https://s3.eu-central-1.amazonaws.com/cdn.listnride.com/brands/lnr_matebikes_top_columns_image_02.jpg"
+                     alt="matebikes feature 2">
+                <h3 class="md-subhead lnr-center">{{ 'brand-integration.matebikes.item2-title' | translate }}</h3>
+                <p class="lnr-center" translate="brand-integration.matebikes.item2-description"></p>
+            </div>
+
+            <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+                <img class="md-card-image"
+                     src="https://s3.eu-central-1.amazonaws.com/cdn.listnride.com/brands/lnr_matebikes_top_columns_image_03.jpg"
+                     alt="matebikes feature 3">
+                <h3 class="md-subhead lnr-center">{{ 'brand-integration.matebikes.item3-title' | translate }}</h3>
+                <p class="lnr-center" translate="brand-integration.matebikes.item3-description"></p>
+            </div>
+        </div>
+        <!-- END BRAND PAGE FEATURES -->
+
+        <br>
+        <md-divider></md-divider>
+        <br>
+
+        <!-- BRAND BIKES -->
+        <div ng-if="!matebikes.isEmpty(matebikes.cities)">
+            <h2 class="md-subhead lnr-center">{{ 'brand-integration.shared.choose-location' | translate }}</h2>
+
+            <div class="lnr-section-title" layout="column" layout-align="center center">
+                <md-menu md-position-mode="target bottom">
+                    <md-button class="md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">
+                        <p class="md-right-arrow md-headline lnr-m-0">&nbsp;&nbsp;{{ matebikes.currentShop.cityName
+                            }}</p>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="(city, v) in matebikes.cities">
+                            <md-button ng-disabled="!v.bikes.length" md-no-ink
+                                       ng-click="matebikes.currentShop = matebikes.cities[city]">
+                                <p class="md-subhead lnr-m-0">{{ v.cityName }}</p>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+
+            <md-content ng-if="matebikes.currentShop.bikes && matebikes.currentShop.bikes.length !==0">
+                <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+                    <bike-card ng-repeat="bike in matebikes.currentShop.bikes"
+                               bike="bike"
+                               show-labels="true"
+                               flex="100"
+                               flex-gt-xs="50"
+                               flex-gt-sm="33">
+                    </bike-card>
+                </div>
+            </md-content>
+
+
+            <div ng-if="!matebikes.currentShop.bikes.length">
+                <p class="md-subhead lnr-center">{{'shared.no-bikes-found' | translate}}</p>
+            </div>
+            <!-- END BRAND BIKES -->
+
+            <md-divider class="lnr-mv lnr-mh-x2"></md-divider>
+        </div>
+
+        <div class="lnr-section-title" layout="column" layout-align="center center">
+            <h1 class="md-headline">{{ 'brand-integration.matebikes.find-out-more' | translate }}</h1>
+            <h2 class="md-subhead" translate="brand-integration.matebikes.order-online"></h2>
+        </div>
+
+        <div class="lnr-mh-x2"></div>
+        <div class="wrap-matebike-table">
+            <img src="https://s3.eu-central-1.amazonaws.com/cdn.listnride.com/brands/lnr_matebikes_technical_table.png"/>
+            <div class="wrap-matebike-table_optional-text">
+                <p class="" translate="brand-integration.matebikes.optional"></p>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</md-content>

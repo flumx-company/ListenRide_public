@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://www.listnride.com/sitemap-com.xml</loc>
+        <lastmod>2018-10-10</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://www.listnride.de/sitemap-de.xml</loc>
+        <lastmod>2018-10-10</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://www.listnride.it/sitemap-it.xml</loc>
+        <lastmod>2018-10-10</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://www.listnride.nl/sitemap-nl.xml</loc>
+        <lastmod>2018-10-10</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://www.listnride.es/sitemap-es.xml</loc>
+        <lastmod>2018-10-10</lastmod>
+    </sitemap>
+</sitemapindex>

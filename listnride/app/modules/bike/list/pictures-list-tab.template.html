@@ -1,0 +1,87 @@
+<md-tab ng-disabled="picturesTab.parent.isListMode" class="pictures" label="{{ 'list.pictures.label' | translate }} {{ picturesTab.parent.tabCompleted(2) }}" layout="row">
+  <md-content class="md-padding" layout="column">
+    <div class="tab-content" layout="row" layout-align="space-between none" layout-padding>
+      <div class="lnr-list-form" flex-xs="100" flex-gt-xs="50" layout="column">
+        <div class="lnr-list-title">
+          <h3 class="md-subhead">
+            {{ 'list.pictures.header' | translate }}
+          </h3>
+        </div>
+        <md-button
+          class="md-raised md-primary lnr-m-0"
+          ngf-multiple="true"
+          ngf-select="picturesTab.parent.addImage($files)"
+          ngf-resize="{width: 1600, height: 1200, quality: .9}"
+          ngf-fix-orientation="true"
+          accept=".jpg,.jpeg,.png"
+          ngf-validate="picturesTab.parent.validateObj"
+          ngf-model-invalid="picturesTab.parent.invalidFiles">
+          {{ 'list.pictures.select-images' | translate }}
+        </md-button>
+
+        <div class="preview-container lnr-mt" layout="column" layout-wrap>
+          <div ng-repeat="img in picturesTab.parent.form.images track by $index" layout="row" layout-align="space-between center">
+            <div ng-if="img.local == 'true'" class="img-preview lnr-mt" ngf-background="img.src" ngf-as-background="true">
+            </div>
+            <div
+              class="img-preview lnr-mt"
+              ng-style="{'background-image': 'url(' + img.medium + ')'}">
+            </div>
+            <md-button class="md-lined md-warn" ng-click="picturesTab.parent.removeImage($index, img)">
+              {{ 'list.pictures.remove' | translate}}
+            </md-button>
+          </div>
+        </div>
+        <div class="text-error" ng-if="picturesTab.parent.invalidFiles[0] !== undefined" layout="column" hide-gt-xs layout-padding>
+          {{ 'list.pictures.under-min-size' | translate}}
+          <ul>
+            <div ng-repeat="invalideImage in picturesTab.parent.invalidFiles" class="text-error">
+              <li>
+                {{invalideImage.name}} - {{invalideImage.$ngfWidth}}x{{invalideImage.$ngfHeight}}
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+      <md-divider hide-xs class="lnr-ml lnr-mr-x2"></md-divider>
+
+      <div flex="50" hide-xs>
+        <div class="lnr-list-title">
+          <h3 class="md-subhead">
+            Info
+          </h3>
+        </div>
+        <p class="md-body-1">{{ 'list.pictures.hint' | translate }}</p>
+        <a ui-sref="how-to-shoot-bike-photos" target="_blank">{{ 'list.pictures.how-to' | translate }}</a>
+
+        <div ng-if="picturesTab.parent.invalidFiles[0] !== undefined" class="text-error">
+          <div class="lnr-list-title">
+            <h3 class="md-subhead">
+              <md-icon md-font-icon="fa-exclamation-triangle" class="lnr-icn-sm md-color-disabled lnr-mr fa">
+              </md-icon>
+              {{ 'list.pictures.invalid-images' | translate}}
+            </h3>
+          </div>
+          {{ 'list.pictures.under-min-size' | translate}}
+          <ul>
+            <div ng-repeat="invalideImage in picturesTab.parent.invalidFiles" class="text-error">
+              <li>
+                {{invalideImage.name}} - {{invalideImage.$ngfWidth}}x{{invalideImage.$ngfHeight}}
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation" layout="row" layout-align="space-between center" layout-margin>
+      <md-button class="md-lined" ng-click="picturesTab.parent.previousTab()">
+        {{ 'list.back' | translate }}
+      </md-button>
+      <md-button class="md-raised md-primary" ng-click="picturesTab.parent.nextTab()" ng-disabled="!picturesTab.parent.isPictureValid() && picturesTab.parent.isListMode">
+        {{ 'list.next' | translate }}
+      </md-button>
+    </div>
+  </md-content>
+</md-tab>

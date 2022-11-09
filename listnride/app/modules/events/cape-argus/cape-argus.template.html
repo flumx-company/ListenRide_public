@@ -1,0 +1,62 @@
+<md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/events/cape-argus_hero.jpg');" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      
+    </div>
+  </div>
+  <div class="content" layout="column" layout-padding>
+    <!-- <div class="lnr-section-title" layout="column" layout-align="center center">
+
+      <h1 class="md-headline">{{ 'events.cape-argus.title' | translate }}</h1>
+      <div class="md-body-1"><p translate="events.cape-argus.text"></p>
+      </div>
+    </div> -->
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center" layout-padding>
+      <div hide-gt-xs layout layout-align="center center">
+          <img flex="50" ng-src="app/assets/ui_images/events/cape-argus_logo.png" />
+      </div>
+      <div layout="column" flex-gt-xs="45">
+        <h1 class="md-headline" style="margin-top: 15px">{{ 'events.cape-argus.title' | translate }}</h1>
+        <p translate="events.cape-argus.text-1"></p>
+      </div>
+      <div layout="row" flex-gt-xs="10" layout-align="center">
+        <md-divider></md-divider>
+      </div>
+      <div layout="column" flex-gt-xs="45" layout-align="center start">
+        <div hide-xs>
+          <img flex="60" ng-src="app/assets/ui_images/events/cape-argus_logo.png" />
+        </div>
+        <p translate="events.cape-argus.text-2"></p>
+        <md-input-container flex md-no-float ng-if="!capeArgus.submitted">
+          <div layout="row">
+            <input ng-model="capeArgus.email" placeholder="{{ 'forms.email-address' | translate }}" flex-order="1" type="email"></input>
+            <md-button ng-click="capeArgus.submit()" ng-disabled="capeArgus.submitting || !capeArgus.email" class="md-raised md-primary" flex-order="2" style="margin: 0 8px">{{ 'invest.submit' | translate }}</md-button>
+          </div>
+        </md-input-container>
+        <p class="lnr-green-text" ng-if="capeArgus.submitted">{{ 'events.cape-argus.preregister-thanks' | translate }}</p>
+      </div>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div flex layout="column" layout-fill>
+      <div layout="row" layout-padding>
+        <md-input-container layout="column" flex="30" style="padding-bottom: 0">
+          <label>{{ 'list.details.size' | translate }}</label>
+          <md-select flex ng-model="filterSize" placeholder="{{ 'list.details.size' | translate }}">
+            <md-option ng-repeat="option in capeArgus.sizeOptions" value="{{option.value}}">
+              {{option.label}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-wrap layout-padding>
+        <bike-card ng-repeat="bike in capeArgus.bikes | filter : {size : filterSize}" bike="bike" booked="bike.booked" flex="100" flex-gt-xs="50" flex-gt-sm="33">
+        </bike-card>
+      </div>
+    </div>
+    <br><br>
+  </div>
+  <footer></footer>
+</md-content>

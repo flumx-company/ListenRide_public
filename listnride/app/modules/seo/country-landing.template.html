@@ -1,0 +1,64 @@
+<div ng-show="countryLanding.loading" flex layout="column" layout-align="center center">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<md-content flex-xs="100" class="country-landing single-column" ng-hide="countryLanding.loading">
+        <section layout="row" layout-align="start start" flex>
+        <div layout-gt-xs="column" layout-align="end none" layout-padding>
+            <!-- all countries page -->
+            <div class="country-landing-l-height" ng-if="!countryLanding.countryName">
+                <breadcrumbs
+                    data="countryLanding.breadcrumbs"
+                    class="lnr-city-landing-breadcrumbs"
+                ></breadcrumbs>
+                <h1 class="md-no-sticky m-t-24">
+                    {{ 'countries.title' | translate }}
+                </h1>
+                <md-list class="wrap-country-list">
+                    <md-list-item ng-repeat="country in countryLanding.countryData">
+                        <a href="countries/{{country.name.en.toLowerCase()}}">
+                            <p>
+                                {{ country.name[countryLanding.languageCode] }}
+                            </p>
+                        </a>
+                    </md-list-item>
+                </md-list>
+            </div>
+
+            <!-- country page -->
+            <div
+                 layout="column"
+                 layout-align="start start"
+                 class="country-landing-l-height"
+                 ng-if="countryLanding.currentCountry"
+                 flex-xs="100">
+                <div class="md-body-1" >
+                    <breadcrumbs
+                            data="countryLanding.breadcrumbsCountry"
+                            class="lnr-city-landing-breadcrumbs"
+                    ></breadcrumbs>
+                    <h1 layout="column" layout-gt-sm="row"
+                        layout-align="start stretch" class="m-t-24 md-headline"
+                        translate="countries.country_title"
+                        translate-values="{country_name: countryLanding.currentCountry.name[countryLanding.languageCode]}"
+                        >
+                    </h1>
+                    <md-list class="wrap-country-list" ng-if="countryLanding.currentCountry.seo_cities.length">
+                        <md-list-item
+                            ng-repeat="city in countryLanding.currentCountry.seo_cities"
+                            class="md-body-1">
+                            <a class="lnr-link" href="/{{city.name.en.toLowerCase()}}">
+                                {{ city.name[countryLanding.languageCode] }}
+                            </a>
+                        </md-list-item>
+                    </md-list>
+                    <p ng-if="!countryLanding.currentCountry.seo_cities.length">
+                       {{ country.no-cities | translate }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer></footer>
+
+</md-content>

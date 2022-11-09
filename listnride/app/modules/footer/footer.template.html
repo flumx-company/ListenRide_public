@@ -1,0 +1,308 @@
+<md-content id="footer" class="md-scroll-shrink" md-theme="lnr-dark" ng-hide="footer.hideFooter">
+  <div class="content" layout="column">
+    <div layout="row" layout-xs="column" class="footer">
+      <div class="wrap-footer-lists"
+           layout="row"
+           flex
+           layout-wrap
+           layout-align="space-between start">
+        <div layout="column" flex-xs="50">
+          <md-list>
+            <md-subheader class="md-no-sticky">listnride</md-subheader>
+            <md-list-item class="md-body-1">
+              <a
+                      class="lnr-link"
+                      ui-sref="about"
+                      >
+                {{ 'footer.about' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a
+                      class="lnr-link"
+                      ui-sref="press"
+                      >
+                {{ 'footer.press' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a
+                      class="lnr-link"
+                      ui-sref="jobs"
+                      >
+                {{ 'footer.jobs' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a
+                      class="lnr-link"
+                      ui-sref="invite"
+                      >
+                {{ 'settings.invite' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a
+                      class="lnr-link"
+                      ui-sref="help"
+                      >
+                {{ 'shared.contact' | translate }}
+              </a>
+            </md-list-item>
+          </md-list>
+        </div>
+        <div layout="column" flex-xs="50">
+          <md-list>
+            <md-subheader class="md-no-sticky">
+              {{ 'shared.learn-more' | translate }}
+            </md-subheader>
+            <md-list-item class="md-body-1">
+              <a
+                      class="lnr-link"
+                      ui-sref="howItWorks"
+                      >
+                {{ 'shared.how-it-works' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a
+                      class="lnr-link"
+                      ui-sref="listingABike"
+                      >
+                {{ 'shared.listing-a-bike' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a class="lnr-link" ui-sref="businessCommunity">
+                {{ 'shared.for-shops' | translate  }}
+              </a>
+            </md-list-item>
+              <md-list-item class="md-body-1">
+                  <a
+                          class="lnr-link"
+                          ui-sref="brands"
+                          >
+                      {{ 'shared.brands' | translate }}
+                  </a>
+              </md-list-item>
+            <md-list-item class="md-body-1">
+              <a class="lnr-link" href="http://journal.listnride.com" target="_blank">
+                {{ 'shared.journal' | translate }}
+              </a>
+            </md-list-item>
+          </md-list>
+        </div>
+
+        <div layout="column" flex-xs="50">
+          <md-list>
+              <md-subheader class="md-no-sticky">
+                 {{ 'footer.top-countries' | translate }}
+              </md-subheader>
+              <seo-grid></seo-grid>
+          </md-list>
+        </div>
+          <div layout="column" flex-xs="50">
+           <md-list>
+            <md-subheader class="md-no-sticky">{{ 'footer.legal' | translate }}</md-subheader>
+            <md-list-item class="md-body-1">
+              <a class="lnr-link" ui-sref="terms">
+                {{ 'footer.terms-and-conditions' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a class="lnr-link" ui-sref="privacy">
+                {{ 'footer.privacy-statement' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a class="lnr-link" ui-sref="countries">
+                {{ 'footer.sitemap' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a class="lnr-link" ui-sref="trustAndSafety">
+                {{ 'shared.trust-and-safety' | translate }}
+              </a>
+            </md-list-item>
+            <md-list-item class="md-body-1">
+              <a class="lnr-link" ui-sref="insurance">
+                {{ 'footer.insurance' | translate }}
+              </a>
+          </md-list>
+        </div>
+
+<!--TODO add it when we`ll have seo pages-->
+        <!--<div layout="column" flex-xs="50">-->
+          <!--<md-list>-->
+            <!--<md-subheader class="md-no-sticky">-->
+                <!--{{ 'footer.top-countries' | translate }}-->
+            <!--</md-subheader>-->
+            <!--<seo-grid showCity="false"-->
+                      <!--class="lnr-sm-content-padding">-->
+            <!--</seo-grid showCity="false"-->
+          <!--</md-list>-->
+        <!--</div>-->
+
+        <div layout="row"
+             layout-gt-sm="column"
+             flex-xs="100">
+          <md-list flex-xs="100"
+                   layout="column"
+                   layout-xs="row">
+            <div id="insurance"
+                 class="lnr-btn-ios"
+                 ng-hide="false">
+              <md-subheader class="md-no-sticky">
+                {{ 'footer.insurance-partner' | translate }}
+              </md-subheader>
+              <div layout="row"
+                   layout-xs="row"
+                   layout-align="start start"
+                   class="footer__partners lnr-pl">
+                <img style="max-width: 60px;" ng-src="app/assets/ui_images/static/lnr-insurance-gothaer-white.svg">
+                <img style="max-width: 76px; padding-left: 8px;" ng-src="app/assets/ui_images/static/lnr_hepster_logo.svg">
+              </div>
+            </div>
+            <div class="wrap-subscribe-icons">
+              <md-subheader class="md-no-sticky">
+                  {{'footer.keep-in-touch' | translate}}
+              </md-subheader>
+              <div layout="row"
+                   layout-xs="row"
+                   layout-align="start start"
+                   layout-align-xs="space-between start"
+                    class="footer__partners lnr-pl">
+                  <a href="https://www.facebook.com/listnride/"
+                      target="_blank">
+                          <img class="social-media-icon" ng-src="app/assets/ui_icons/fb.svg">
+                  </a>
+                  <a href="https://www.instagram.com/listnride/"
+                      target="_blank">
+                          <img class="social-media-icon" ng-src="app/assets/ui_icons/inst.svg">
+                  </a>
+                  <a href="mailto:hello@listnride.com">
+                          <img class="social-media-icon" ng-src="app/assets/ui_icons/mail.svg">
+                  </a>
+              </div>
+            </div>
+        </div>
+          </md-list>
+          <div layout="column"
+               layout-wrap
+               layout-align="start start"
+               layout-align-xs="start start"
+               flex-xs="100">
+              <md-list>
+                  <md-subheader class="md-no-sticky">
+                      <span class="text-color--white">
+                          {{'footer.subscribe-title' | translate}}
+                      </span>
+                  </md-subheader>
+                  <md-list-item>
+                      <form
+                        ng-cloak
+                        name="footerSubscribe"
+                        novalidate
+                        ng-submit="footer.onNewsletterSubmit()">
+                          <div class="footer-subscribe">
+                          <input
+                            ng-model="footer.email"
+                            type="email"
+                            required
+                            name="email"
+                            ng-pattern="footer.emailPattern"
+                            placeholder="{{'shared.your-email' | translate}}" />
+                          <button type="submit"><img src="app/assets/ui_icons/arrow.svg" alt=">"/></button>
+                          <div
+                            ng-if="true"
+                            ng-messages="footerSubscribe.email.$error"
+                            role="alert"
+                            class="invalid-error"
+                            ng-show="footerSubscribe.email.$invalid && !footerSubscribe.email.$pristine">
+                            <div ng-message="required">{{ 'forms.errors.empty-email' | translate }}</div>
+                            <div ng-message="email">{{ 'forms.errors.valid-email' | translate }}</div>
+                            <div ng-message="pattern">{{ 'forms.errors.valid-email' | translate }}</div>
+                          </div>
+                          </div>
+                      </form>
+                  </md-list-item>
+              </md-list>
+              <md-list layout="row"
+                       layout-xs="row"
+                       layout-wrap
+                       layout-align="start start"
+                       layout-align-xs="start start"
+                       class="footer-recapcha"
+                      >
+                  <span class="recapcha-title">
+                      {{ 'footer.recapcha-text' | translate }}:&nbsp
+                  </span>
+                  <a class="lnr-link"
+                     href="https://www.google.com/intl/uk/policies/privacy/"
+                     target="_blank">
+                      {{ 'footer.privacy-statement' | translate }}
+                  </a>
+                  <span>&nbsp;&&nbsp;</span>
+                  <a class="lnr-link"
+                     href="https://www.google.com/intl/uk/policies/terms/"
+                     target="_blank">
+                      {{ 'footer.terms-and-conditions' | translate }}
+                  </a>
+              </md-list>
+          </div>
+        </div>
+      </div>
+      <md-divider></md-divider>
+      <div layout="row" layout-xs="column" layout-align-xs="start start" layout-align="space-between center" layout-padding>
+          <div layout-align="center center" layout="row">
+              <img class="footer-logo" src="app/assets/ui_icons/mini-logo.svg"/>
+              © {{footer.year}} List and Ride GmbH.
+              <a class="lnr-link lnr-underline" ui-sref="imprint">
+                  {{ 'footer.imprint' | translate }}
+              </a>
+          </div>
+              <md-list>
+                <md-menu md-position-mode="target bottom" class="lnr-pl select-language">
+              <md-button
+                class="lnr-btn-lang md-lined md-right-arrow"
+                md-no-ink
+                translate="{{ footer.language }}"
+                ng-click="$mdOpenMenu($event)">
+              </md-button>
+                      <md-menu-content width="2">
+                          <md-menu-item>
+                              <md-button md-no-ink ng-click="footer.switchLanguage('de')">
+                                  {{'footer.languages.german' | translate }}
+                              </md-button>
+                          </md-menu-item>
+                          <md-menu-item>
+                              <md-button md-no-ink ng-click="footer.switchLanguage('en')">
+                                  {{'footer.languages.english' | translate }}
+                              </md-button>
+                          </md-menu-item>
+                          <md-menu-item>
+                              <md-button md-no-ink ng-click="footer.switchLanguage('nl')">
+                                  {{'footer.languages.dutch' | translate }}
+                              </md-button>
+                          </md-menu-item>
+                          <md-menu-item>
+                              <md-button md-no-ink ng-click="footer.switchLanguage('it')">
+                                  {{'footer.languages.italian' | translate }}
+                              </md-button>
+                          </md-menu-item>
+                          <md-menu-item>
+                              <md-button md-no-ink ng-click="footer.switchLanguage('es')">
+                                  {{'footer.languages.spanish' | translate }}
+                              </md-button>
+                          </md-menu-item>
+                          <md-menu-item>
+                              <md-button md-no-ink ng-click="footer.switchLanguage('fr')">
+                                  {{'footer.languages.french' | translate }}
+                              </md-button>
+                          </md-menu-item>
+                      </md-menu-content>
+                  </md-menu>
+              </md-list>
+      </div>
+    </div>
+</md-content>

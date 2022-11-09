@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="119px" height="85px" viewBox="0 0 119 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>feature_2_black</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="140" height="140"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="feature_2_black" transform="translate(-7.000000, -24.000000)">
+            <g id="Mask">
+                <rect id="path-1" x="0" y="0" width="140" height="140"></rect>
+            </g>
+            <g id="Page-1-Clipped">
+                <g>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <g id="Page-1" mask="url(#mask-2)">
+                        <g transform="translate(7.000000, 24.000000)" id="Group">
+                            <g>
+                                <g stroke="#61c794" stroke-width="3">
+                                    <path d="M7,74.5 L11.163,74.5" id="Stroke-1"></path>
+                                    <path d="M19.1382,74.5 L110.8492,74.5" id="Stroke-2" stroke-dasharray="7.975000000000001,7.975"></path>
+                                    <g id="Group-31">
+                                        <path d="M114.8367,74.5 L118.9997,74.5" id="Stroke-3"></path>
+                                        <path d="M7,65.5 L119,65.5" id="Stroke-5"></path>
+                                        <path d="M7,83.5 L119,83.5" id="Stroke-7"></path>
+                                        <path d="M20,65.1701 C20,65.1701 29.781,46.3831 42.865,46.3831 C52.141,46.3831 58.888,54.1401 62.029,58.6551" id="Stroke-9"></path>
+                                        <path d="M56.5313,52.3305 C56.5313,52.3305 65.0063,32.6285 81.1093,32.6285 C104.2573,32.6285 108.0003,65.1705 108.0003,65.1705" id="Stroke-11"></path>
+                                        <path d="M31,21.3284 C31,26.8514 26.523,31.3284 21,31.3284 C15.477,31.3284 11,26.8514 11,21.3284 C11,15.8054 15.477,11.3284 21,11.3284 C26.523,11.3284 31,15.8054 31,21.3284 L31,21.3284 L31,21.3284 L31,21.3284 Z" id="Stroke-13"></path>
+                                        <path d="M21,6.3284 L21,0.3284" id="Stroke-15"></path>
+                                        <path d="M31.6066,10.7218 L35.8496,6.4788" id="Stroke-17"></path>
+                                        <path d="M36,21.3284 L42,21.3284" id="Stroke-19"></path>
+                                        <path d="M31.6066,31.935 L35.8496,36.178" id="Stroke-21"></path>
+                                        <path d="M21,36.3284 L21,42.3284" id="Stroke-23"></path>
+                                        <path d="M10.3934,31.935 L6.1504,36.178" id="Stroke-25"></path>
+                                        <path d="M6,21.3284 L0,21.3284" id="Stroke-27"></path>
+                                        <path d="M10.3934,10.7218 L6.1504,6.4788" id="Stroke-29"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

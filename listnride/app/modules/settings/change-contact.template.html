@@ -1,0 +1,70 @@
+<md-dialog>
+    <div show-xs>
+        <div class="md-toolbar-tools" layout-align="center center">
+            <md-button class="md-icon-button">
+                <md-icon></md-icon>
+            </md-button>
+            <span flex></span>
+            <h2 class="md-headline" hide-xs>{{ 'forms.update-contact' | translate }}</h2>
+            <h2 class="md-headline" hide-gt-xs>{{ 'forms.update-contact-mobile' | translate }}</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="changeContact.closeDialog()">
+                <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </div>
+    <md-dialog-content>
+        <div class="md-dialog-content" layout="column">
+            <div class="tab-content" layout="column">
+                <div layout="row" layout-align="center center">
+                    <md-input-container flex>
+                        <form name="contact" class="lnr-tel-int">
+                            <label>{{ 'shared.phone-number' | translate }}</label>
+                            <input
+                                required
+                                type="text"
+                                international-phone-number
+                                ng-model="changeContact.user.new_phone_number"
+                                ng-pattern="/^\+(?:[0-9] ?){6,14}[0-9]$/"
+                                name="phone_number"
+                                preferred-countries="de, at, nl, fr, lv, es, it, ch, gb"
+                            >
+                            <div ng-messages="contact.phone_number.$error" role="alert">
+                                <div ng-message="pattern">{{ 'verification.5.enter-valid-phone-nr' | translate }}</div>
+                            </div>
+                        </form>
+                    </md-input-container>
+                    <md-input-container layout="row" flex="45">
+                        <md-button ng-if="!changeContact.sentConfirmationSms" ng-disabled="!contact.phone_number.$valid || changeContact.user.new_phone_number === changeContact.user.phhone_number"
+                            flex class="md-raised md-primary lnr-btn-inline" ng-click="changeContact.sendSms()">
+                            <span hide-xs>{{ 'verification.5.send-confirmation-sms' | translate }}</span>
+                            <span hide-gt-xs>{{ 'verification.5.send-confirmation-sms-mobile' | translate }}</span>
+                        </md-button>
+                        <md-button ng-if="changeContact.sentConfirmationSms" ng-disabled="!contact.phone_number.$valid || changeContact.user.new_phone_number === changeContact.user.phone_number"
+                            flex class="md-raised md-primary lnr-btn-inline" ng-click="changeContact.sendSms()">
+                            <span hide-xs>{{ 'verification.5.resend-confirmation-sms' | translate }}</span>
+                            <span hide-gt-xs>{{ 'verification.5.resend-confirmation-sms-mobile' | translate }}</span>
+                        </md-button>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <md-input-container flex>
+                        <form name="confirm">
+                            <label hide-xs>{{ 'verification.5.sms-verification-code' | translate }}</label>
+                            <label hide-gt-xs>{{ 'verification.5.sms-verification-code-mobile' | translate }}</label>
+                            <input required name="confirmation_code" min-length="4" max-length="4" ng-model="changeContact.user.confirmation_code"></input>
+                        </form>
+                    </md-input-container>
+                    <md-input-container layout="row" flex="45">
+                        <md-button flex class="md-raised md-primary lnr-btn-inline" ng-disabled="!changeContact.sentConfirmationSms" ng-click="changeContact.confirmPhone()">
+                            <span hide-xs>{{ 'verification.5.confirm-code' | translate }}</span>
+                            <span hide-gt-xs>{{ 'verification.5.confirm-code-mobile' | translate }}</span>
+                        </md-button>
+                    </md-input-container>
+                </div>
+                <p class="md-body-1 lnr-center" ng-if="verificationDialog.user.confirmed_phone">{{ 'verification.5.phone-nr-verified' | translate }}</p>
+            </div>
+        </div>
+    </md-dialog-content>
+
+</md-dialog>

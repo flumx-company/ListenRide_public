@@ -1,0 +1,79 @@
+<md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg"
+    style="background-image: url('app/assets/ui_images/static/lnr_jobs.jpg')"
+    layout="row"
+    layout-align="space-around center">
+  </div>
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">
+        {{ 'jobs.header' | translate }}
+      </h1>
+      <h3 class="md-subhead">
+        {{ 'jobs.subheader' | translate }}
+      </h3>
+    </div>
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="space-around center">
+      <div flex-gt-sm="70" layout="column" layout-align="space stretch">
+        <!--<h2 class="md-subhead">-->
+          <!--{{ 'jobs.contact.title' | translate }}-->
+        <!--</h2>-->
+        <p>
+          {{ 'jobs.contact.content' | translate }}
+        </p>
+        <md-list style="margin-left: -18px" ng-if="!jobs.showJobDetails">
+          <md-subheader class="md-no-sticky">
+            {{ 'jobs.open' | translate }}:
+          </md-subheader>
+          <md-list-item ng-repeat="job in jobs.availableJobs">
+            <a ui-sref="jobs({position: job.id})" ng-click="jobs.showDetails(job)">
+              <p>
+                {{job.title}}
+              </p>
+            </a>
+          </md-list-item>
+        </md-list>
+        <div ng-if="jobs.showJobDetails">
+          <div class="md-body-1">
+            <div id="jobs-details" layout="column" layout-align="space-around stretch" layout-margin>
+              <h1 layout="column" layout-gt-sm="row" layout-align="space-around stretch" class="md-headline">
+                {{jobs.chosenJob.title}}
+              </h1>
+              <h3><strong>{{jobs.chosenJob.role_headline}}</strong></h3>
+              <md-list>
+                <md-list-item ng-repeat="desc in jobs.chosenJob.role">
+                  &bull;&nbsp{{desc}}
+                </md-list-item>
+              </md-list>
+              <h3><strong>{{jobs.chosenJob.requirement_headline}}</strong></h3>
+              <md-list>
+                <md-list-item ng-repeat="desc in jobs.chosenJob.required">
+                  &bull;&nbsp{{desc}}
+                </md-list-item>
+              </md-list>
+              <h3><strong>{{jobs.chosenJob.offer_headline}}</strong></h3>
+              <md-list>
+                <md-list-item ng-repeat="desc in jobs.chosenJob.offer">
+                  &bull;&nbsp{{desc}}
+                </md-list-item>
+              </md-list>
+              <div class="navigation" layout="row" layout-align="space-between center" layout-margin>
+                <md-button class="md-lined" ng-click="jobs.hideDetails()">
+                  {{ 'jobs.go-back' | translate }}
+                </md-button>
+                <a
+                  href="mailto:contact@listnride.com?Subject=Application%20for%20{{jobs.chosenJob.title}}"
+                  target="_top"
+                  class="md-raised md-primary md-button md-lnr-dark-theme md-ink-ripple list-align"
+                >
+                  {{ 'jobs.apply' | translate }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</md-content>

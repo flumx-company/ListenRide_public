@@ -1,0 +1,43 @@
+<form
+  name="addressInput.addressForm"
+  layout="column"
+  class="md-body-1">
+  <div layout="row" layout-xs="column">
+    <!-- <md-input-container flex-gt-xs="45">
+      <label>{{ 'list.location.street-number' | translate }}</label>
+      <input name="street" ng-model="settings.user.locations.primary.street" required>
+    </md-input-container> -->
+    <autocomplete
+      autocomplete-id="address-input"
+      class="address-input"
+      layout="column"
+      required="true"
+      location="addressInput.address.street"
+      label-id="{{ 'forms.street' | translate }}"
+      place-changed="addressInput.updateAddress(place)"
+      flex-gt-xs="70">
+    </autocomplete>
+    <span hide-xs flex></span>
+    <md-input-container flex-gt-xs="25">
+      <label>{{ 'forms.streetnumber' | translate }}</label>
+      <input name="streetNumber" ng-model="addressInput.address.streetNumber" ng-change="addressInput.checkValidAddress()" required>
+    </md-input-container>
+  </div>
+
+  <div layout="row" layout-xs="column">
+    <md-input-container flex-gt-xs="20">
+      <label>{{ 'forms.zip' | translate }}</label>
+      <input name="zip" ng-model="addressInput.address.zip" ng-change="addressInput.checkValidAddress()" required>
+    </md-input-container>
+    <span hide-xs flex></span>
+    <md-input-container flex-gt-xs="35">
+      <label>{{ 'forms.city' | translate }}</label>
+      <input name="city" ng-model="addressInput.address.city" ng-change="addressInput.checkValidAddress()" required>
+    </md-input-container>
+    <span hide-xs flex></span>
+    <md-input-container flex-gt-xs="35">
+      <label>{{ 'forms.country' | translate }}</label>
+      <input name="country" ng-model="addressInput.address.country" ng-change="addressInput.checkValidAddress()" required>
+    </md-input-container>
+  </div>
+</form>

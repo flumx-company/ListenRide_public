@@ -1,0 +1,45 @@
+<!-- invitation form -->
+<div id="inviteForm" layout-padding>
+    <div class="invite-form-container content" md-theme="lnr-dark" layout="column" layout-align="space-around none">
+        <h2 class="lnr-center md-display-1">{{ referral.header | translate }}</h2>
+        <p class="lnr-center md-subhead" layout layout-align="center center">
+            <span flex="90">{{ referral.subHeader | translate }}</span>
+        </p>
+
+        <div ng-if="referral.authentication.loggedIn()"
+             class="button-container"
+             layout="row"
+             layout-align="center center"
+             layout-margin>
+            <img ng-click="referral.shareThroughFacebook()"
+                 class="lnr-icn-lrg share-icon"
+                 ng-src="app/assets/ui_icons/icn_facebook_share.png">
+            </img>
+            <img ng-click="referral.shareThroughEmail()"
+                 class="lnr-icn-lrg share-icon"
+                 ng-src="app/assets/ui_icons/icn_email_share.png">
+            </img>
+        </div>
+        <div ng-if="referral.authentication.loggedIn()"
+             flex
+             layout="column"
+             layout-align="center center">
+            <div class="lnr-search-bar voucher-link md-whiteframe-3dp"
+                 layout="row"
+                 md-theme="default">
+                <md-input-container flex="75">
+                    <input id="linkContainer" type="text" ng-readonly="true" ng-model="referral.inviteUrl">
+                </md-input-container>
+                <md-button class="md-raised md-primary" flex="25" ng-click="referral.copyToClipboard()">
+                    {{referral.buttonLabel }}
+                </md-button>
+            </div>
+        </div>
+
+        <div layout="column" layout-align="center center">
+            <md-button ng-if="!referral.authentication.loggedIn() && referral.showLogin" ng-click="referral.authentication.showLoginDialog()"
+                       class="md-raised md-primary">{{ 'invite.login' | translate }}
+            </md-button>
+        </div>
+    </div>
+</div>

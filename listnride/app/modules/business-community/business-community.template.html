@@ -1,0 +1,170 @@
+<md-content class="single-column">
+  <div
+    id="hero-shot"
+    class="lnr-preload-bg"
+    style="background-image: url('app/assets/ui_images/static/lnr_shop_landing_hero.jpg'); background-position: 50% 50%;"
+    layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'business-community.title' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'business-community.subtitle' | translate }}</h2>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="spacer"></div>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <p class="md-subhead">{{ 'business-community.description' | translate }}</p>
+    </div>
+  </div>
+
+  <!-- start features -->
+  <div class="content" layout-padding>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_choice.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'business-community.feature-1.title' | translate }}</p>
+        <p class="lnr-center">{{ 'business-community.feature-1.description' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_id.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'business-community.feature-2.title' | translate }}</p>
+        <p class="lnr-center">{{ 'business-community.feature-2.description' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_notalone.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'business-community.feature-3.title' | translate }}</p>
+        <p class="lnr-center">{{ 'business-community.feature-3.description' | translate }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- end features -->
+
+  <div class="content lnr-mh-x2">
+    <!-- Requests section -->
+    <div layout="column" layout-padding layout-margin layout-gt-xs="row">
+      <div
+        layout="column"
+        layout-align="start start"
+        layout-align-xs="start center"
+        flex-gt-xs="50">
+        <img width="250" class="lnr-w-fluid" ng-src="app/assets/ui_images/business/request.gif" alt="Request image" style="box-shadow: 1px 0px 4px 1px #e5e8e9;">
+      </div>
+      <div
+        class="md-body-1 lnr-xs-center"
+        layout="column"
+        layout-align="start start"
+        layout-align-xs="start center"
+        flex-gt-xs="50"
+        flex-order-xs="-1">
+        <p class="md-subhead lnr-gt-xs-pt-x2">{{ 'business-community.requests.title' | translate }}</p>
+        <p class="lnr-mh-x2" translate="business-community.requests.description"></p>
+        <md-button
+          class="md-raised md-primary md-lrg lnr-ml-0 lnr-mt"
+          ng-disabled="businessCommunity.authentication.loggedIn()"
+          ng-click="businessCommunity.authentication.showSignupDialog(false, false, false, true)">
+          <span ng-if="!businessCommunity.authentication.loggedIn()">{{ 'forms.sign-up-today' | translate }}</span>
+          <span ng-if="businessCommunity.authentication.loggedIn()">{{ 'forms.already-registered' | translate }}</span>
+        </md-button>
+      </div>
+    </div>
+
+    <!-- Bike page section -->
+    <div layout="column" layout-padding layout-margin layout-gt-xs="row">
+      <div
+        layout="column"
+        layout-align="start end"
+        layout-align-xs="start center"
+        flex-gt-xs="50">
+        <img class="lnr-w-fluid" ng-src="app/assets/ui_images/business/bike.jpg" alt="Bike page">
+      </div>
+      <div
+        class="md-body-1 lnr-xs-center"
+        layout="column"
+        layout-align="start start"
+        layout-align-xs="start center"
+        flex-gt-xs="50"
+        flex-order="-1">
+        <br>
+        <p class="md-subhead lnr-gt-xs-pt-x2">{{ 'business-community.bike-page.title' | translate }}</p>
+        <p class="lnr-mh-x2" translate="business-community.bike-page.description"></p>
+        <md-button
+          class="md-raised md-primary md-lrg lnr-ml-0 lnr-mt"
+          ng-disabled="businessCommunity.authentication.loggedIn()"
+          ng-click="businessCommunity.authentication.showSignupDialog(false, false, false, true)">
+          <span ng-if="!businessCommunity.authentication.loggedIn()">{{ 'forms.sign-up-today' | translate }}</span>
+          <span ng-if="businessCommunity.authentication.loggedIn()">{{ 'forms.already-registered' | translate }}</span>
+        </md-button>
+      </div>
+    </div>
+
+    <!-- Wordpress plugin section -->
+    <div layout="column" layout-padding layout-margin layout-gt-xs="row">
+      <div
+        layout="column"
+        layout-align="start start"
+        layout-align-xs="start center"
+        flex-gt-xs="50">
+        <img class="lnr-w-fluid" ng-src="app/assets/ui_images/business/plugin_page.jpg" alt="Plugin page image">
+      </div>
+      <div
+        class="md-body-1 lnr-xs-center"
+        layout="column"
+        layout-align="start start"
+        layout-align-xs="start center"
+        flex-gt-xs="50"
+        flex-order-xs="-1">
+        <br>
+        <p class="md-subhead lnr-gt-xs-pt-x2">{{ 'business-community.plugin-wp.title' | translate }}</p>
+        <p class="lnr-mh-x2" translate="business-community.plugin-wp.description"></p>
+        <img class="lnr-mh-x2" ng-src="app/assets/ui_images/business/wordpress-logo.png" alt="Wordpress logo">
+        <a
+          class="md-button md-raised md-primary md-lrg lnr-mh-x2 lnr-ml-0"
+          href="https://s3.eu-central-1.amazonaws.com/listnride-cdn/listnride-shop-integration.zip"
+          target="_blank">
+          {{ 'business-community.plugin-wp.install' | translate }}
+        </a>
+        <p translate="business-community.plugin-wp.link"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer lnr-pv-x2" hide-xs></div>
+
+  <div class="content lnr-mh-x2" layout-align="start center">
+    <div class="lnr-section-title">
+      <h2 class="md-headline">{{ 'business-community.companies.title' | translate }}</h2>
+    </div>
+    <div class="lnr-ph-x2" layout="row" layout-align="center center" layout-padding layout-wrap>
+      <div flex-xs="100" flex-sm="50" flex="auto" class="lnr-business-logo lnr-p-x2">
+        <img ng-src="app/assets/ui_images/business/brands_logo/lnr_8bar_logo.png" height="51" alt="8bar logo">
+      </div>
+      <div flex-xs="100" flex-sm="50" flex="auto" class="lnr-business-logo lnr-p-x2">
+        <img ng-src="app/assets/ui_images/business/brands_logo/lnr_citybiker_logo.png" height="34" alt="citybiker logo">
+      </div>
+      <div flex-xs="100" flex-sm="50" flex="auto" class="lnr-business-logo lnr-p-x2">
+        <img ng-src="app/assets/ui_images/business/brands_logo/lnr_velosoph_logo.png" height="60" alt="velosoph logo">
+      </div>
+      <div flex-xs="100" flex-sm="50" flex="auto" class="lnr-business-logo lnr-p-x2">
+        <img ng-src="app/assets/ui_images/business/brands_logo/lnr_boxbike_logo.png" height="53" alt="boxbike logo">
+      </div>
+    </div>
+    <div class="lnr-mh-x2" layout="row" layout-align="center center">
+      <md-button
+        class="md-raised md-primary md-lrg"
+        ng-disabled="businessCommunity.authentication.loggedIn()"
+        ng-click="businessCommunity.authentication.showSignupDialog(false, false, false, true)">
+        <span ng-if="!businessCommunity.authentication.loggedIn()">{{ 'forms.sign-up-today' | translate }}</span>
+        <span ng-if="businessCommunity.authentication.loggedIn()">{{ 'forms.already-registered' | translate }}</span>
+      </md-button>
+    </div>
+  </div>
+
+  <div class="spacer lnr-pv-x2" hide-xs></div>
+
+  <lnr-support></lnr-support>
+  <div class="spacer"></div>
+  <footer></footer>
+</md-content>

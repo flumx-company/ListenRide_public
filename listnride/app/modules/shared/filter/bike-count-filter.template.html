@@ -1,0 +1,37 @@
+<div class="row lnr-center" layout-align="center center">
+  <md-button
+    ng-disabled="bikeCountFilter.currentValues.length <= 1"
+    md-prevent-menu-close
+    class="md-icon-button md-warn lnr-md-no-focused"
+    ng-click="bikeCountFilter.decreaseBikesCount()">
+    <md-icon md-font-icon="fa-minus" class="fa fa--lh20"></md-icon>
+  </md-button>
+  <span
+    ng-if="bikeCountFilter.currentValues.length == 1">
+    {{bikeCountFilter.currentValues.length}} {{'search.bike' | translate}}
+  </span>
+  <span ng-if="bikeCountFilter.currentValues.length > 1">
+    {{bikeCountFilter.currentValues.length}} {{'search.bikes' | translate}}
+  </span>
+  <md-button md-prevent-menu-close class="md-icon-button md-primary lnr-md-no-focused" ng-click="bikeCountFilter.increaseBikesCount()">
+    <md-icon md-font-icon="fa-plus" class="fa fa--lh20"></md-icon>
+  </md-button>
+</div>
+
+<md-divider></md-divider>
+<p class="lnr-center">{{'search.pick-body-size' | translate}}</p>
+<div class="filter__select-list">
+  <div ng-repeat="item in bikeCountFilter.currentValues track by $index">
+    <md-select
+      ng-model="bikeCountFilter.currentValues[$index]"
+      md-container-class="lnr-select-in-modal"
+      placeholder="{{ 'shared.pick-size' | translate }}"
+      ng-change="bikeCountFilter.onSizeChange()">
+      <md-option
+        ng-repeat="option in bikeCountFilter.sizes"
+        value="{{option.value}}">
+        {{option.label}}
+      </md-option>
+    </md-select>
+  </div>
+</div>

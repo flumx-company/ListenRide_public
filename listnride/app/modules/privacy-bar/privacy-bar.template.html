@@ -1,0 +1,4 @@
+<div class="privacy-bar" ng-if="!privacyBar.isAgreeCookiesInfo" layout="row" layout-align="center center">
+  <p data-ng-bind-html="'meta.privacy.use-opt-in' | translate"></p>
+  <button class="lnr-privacy-btn md-lined md-button" ng-click="privacyBar.close();">{{'meta.privacy.use-opt-in-button' | translate }}</button>
+</div>

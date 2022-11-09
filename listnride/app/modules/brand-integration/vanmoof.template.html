@@ -1,0 +1,127 @@
+ <md-content class="single-column"> 
+ 
+   <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <ul class="cb-slideshow">
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+    </ul>
+
+    <div class="lnr-page-title md-color-white" layout="column" layout-align="center center">    
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.vanmoof.description' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'brand-integration.vanmoof.subdescription' | translate }}</h2>
+    </div>
+
+    <br>
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img flex="20" class="md-card-image" src="app/assets/ui_images/brand-integration/vanmoof/icon1.png" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.vanmoof.item1-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.vanmoof.item1-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img flex="20" class="md-card-image" src="app/assets/ui_images/brand-integration/vanmoof/icon2.png" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.vanmoof.item2-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.vanmoof.item2-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img flex="20" class="md-card-image" flex="50" src="app/assets/ui_images/brand-integration/vanmoof/icon3.png" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.vanmoof.item3-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.vanmoof.item3-description' | translate }}"></p>
+      </div>
+    </div>
+
+    <md-divider></md-divider>
+    <br>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <md-menu md-position-mode="target bottom">
+        <md-button class="md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">
+          <h1 class="md-right-arrow md-headline">&nbsp;&nbsp;{{ vanmoof.currentCity }}</h1>
+        </md-button>
+        <md-menu-content width="3">        
+          <md-menu-item>
+            <md-button md-no-ink ng-click="vanmoof.showBikesIn('berlin')"><h1 class="md-subhead">{{ 'shared.berlin' | translate }}</h1></md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ng-click="vanmoof.showBikesIn('munich')"><h1 class="md-subhead">{{ 'shared.munich' | translate }}</h1></md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ng-click="vanmoof.showBikesIn('hamburg')"><h1 class="md-subhead">{{ 'shared.hamburg' | translate }}</h1></md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <h2 class="md-subhead">{{ 'brand-integration.shared.choose-location' | translate }}</h2>
+    </div>
+
+    <md-content>
+      <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+        <bike-card ng-repeat="bike in vanmoof.currentBikes" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+      </div>
+    </md-content>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <!-- <div id="testimonials" class="content section" layout-align="start center">
+      <div class="lnr-section-title" layout="column" layout-align="center center">
+        <h2 class="md-headline">{{ 'shared.testimonials-header' | translate }}</h2>
+      </div>  
+      <div class="testimonials-container" layout-padding>
+        <slick settings="vanmoof.slickConfig">   
+          <div ng-repeat="testimonial in vanmoof.testimonials"
+            class="testimonials-slick-slide" layout="column" layout-align="center center">
+            <div class="testimonials-text md-subhead">&ldquo;{{ testimonial.text }}&rdquo;</div>
+              <a ui-sref="user({userId: testimonial.userId})">
+                <img class="testimonials-img" ng-src="{{ testimonial.userImagePath}}">
+              </a>
+            <h3 class="md-subhead testimonials-name">{{ testimonial.userName }}</h3>
+          </div>  
+        </slick>
+      </div>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br> -->
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.vanmoof.find-out-more' | translate }}</h1>
+      <h2 class="md-subhead" translate="{{ 'brand-integration.vanmoof.order-online' | translate }}"></h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-padding>
+      <div flex-gt-sm="45" layout="column" layout-margin>
+        <h3 class="md-body-2 lnr-clickable" ng-click="left1=!left1">{{ 'brand-integration.vanmoof.faq-question-1' | translate }}</h3>
+        <div ng-show="left1"><p >{{ 'brand-integration.vanmoof.faq-answer-1' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left2=!left2">{{ 'brand-integration.vanmoof.faq-question-2' | translate }}</h3>
+        <div ng-show="left2"><p >{{ 'brand-integration.vanmoof.faq-answer-2' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left3=!left3">{{ 'brand-integration.vanmoof.faq-question-3' | translate }}</h3>
+        <div ng-show="left3"><p >{{ 'brand-integration.vanmoof.faq-answer-3' | translate }}</p></div>
+      </div>
+
+      <div flex-gt-sm="45" flex-gt-sm-offset="5" layout="column" layout-margin>
+        <h3 class="md-body-2 lnr-clickable" ng-click="right1=!right1">{{ 'brand-integration.vanmoof.faq-question-4' | translate }}</h3>
+        <div ng-show="right1"><p >{{ 'brand-integration.vanmoof.faq-answer-4' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="right2=!right2">{{ 'brand-integration.vanmoof.faq-question-5' | translate }}</h3>
+        <div ng-show="right2"><p >{{ 'brand-integration.vanmoof.faq-answer-5' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="right3=!right3">{{ 'brand-integration.vanmoof.faq-question-6' | translate }}</h3>
+        <div ng-show="right3"><p translate="brand-integration.vanmoof.faq-answer-6"></p></div>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</md-content>

@@ -1,0 +1,81 @@
+<md-tab
+  class="location"
+  ng-disabled="locationTab.parent.isListMode"
+  label="{{ 'list.location.label' | translate }} {{ locationTab.parent.tabCompleted(3) }}" layout="row">
+  <md-content class="md-padding" layout="column">
+    <div class="tab-content" layout="row" layout-align="space-between none" layout-padding>
+      <div class="lnr-list-form" flex-xs="100" flex-gt-xs="50" layout="column">
+        <div class="lnr-list-title">
+          <h3 class="md-subhead">
+            {{ 'list.location.header' | translate }}
+          </h3>
+        </div>
+
+        <!-- Autocomplete Input Fields -->
+        <autocomplete autocomplete-id="list-search"
+          class="list-search"
+          layout="column"
+          location="locationTab.parent.form.location.street"
+          label-id="{{ 'list.location.street-number' | translate }}"
+          required="true"
+          place-changed="locationTab.parent.fillAddress(place)">
+        </autocomplete>
+
+        <!-- Manual Input Fields -->
+        <!-- <md-input-container>
+          <label>{{ 'list.location.street-number' | translate }}</label>
+          <input required ng-model="locationTab.parent.form.street">
+        </md-input-container> -->
+
+        <md-input-container>
+          <label>{{ 'list.location.zip' | translate }}</label>
+          <input
+            required
+            ng-model="locationTab.parent.form.location.zip">
+        </md-input-container>
+
+        <md-input-container>
+          <label>{{ 'list.location.city' | translate }}</label>
+          <input
+            required
+            ng-model="locationTab.parent.form.location.city">
+        </md-input-container>
+
+        <md-input-container>
+          <label>{{ 'list.location.country' | translate }}</label>
+          <input
+            required
+            ng-model="locationTab.parent.form.location.country">
+        </md-input-container>
+      </div>
+
+      <md-divider hide-xs class="lnr-ml lnr-mr-x2"></md-divider>
+
+      <div flex="50" hide-xs>
+        <div class="lnr-list-title">
+          <h3 class="md-subhead">
+            Info
+          </h3>
+        </div>
+        <p class="md-body-1">
+          {{ 'list.location.hint' | translate }}
+        </p>
+      </div>
+
+    </div>
+
+    <div class="navigation" layout="row" layout-align="space-between center" layout-margin>
+      <md-button
+        class="md-lined"
+        ng-click="locationTab.parent.previousTab()">
+        {{ 'list.back' | translate }}
+      </md-button>
+      <md-button
+        class="md-raised md-primary"
+        ng-disabled="!locationTab.parent.isLocationValid() && locationTab.parent.isListMode"
+        ng-click="locationTab.parent.nextTab()">
+        {{ 'list.next' | translate }}
+      </md-button>
+    </div>
+  </md-content>
+</md-tab>

@@ -1,0 +1,17 @@
+<div layout="column" layout-wrap flex class="lnr-ml filter-column">
+  <div class="filter-column__item" layout="row" ng-repeat="acc in accessoriesFilter.accessories track by $index">
+    <md-checkbox
+      ng-checked="accessoriesFilter.exists(acc.model, accessoriesFilter.currentAccessories)"
+      ng-click="accessoriesFilter.toggle(acc.model, accessoriesFilter.currentAccessories)"
+      md-prevent-menu-close
+    >
+    </md-checkbox>
+    <div flex="40" md-prevent-menu-close>
+      {{ acc.name }}
+    </div>
+    <div flex="10" style="margin-left: auto;">
+      <md-icon md-svg-src="app/assets/ui_icons/{{acc.iconFileName}}" class="lnr-icn-sm md-color-foreground accessory-icon">
+      </md-icon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<md-dialog>
+  <div class="md-toolbar-tools" layout-align="space-between center">
+    <span class="lnr-btn-placeholder"></span>
+    <h2 class="lnr-center">{{ 'availability.modal-title' | translate }}</h2>
+    <md-button class="md-icon-button" ng-click="bikeAvailability.close()">
+      <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+    </md-button>
+  </div>
+  <md-dialog-content class="" layout="column">
+    <div class="md-dialog-content" layout="column">
+      <input-range
+        lnr-date-picker
+        lnr-single-input
+        data="bikeAvailability.dateRange"
+        date-on-change="bikeAvailability.onDateChange"
+        class="lnr-mb-x2"
+      >
+      </input-range>
+      <div
+        id="timeRange"
+        layout="row"
+        layout-xs="column"
+      >
+        <md-input-container flex flex="50" flex-xs="100">
+          <label>{{ 'shared.from' | translate }}</label>
+          <md-select
+            ng-model="bikeAvailability.date.startTime"
+            ng-disabled="bikeAvailability.dateRange.start_date == undefined"
+            ng-change="bikeAvailability.onTimeChange('start')"
+            placeholder="{{ 'shared.from' | translate }}">
+            <md-option
+              ng-repeat="i in [].constructor(17) track by $index" value="{{$index + 6}}">
+              {{ ($index + 6) + ":00" }}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <div class="lnr-ph" hide-xs></div>
+        <md-input-container flex flex="50" flex-xs="100">
+          <label>{{ 'shared.to' | translate }}</label>
+          <md-select
+            ng-model="bikeAvailability.date.endTime"
+            ng-disabled="bikeAvailability.dateRange.start_date == undefined"
+            ng-change="bikeAvailability.onTimeChange('end')"
+            placeholder="{{ 'shared.to' | translate }}">
+            <md-option
+              ng-repeat="i in [].constructor(17) track by $index" value="{{$index + 6}}">
+              {{ ($index + 6) + ":00" }}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+
+      <!-- NON-AVAILABILITY REASON -->
+      <md-input-container>
+        <label>{{ 'shared.non-availability-type' | translate }}</label>
+        <md-select
+          ng-model="bikeAvailability.optionalData.reason"
+          placeholder="{{ 'shared.non-availability-type' | translate }}">
+          <md-option
+            ng-repeat="reasonOption in bikeAvailability.reasonOptions track by $index"
+            value="{{reasonOption}}"
+            translate="{{reasonOption}}">
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+      <!-- COMMENTS -->
+      <md-input-container>
+        <label>{{ 'forms.comments' | translate }}</label>
+        <textarea
+          md-no-resize
+          name="notes"
+          ng-model="bikeAvailability.optionalData.comment"
+          rows="3"
+        >
+        </textarea>
+      </md-input-container>
+
+      <!-- SAVE BUTTON -->
+      <div layout="row" layout-align="center center">
+        <md-button
+          class="md-raised md-primary"
+          ng-click="bikeAvailability.onSaveButtonClick()"
+          ng-disabled="!bikeAvailability.isValid()">
+          <span>{{ 'availability.submit-btn-save' | translate }}</span>
+        </md-button>
+      </div>
+    </div>
+  </md-dialog-content>
+</md-dialog>

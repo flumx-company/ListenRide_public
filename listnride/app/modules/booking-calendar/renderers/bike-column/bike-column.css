@@ -1,0 +1,94 @@
+/*
+  BIKE COLUMN STYLES
+ */
+
+.booking-calendar .b-tree-cell {
+  padding: 0;
+}
+
+.booking-calendar .b-tree-cell-inner {
+  padding: 15px !important; /* bryntum sets inline padding to leaf cells */
+}
+
+.booking-calendar .b-tree-expander {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  margin: 0;
+  width: 15px;
+}
+.booking-calendar .b-tree-expander::before {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.booking-calendar .bike-column {
+  background-color: rgb(255,255,255);
+}
+
+.booking-calendar .bike-column * {
+  max-width: 100%;
+}
+
+.booking-calendar .bike-column .bike-img-wrap {
+  flex-shrink: 0;
+  width: 85px;
+  margin-right: 10px;
+}
+
+.booking-calendar .bike-column .bike-img {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.booking-calendar .bike-column .bike-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 60px;
+  overflow: hidden; /* is needed for bike name text overflow */
+}
+
+.booking-calendar .bike-column .bike-meta {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  font-size: 13px;
+}
+
+.booking-calendar .bike-column .bike-meta dt {
+  margin-right: 5px;
+  font-weight: 500;
+}
+
+.booking-calendar .bike-column .bike-meta dd {
+  margin: 0 10px 0 0;
+}
+
+.booking-calendar .bike-column .bike-meta .booking-calendar__badge {
+  margin-left: auto;
+}
+
+.booking-calendar .bike-column .bike-name {
+  margin: 0;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.booking-calendar .bike-column.b-tree-parent-cell .bike-name {
+  padding-right: 25px; /* prevent overlapping with expander button */
+}
+
+.booking-calendar .bike-column .variant-index {
+  margin-right: 10px;
+  padding: 0 5px;
+  border-radius: 25px;
+  background-color: rgb(85, 85, 85);
+  color: #ffffff;
+  text-align: center;
+  line-height: 25px;
+  min-width: 25px;
+}

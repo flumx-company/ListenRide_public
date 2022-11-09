@@ -1,0 +1,77 @@
+<md-tab
+  ng-disabled="categoriesTab.parent.isListMode"
+  class="categories"
+  label="{{ 'list.category.label' | translate }} {{ categoriesTab.parent.tabCompleted(0) }}"
+  layout="row"
+>
+  <md-content class="md-padding" layout="column">
+    <div class="tab-content" layout="row" layout-align="space-between none" layout-padding>
+      <div class="lnr-list-form" flex-xs="100" flex-gt-xs="50" layout="column" flex="100">
+        <div class="lnr-list-title">
+          <h3 class="md-subhead">
+            {{ 'list.category.header' | translate }}
+          </h3>
+        </div>
+        <md-input-container>
+          <label style="display: none">1. Select the bike category</label>
+          <md-select ng-model="categoriesTab.parent.selectedCategory" ng-change="categoriesTab.parent.changeCategory()">
+            <md-option ng-value="category" ng-repeat="category in categoriesTab.parent.categoryOptions">
+              <md-icon md-svg-src="app/assets/ui_icons/{{ category.iconFileName }}" class="lnr-icn-sm"></md-icon>
+              &nbsp;&nbsp;{{ category.name }}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <label style="display: none">2. Specify the subcategory</label>
+          <md-select
+            ng-class="categoriesTab.parent.selectedCategory.subcategories ? '' : 'lnr-no-select'"
+            ng-model="categoriesTab.parent.form.subCategory">
+            <md-option ng-value="subCategory.id" ng-repeat="subCategory in categoriesTab.parent.selectedCategory.subcategories">
+              {{ subCategory.name }}
+            </md-option>
+          </md-select>
+        </md-input-container>
+
+        <div ng-style="{'visibility' : categoriesTab.parent.showAccessories() ? 'visible' : 'hidden'}">
+          <div class="lnr-list-title" >
+            <h3 class="md-subhead">
+              {{ 'list.accessories.header' | translate }}
+            </h3>
+          </div>
+          <div layout="row" flex layout-wrap>
+            <div
+              class="accessory-checkbox"
+              flex="30" flex-xs="45" layout="row" layout-align="start center"
+              ng-repeat="acc in categoriesTab.parent.accessoryOptions"
+              ng-class="categoriesTab.parent.form.accessories[acc.model] ? 'checked' : 'unchecked'"
+              ng-click="categoriesTab.parent.form.accessories[acc.model] = !categoriesTab.parent.form.accessories[acc.model]">
+              <md-icon ng-class="categoriesTab.parent.form.accessories[acc.model] ? 'checked' : 'unchecked'" class="lnr-icn-md md-color-foreground accessory-icon"
+                md-svg-src="app/assets/ui_icons/{{acc.iconFileName}}"></md-icon>
+              <div class="accessory-label no-select" ng-class="categoriesTab.parent.form.accessories[acc.model] ? 'checked' : 'unchecked'">
+                {{'list.accessories.' + acc.label | translate }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <md-divider hide-xs class="lnr-ml lnr-mr-x2"></md-divider>
+
+      <div flex="50" hide-xs>
+        <div class="lnr-list-title">
+          <h3 class="md-subhead">{{ 'shared.info' | translate }}</h3>
+        </div>
+        <p class="md-body-1">{{ 'list.category.hint' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="navigation" layout="row" layout-align="end center" layout-margin>
+      <md-button
+        class="md-raised md-primary"
+        ng-disabled="!categoriesTab.parent.isCategoryValid() && categoriesTab.parent.isListMode"
+        ng-click="categoriesTab.parent.nextTab()">
+        {{ 'list.next' | translate }}
+      </md-button>
+    </div>
+  </md-content>
+</md-tab>

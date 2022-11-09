@@ -1,0 +1,87 @@
+<md-content class="single-column" ng-hide="inviteLanding.hidden">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/lnr_invite_landing.jpg')" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ inviteLanding.referrer.first_name }} {{ 'invite-landing.header' | translate }}</h1>
+    </div>
+  </div>
+
+  <!-- greeting -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'invite-landing.subheader' | translate }}</h2>
+      <h3 class="md-subhead" translate="{{ 'invite-landing.subsubheader' | translate }}"></h3><div class="spacer"></div>
+    </div>
+  </div>
+  <!-- end greeting -->
+
+
+  <!-- sign up -->
+  <div class="content" layout-padding>
+    <div class="content highlight-tile" layout="column" layout-padding layout-align="center center">
+      <div layout layout-align="center center" flex>
+        <div layout="row" flex-gt-sm="50" flex-gt-xs="75">
+          <div
+            layout
+            layout-align="center center"
+            class="lnr-pr"
+          >
+            <img
+              class="lnr-profile-md-lrg"
+              ng-src="{{ inviteLanding.referrer.profile_picture.profile_picture.url }}">
+            </img>
+          </div>
+          <h4
+            class="md-body-1"
+            flex
+            layout
+            layout-align="center center"
+            translate="invite-landing.subsubsubheader"
+            translate-values="{name: inviteLanding.name}">
+          >
+          </h4>
+        </div>
+      </div>
+      <div class="lnr-mb" flex layout="column" layout-align="center center">
+        <md-button
+          ng-if="!inviteLanding.authentication.loggedIn()"
+          ng-click="inviteLanding.authentication.showSignupDialog(inviteLanding.inviteCode)"
+          class="md-raised md-primary md-xlrg">
+          {{ inviteLanding.authentication.loggedIn() ? 'invite-landing.sign-up-get-voucher' : 'invite-landing.sign-up-get-voucher' | translate }}
+        </md-button>
+      </div>
+    </div>
+  </div>
+  <!-- end sign up -->
+  <div class="spacer"></div>
+
+  <!-- how it works -->
+  <div class="content" layout-padding>
+    <!-- <md-divider></md-divider> -->
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'invite-landing.how-lnr-works' | translate }}</h2>
+    </div>
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_rent_find.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'invite-landing.explanation-1-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'invite-landing.explanation-1-description' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_rent_request.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'invite-landing.explanation-2-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'invite-landing.explanation-2-description' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_rent_time.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'invite-landing.explanation-3-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'invite-landing.explanation-3-description' | translate }}
+      </div>
+    </div>
+  </div>
+  <!-- end how it works -->
+
+  <div class="spacer"></div>
+  <footer></footer>
+</md-content>

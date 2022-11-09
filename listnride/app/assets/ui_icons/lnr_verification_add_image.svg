@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="132px" height="132px" viewBox="0 0 132 132" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon Add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Verification-Step-1-Shop" transform="translate(-309.000000, -249.000000)" stroke="#7AB2F8">
+            <g id="Icon-Add" transform="translate(310.000000, 250.000000)">
+                <path d="M65,130 C100.898509,130 130,100.898509 130,65 C130,29.1014913 100.898509,0 65,0 C33.7449358,0 7.64223349,22.0598838 1.41243999,51.4591044 C0.486903562,55.8268334 0,60.3565555 0,65 C0,100.898509 29.1014913,130 65,130 Z" id="Oval-3" stroke-width="2"></path>
+                <path d="M65.5,46.2532468 L65.5,84.7467532" id="Line" stroke-width="5" stroke-linecap="square"></path>
+                <path d="M65.5,46.2532468 L65.5,84.7467532" id="Line-Copy" stroke-width="5" stroke-linecap="square" transform="translate(65.500000, 65.500000) rotate(-90.000000) translate(-65.500000, -65.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

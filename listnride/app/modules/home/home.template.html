@@ -1,0 +1,298 @@
+<md-content class="single-column">
+  <div id="landingSection" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <div id="homeHeroShot" style="background-image: url({{home.heroShotUrl}})"></div>
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'home.landing-section-header' | translate }}</h1>
+      <p class="md-subhead">{{ 'home.landing-section-subheader' | translate }}</p>
+    </div>
+
+    <form class="lnr-homepage-search md-whiteframe-3dp lnr-search-bar--fs18" layout="row" layout-xs="column" md-theme="default">
+      <!-- search input with autocomplete -->
+      <h2 hide show-xs class="md-subhead lnr-sm-center lnr-mb-x2">Search the bike that is right for you</h2>
+      <autocomplete
+        autocomplete-id="home-search"
+        class="lnr-search-control home-search"
+        flex="75"
+        flex-xs="100"
+        layout="column"
+        location="home.location"
+        placeholder-id="{{ 'autocomplete.default-placeholder' | translate }}"
+        place-changed="home.placeChanged(place)">
+      </autocomplete>
+      <!-- search input without autocomplete -->
+      <!-- <input ng-model="home.location" class="home-search" style="padding: 0 10px" placeholder="{{ 'autocomplete.default-placeholder' | translate }}"> -->
+      <md-button
+        ng-click="home.onSearchClick()"
+        class="md-raised md-primary lnr-search-control"
+        id="submit"
+        flex="25"
+        flex-xs="100"
+      >
+        <span>{{ 'shared.search' | translate }}</span>
+        <span hide-gt-xs show-xs>Bikes</span>
+      </md-button>
+    </form>
+  </div>
+
+  <div id="featuredBikes" class="content section" layout="column" layout-align="start center">
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'home.featured-bikes-header' | translate }}</h2>
+      <p class="md-subhead">{{ 'home.featured-bikes-subheader' | translate }}</p>
+    </div>
+    <div layout-xs="column" layout="row">
+      <div layout="row" layout-wrap layout-padding>
+        <bike-card
+          ng-repeat="bike in home.featuredBikes"
+          bike="bike"
+          show-labels="true"
+          flex="100"
+          flex-gt-xs="50"
+          flex-gt-sm="33"
+          home="true"
+        >
+        </bike-card>
+      </div>
+    </div>
+  </div>
+
+  <div id="testimonials" class="content section" layout-align="start center">
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'shared.testimonials-header' | translate }}</h2>
+    </div>
+
+    <div class="testimonials-container" layout-padding ng-if="home.testimonials.length">
+      <slick settings="home.slickConfig">
+        <div
+          ng-repeat="testimonial in home.testimonials"
+          class="testimonials-slick-slide"
+          flex
+          layout="row"
+          layout-xs="column"
+          layout-align="center center"
+        >
+          <div layout="column" layout-align="center center" class="testimonial-avatar">
+            <a ui-sref="#">
+              <img class="testimonials-img" ng-src="{{ testimonial.userImagePath}}">
+            </a>
+          </div>
+          <div class="testimonials-text md-subhead">
+            &ldquo;{{ testimonial.translationKey | translate }}&rdquo; <strong>{{ testimonial.userName }}</strong>
+          </div>
+        </div>
+      </slick>
+    </div>
+  </div>
+
+  <div class="lnr-bg-gray section">
+    <div class="content insurance__top">
+      <div layout="column" layout-gt-sm="row" class="insurance-banner">
+        <div flex="35" class="insurance-banner__text">
+          <div layout="column" layout-align-xs="center center" layout-align-sm="center center">
+            <md-icon
+              md-svg-src="app/assets/ui_icons/icn_insurance-gray.svg"
+              class="lnr-icn-mlrg lnr-m-0"
+            >
+            </md-icon>
+            <h2 class="md-headline lnr-sm-text-center lnr-mt-x2">
+              {{ 'home.insurance.header' | translate }}
+            </h2>
+          </div>
+          <div class="md-body-1 lnr-sm-text-center" layout="column">
+            <p translate="home.insurance.description"></p>
+            <div><a ui-sref="insurance">{{ 'shared.learn-more' | translate }}</a></div>
+          </div>
+        </div>
+        <div flex="65" flex-order="-1" flex-order-gt-sm="1">
+          <div class="lnr-preload-bg insurance-banner__img"
+               style="background-image: url('app/assets/ui_images/static/lnr-landing-insurance.jpg')" layout="row"
+               layout-align="center center">
+            <div class="insurance__gothaer">
+              <span class="md-body-1">{{ 'home.insurance.logo-description' | translate }}</span>
+              <img ng-src="app/assets/ui_images/static/lnr-insurance-gothaer-blue@2x.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START FEATURED TILES -->
+
+  <div class="content section" layout-align="start center">
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'home.featured-tiles-header' | translate }}</h2>
+      <p class="md-subhead">{{ 'home.featured-tiles-subheader' | translate }}</p>
+    </div>
+
+    <div class="home__brands-list" layout="row" layout-align="center center" layout-padding layout-wrap>
+      <img class="lnr-p-x2" flex-xs="50" flex="20" ng-src="app/assets/ui_images/home/brands_logo/lnr_brompton_logo.png" alt="brompton logo">
+      <img class="lnr-p-x2" flex-xs="50" flex="20" ng-src="app/assets/ui_images/home/brands_logo/lnr_leaos_logo.png" alt="leaos logo">
+      <img class="lnr-p-x2" flex-xs="50" flex="20" ng-src="app/assets/ui_images/home/brands_logo/lnr_vello_logo.png" alt="vello logo">
+      <img class="lnr-p-x2" flex-xs="50" flex="20" ng-src="app/assets/ui_images/home/brands_logo/lnr_veloheld_logo.png" alt="veloheld logo">
+      <img class="lnr-p-x2" flex-xs="50" flex="20" ng-src="app/assets/ui_images/home/brands_logo/lnr_votec_logo.png" alt="votec logo">
+    </div>
+
+    <div layout="row" layout-align="center center">
+      <a ui-sref="brands" class="md-button md-raised md-primary home__brands-btn">
+        {{ 'home.see-all-brands-and-bikes' | translate }}
+      </a>
+    </div>
+  </div>
+
+  <!-- END FEATURED TILES -->
+
+  <!-- START FEATURED CITIES -->
+
+  <div id="featuredCities" class="content section" layout-align="start center">
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'home.featured-cities-header' | translate }}</h2>
+      <p class="md-subhead">{{ 'home.featured-cities-subheader' | translate }}</p>
+    </div>
+
+    <md-grid-list
+      id="featuredTilesGrid"
+      class="md-color-white lnr-m"
+      md-cols="1"
+      md-cols-gt-xs="2"
+      md-cols-gt-sm="4"
+      md-gutter="16px"
+      md-row-height="1.5:1"
+    >
+      <md-grid-tile class="tile tile-berlin">
+        <a ui-sref="cityLanding({city: 'berlin'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.berlin' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-munich">
+        <a ui-sref="cityLanding({city: 'munich'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.munich' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-amsterdam">
+        <a ui-sref="cityLanding({city: 'amsterdam'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.amsterdam' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-vienna">
+        <a ui-sref="cityLanding({city: 'vienna'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.vienna' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+      <md-grid-tile class="tile tile-usedom">
+        <a ui-sref="cityLanding({city: 'usedom'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.usedom' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-lanzarote">
+        <a ui-sref="cityLanding({city: 'lanzarote'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.lanzarote' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-mallorca">
+        <a ui-sref="cityLanding({city: 'mallorca'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.mallorca' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-sylt">
+        <a ui-sref="cityLanding({city: 'sylt'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.sylt' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-toscana">
+        <a ui-sref="cityLanding({city: 'tuscany'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.tuscany' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-sicily">
+        <a ui-sref="cityLanding({city: 'sicily'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.sicily' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-sardinia">
+        <a ui-sref="cityLanding({city: 'sardinia'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.sardinia' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="tile tile-lake-garda">
+        <a ui-sref="cityLanding({city: 'lake-garda'})" target="_blank" layout-padding layout="column"
+           layout-align="center center">
+          <h3 class="md-title">{{ 'shared.lake-garda' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
+
+  <!-- END FEATURED CITIES -->
+
+  <!-- <div id="listBike" class="section"  md-theme="lnr-dark" layout="column" layout-align="space-between none">
+    <div class="lnr-center md-color-white lnr-mt" flex layout="column" layout-align="center center">
+      <h2 class="md-display-1">{{ 'home.list-a-bike-header' | translate }}</h2>
+      <p class="md-subhead">{{ 'home.list-a-bike-subheader' | translate }}</p>
+    </div>
+
+    <div flex layout="column" layout-align="center center">
+        <md-button ui-sref="listingABike" class="md-raised md-primary md-xlrg">{{ 'shared.list-a-bike' | translate }}</md-button>
+    </div>
+  </div> -->
+
+  <!-- <div class="highlight-section" md-theme="lnr-dark" flex layout="column" layout-align="center center">
+    <div class="content lnr-center md-color-white lnr-mt" layout="column">
+      <h2 class="md-display-1">{{ 'home.newsletter-header' | translate }}</h2>
+      <p class="md-subhead">{{ 'home.newsletter-subheader' | translate }}</p>
+    </div>
+    <br>
+    <div class="content" layout="column" style="width: 50%">
+      <form name="home.newsletterForm" layout="row" flex>
+        <md-input-container layout="column" flex="70">
+          <label style="color: #FFFFFF">{{ 'forms.email-address' | translate }}</label>
+          <input
+            name="email"
+            ng-model="home.email"
+            type="email"
+            required
+            ng-pattern="/(?!^[.+&'_-]*@.*$)(^[_\w\d+&'-]+(\.[_\w\d+&'-]*)*@[\w\d-]+(\.[\w\d-]+)*\.(([\d]{1,3})|([\w]{2,}))$)/i"
+            style="background-color: #FFFFFF; color:#000000;"
+          >
+          <div ng-messages="home.newsletterForm.email.$error" role="alert">
+            <div ng-message="required">{{ 'forms.errors.empty-email' | translate }}</div>
+            <div ng-message="email">{{ 'forms.errors.valid-email' | translate }}</div>
+            <div ng-message="pattern">{{ 'forms.errors.valid-email' | translate }}</div>
+          </div>
+        </md-input-container>
+        <md-input-container layout="column" flex="30">
+          <md-button class="md-raised md-primary" style="margin-top: 25px;" ng-click="home.subscribeNewsletter(home.email)">Keep me updated</md-button>
+        </md-input-container>
+      </form>
+    </div>
+  </div> -->
+
+  <!-- <div class="content highlight-tile" layout="column" layout-padding layout-align="center center">
+      <h2 class="md-display-1">{{ 'home.list-a-bike-header' | translate }}</h2>
+      <p class="md-subhead">{{ 'home.list-a-bike-subheader' | translate }}</p>
+      <div flex layout="column" layout-align="center center">
+        <md-button ui-sref="listingABike" class="md-raised md-primary md-xlrg">{{ 'shared.list-a-bike' | translate }}</md-button>
+      </div>
+  </div> -->
+  <footer></footer>
+</md-content>

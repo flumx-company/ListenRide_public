@@ -1,0 +1,63 @@
+ <md-content class="single-column"> 
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/static/lnr_shop_landing_hero.jpg'); background-position: 50% 50%;" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'shop-landing.title' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'shop-landing.subtitle' | translate }}</h2>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="spacer"></div>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <p class="md-subhead">{{ 'shop-landing.description' | translate }}</p>
+    </div>
+
+    <!-- <div flex="100"> -->
+      <!-- <div flex="100" style="background-image: url('app/assets/ui_images/static/lnr_shop_landing_preview.jpg')"></div> -->
+      <!-- <img ng-src="app/assets/ui_images/static/lnr_shop_landing_preview.jpg" style="height: auto; width: auto; display: block;"></img> -->
+    <!-- </div> -->
+    <md-card class="lnr-image-card">
+      <img ng-src="app/assets/ui_images/static/lnr_shop_landing_preview.jpg">
+    </md-card>
+  </div>
+
+
+  <!-- start features -->
+  <div class="content" layout-padding>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_notalone.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'shop-landing.feature-1.title' | translate }}</p>
+        <p class="lnr-center">{{ 'shop-landing.feature-1.description' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_easy.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'shop-landing.feature-2.title' | translate }}</p>
+        <p class="lnr-center">{{ 'shop-landing.feature-2.description' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_control.svg"></md-icon>
+        <p class="md-subhead lnr-center">{{ 'shop-landing.feature-3.title' | translate }}</p>
+        <p class="lnr-center">{{ 'shop-landing.feature-3.description' | translate }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- end features -->
+
+  <!-- start contact -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'shop-landing.join-now' | translate }}</h2>
+      <p class="md-subhead">{{ 'shop-landing.join-now-description' | translate }}</p>
+      <br>
+      <md-button href="mailto:contact@listnride.com?subject=listnride shop plugin" class="md-raised md-primary">{{ 'shop-landing.contact-us' | translate }}</md-button>
+    </div>
+  </div>
+  <!-- end contact -->
+
+  <div class="spacer"></div>
+  <footer></footer>
+</md-content>

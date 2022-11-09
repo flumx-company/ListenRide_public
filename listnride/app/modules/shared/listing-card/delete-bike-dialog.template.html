@@ -1,0 +1,11 @@
+<div id="deleteBikeDialog" layout="column">
+  <div class="delete-bike-text">
+    <h2 class="md-title">{{ 'listingCard.dialog-title' | translate }}</h2>
+    <p>{{ 'listingCard.dialog-subtitle' | translate }}</p>
+  </div>
+
+  <div class="delete-bike-actions" layout="row" layout-align="end center">
+    <md-button ng-click="deleteBikeDialog.hide()">{{ 'listingCard.cancel' | translate }}</md-button>
+    <md-button ng-click="deleteBikeDialog.deleteBike()" class="md-warn">{{ 'listingCard.delete' | translate }}</md-button>
+  </div>
+</div>

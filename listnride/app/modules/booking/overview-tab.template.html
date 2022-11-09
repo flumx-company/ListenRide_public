@@ -1,0 +1,199 @@
+<md-tab
+  class="categories"
+  label="{{ overview.parent.tabOrder['overview'] + 1 }}. {{ 'booking.overview.tab' | translate }} {{ overview.parent.tabCompleted('overview') }}"
+  layout="row"
+  ng-disabled="overview.parent.tabsDisabled"
+  md-on-select="overview.parent.onTabChanged()">
+  <div class="spacer-xs"></div>
+  <md-content layout="column">
+    <div layout="column">
+      <div class="tab-content" style="min-height: 450px;" layout-align="space-between none" layout-padding>
+        <div class="lnr-list-form" ng-hide="overview.parent.booked" layout="column">
+          <h2 class="md-title lnr-m-0">{{ 'booking.overview.bike-rental' | translate }}</h2>
+          <div class="spacer-xs"></div>
+        	<div layout="row" layout-align="space-between none" layout-wrap>
+            <div flex="40" flex-xs="100" class="lnr-mb-x2">
+              <a ui-sref="bike({bikeId: overview.parent.bike.id})" target="_blank">
+                <img flex="100" ng-src="{{ overview.parent.bike.image_file }}" />
+              </a>
+            </div>
+            <div flex="35" flex-xs="60" layout="column">
+              <a class="md-title lnr-black" ui-sref="bike({bikeId: overview.parent.bike.id})" target="_blank">{{ overview.parent.bike.brand   }}, {{ overview.parent.bikeCategory }}</a>
+              <br>
+              <div layout="row" layout-align="space-between none">
+                <span flex="45" class="md-body-2">{{ 'settings.from' | translate }}</span>
+                <span flex="55" class="md-body-1 lnr-lh-body-2">{{ overview.parent.startDate | date }} <i ng-if="overview.parent.bike.event">{{overview.parent.startDate | date:'HH:mm' }}</i></span>
+              </div>
+              <div layout="row" layout-align="space-between none">
+                <span flex="45" class="md-body-2">{{ 'settings.to' | translate }}</span>
+                <span flex="55" class="md-body-1 lnr-lh-body-2">{{ overview.parent.endDate | date }} <i ng-if="overview.parent.bike.event">{{overview.parent.endDate | date:'HH:mm' }}</i></span>
+              </div>
+              <!-- Hide rider height for MBP  -->
+              <div
+                ng-if="overview.parent.bike.frame_size && !overview.parent.hasTimeSlots"
+                layout="row"
+                layout-align="space-between none">
+                <span flex="45" class="md-body-2">{{ 'list.details.size' | translate }}</span>
+                <span flex="55" class="md-body-1 lnr-lh-body-2">{{ overview.parent.humanReadableSize(overview.parent.bike.size) }}</span>
+              </div>
+               <div
+                ng-if="overview.parent.bike.frame_size"
+                layout="row"
+                layout-align="space-between none">
+                <span flex="45" class="md-body-2">{{ 'list.details.frame-size' | translate }}</span>
+                <span flex="55" class="md-body-1 lnr-lh-body-2">{{ overview.parent.bike.frame_size }}</span>
+              </div>
+              <div layout="row" layout-align="space-between none">
+                <span flex="45" class="md-body-2">{{ 'booking.overview.location' | translate }}</span>
+                <span flex="55" class="md-body-1 lnr-lh-body-2">{{ overview.parent.bike.city }}</span>
+              </div>
+            </div>
+            <div flex="20">
+              <p ng-if="overview.parent.subtotal > 0" class="md-subhead lnr-bold lnr-right" style="margin: 0;">{{ overview.parent.subtotal | currency:"€":2 }}</p>
+              <p ng-if="overview.parent.subtotal <= 0" class="md-subhead lnr-bold lnr-right" style="margin: 0;">{{ 'bike.for-free' | translate }}</p>
+            </div>
+          </div>
+          <div class="spacer-xs"></div>
+          <md-divider></md-divider>
+          <div class="spacer-xs"></div>
+
+          <!-- START PREMIUM INSURANCE -->
+          <div class="premium-insurance" ng-if="overview.parent.insuranceAllowed()">
+            <div layout="row" layout-align="none center">
+              <md-switch ng-model="overview.parent.isPremium" ng-change="overview.parent.premiumChange()" aria-label="Switch 1" class="lnr-m-0">
+              </md-switch>
+              <h2 class="md-title lnr-m-0 lnr-ph lnr-sm-fs14">{{ 'booking.overview.premium-insurance-title' | translate }}</h2>
+              <md-icon hide-xs md-svg-src="app/assets/ui_icons/icn_insurance.svg" class="lnr-icn-smd"></md-icon>
+              <div class="spacer-horizontal__xs"></div>
+              <span flex></span>
+              <span
+                class="md-subhead"
+                style="min-width: 85px;text-align: right;">3,00€ {{ 'shared.pd' | translate }}
+              </span>
+            </div>
+            <!-- <p class="lnr-m-0">{{ 'booking.overview.premium-insurance-subtitle' | translate }}</p> -->
+            <br>
+            <span class="md-body-2">{{ 'booking.overview.thats-included' | translate }}</span>
+            <div layout="row" layout-xs="column">
+              <div layout="column" layout-margin style="margin-left: 0">
+                <div layout="row" class="lnr-ml-0 premium-insurance__adv">
+                  <md-icon md-svg-src="app/assets/ui_icons/icn_checkmark.svg" class="lnr-icn-sm"></md-icon>
+                  <span>{{ 'booking.overview.premium-feature-1' | translate }}</span>
+                </div>
+                <div layout="row" class="lnr-ml-0 premium-insurance__adv">
+                  <md-icon md-svg-src="app/assets/ui_icons/icn_checkmark.svg" class="lnr-icn-sm"></md-icon>
+                  <span>{{ 'booking.overview.premium-feature-2' | translate }}</span>
+                </div>
+                <div layout="row" class="lnr-ml-0 premium-insurance__adv">
+                  <md-icon md-svg-src="app/assets/ui_icons/icn_checkmark.svg" class="lnr-icn-sm"></md-icon>
+                  <span>{{ 'booking.overview.premium-feature-3' | translate }}</span>
+                </div>
+              </div>
+              <div layout="column" layout-margin class="lnr-xs-m-0">
+                <div layout="row" class="lnr-ml-0 premium-insurance__adv">
+                  <md-icon md-svg-src="app/assets/ui_icons/icn_checkmark.svg" class="lnr-icn-sm"></md-icon>
+                  <span>{{ 'booking.overview.premium-feature-4' | translate }}</span>
+                </div>
+                <div layout="row" class="lnr-ml-0 premium-insurance__adv">
+                  <md-icon md-svg-src="app/assets/ui_icons/icn_checkmark.svg" class="lnr-icn-sm"></md-icon>
+                  <span>{{ 'booking.overview.premium-feature-5' | translate }}</span>
+                </div>
+              </div>
+            </div>
+            <br>
+            <a class="lnr-link" ui-sref="insurance" target="_blank">{{ 'shared.learn-more' | translate }}</a>
+
+            <div class="spacer"></div>
+            <md-divider></md-divider>
+          </div>
+          <!-- END PREMIUM INSURANCE -->
+          <div layout="row" layout-xs="column" layout-align="space-between none">
+            <div flex-gt-xs="33">
+              <p class="md-title">{{ 'booking.overview.invoice-address' | translate }}</p>
+              <p class="md-body-1" ng-if="!overview.parent.user.locations.billing">
+                <span class="lnr-bold">
+                  {{ overview.parent.user.first_name + " " + overview.parent.user.last_name }}
+                </span><br>
+                {{ overview.parent.user.street }}<br>{{ overview.parent.user.zip + " " + overview.parent.user.city }}<br>{{   overview.parent.user.country }}
+              </p>
+              <p class="md-body-1" ng-if="overview.parent.user.locations.billing">
+                <span class="lnr-bold" ng-if="!overview.parent.user.locations.billing.name">
+                  {{ overview.parent.user.locations.billing.first_name + " " + overview.parent.user.locations.billing.last_name }}
+                </span>
+                <span class="lnr-bold" ng-if="overview.parent.user.locations.billing.name">
+                  {{ overview.parent.user.locations.billing.name }}
+                </span>
+                <br>
+                {{ overview.parent.user.locations.billing.street }}<br>
+                {{ overview.parent.user.locations.billing.zip + " " + overview.parent.user.locations.billing.city }}<br>
+                {{ overview.parent.user.locations.billing.country }}
+              </p>
+            </div>
+            <div ng-hide show-xs>
+              <div class="spacer-xs"></div>
+              <md-divider></md-divider>
+              <div class="spacer-xs"></div>
+            </div>
+            <div flex-gt-xs="33">
+              <p class="md-title">{{ 'booking.overview.payment' | translate }}</p>
+              <div ng-if="overview.parent.user.payment_method.payment_type == 'credit-card'">
+                <p class="md-body-1">
+                  <span class="lnr-bold" translate="{{ 'shared.payment-type.' + overview.parent.user.payment_method.payment_type }}"></span><br>
+                  **** **** **** {{ overview.parent.user.payment_method.last_four }}
+                </p>
+              </div>
+              <div ng-if="overview.parent.user.payment_method.payment_type == 'paypal-account'">
+                <p class="md-body-1">
+                  <span class="lnr-bold">{{ 'shared.payment-type.paypal-account' | translate }}</span><br>
+                  {{ overview.parent.user.payment_method.email }}
+                </p>
+              </div>
+              <a class="lnr-link" ng-click="overview.parent.previousTab()">{{ 'shared.change' | translate }}</a>
+            </div>
+            <div ng-hide show-xs>
+              <div class="spacer-xs"></div>
+              <md-divider></md-divider>
+              <div class="spacer-xs"></div>
+            </div>
+            <div flex-gt-xs="33">
+              <p class="md-title">{{ 'booking.overview.redeem-voucher' | translate }}</p>
+              <div layout="row" layout-xs="column">
+                <md-input-container flex-gt-xs="70">
+                  <label>{{ 'settings.voucher-code' | translate }}</label>
+                  <input ng-model="overview.parent.voucherCode"></input>
+                </md-input-container>
+                <md-input-container layout="row" flex-gt-xs="30" flex="100">
+                <md-button
+                  flex
+                  ng-disabled="!overview.parent.voucherCode"
+                  class="md-raised md-primary lnr-btn-inline lnr-btn-mobile booking__voucher-btn"
+                  ng-click="overview.parent.addVoucher()"
+                >
+                  {{ 'booking.overview.add' | translate }}
+                </md-button>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lnr-list-form" ng-hide="!overview.parent.booked">
+          <div ng-hide="!overview.parent.booked" layout-align="center center" flex>
+            <br><br><br><br>
+            <h2 ng-if="!overview.parent.bike.user.direct_booking_scheme" class="md-headline lnr-center lnr-green-text">
+              {{ 'booking.overview.success-header' | translate }}
+            </h2>
+            <h2 ng-if="overview.parent.bike.user.direct_booking_scheme" class="md-headline lnr-center lnr-green-text">
+              {{ 'booking.overview.direct.success-header' | translate }}
+            </h2>
+            <p class="md-subhead lnr-center">{{ 'booking.overview.success-subheader' | translate }}</p>
+            <br><br>
+            <div layout="row" layout-align="center center">
+              <md-button class="md-raised md-primary md-lrg" onClick="window.close()">Close</md-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </md-content>
+</md-tab>

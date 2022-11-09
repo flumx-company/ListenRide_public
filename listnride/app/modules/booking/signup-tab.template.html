@@ -1,0 +1,231 @@
+<md-tab class="personal"
+        label="{{ signup.parent.tabOrder['sign-in'] + 1 }}. {{ 'booking.sign-in.tab' | translate }} {{ signup.parent.tabCompleted('sign-in') }}"
+        layout="row"
+        ng-disabled="signup.parent.tabsDisabled"
+        md-on-select="signup.parent.onTabChanged()">
+  <div class="spacer-xs"></div>
+  <md-content layout="column">
+    <div class="tab-content" style="min-height: 450px;"
+         layout-align="space-between none"
+         layout-padding>
+      <div
+        class="lnr-list-form"
+        layout="column">
+        <h2 class="md-title">
+          {{ signup.parent.showLogin ? 'booking.sign-in.login' : 'booking.sign-in.new' | translate }}
+        </h2>
+        <br>
+        <!--signup form-->
+        <form
+          ng-cloak
+          name="signupForm"
+          novalidate
+          ng-submit="signup.parent.emailSignup()"
+          ng-if="!signup.parent.showLogin"
+        >
+          <div class="md-dialog-content">
+            <div layout="column">
+              <div layout="row" layout-xs="column">
+                <div flex="50" flex-xs="100" layout="column">
+                  <md-tooltip ng-if="!signup.parent.terms">Please agree to our terms of use and privacy policy.
+                  </md-tooltip>
+                  <md-button
+                    ng-click="signup.parent.authentication.connectFb(false, true)"
+                    class="md-primary md-lined md-raised lnr-btn-fb"
+                    ng-disabled="!signup.parent.terms"
+                    style="margin: 0; padding: 0;"
+                  >
+                    {{ 'booking.sign-in.register-facebook' | translate }}
+                  </md-button>
+                </div>
+                <div layout flex="50" flex-xs="100" layout-align="center center" class="booking__already-member" hide-xs>
+                  <a class="lnr-link" ng-click="signup.parent.showLogin = true">{{ 'booking.sign-in.already-member' | translate }}</a>
+                </div>
+              </div>
+              <div class="lnr-middle-divider">
+                {{ 'forms.or' | translate }}
+              </div>
+            </div>
+            <div class="lnr-input-containers" layout="row" layout-xs="column" value="{{$localStorage.firstName}}">
+              <md-input-container flex>
+                <label>{{ 'forms.first-name' | translate }}</label>
+                <input
+                  name="first_name"
+                  ng-model="signup.parent.user.firstName"
+                  required
+                  ng-maxlength="20"
+                >
+                <div ng-messages="signupForm.first_name.$error" role="alert">
+                  <div ng-message="required">{{ 'forms.errors.empty-first-name' | translate }}</div>
+                  <div ng-message="maxlength">{{ 'forms.errors.max-size-first-name' | translate }}</div>
+                </div>
+              </md-input-container>
+
+              <md-input-container flex>
+                <label>{{ 'forms.last-name' | translate }}</label>
+                <input
+                  name="last_name"
+                  ng-model="signup.parent.user.lastName"
+                  required
+                  ng-maxlength="30"
+                >
+                <div ng-messages="signupForm.last_name.$error" role="alert">
+                  <div ng-message="required">{{ 'forms.errors.empty-last-name' | translate }}</div>
+                  <div ng-message="maxlength">{{ 'forms.errors.max-size-last-name' | translate }}</div>
+                </div>
+              </md-input-container>
+            </div>
+
+            <div class="lnr-input-containers" layout="row" layout-xs="column">
+              <md-input-container flex>
+                <label>{{ 'forms.email-address' | translate }}</label>
+                <input
+                  name="email"
+                  ng-model="signup.parent.user.email"
+                  type="email"
+                  required
+                  ng-pattern="/(?!^[.+&'_-]*@.*$)(^[_\w\d+&'-]+(\.[_\w\d+&'-]*)*@[\w\d-]+(\.[\w\d-]+)*\.(([\d]{1,3})|([\w]{2,}))$)/i"
+                >
+                <div ng-messages="signupForm.email.$error" role="alert">
+                  <div ng-message="required">{{ 'forms.errors.empty-email' | translate }}</div>
+                  <div ng-message="email">{{ 'forms.errors.valid-email' | translate }}</div>
+                  <div ng-message="pattern">{{ 'forms.errors.valid-email' | translate }}</div>
+                </div>
+              </md-input-container>
+
+              <md-input-container flex>
+                <label>{{ 'forms.password' | translate }}</label>
+                <input
+                  name="password"
+                  ng-model="signup.parent.user.password"
+                  type="password"
+                  required
+                  ng-minlength="6"
+                  ng-maxlength="30"
+                >
+                <div ng-messages="signupForm.password.$error" role="alert">
+                  <div ng-message="required">{{ 'forms.errors.password-missing' | translate }}</div>
+                  <div ng-message="minlength">{{ 'forms.errors.password-length' | translate }}</div>
+                  <div ng-message="maxlength">{{ 'forms.errors.password-length' | translate }}</div>
+                </div>
+              </md-input-container>
+            </div>
+
+            <div flex layout="row" layout-align="space-around start" class="lnr-mt lnr-mb">
+              <md-checkbox
+                id="signup-terms"
+                ng-model="signup.parent.terms"
+                aria-label="terms"
+                style="margin-top: 3px"
+              >
+              </md-checkbox>
+              <div flex="95">
+                <div data-ng-bind-html="'forms.signing-up-accept-tac' | translate"></div>
+              </div>
+            </div>
+
+            <div flex layout="row" layout-align="space-around start" class="lnr-mb">
+              <md-checkbox
+                id="signup-newsletter"
+                ng-model="signup.parent.newsletter"
+                aria-label="newsletter"
+                style="margin-top: 3px"
+              >
+              </md-checkbox>
+              <div flex="95">
+                <div data-ng-bind-html="'forms.signing-up-accept-newsletter' | translate"></div>
+              </div>
+            </div>
+
+            <div class="md-dialog-buttons" layout="column">
+              <md-tooltip ng-if="!signup.parent.terms">Please agree to our terms of use and privacy policy.
+                </md-tooltip>
+              <md-button
+                type="submit"
+                class="md-primary md-raised"
+                ng-disabled="!signup.parent.terms"
+              >
+                {{ 'booking.sign-in.register' | translate }}
+              </md-button>
+              <div layout layout-padding layout-align="center center" hide-gt-xs>
+                <a class="lnr-link" ng-click="signup.parent.showLogin = true">{{ 'booking.sign-in.already-member' | translate }}</a>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <!--login form-->
+
+        <form
+          ng-cloak
+          name="signup.parent.loginForm"
+          novalidate
+          ng-if="signup.parent.showLogin"
+          ng-submit="signup.parent.authentication.loginGlobal(signup.parent.loginForm)">
+          <div class="md-dialog-content" layout="column">
+            <div layout="row" layout-xs="column">
+              <md-button ng-click="signup.parent.authentication.connectFb(false, true)" class="md-primary md-lined lnr-btn-fb" style="margin: 0; padding: 0;" flex="50" flex-xs="100">
+                 {{ 'booking.sign-in.login-facebook' | translate }}
+              </md-button>
+              <div layout flex="50" flex-xs="100" layout-align="center center" class="booking__already-member" hide-xs>
+                <a
+                  class="lnr-link"
+                  ng-click="signup.parent.showLogin = false">
+                  {{ 'booking.sign-in.not-member' | translate }}
+                </a>
+              </div>
+            </div>
+            <div class="lnr-middle-divider">
+              {{ 'forms.or' | translate }}
+            </div>
+
+            <div class="lnr-input-containers" layout="row" layout-xs="column">
+              <md-input-container flex>
+                <label>{{ 'forms.email-address' | translate }}</label>
+                <input
+                  ng-model="loginDialog.email"
+                  name="email"
+                  required
+                  type="email"
+                  md-autofocus
+                  ng-pattern="/(?!^[.+&'_-]*@.*$)(^[_\w\d+&'-]+(\.[_\w\d+&'-]*)*@[\w\d-]+(\.[\w\d-]+)*\.(([\d]{1,3})|([\w]{2,}))$)/i"
+                />
+                <div ng-messages="signup.parent.loginForm.email.$error" role="alert">
+                  <div ng-message="required">{{ 'forms.errors.empty-email' | translate }}</div>
+                  <div ng-message="email">{{ 'forms.errors.valid-email' | translate }}</div>
+                  <div ng-message="pattern">{{ 'forms.errors.valid-email' | translate }}</div>
+                </div>
+              </md-input-container>
+
+              <md-input-container flex>
+                <label>{{ 'forms.password' | translate }}</label>
+                <input type="password" ng-model="loginDialog.password" name="password" required ng-minlength="6" ng-maxlength="30"/>
+                <div ng-messages="signup.parent.loginForm.password.$error" role="alert">
+                  <div ng-message="required">{{ 'forms.errors.password-missing' | translate }}</div>
+                  <div ng-message="minlength">{{ 'forms.errors.password-length' | translate }}</div>
+                  <div ng-message="maxlength">{{ 'forms.errors.password-length' | translate }}</div>
+                </div>
+              </md-input-container>
+            </div>
+
+            <div class="md-dialog-buttons" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center stretch">
+              <a class="lnr-link" ng-click="signup.parent.resetPassword()">
+                {{ 'forms.forgot-password' | translate }}
+              </a>
+              <md-button type="submit" class="md-primary md-raised">
+                {{ 'forms.log-in' | translate }}
+              </md-button>
+              <div layout layout-padding layout-align="center center" hide-gt-xs>
+                <a
+                  class="lnr-link"
+                  ng-click="signup.parent.showLogin = false">
+                  {{ 'booking.sign-in.not-member' | translate }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </md-content>
+</md-tab>

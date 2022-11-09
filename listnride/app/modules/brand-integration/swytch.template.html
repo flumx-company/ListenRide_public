@@ -1,0 +1,121 @@
+<md-content class="single-column">
+
+  <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <!-- BRAND SLIDER -->
+    <ul class="cb-slideshow cb-slideshow--brand cb-slideshow--3">
+      <li ng-repeat="slide in swytch.cbSlider track by $index">
+        <span style="background-image: url('{{slide}}')"></span>
+      </li>
+    </ul>
+    <!-- END BRAND SLIDER -->
+
+    <!-- LOGO (Should be placed if there is no logo on Hero images) -->
+    <!-- <div class="lnr-page-title md-color-white" layout="column" layout-align="center center">
+      <div>
+        <img ng-src="app/assets/ui_images/brand-integration/swytch/lnr_swytch_logo.svg" flex="65"><br><br>
+      </div>
+    </div> -->
+    <!-- END LOGO -->
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.swytch.title' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'brand-integration.swytch.description' | translate }}</h2>
+    </div>
+
+    <!-- BRAND PAGE FEATURES -->
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/swytch/lnr_swytch_top_columns_image_01.jpg"
+          alt="swytch feature 1">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.swytch.feature-1.title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.swytch.feature-1.description"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/swytch/lnr_swytch_top_columns_image_02.jpg"
+          alt="swytch feature 2">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.swytch.feature-2.title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.swytch.feature-2.description"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/swytch/lnr_swytch_top_columns_image_03.jpg"
+          alt="swytch feature 3">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.swytch.feature-3.title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.swytch.feature-3.description"></p>
+      </div>
+    </div>
+    <!-- END BRAND PAGE FEATURES -->
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <!-- BRAND BIKES -->
+    <!-- <h2 class="md-headline lnr-center">{{ 'brand-integration.swytch.test-bike' | translate }}</h2> -->
+    <h2 class="md-subhead lnr-center">{{ 'brand-integration.shared.choose-location' | translate }}</h2>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <md-menu md-position-mode="target bottom">
+        <md-button class="md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">
+          <p class="md-right-arrow md-headline lnr-m-0">&nbsp;&nbsp;{{ swytch.currentShop.cityName }}</p>
+        </md-button>
+        <md-menu-content width="3">
+          <md-menu-item ng-repeat="(city, v) in swytch.cities">
+            <md-button ng-disabled="!v.bikes.length" md-no-ink ng-click="swytch.currentShop = swytch.cities[city]">
+              <p class="md-subhead lnr-m-0">{{ v.cityName }}</p>
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+
+    <md-content ng-if="swytch.currentShop.bikes && swytch.currentShop.bikes.length !==0">
+      <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+        <bike-card ng-repeat="bike in swytch.currentShop.bikes" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+      </div>
+    </md-content>
+
+    <div ng-if="!swytch.currentShop.bikes.length">
+      <p class="md-subhead lnr-center">{{'shared.no-bikes-found'}}</p>
+    </div>
+    <!-- END BRAND BIKES -->
+
+    <md-divider class="lnr-mv lnr-mh-x2"></md-divider>
+
+    <!-- BRAND FAQ  -->
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.swytch.find-out-more.title' | translate }}</h1>
+      <h2 class="md-subhead" translate="brand-integration.swytch.find-out-more.description"></h2>
+    </div>
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-align-gt-sm="space-between start"
+      layout-padding layout-wrap>
+      <!-- LEFT COLUMN -->
+      <div class="lnr-sm-center lnr-sm-no-vertical-space" flex-gt-sm="45" layout="column" layout-margin>
+        <div ng-repeat="f in swytch.faqs[1] track by $index">
+          <h3 class="md-body-2 lnr-clickable" ng-click="swytch['faq-l'+$index] = !swytch['faq-l'+$index]" translate="{{f.question}}"></h3>
+          <div ng-show="swytch['faq-l'+$index]">
+            <p translate="{{f.answer}}"></p>
+          </div>
+        </div>
+      </div>
+      <!-- END LEFT COLUMN -->
+      <!-- RIGHT COLUMN -->
+      <div class="lnr-sm-center lnr-sm-no-vertical-space" flex-gt-sm="45" layout="column" layout-margin>
+        <div ng-repeat="f in swytch.faqs[0] track by $index">
+          <h3 class="md-body-2 lnr-clickable" ng-click="swytch['faq-r'+$index] = !swytch['faq-r'+$index]" translate="{{f.question}}"></h3>
+          <div ng-show="swytch['faq-r'+$index]">
+            <p translate="{{f.answer}}"></p>
+          </div>
+        </div>
+      </div>
+      <!-- END RIGHT COLUMN -->
+    </div>
+    <!-- END BRAND FAQ -->
+
+    <div class="lnr-mh-x2"></div>
+  </div>
+  <footer></footer>
+</md-content>

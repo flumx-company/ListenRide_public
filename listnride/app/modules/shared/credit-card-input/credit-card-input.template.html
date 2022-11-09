@@ -1,0 +1,28 @@
+<div
+  id="securedfields"
+  ng-form name="creditCardForm"
+  class="lnr-input-containers"
+  layout="row"
+  layout-align="space-between none"
+  layout-wrap>
+  <!-- CARD NAME -->
+  <md-input-container flex="100" flex-gt-xs="30">
+    <label>{{ 'booking.payment.card-name' | translate }}</label>
+    <input name="cardholderName" ng-model="creditCardInput.data.cardholderName" type="text" />
+  </md-input-container>
+  <!-- CARD NUMBER -->
+  <md-input-container flex="100" flex-gt-xs="30">
+    <label>{{ 'booking.payment.card-number' | translate }} *</label>
+    <span class="md-input" data-cse="encryptedCardNumber"></span>
+  </md-input-container>
+  <!-- EXP DATE -->
+  <md-input-container flex="45" flex-gt-xs="15">
+    <label>{{ 'booking.payment.exp-date' | translate }} *</label>
+    <span class="md-input" data-cse="encryptedExpiryDate"></span>
+  </md-input-container>
+  <!-- CARD CVC -->
+  <md-input-container flex="45" flex-gt-xs="15">
+    <label>{{ 'booking.payment.cvc' | translate }} *</label>
+    <span class="md-input" data-cse="encryptedSecurityCode"></span>
+  </md-input-container>
+</div>

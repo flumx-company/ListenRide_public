@@ -1,0 +1,21 @@
+ <md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/static/lnr_privacy.jpg')" layout="row" layout-align="center center">
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'privacy.title' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'privacy.subtitle' | translate }}</h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-padding>
+      <div flex-gt-sm="80" layout="column" layout-margin>
+        <p class="lnr-center" translate="privacy.description"></p>
+        <br>
+        <a href="javascript:gaOptout()" onClick="alert('Google Analytics successfully deactivated')" class="lnr-center">{{ 'privacy.ga-opt-out' | translate }}</a>
+      </div>
+    </div>
+    <div class="lnr-pv-x2"></div>
+  </div>
+  <footer></footer>
+</md-content>

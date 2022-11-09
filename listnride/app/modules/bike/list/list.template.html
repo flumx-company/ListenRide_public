@@ -1,0 +1,59 @@
+<md-content class="single-column">
+  <div class="content lnr-page-margin"
+       layout="column"
+       layout-align="center center">
+    <div class="lnr-section-title"
+         layout="column"
+         layout-align="center center">
+      <h1 class="md-headline">{{ list.heading | translate }}</h1>
+    </div>
+
+    <div layout="row"
+         layout-align="end center"
+         ng-if="!list.isListMode">
+      <md-button
+        class="md-raised md-primary"
+        ng-disabled="!list.isFormValid() || list.submitDisabled"
+        ng-click="list.onFormSubmit()"
+      >
+        {{ 'list.save-changes' | translate }}
+      </md-button>
+    </div>
+
+    <form
+      name="listBike"
+      class="lnr-xs-w100"
+      layout="column"
+      layout-align="start center"
+      layout-padding
+    >
+      <md-tabs
+        lnr-md-focus-tabs="list.selectedIndex"
+        md-no-pagination
+        md-dynamic-height
+        md-no-ink
+        md-no-ink-bars
+        md-selected="list.selectedIndex"
+      >
+        <!-- categories -->
+        <categories-list-tab></categories-list-tab>
+
+        <!-- details -->
+        <details-list-tab></details-list-tab>
+
+        <!-- pictures -->
+        <pictures-list-tab></pictures-list-tab>
+
+        <!-- location -->
+        <location-list-tab></location-list-tab>
+
+        <!-- insurance -->
+        <insurance-list-tab></insurance-list-tab>
+
+        <!-- pricing -->
+        <pricing-list-tab></pricing-list-tab>
+      </md-tabs>
+    </form>
+  </div>
+  <footer></footer>
+</md-content>

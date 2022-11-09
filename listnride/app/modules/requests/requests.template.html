@@ -1,0 +1,117 @@
+<!-- All views except XS -->
+<div flex="100" layout="row" layout-fill>
+
+  <!-- Left Column displaying list of all Requests -->
+  <md-content flex-gt-xs="25" flex-sm="40" flex="100" class="requests-list" flex-order="1">
+    <div flex layout="row" layout-align="space-around center">
+      <section layout="row" layout-align="space-around center">
+        <md-button md-no-ink
+                   ng-class="{'request-filter-switch-active':requests.filters.type == 'all'}"
+                   class="request-filter-switch left md-noink"
+                   ng-click="requests.filterBikes('all', true)">
+                   {{ 'shared.all' | translate }}
+        </md-button>
+        <md-button md-no-ink
+                   ng-class="{'request-filter-switch-active':requests.filters.type == 'lister'}"
+                   class="request-filter-switch middle"
+                   ng-click="requests.filterBikes('lister', true)">
+                   {{ 'shared.as' | translate }} {{ 'shared.lister' | translate}}
+        </md-button>
+        <md-button md-no-ink
+                   ng-class="{'request-filter-switch-active':requests.filters.type == 'rider'}"
+                   class="request-filter-switch right"
+                   ng-click="requests.filterBikes('rider', true)">
+                   {{ 'shared.as' | translate }} {{ 'shared.rider' | translate}}
+        </md-button>
+      </section>
+    </div>
+    <div flex layout="row" layout-align="space-around center">
+      <md-input-container class="request-filter-dropdown md-block">
+        <md-select ng-model="requests.filters.selected" ng-change="requests.filters.applyFilter(requests.filters.selected)">
+          <md-option ng-repeat="filter in ::requests.filters.options" value="{{$index}}">{{filter | translate}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+    <md-progress-linear class="md-accent" ng-if="requests.loadingList" md-mode="query"></md-progress-linear>
+    <div layout="column"
+         layout-align="center center"
+         layout-fill
+         ng-if="!requests.loadingList && requests.requests.length == 0">
+         <p class="requests-list-no-item lnr-center">{{ 'requests.no-requests-yet' | translate }}</p>
+    </div>
+
+    <!--#list-wrapper {-->
+    <!--max-height: 700px;-->
+    <!--overflow-y: scroll;-->
+    <!--}-->
+    <div id="list-wrapper" >
+      <div>
+        <div ng-repeat="request in requests.requests | orderBy:'-start_date' track by request.id" >
+          <md-divider md-insets></md-divider>
+          <md-list-item
+            class="requests-list-item md-2-line"
+            ng-class="{'request-filter-switch-active':requests.selected === request.id}"
+            ng-click="requests.loadRequest(request.id, true)"
+          >
+            <img ng-src="{{request.image}}" class="md-avatar" alt="{{request.ride}}" />
+            <div class="md-list-item-text" layout="column">
+              <div layout="row">
+                <h4 ng-if="requests.is_rider(request)" class="lnr-bold">{{request.ride}}</h4>
+                <h4 ng-if="!requests.is_rider(request)" class="lnr-bold">{{request.user.first_name}} {{request.user.last_name}}</h4>
+                <div flex></div>
+                <div class="unread-indicator" ng-if="!request.message.is_read && request.message.receiver == requests.userId"></div>
+              </div>
+              <p>{{request.start_date_tz | amUtc | amDateFormat:'DD.MM.YY, HH:mm'}}
+                - {{request.end_date_tz | amUtc | amDateFormat:'DD.MM.YY, HH:mm'}}</p>
+            </div>
+          </md-list-item>
+        </div>
+        <md-divider md-insets></md-divider>
+        <span></span>
+      </div>
+    </div>
+  </md-content>
+
+  <!-- Right Column displaying actual Chat -->
+  <div flex-order="2" layout="column" hide-xs flex="75" flex-sm="60">
+    <md-progress-linear class="md-accent" ng-if="requests.loadingChat" md-mode="query"></md-progress-linear>
+    <div flex="90" scroll-glue="requests.request.glued" class="chat lnr-maxh-100">
+      <message ng-repeat="message in requests.request.messages"
+        content="message.content"
+        sender="message.sender"
+        status="message.status"
+        request="requests.request"
+        payment-failed="requests.isPaymentFailed(requests.request.payment_status)"
+        retry-clicked="requests.retryButtonClicked"
+        message-time="message.created_at_readable"
+        time="message.created_at"
+        confirm-booking="requests.confirmBooking()"
+        accept-booking="requests.acceptBooking()"
+        retry-payment="requests.retryPayment"
+        show-rating-dialog="requests.showRatingDialog()">
+      </message>
+    </div>
+    <form
+      ng-if="requests.request.messages"
+      class="lnr-message-form"
+      ng-submit="requests.sendMessage()"
+      layout="row"
+      layout-padding>
+      <md-input-container class="ap-chat" flex md-no-float>
+        <input
+          ng-model="requests.message"
+          placeholder="{{ 'requests.write-message' | translate }}">
+        </input>
+      </md-input-container>
+      <md-input-container layout="row" hide-xs flex-gt-sm="20" flex="30">
+        <md-button
+          flex
+          class="md-raised md-primary lnr-m-0"
+          type="submit" ng-disabled="!requests.message">
+            {{ 'shared.send' | translate }}
+        </md-button>
+      </md-input-container>
+    </form>
+  </div>
+</div>

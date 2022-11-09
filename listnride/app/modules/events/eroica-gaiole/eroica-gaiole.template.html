@@ -1,0 +1,38 @@
+<md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/events/eroica-gaiole_hero.jpg'); background-position: 0 70%;" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center"></div>
+  </div>
+  <div class="content" layout="column" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+
+      <h1 class="md-headline">{{ 'events.eroica-gaiole.title' | translate }}</h1>
+      <p class="md-body-1" translate="events.eroica-gaiole.description"></p>
+      <div class="md-body-1"><p translate="events.eroica-gaiole.text"></p>
+      </div>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div flex layout="column" layout-fill>
+      <div layout="row" layout-padding>
+        <md-input-container layout="column" flex="30" style="padding-bottom: 0">
+          <label>{{ 'list.details.size' | translate }}</label>
+          <md-select flex ng-model="filterSize" placeholder="{{ 'list.details.size' | translate }}">
+            <md-option ng-repeat="option in eroicaGaiole.sizeOptions" value="{{option.value}}">
+              {{option.label}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+      <div layout="row" layout-wrap layout-padding>
+        <bike-card
+          ng-repeat="bike in eroicaGaiole.bikes | filter : {size : filterSize}"
+          bike="bike" booked="bike.booked"
+          show-labels="true"
+          flex="100" flex-gt-xs="50" flex-gt-sm="33">
+        </bike-card>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</md-content>

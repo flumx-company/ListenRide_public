@@ -1,0 +1,61 @@
+<div layout="row" layout-align="center center" layout-wrap>
+  <md-input-container
+    flex-xs="100"
+    flex md-no-float
+    class="lnr-m-0 js-datapicker"
+    ng-class="{'md-input-has-value': vm.start_at}">
+
+    <input
+      ng-if="!vm.isSingle"
+      type="text"
+      value="{{vm.start_at}}"
+      placeholder="{{ 'availability.start-from' | translate }}"
+      readonly style="padding: 0 55px 0 20px;">
+    </input>
+
+    <input
+      ng-if="vm.isSingle"
+      type="text"
+      value="{{vm.start_at | addText:' - '}}{{ vm.end_at}}"
+      placeholder="{{ 'availability.choose-range' | translate }}"
+      readonly
+      style="padding: 0 55px 0 20px; min-width: 235px; color: rgba(85, 85, 85, 1.0) !important;">
+    </input>
+
+    <md-icon
+      md-svg-src="app/assets/ui_icons/icn_event_note.svg"
+      class="md-icon--btn">
+    </md-icon>
+  </md-input-container>
+
+  <span
+    ng-if="!vm.isSingle"
+    hide-xs
+    flex="15"
+    align="center"
+    class="lnr-lh0 lnr-fs0">
+    <i class="lnr-dash-input-divider"></i>
+  </span>
+
+  <md-input-container
+    ng-if="!vm.isSingle"
+    flex-xs="100"
+    flex
+    md-no-float
+    class="lnr-m-0"
+    ng-click="vm.openCalendar($event);">
+
+    <input
+      type="text"
+      value="{{ vm.end_at }}"
+      placeholder="{{ 'availability.end-at' | translate }}"
+      readonly
+      style="padding: 0 55px 0 20px;">
+    </input>
+
+    <md-icon
+      md-svg-src="app/assets/ui_icons/icn_event_note.svg"
+      class="md-icon--btn">
+    </md-icon>
+  </md-input-container>
+</div>

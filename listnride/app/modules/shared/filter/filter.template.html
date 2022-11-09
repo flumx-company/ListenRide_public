@@ -1,0 +1,94 @@
+<div layout="row" layout-margin>
+  <md-button
+    class="md-lined lnr__filter-btn"
+    ng-class="filter.currentDate.start_date ? 'filter__selected': ''"
+    lnr-date-picker
+    data="filter.currentDate"
+    date-on-change="filter.onDateChange"
+    clear-calendar-data="filter.isClearDataRange"
+  >
+    <span ng-if="!filter.currentDate.start_date">{{ 'search.timespan' | translate }}</span>
+    <span ng-if="filter.currentDate.start_date && filter.currentDate.duration <= 0">
+      {{ filter.initialValues.date.start_date | amDateFormat:'DD MMMM' }}
+    </span>
+    <span ng-if="filter.currentDate.start_date && filter.currentDate.duration > 0">
+      {{ filter.initialValues.date.start_date | amDateFormat:'DD MMMM' | addText:' - '}}
+      {{ filter.initialValues.date.start_date | amAdd : filter.currentDate.duration : 'seconds' | amDateFormat:'DD MMMM'}}
+    </span>
+
+  </md-button>
+
+  <md-select
+    class="lnr-ml"
+    ng-model="filter.currentSize"
+    ng-class="filter.currentSize != filter.sizes[0].value ? 'filter__selected': ''"
+    ng-change="filter.onSimpleSizeChange()"
+  >
+    <md-option ng-repeat="option in filter.sizes" value="{{option.value}}">
+      {{option.label}}
+    </md-option>
+  </md-select>
+
+  <!-- <md-menu md-position-mode="target bottom">
+    <md-button
+      class="md-lined lnr-m-0 lnr__filter-btn"
+      ng-class="filter.currentSizes.length >= 1 && filter.currentSizes[0] != -1 || filter.currentSizes.length > 1 ? 'filter__selected': ''"
+      ng-click="$mdOpenMenu($event); filter.closeDateRange()"
+    >
+      <span ng-if="filter.currentSizes.length < 1 || filter.currentSizes.length <= 1 && filter.currentSizes[0] == -1">
+        {{ 'search.number-of-bikes' | translate }}
+      </span>
+      <span ng-if="filter.currentSizes.length == 1 && filter.currentSizes[0] != -1">
+        {{filter.currentSizes.length}} {{'search.bike' | translate}}
+      </span>
+      <span ng-if="filter.currentSizes.length > 1">
+        {{filter.currentSizes.length}} {{'search.bikes' | translate}}
+      </span>
+    </md-button>
+    <md-menu-content width="4">
+      <div class="lnr-p">
+        <bike-count-filter></bike-count-filter>
+      </div>
+    </md-menu-content>
+  </md-menu> -->
+
+  <md-menu md-position-mode="left bottom" lnr-md-menu-fullscreen>
+    <md-button
+      class="md-lined lnr-m-0 lnr__filter-btn"
+      ng-class="filter.currentCategories.length >= 1 ? 'filter__selected': ''"
+      ng-click="$mdOpenMenu($event); filter.closeDateRange()"
+    >
+      {{ 'search.category' | translate }}
+    </md-button>
+    <md-menu-content width="5" class="lnr-100mh lnr-md-menu-bordered">
+      <div class="lnr-right">
+        <md-button show-xs hide-gt-xs class="md-icon-button md-warn md-menu__close-btn lnr-md-no-focused">
+          <md-icon md-font-icon="fa-times" class="fa"></md-icon>
+        </md-button>
+      </div>
+      <category-filter
+        on-filter-change="filter.onCategoryChange"
+        current-categories="filter.currentCategories"
+      >
+      </category-filter>
+    </md-menu-content>
+  </md-menu>
+
+  <md-select
+    class="lnr-ml"
+    ng-class="filter.currentBrand != filter.brands[0] ? 'filter__selected': ''"
+    ng-model="filter.currentBrand"
+    ng-change="filter.onBrandChange()"
+  >
+    <md-option ng-repeat="option in filter.brands" value="{{option}}">
+      {{option}}
+    </md-option>
+  </md-select>
+  <span flex></span>
+  <md-button
+    ng-click="filter.clearFilters()"
+    class="md-warn"
+  >
+    {{ 'search.clear-filters' | translate }}
+  </md-button>
+</div>

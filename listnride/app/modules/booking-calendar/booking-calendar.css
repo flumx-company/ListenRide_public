@@ -1,0 +1,161 @@
+/*
+  GENERAL BOOKING CALENDAR SCREEN STYLES
+ */
+
+/* <booking-calendar> component container */
+booking-calendar {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.not-available-message {
+  display: flex;
+  flex: 1 1 auto;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-available-message > * {
+  max-width: 50vw;
+  text-align: center;
+}
+
+.booking-calendar {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+/* Calendar controls START */
+.booking-calendar__filters {
+  display: flex;
+  align-items: center;
+}
+
+.booking-calendar__filters > * + * {
+  margin: 0 0 0 20px;
+}
+
+.booking-calendar__controls {
+  display: flex;
+  padding: 0 10px;
+  margin: 0;
+  align-items: center;
+}
+
+.booking-calendar__nav {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-transform: capitalize;
+}
+
+.booking-calendar__nav > * + *,
+.booking-calendar__nav .md-icon-button {
+  margin: 0 0 0 10px;
+}
+
+.booking-calendar .view-presets-selector > button {
+  text-transform: capitalize;
+}
+
+.booking-calendar .go-to-date-button md-icon {
+  height: 24px;
+  font-size: 24px !important;
+}
+
+.booking-calendar-divider {
+  margin-bottom: 10px;
+}
+
+#booking-calendar-datepicker {
+  padding: 0;
+  max-height: none !important;
+}
+/* Calendar controls END */
+
+/*
+  SCHEDULER WIDGET MISC STYLES
+ */
+
+.booking-calendar .scheduler-container {
+  height: calc(100% - 85px); /* hack for Safari */
+  max-width: 100%;
+}
+
+/* disable time axis hover/focus events */
+.booking-calendar .b-sch-header-timeaxis-cell:hover,
+.booking-calendar .b-sch-header-timeaxis-cell:focus,
+.booking-calendar .b-sch-timeaxiscolumn:hover,
+.booking-calendar .b-sch-timeaxiscolumn:focus {
+  cursor: auto;
+  background-color: initial !important;
+}
+
+.booking-calendar__badge {
+  padding: 3px 7px;
+  font-size: 0.75em;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #ffffff;
+  border-radius: 10px;
+  line-height: 12px;
+}
+
+.booking-calendar__badge--chevron::after {
+  font-family: FontAwesome;
+  font-size: 0.8em;
+  content: '\f054'; /* fa-chevron-right */
+}
+
+.booking-calendar__badge--blue {
+  background-color: #7ab2f8;
+}
+
+.booking-calendar__badge--green {
+  background-color: rgb(95,198,147);
+}
+
+.booking-calendar__badge--clickable {
+  cursor: pointer;
+}
+
+.booking-calendar .variant-row {
+  background-color: rgb(245, 247, 247) !important;
+}
+
+/* Highlight axis cells START */
+/* saturday */
+.booking-calendar .b-sch-dayheadercell-6,
+.booking-calendar .b-sch-dayheadercell-6:hover,
+.booking-calendar .b-sch-dayheadercell-6:focus,
+/* sunday */
+.booking-calendar .b-sch-dayheadercell-0,
+.booking-calendar .b-sch-dayheadercell-0:hover,
+.booking-calendar .b-sch-dayheadercell-0:focus {
+  background-color: rgba(217, 222, 222, 0.33) !important;
+}
+/* today */
+.booking-calendar .b-sch-dayheadercell-today,
+.booking-calendar .b-sch-dayheadercell-today:hover,
+.booking-calendar .b-sch-dayheadercell-today:focus {
+  background-color: rgb(85, 85, 85) !important;
+  color: #ffffff;
+}
+/* Highlight axis cells END */
+
+/* hide current time label (leave the line only) */
+.booking-calendar .scheduler-container .b-grid-header-container .b-sch-current-time {
+  display: none;
+}
+
+/* Current time line */
+.booking-calendar .b-grid-subgrid .b-sch-line {
+  border-left: 2px solid rgb(188, 216, 251);
+}

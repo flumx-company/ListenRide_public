@@ -1,0 +1,72 @@
+ <md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/citypages/amsterdam-heroshot.jpg')" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'cities.amsterdam.title' | translate }}</h1>
+    </div>
+  </div>
+  <br>
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'cities.amsterdam.subtitle' | translate }}</h2>
+      <h3 class="md-subhead">{{ 'cities.amsterdam.description' | translate }}</h3>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center" layout-padding>
+      <div layout="column" flex-gt-xs="45">
+        <h3 class="md-subhead">{{ 'cities.amsterdam.about' | translate }}</h3>
+        <p translate="cities.amsterdam.about-content"></p>
+        <br>
+        <md-card class="lnr-bike-card">
+          <img class="md-card-image" src="app/assets/ui_images/citypages/amsterdam-routes.jpg" alt="">
+        </md-card>
+        <br>
+        <h3 class="md-subhead">{{ 'cities.amsterdam.bike-routes' | translate }}</h3>
+        <p translate="cities.amsterdam.bike-routes-content"></p>
+      </div>
+      <div layout="row" flex-gt-xs="10" layout-align="center">
+        <md-divider></md-divider>
+      </div>
+      <div layout="column" flex-gt-xs="45">
+        <md-card class="lnr-bike-card">
+          <img class="md-card-image" src="app/assets/ui_images/citypages/amsterdam-shops.jpg" alt="">
+        </md-card>
+        <br>
+        <h3 class="md-subhead">{{ 'cities.amsterdam.bike-shops' | translate }}</h3>
+        <p translate="cities.amsterdam.bike-shops-content"></p>
+        <br>
+        <md-card class="lnr-bike-card">
+          <img class="md-card-image" src="app/assets/ui_images/citypages/amsterdam-cafes.jpg" alt="">
+        </md-card>
+        <br>
+        <h3 class="md-subhead">{{ 'cities.amsterdam.cafes-bars' | translate }}</h3>
+        <p translate="cities.amsterdam.cafes-bars-content"></p>
+      </div>
+    </div>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'cities.amsterdam.search-title' | translate }}</h1>
+      <p class="md-subhead">{{ 'cities.amsterdam.search-subtitle' | translate }}</p>
+    </div>
+
+    <md-grid-list id="city-pages" class="md-color-white lnr-m" md-cols="1" md-cols-gt-xs="3" md-gutter="16px" md-row-height="1.5:1">
+      <md-grid-tile class="amsterdam-1">
+        <a ui-sref="search({ location: 'Amsterdam', city: true })" target="_blank" layout="row" layout-align="center center">
+          <h3 class="md-title">{{ 'cities.shared.rent-city' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="amsterdam-2">
+        <a ui-sref="search({ location: 'Amsterdam', race: true })" target="_blank" layout="row" layout-align="center center">
+          <h3 class="md-title">{{ 'cities.shared.rent-road' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+
+      <md-grid-tile class="amsterdam-3">
+        <a ui-sref="search({ location: 'Amsterdam', special: true })" target="_blank" layout="row" layout-align="center center">
+          <h3 class="md-title">{{ 'cities.shared.rent-cargo' | translate }}</h3>
+        </a>
+      </md-grid-tile>
+    </md-grid-list>
+    <br>
+  </div>
+  <footer></footer>
+</md-content>

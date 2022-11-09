@@ -1,0 +1,117 @@
+<md-tab class="categories"
+        label="{{ payment.parent.tabOrder['payment'] + 1 }}. {{ 'booking.payment.tab' | translate }} {{ payment.parent.tabCompleted('payment') }}"
+        layout="row"
+        ng-disabled="payment.parent.tabsDisabled"
+        md-on-select="payment.parent.onTabChanged()">
+  <div class="spacer-xs"></div>
+  <md-content layout="column">
+    <div class="tab-content"
+         style="min-height: 250px;"
+         layout-align="space-between none"
+         layout-padding>
+      <div class="lnr-list-form" layout="column">
+        <h3 class="md-title">{{ 'booking.payment.select-method' | translate }}</h3>
+        <p class="md-body-1">{{ 'booking.payment.subtitle' | translate }}</p>
+        <div class="spacer-xs"></div>
+
+        <md-radio-group
+          class="lnr-md-no-focused"
+          ng-model="payment.parent.paymentMethod">
+          <md-divider></md-divider>
+          <!-- CARD METHOD -->
+          <div layout="row">
+            <md-radio-button
+              value="1"
+              class="md-primary md-title lnr-payment-tab-button"
+              flex="80">
+                {{ 'booking.payment.credit-card' | translate }}
+            </md-radio-button>
+            <div flex="20" layout="row" layout-align="end center">
+              <img
+                class="md-card-image lnr-request__img-methods lnr-payment-tab-image lnr-mr-x2"
+                ng-src="app/assets/ui_icons/lnr_logo_mastercard.svg"
+                alt="Mastercard"
+              >
+              <img
+                class="md-card-image lnr-request__img-methods lnr-payment-tab-image"
+                ng-src="app/assets/ui_icons/lnr_logo_visa.svg"
+                alt="Visa"
+              >
+            </div>
+          </div>
+          <form
+            name="payment.parent.paymentForm"
+            novalidate
+            ng-hide="payment.parent.paymentMethod != 1">
+            <credit-card-input data="payment.parent.creditCardData"></credit-card-input>
+          </form>
+          <!-- END CARD METHOD -->
+          <md-divider></md-divider>
+          <!-- PAYPAL METHOD -->
+          <div layout="row" layout-align="space-between none">
+            <md-radio-button
+              value="2"
+              class="md-primary md-title lnr-payment-tab-button"
+              flex="80"
+            >
+              Paypal
+            </md-radio-button>
+            <div flex="20" layout="row" layout-align="end center">
+              <img
+                class="md-card-image lnr-request__img-methods lnr-payment-tab-image"
+                ng-src="app/assets/ui_icons/lnr_logo_paypal.svg"
+                alt="PayPal"
+              >
+            </div>
+          </div>
+          <paypal-checkout-button
+            ng-if="payment.parent.loggedIn()"
+            ng-hide="payment.parent.paymentMethod != 2"
+            on-success="payment.parent.onSuccessPaymentValidation">
+          </paypal-checkout-button>
+          <!-- END PAYPAL METHOD -->
+          <md-divider></md-divider>
+          <!-- CURRENT PAYMENT METHOD -->
+          <div class="spacer"></div>
+          <div ng-if="payment.parent.user.payment_method">
+            <h3 class="md-title">{{ 'booking.payment.current-method' | translate }}</h3>
+            <div layout="row" layout-align="space-between none" class="lnr-mh-x2">
+              <div layout="row" layout-xs="column">
+                <md-radio-button
+                  value="current"
+                  class="md-primary md-title md-checked lnr-pr-x2"
+                  flex="1">
+                  <span translate="{{ 'shared.payment-type.' + payment.parent.user.payment_method.payment_type }}"></span>
+                </md-radio-button>
+                <div flex="auto" class="lnr-pt">{{ payment.parent.paymentDescription }}</div>
+              </div>
+              <div flex="20" layout="row" layout-align="end center">
+                <img
+                  ng-if="payment.parent.user.payment_method.payment_type === 'paypal-account'"
+                  class="md-card-image lnr-request__img-methods lnr-payment-tab-image"
+                  ng-src="app/assets/ui_icons/lnr_logo_paypal.svg" alt="PayPal">
+                <div ng-if="payment.parent.user.payment_method.payment_type === 'credit-card'">
+                  <img
+                  class="md-card-image lnr-request__img-methods lnr-payment-tab-image lnr-mr-x2"
+                  ng-src="app/assets/ui_icons/lnr_logo_mastercard.svg"
+                  alt="Mastercard"
+                  >
+                  <img
+                    class="md-card-image lnr-request__img-methods lnr-payment-tab-image"
+                    ng-src="app/assets/ui_icons/lnr_logo_visa.svg"
+                    alt="Visa"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END CURRENT PAYMENT METHOD -->
+        </md-radio-group>
+
+        <div class="spacer"></div>
+        <p class="md-caption" data-ng-bind-html="'forms.privacy-policy' | translate"></p>
+      </div>
+    </div>
+    </div>
+  </md-content>
+</md-tab>

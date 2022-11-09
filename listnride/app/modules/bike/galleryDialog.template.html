@@ -1,0 +1,31 @@
+<md-dialog flex="65" class="dialog-bikes">
+
+  <md-toolbar class="md-accent">
+    <div class="md-toolbar-tools" layout-align="center center">
+      <md-button class="md-icon-button">
+        <md-icon></md-icon>
+      </md-button>
+      <span flex></span>
+      <h2 class="md-headline">Bike Photos</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="galleryDialog.hide()">
+        <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content class="dialog-content">
+    <div layout="column" style="height: 100%" layout="column">
+      <slick settings="galleryDialog.slickConfig" class="bikes">
+
+
+        <!-- TODO: add image alt for title. Use label attr on div tag -->
+        <div ng-repeat="image in galleryDialog.images">
+          <img style="max-width: 100%" ng-src="{{image.original}}">
+        </div>
+
+      </slick>
+    </div>
+  </md-dialog-content>
+
+</md-dialog>

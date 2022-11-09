@@ -1,0 +1,116 @@
+ <md-content class="single-column">
+
+<div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <!-- BRAND SLIDER -->
+    <ul class="cb-slideshow cb-slideshow--brand">
+      <li ng-repeat="slide in veloheld.cbSlider track by $index">
+        <span style="background-image: url('{{slide}}')"></span>
+      </li>
+    </ul>
+    <!-- END BRAND SLIDER -->
+
+    <div class="lnr-page-title md-color-white" layout="column" layout-align="center center">
+      <div>
+        <img ng-src="app/assets/ui_images/brand-integration/veloheld/lnr_veloheld_logo.png" flex="65"><br><br>
+      </div>
+      <!-- <h1 class="md-display-1">{{ 'brand-integration.veloheld.title' | translate }}</h1> -->
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.veloheld.title' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'brand-integration.veloheld.description' | translate }}</h2>
+    </div>
+
+    <!-- BRAND PAGE FEATURES -->
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.veloheld.feature-1.title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.veloheld.feature-1.description"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.veloheld.feature-2.title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.veloheld.feature-2.description"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.veloheld.feature-3.title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.veloheld.feature-3.description"></p>
+      </div>
+    </div>
+    <!-- END BRAND PAGE FEATURES -->
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <!-- BRAND BIKES -->
+    <h2 class="md-headline lnr-center">{{ 'brand-integration.veloheld.test-bike' | translate }}</h2>
+    <h3 class="md-subhead lnr-center">{{ 'brand-integration.shared.choose-location' | translate }}</h3>
+
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <md-menu md-position-mode="target bottom">
+        <md-button class="md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">
+          <p class="md-right-arrow md-headline lnr-m-0">&nbsp;&nbsp;{{ 'shared.' + veloheld.currentShop.cityName | translate}}</p>
+        </md-button>
+        <md-menu-content width="3">
+          <md-menu-item ng-repeat="(city, v) in veloheld.cities">
+            <md-button ng-disabled="!v.bikes.length" md-no-ink ng-click="veloheld.currentShop = veloheld.cities[city]">
+              <p class="md-subhead lnr-m-0">{{ 'shared.' + v.cityName | translate}}</p>
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+
+    <md-content ng-if="veloheld.currentShop.bikes && veloheld.currentShop.bikes.length !==0">
+      <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+        <bike-card ng-repeat="bike in veloheld.currentShop.bikes" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+      </div>
+    </md-content>
+
+    <div ng-if="!veloheld.currentShop.bikes.length">
+      <p class="md-subhead lnr-center">{{'shared.no-bikes-found'}}</p>
+    </div>
+    <!-- END BRAND BIKES -->
+
+    <md-divider class="lnr-mv lnr-mh-x2"></md-divider>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.veloheld.find-out-more.title' | translate }}</h1>
+      <h2 class="md-subhead" translate="brand-integration.veloheld.find-out-more.description"></h2>
+    </div>
+
+    <!-- BRAND FAQ  -->
+    <!--<div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-align-gt-sm="space-between start" layout-padding layout-wrap>-->
+      <!--&lt;!&ndash; LEFT COLUMN &ndash;&gt;-->
+      <!--<div class="lnr-sm-center lnr-sm-no-vertical-space" flex-gt-sm="45" layout="column" layout-margin>-->
+        <!--<div ng-repeat="f in veloheld.faqs[1] track by $index">-->
+          <!--<h3 class="md-body-2 lnr-clickable" ng-click="veloheld['faq-l'+$index] = !veloheld['faq-l'+$index]">{{ f.question | translate}}</h3>-->
+          <!--<div ng-show="veloheld['faq-l'+$index]">-->
+            <!--<p>{{ f.answer | translate}}</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--&lt;!&ndash; END LEFT COLUMN &ndash;&gt;-->
+      <!--&lt;!&ndash; RIGHT COLUMN &ndash;&gt;-->
+      <!--<div class="lnr-sm-center lnr-sm-no-vertical-space" flex-gt-sm="45" layout="column" layout-margin>-->
+        <!--<div ng-repeat="f in veloheld.faqs[0] track by $index">-->
+          <!--<h3 class="md-body-2 lnr-clickable" ng-click="veloheld['faq-r'+$index] = !veloheld['faq-r'+$index]">{{ f.question | translate}}</h3>-->
+          <!--<div ng-show="veloheld['faq-r'+$index]">-->
+            <!--<p>{{ f.answer | translate}}</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--&lt;!&ndash; END RIGHT COLUMN &ndash;&gt;-->
+
+    <!--</div>-->
+    <!-- END BRAND FAQ -->
+
+    <div class="lnr-mh-x2"></div>
+  </div>
+ <footer></footer>
+</md-content>

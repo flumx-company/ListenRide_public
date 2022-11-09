@@ -1,0 +1,715 @@
+/*-----------------------------------------------------------------------------------*/
+/* This file contains the custom CSS required for our slideshow galleries
+/*-----------------------------------------------------------------------------------*/
+
+.cb-slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  -webkit-animation: pentaAnimation 25s linear infinite 0s;
+  -moz-animation: pentaAnimation 25s linear infinite 0s;
+  -o-animation: pentaAnimation 25s linear infinite 0s;
+  animation: pentaAnimation 25s linear infinite 0s;
+}
+
+/*---------------------------------------------------------*/
+/* HOME
+/*---------------------------------------------------------*/
+
+home .cb-slideshow li span {
+  -webkit-animation: pentaAnimation 25s linear infinite 0s;
+  -moz-animation: pentaAnimation 25s linear infinite 0s;
+  -o-animation: pentaAnimation 25s linear infinite 0s;
+  animation: pentaAnimation 25s linear infinite 0s;
+}
+
+home .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/lnr_hero2.jpg);
+  background-position: 75% 50%;
+}
+
+home .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/lnr_hero3.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+home .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/lnr_hero6.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+home .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/lnr_hero4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+home .cb-slideshow li:nth-child(5) span {
+  background-image: url(../ui_images/lnr_hero5.jpg);
+  background-position: 100% 50%;
+  -webkit-animation-delay: 20s;
+  -moz-animation-delay: 20s;
+  -o-animation-delay: 20s;
+  animation-delay: 20s;
+}
+
+/*---------------------------------------------------------*/
+/* AMPLER
+/*---------------------------------------------------------*/
+
+ampler .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+ampler .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/ampler_hero1.jpg);
+  background-position: 75% 50%;
+}
+
+ampler .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/ampler_hero2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+ampler .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/ampler_hero1.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+ampler .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/ampler_hero3.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* BROMPTON
+/*---------------------------------------------------------*/
+
+brompton .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+brompton #slideshow div {
+    opacity: 0;
+    color: #fff;
+    animation: bromptonTitleAnimation 20s linear infinite 0s;
+    -webkit-animation: bromptonTitleAnimation 20s linear infinite 0s;
+    -moz-animation: bromptonTitleAnimation 20s linear infinite 0s;
+    -o-animation: bromptonTitleAnimation 20s linear infinite 0s;
+}
+
+brompton .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/brompton_hero1.jpg);
+}
+
+brompton .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/brompton_hero2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+brompton .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/brompton_hero3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+brompton .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/brompton_hero4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* MULI
+/*---------------------------------------------------------*/
+
+muli .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+muli .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/muli/muli_hero_1.jpg);
+}
+
+muli .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/muli/muli_hero_2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+muli .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/muli/muli_hero_3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+muli .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/muli/muli_hero_4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* VELLO
+/*---------------------------------------------------------*/
+
+vello .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+vello .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/vello/lnr_vello_hero_1.jpg);
+}
+
+vello .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/vello/lnr_vello_hero_2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+vello .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/vello/lnr_vello_hero_3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+vello .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/vello/lnr_vello_hero_4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* VELETAGE
+/*---------------------------------------------------------*/
+
+veletage .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+veletage .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/veletage/lnr_veletage_hero_1.jpg);
+  background-position: 50% 50%;
+}
+
+veletage .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/veletage/lnr_veletage_hero_2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+veletage .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/veletage/lnr_veletage_hero_3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+veletage .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/veletage/lnr_veletage_hero_4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* BONVELO
+/*---------------------------------------------------------*/
+
+bonvelo .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+bonvelo .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/bonvelo/lnr_bonvelo_hero_1.jpg);
+  background-size: cover;
+}
+
+bonvelo .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/bonvelo/lnr_bonvelo_hero_2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+bonvelo .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/bonvelo/lnr_bonvelo_hero_3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+bonvelo .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/bonvelo/lnr_bonvelo_hero_4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* MOTOPARILLA
+/*---------------------------------------------------------*/
+
+motoparilla .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+motoparilla .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/motoparilla/motoparilla_hero_1.jpg);
+  background-size: cover;
+}
+
+motoparilla .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/motoparilla/motoparilla_hero_2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+motoparilla .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/motoparilla/motoparilla_hero_3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+motoparilla .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/motoparilla/motoparilla_hero_2.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* VOTEC
+/*---------------------------------------------------------*/
+
+votec .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+votec .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/votec/votec_hero_1.jpg);
+}
+
+votec .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/votec/votec_hero_2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+votec .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/votec/votec_hero_3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+votec .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/votec/votec_hero_4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+
+/*---------------------------------------------------------*/
+/* VANMOOF
+/*---------------------------------------------------------*/
+
+vanmoof .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+vanmoof .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/vanmoof/vanmoof_hero1.jpg);
+}
+
+vanmoof .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/vanmoof/vanmoof_hero2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+vanmoof .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/vanmoof/vanmoof_hero3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+vanmoof .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/vanmoof/vanmoof_hero4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* Moeve
+/*---------------------------------------------------------*/
+
+moeve .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+moeve .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/moeve/hero1.jpg);
+}
+
+moeve .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/moeve/hero2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+moeve .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/moeve/hero3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+moeve .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/moeve/hero4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* RETHINK
+/*---------------------------------------------------------*/
+
+rethink .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+rethink .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/rethink/rethink_1.jpg);
+}
+
+rethink .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/rethink/rethink_2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+rethink .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/rethink/rethink_1.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+rethink .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/rethink/rethink_3.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* COCOMAT
+/*---------------------------------------------------------*/
+
+cocomat .cb-slideshow li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+cocomat .cb-slideshow li:nth-child(1) span {
+  background-image: url(../ui_images/brand-integration/cocomat/hero-1.jpg);
+}
+
+cocomat .cb-slideshow li:nth-child(2) span {
+  background-image: url(../ui_images/brand-integration/cocomat/hero-2.jpg);
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+cocomat .cb-slideshow li:nth-child(3) span {
+  background-image: url(../ui_images/brand-integration/cocomat/hero-3.jpg);
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+cocomat .cb-slideshow li:nth-child(4) span {
+  background-image: url(../ui_images/brand-integration/cocomat/hero-4.jpg);
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+/*---------------------------------------------------------*/
+/* YUBA
+/*---------------------------------------------------------*/
+
+yuba .cb-slideshow li span {
+  -webkit-animation-duration: 25s;
+  -moz-animation-duration: 25s;
+  -o-animation-duration: 25s;
+  animation-duration: 25s;
+}
+
+/*---------------------------------------------------------*/
+/* cb-slideshow for Brand Pages
+/* set backgound-image via inline style in template
+/*---------------------------------------------------------*/
+
+.cb-slideshow--brand li span {
+  -webkit-animation: quattroAnimation 20s linear infinite 0s;
+  -moz-animation: quattroAnimation 20s linear infinite 0s;
+  -o-animation: quattroAnimation 20s linear infinite 0s;
+  animation: quattroAnimation 20s linear infinite 0s;
+}
+
+.cb-slideshow--3 li span {
+  -webkit-animation: quattroAnimation 15s linear infinite 0s;
+  -moz-animation: quattroAnimation 15s linear infinite 0s;
+  -o-animation: quattroAnimation 15s linear infinite 0s;
+  animation: quattroAnimation 15s linear infinite 0s;
+}
+
+.cb-slideshow--brand li:nth-child(2) span {
+  -webkit-animation-delay: 5s;
+  -moz-animation-delay: 5s;
+  -o-animation-delay: 5s;
+  animation-delay: 5s;
+}
+
+.cb-slideshow--brand li:nth-child(3) span {
+  -webkit-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  animation-delay: 10s;
+}
+
+.cb-slideshow--brand li:nth-child(4) span {
+  -webkit-animation-delay: 15s;
+  -moz-animation-delay: 15s;
+  -o-animation-delay: 15s;
+  animation-delay: 15s;
+}
+
+.cb-slideshow--brand li:nth-child(5) span {
+  -webkit-animation-delay: 20s;
+  -moz-animation-delay: 20s;
+  -o-animation-delay: 20s;
+  animation-delay: 20s;
+}
+
+.cb-slideshow--brand li:nth-child(6) span {
+  -webkit-animation-delay: 25s;
+  -moz-animation-delay: 25s;
+  -o-animation-delay: 25s;
+  animation-delay: 25s;
+}
+
+
+
+/*---------------------------------------------------------*/
+/* KEYFRAMES (specifying animation behavior)
+/*---------------------------------------------------------*/
+
+@-webkit-keyframes quattroAnimation {
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  5% { opacity: 1; animation-timing-function: ease-out; }
+  25% { opacity: 1 }
+  35% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@-moz-keyframes quattroAnimation {
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  5% { opacity: 1; animation-timing-function: ease-out; }
+  25% { opacity: 1 }
+  35% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@-o-keyframes quattroAnimation {
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  5% { opacity: 1; animation-timing-function: ease-out; }
+  25% { opacity: 1 }
+  35% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@keyframes quattroAnimation {
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  5% { opacity: 1; animation-timing-function: ease-out; }
+  25% { opacity: 1 }
+  35% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@-webkit-keyframes pentaAnimation {
+  0% { opacity: 0; animation-timing-function: linear; }
+  2% { opacity: 1; animation-timing-function: linear; }
+  25% { opacity: 1 }
+  27% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@-moz-keyframes pentaAnimation {
+  0% { opacity: 0; animation-timing-function: linear; }
+  2% { opacity: 1; animation-timing-function: linear; }
+  25% { opacity: 1 }
+  27% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@-o-keyframes pentaAnimation {
+  0% { opacity: 0; animation-timing-function: linear; }
+  2% { opacity: 1; animation-timing-function: linear; }
+  25% { opacity: 1 }
+  27% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@keyframes pentaAnimation {
+  0% { opacity: 0; animation-timing-function: linear; }
+  2% { opacity: 1; animation-timing-function: linear; }
+  25% { opacity: 1 }
+  27% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@-webkit-keyframes bromptonTitleAnimation {
+  10% { opacity: 0; }
+  25% { opacity: 0; animation-timing-function: ease-in; }
+  30% { opacity: 1; animation-timing-function: ease-out; }
+  98% { opacity: 1; }
+}
+
+@-moz-keyframes bromptonTitleAnimation {
+  10% { opacity: 0; }
+  25% { opacity: 0; animation-timing-function: ease-in; }
+  30% { opacity: 1; animation-timing-function: ease-out; }
+  98% { opacity: 1; }
+}
+
+@-o-keyframes bromptonTitleAnimation {
+  10% { opacity: 0; }
+  25% { opacity: 0; animation-timing-function: ease-in; }
+  30% { opacity: 1; animation-timing-function: ease-out; }
+  98% { opacity: 1; }
+}
+
+@keyframes bromptonTitleAnimation {
+  10% { opacity: 0; }
+  25% { opacity: 0; animation-timing-function: ease-in; }
+  30% { opacity: 1; animation-timing-function: ease-out; }
+  98% { opacity: 1; }
+}

@@ -1,0 +1,127 @@
+ <md-content class="single-column"> 
+ 
+   <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <ul class="cb-slideshow">
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+      <li><span></span></li>
+    </ul>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.bonvelo.description' | translate }}</h1>
+      <h2 class="md-subhead">{{ 'brand-integration.bonvelo.subdescription' | translate }}</h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/bonvelo/lnr_bonvelo_teaser_1.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.bonvelo.item1-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.bonvelo.item1-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/bonvelo/lnr_bonvelo_teaser_2.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.bonvelo.item2-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.bonvelo.item2-description' | translate }}"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/bonvelo/lnr_bonvelo_teaser_3.jpg" alt="">
+        <h3  class="md-subhead lnr-center">{{ 'brand-integration.bonvelo.item3-title' | translate }}</h3>
+        <p class="lnr-center" translate="{{ 'brand-integration.bonvelo.item3-description' | translate }}"></p>
+      </div>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <h2 class="md-headline lnr-center">{{ 'brand-integration.bonvelo.test-bike' | translate }}</h2>
+
+    <md-content>
+      <md-tabs md-no-pagination md-dynamic-height md-no-ink md-no-ink-bars md-center-tabs="on">
+        <md-tab label="{{ 'shared.munich' | translate }}">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding>
+              <bike-card ng-repeat="bike in bonvelo.bikes.munich" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="{{ 'shared.hamburg' | translate }}">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding>
+              <bike-card ng-repeat="bike in bonvelo.bikes.hamburg" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab style="font-size: 40px" label="{{ 'shared.berlin' | translate }}">
+          <md-content>
+            <div flex-gt-xs layout="row" layout-wrap layout-padding>
+              <bike-card ng-repeat="bike in bonvelo.bikes.berlin" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+            </div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <div id="testimonials" class="content section" layout-align="start center">
+      <div class="lnr-section-title" layout="column" layout-align="center center">
+        <h2 class="md-headline">{{ 'shared.testimonials-header' | translate }}</h2>
+      </div>  
+      <div class="testimonials-container" layout-padding ng-if="bonvelo.testimonials.length">
+        <slick settings="bonvelo.slickConfig" class="slick-centered">
+          <div ng-repeat="testimonial in bonvelo.testimonials"
+            class="testimonials-slick-slide" layout="column" layout-align="center center">
+            <div class="testimonials-text md-subhead">&ldquo;{{ testimonial.text }}&rdquo;</div>
+          </div>
+        </slick>
+      </div>
+    </div>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.bonvelo.find-out-more' | translate }}</h1>
+      <h2 class="md-subhead" translate="{{ 'brand-integration.bonvelo.faq-description' | translate }}"></h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-padding>
+      <div flex-gt-sm="45" layout="column" layout-margin>
+        <h3 class="md-body-2 lnr-clickable" ng-click="left1=!left1">{{ 'brand-integration.bonvelo.faq-question-1' | translate }}</h3>
+        <div ng-show="left1"><p>{{ 'brand-integration.bonvelo.faq-answer-1' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left2=!left2">{{ 'brand-integration.bonvelo.faq-question-2' | translate }}</h3>
+        <div ng-show="left2"><p>{{ 'brand-integration.bonvelo.faq-answer-2' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left3=!left3">{{ 'brand-integration.bonvelo.faq-question-3' | translate }}</h3>
+        <div ng-show="left3"><p>{{ 'brand-integration.bonvelo.faq-answer-3' | translate }}</p></div>
+      </div>
+
+      <div flex-gt-sm="45" flex-gt-sm-offset="5" layout="column" layout-margin>
+        <h3 class="md-body-2 lnr-clickable" ng-click="right1=!right1">{{ 'brand-integration.bonvelo.faq-question-6' | translate }}</h3>
+        <div ng-show="right1"><p translate="{{ 'brand-integration.bonvelo.faq-answer-6' | translate }}"></p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left4=!left4">{{ 'brand-integration.bonvelo.faq-question-4' | translate }}</h3>
+        <div ng-show="left4"><p>{{ 'brand-integration.bonvelo.faq-answer-4' | translate }}</p></div>
+
+        <h3 class="md-body-2 lnr-clickable" ng-click="left5=!left5">{{ 'brand-integration.bonvelo.faq-question-5' | translate }}</h3>
+        <div ng-show="left5"><p translate="{{ 'brand-integration.bonvelo.faq-answer-5' | translate }}"></p></div>
+      </div>
+    </div>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-subhead" translate="{{ 'brand-integration.bonvelo.bottom-text' | translate }}"></h2>
+    </div>
+  </div>
+ <footer></footer>
+</md-content>

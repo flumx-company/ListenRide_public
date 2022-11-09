@@ -1,0 +1,124 @@
+<md-content class="single-column">
+  <!-- HERO-SHOT -->
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/static/lnr_brandlanding_page_hero.jpg')"
+    layout="row" layout-align="space-around center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'brands.title' | translate }}</h1>
+    </div>
+  </div>
+  <!-- CONTENT -->
+  <div class="content" layout-padding>
+    <div class="lnr-pv-x2"></div>
+    <div class="lnr-section-title lnr-xs-m-0" layout="column" layout-align="center center">
+      <p class="md-subhead">{{ 'brands.description' | translate }}</p>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-pv-x2"></div>
+    <div class="lnr-section-title lnr-xs-m-0" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'brands.choose-from-brands' | translate }}</h2>
+    </div>
+    <div class="lnr-pb-0" layout="row" layout-align="space-between center">
+      <md-menu md-position-mode="left bottom" lnr-md-menu-fullscreen>
+        <md-button
+          class="lnr-md-button__icon lnr-no-ripple"
+          ng-click="$mdOpenMenu($event);"
+        >
+          <md-icon md-svg-src="app/assets/ui_icons/icn_slider_controls.svg" aria-label="Choose bike categories"></md-icon>
+          <span class="lnr-fs14">{{ 'brands.filter-by-bike-type' | translate }}</span>
+        </md-button>
+        <md-menu-content width="5" class="lnr-100mh lnr-md-menu-bordered">
+          <div class="lnr-right">
+            <md-button show-xs hide-gt-xs class="md-icon-button md-warn md-menu__close-btn lnr-md-no-focused">
+              <md-icon md-font-icon="fa-times" class="fa"></md-icon>
+            </md-button>
+          </div>
+          <category-filter
+            class="minimal-view"
+            current-categories="brands.categoryIds"
+            on-filter-change="brands.filterChange"
+            only-parent-categories="true">
+          </category-filter>
+        </md-menu-content>
+      </md-menu>
+      <!-- VIEW SWITCHER -->
+      <div layout="row" layout-align="end center">
+        <span class="lnr-pr" ng-if="!brands.isMapView">{{'shared.map' | translate}}</span>
+        <span class="lnr-pr" ng-if="brands.isMapView">{{'shared.list' | translate}}</span>
+        <md-switch
+          ng-model="brands.isMapView"
+          ng-change="brands.toggleView(brands.isMapView)">
+        </md-switch>
+      </div>
+    </div>
+    <div class="lnr-p-x2" ng-class="brands.isMapView ? 'brands__fixed-map-height': ''">
+      <div class="lnr-pos-r">
+        <div class="lnr-pt-0" ng-show="!brands.isMapView">
+          <p class="lnr-center md-subhead" ng-if="!brands.filteredBrands.length && brands.categoryIds.length" translate="brands.no-brands-found"></p>
+          <md-grid-list
+          id="featuredTilesGrid"
+          class="md-color-white"
+          md-cols="1"
+          md-cols-gt-xs="4"
+          md-gutter="16px"
+          md-row-height="1:0.65"
+          md-cols-xs="2"
+        >
+          <md-grid-tile
+            class="tile"
+            md-colspan-gt-xs="1"
+            style="background-image: url('{{brand.tile_image}}')"
+            ng-repeat="brand in brands.data track by $index"
+            ng-if="brands.isIncludeCategory(brand.categories)"
+          >
+            <a ui-sref="{{ brand.title | lowercase }}" layout="column" layout-align="center center">
+            </a>
+          </md-grid-tile>
+        </md-grid-list>
+        </div>
+        <div class="brands__map" ng-class="brands.isMapView ? 'active' : ''">
+          <!-- add ng-if if we can't find any brands -->
+          <ng-map
+            id="searchMap"
+            default-style="false"
+            center="[{{brands.mapOptions.lat}},{{brands.mapOptions.lng}}]"
+            zoom="{{brands.mapOptions.zoom}}"
+            on-click="brands.onMapClick(event)"
+            gesture-handling="cooperative"
+            map-type-control="false"
+            street-view-control="false"
+            styles="{{brands.colorScheme}}"
+            style="height: 650px;"
+            on-click="search.onMapClick(event)"
+          >
+            <info-window id="searchMapWindow">
+              <div ng-non-bindable="">
+                <!-- BRAND TILE -->
+                <a ui-sref="{{ brands.selectedBrand.title | lowercase }}" target="_blank">
+                  <md-card class="lnr-bike-card" style="border:none; padding: 10px; margin: 0">
+                    <div class="bg lnr-preload-bg"></div>
+                    <img class="md-card-image" ng-src="{{ brands.selectedBrand.tile_image }}" alt="brands.selectedBrand.title">
+
+                    <!-- <md-card-title layout="row">
+                      <md-card-title-text flex="100" class="lnr-margin-left lnr-bike-title" layout="column" layout-align="space-around start">
+                        <span class="md-subhead">{{ brands.selectedBrand.title }}</span>
+                      </md-card-title-text>
+                    </md-card-title> -->
+                  </md-card>
+                </a>
+              </div>
+            </info-window>
+          </ng-map>
+        </div>
+      </div>
+    </div>
+    <p class="lnr-m-0 lnr-ph-x2" translate="brands.join-program-link"></p>
+  </div>
+
+  </div>
+
+  <lnr-support></lnr-support>
+
+  <footer></footer>
+</md-content>

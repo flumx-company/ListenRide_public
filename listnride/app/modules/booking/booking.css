@@ -1,0 +1,159 @@
+/*-----------------------------------------------------------------------------------*/
+/*  Booking FLOW
+/*-----------------------------------------------------------------------------------*/
+
+.mt0 {
+    margin-top: 0;
+}
+
+.lnr-row-images {
+    flex-direction: row-reverse;
+}
+
+.lnr-row-images__item {
+    margin-right: -16px;
+}
+
+.lnr-row-images img {
+    width: 71px;
+    height: 71px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.lnr-row-images__item:last-child {
+    margin-left: -16px;
+}
+
+.lnr-sms-input {
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: rgba(206,212,216,0.9);
+    width: 120px;
+    padding-bottom: 3px;
+}
+
+.lnr-sms-input .lnr-sms-digit .md-input {
+    border-width: 0;
+    border-bottom: 1px solid rgba(206,212,216,0.9);
+    height: 35px;
+    border-radius: 0;
+}
+
+.lnr-sms-input md-input-container {
+    margin-bottom: 0;
+}
+
+.lnr-payment-image {
+    margin: 15px;
+}
+
+.lnr-payment-tab-image {
+    height: 20px;
+}
+
+.lnr-payment-tab-button {
+    padding: 19px 0;
+}
+
+booking .md-label {
+    color: rgba(85, 85, 85, 1.0);
+}
+
+booking md-radio-button {
+    margin: 0;
+}
+
+.booking__receipt {
+    margin-top: 100px;
+    z-index: 2;
+}
+
+.details__send-code {
+    margin: 25px 0 0
+}
+
+.booking__md-content {
+    max-height: 620px;
+}
+
+.booking md-tab-content.md-no-scroll {
+    overflow: visible;
+}
+
+.payment__paypal-btn {
+    margin: 0 32px 19px;
+}
+
+.booking__body md-tabs-wrapper {
+    padding: 0 16px;
+}
+
+@media(max-width: 959px) { /* sm */
+
+    .booking__body md-tabs-wrapper {
+        padding: 0 8px;
+    }
+
+    .lnr-list-form {
+        padding: 0;
+    }
+
+    .booking__receipt {
+        margin: 0;
+    }
+
+    .booking__next-step {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        margin: 0;
+        padding: 0 16px 10px;
+        background-color: rgba(250, 250, 250, 1);
+    }
+
+    .booking__terms {
+        order: 2;
+        font-size: 12px;
+        margin: 5px 8px 0;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+    .details__send-code {
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 599px) {
+    .lnr-list-form md-input-container .md-input-message-animation:not(.ng-animate) {
+        margin-top: 0;
+    }
+
+    .details__send-code {
+        margin-top: 10px;
+    }
+
+    .layout-xs-column > md-divider {
+        border-top-width: 1px;
+    }
+
+    .booking__voucher-btn {
+        margin: 0;
+    }
+
+    .booking__already-member {
+        order: -1;
+        margin: 0 0 20px;
+    }
+
+     .lnr-list-form md-input-container {
+         margin-right: 0px;
+         margin-left: 0px;
+     }
+}
+

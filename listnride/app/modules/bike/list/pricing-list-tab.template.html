@@ -1,0 +1,239 @@
+<md-tab ng-disabled="pricingTab.parent.isListMode" class="pricing" label="{{ 'list.pricing.label' | translate }} {{ pricingTab.parent.tabCompleted(5) }}" layout="row">
+  <md-content class="md-padding" layout="column">
+    <div class="tab-content" layout="row" layout-align="space-between none" layout-padding>
+      <!-- form for the price -->
+      <div ng-form name="pricingTab.parent.priceForm" class="lnr-list-form" flex-xs="100" flex-gt-xs="50" layout="column">
+        <h3 class="md-subhead">{{ 'list.pricing.header' | translate }}</h3>
+        <p>{{'list.pricing.description' | translate}}</p>
+
+        <div layout="row" layout-align="space-between center">
+          <div flex="45" ng-if="pricingTab.parent.hasTimeSlots">
+            <md-input-container class="md-block">
+              <label>{{'list.half-day-price' | translate}} </label>
+              <input
+                ng-model="pricingTab.parent.form.prices[1].price"
+                ng-model-options='{ debounce: 300 }'
+                ng-pattern="/^\d+$/"
+                name="price_half_days"
+                placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                type="text"
+                maxlength="4"
+                required>
+              <div
+                ng-messages="pricingTab.parent.priceForm.price_half_days.$error"
+                ng-show="pricingTab.parent.priceForm.price_half_days.$dirty">
+                <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div flex="{{pricingTab.parent.hasTimeSlots ? 45 : 100}}">
+            <!-- Daily Price -->
+           <md-input-container class="md-block">
+             <label>{{ 'list.pricing.header' | translate }} (€)</label>
+             <input
+              ng-model="pricingTab.parent.form.prices[0].price"
+              ng-change="pricingTab.parent.setCustomPrices(true)"
+              ng-model-options='{ debounce: 300 }'
+              ng-pattern="/^\d+$/"
+              name="daily_price"
+              placeholder="{{'list.pricing.daily-price-placeholder' | translate}}"
+              type="number"
+              min="1"
+              maxlength="4"
+              required>
+             <div ng-messages="pricingTab.parent.priceForm.daily_price.$error"
+               ng-show="pricingTab.parent.priceForm.daily_price.$dirty">
+               <div ng-message="required">{{'list.pricing.validations.required.daily_price' | translate}}</div>
+             </div>
+           </md-input-container>
+          </div>
+        </div>
+
+
+        <!-- Daily and Weekly Discounts -->
+        <div layout="row" layout-align="space-between center">
+          <div flex="45">
+            <md-input-container class="md-block">
+              <div layout layout-align="space-between center">
+                <div>
+                  <label>{{ 'list.pricing.daily-discount' | translate }} (%)</label>
+                </div>
+                <div>
+                  <md-icon hide-xs class="lnr-icn-xs md-color-black" md-svg-src="app/assets/ui_icons/icn_info.svg"></md-icon>
+                  <md-tooltip md-direction="right">
+                    {{ 'list.pricing.daily-discount-tooltip' | translate }}
+                  </md-tooltip>
+                </div>
+              </div>
+              <input type="text" ng-pattern="/^\d+$/" name="dailyDiscount" amount placeholder="{{'list.pricing.daily-discount-placeholder' | translate}}"
+                maxlength="2" ng-model="pricingTab.parent.form.discounts.daily" ng-change="pricingTab.parent.setCustomPrices()" ng-model-options='{ debounce: 300 }'
+                show-as-integer ng-disabled="!pricingTab.parent.discountFieldEditable">
+            </md-input-container>
+          </div>
+          <div flex="45">
+            <md-input-container class="md-block">
+              <div layout layout-align="space-between center">
+                <div>
+                  <label>{{ 'list.pricing.weekly-discount' | translate }} (%)</label>
+                </div>
+                <div>
+                  <md-icon hide-xs class="lnr-icn-xs md-color-black" md-svg-src="app/assets/ui_icons/icn_info.svg"></md-icon>
+                  <md-tooltip md-direction="right">
+                    {{ 'list.pricing.weekly-discount-tooltip' | translate }}
+                  </md-tooltip>
+                </div>
+              </div>
+              <input type="text" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.weekly-discount-placeholder' | translate}}" maxlength="2"
+                ng-model="pricingTab.parent.form.discounts.weekly" ng-change="pricingTab.parent.setCustomPrices()" ng-model-options='{ debounce: 300 }'
+                show-as-integer ng-disabled="!pricingTab.parent.discountFieldEditable">
+            </md-input-container>
+          </div>
+        </div>
+        <div>
+          <!-- description is not shown when custom prices are used.-->
+          <span class="md-caption" ng-if="pricingTab.parent.form.discounts.weekly && pricingTab.parent.form.prices[0].price && !pricingTab.parent.show_reset_button">
+            {{'list.pricing.discount-description-initial' | translate}} {{pricingTab.parent.form.discounts.weekly | number:0}}% {{'list.pricing.discount-description-mid'
+            | translate}} {{pricingTab.parent.form.prices[6].price}}€ {{'list.pricing.discount-description-ending' | translate}}
+          </span>
+          <span>&nbsp</span>
+        </div>
+        <!-- Switch for Custom Prices -->
+        <div layout="row" layout-align="space-between center">
+          <p>{{'list.pricing.custom-prices' | translate}}</p>
+          <md-switch ng-model="pricingTab.parent.form.custom_price" ng-change="pricingTab.parent.toggleDiscount()" ng-model-options='{ debounce: 1 }'>
+          </md-switch>
+          <div ng-style="{'display': settings.completeClosed ? '' : 'none'}">
+            ({{ 'settings.mark-as-closed' | translate }})
+          </div>
+        </div>
+        <!-- Custom Prices -->
+        <div class="bikes-custom-price" ng-show="pricingTab.parent.show_custom_price">
+          <div layout="row" layout-align="space-between center">
+            <div flex="45">
+              <md-input-container class="md-block">
+                <label>{{'list.pricing.price_2_days' | translate}} </label>
+                <input type="text" name="price_2_days" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                  maxlength="4" ng-model="pricingTab.parent.form.prices[pricingTab.parent.secondDayIndex + 0].price"
+                  ng-change="pricingTab.parent.disableDiscounts()" ng-model-options='{ debounce: 300 }'
+                  ng-disabled="!pricingTab.parent.form.custom_price" required>
+                <div ng-messages="pricingTab.parent.priceForm.price_2_days.$error" ng-show="pricingTab.parent.priceForm.price_2_days.$dirty">
+                  <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+                </div>
+              </md-input-container>
+            </div>
+            <div flex="45">
+              <md-input-container class="md-block">
+                <label>{{'list.pricing.price_3_days' | translate}}</label>
+                <input type="text" name="price_3_days" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                  maxlength="4" ng-model="pricingTab.parent.form.prices[pricingTab.parent.secondDayIndex + 1].price"
+                  ng-change="pricingTab.parent.disableDiscounts()" ng-model-options='{ debounce: 300 }'
+                  ng-disabled="!pricingTab.parent.form.custom_price" required>
+                <div ng-messages="pricingTab.parent.priceForm.price_3_days.$error" ng-show="pricingTab.parent.priceForm.price_3_days.$dirty">
+                  <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+                </div>
+              </md-input-container>
+            </div>
+          </div>
+          <div layout="row" layout-align="space-between center">
+            <div flex="45">
+              <md-input-container class="md-block">
+                <label>{{'list.pricing.price_4_days' | translate}}</label>
+                <input type="text" name="price_4_days" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                  maxlength="4" ng-model="pricingTab.parent.form.prices[pricingTab.parent.secondDayIndex + 2].price"
+                  ng-change="pricingTab.parent.disableDiscounts()" ng-model-options='{ debounce: 300 }'
+                  ng-disabled="!pricingTab.parent.form.custom_price" required>
+                <div ng-messages="pricingTab.parent.priceForm.price_4_days.$error" ng-show="pricingTab.parent.priceForm.price_4_days.$dirty">
+                  <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+                </div>
+              </md-input-container>
+            </div>
+            <div flex="45">
+              <md-input-container class="md-block">
+                <label>{{'list.pricing.price_5_days' | translate}}</label>
+                <input type="text" name="price_5_days" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                  maxlength="4" ng-model="pricingTab.parent.form.prices[pricingTab.parent.secondDayIndex + 3].price"
+                  ng-change="pricingTab.parent.disableDiscounts()" ng-model-options='{ debounce: 300 }'
+                  ng-disabled="!pricingTab.parent.form.custom_price" required>
+                <div ng-messages="pricingTab.parent.priceForm.price_5_days.$error" ng-show="pricingTab.parent.priceForm.price_5_days.$dirty">
+                  <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+                </div>
+              </md-input-container>
+            </div>
+          </div>
+          <div layout="row" layout-align="space-between center">
+            <div flex="45">
+              <md-input-container class="md-block">
+                <label>{{'list.pricing.price_6_days' | translate}}</label>
+                <input type="text" name="price_6_days" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                  maxlength="4" ng-model="pricingTab.parent.form.prices[pricingTab.parent.secondDayIndex + 4].price"
+                  ng-change="pricingTab.parent.disableDiscounts()" ng-model-options='{ debounce: 300 }'
+                  ng-disabled="!pricingTab.parent.form.custom_price" required>
+                <div ng-messages="pricingTab.parent.priceForm.price_6_days.$error" ng-show="pricingTab.parent.priceForm.price_6_days.$dirty">
+                  <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+                </div>
+              </md-input-container>
+            </div>
+            <div flex="45">
+              <md-input-container class="md-block">
+                <label>{{'list.pricing.price_7_days' | translate}}</label>
+                <input type="text" name="price_7_days" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                  maxlength="4" ng-model="pricingTab.parent.form.prices[pricingTab.parent.secondDayIndex + 5].price"
+                  ng-change="pricingTab.parent.disableDiscounts()" ng-model-options='{ debounce: 300 }'
+                  ng-disabled="!pricingTab.parent.form.custom_price" required>
+                <div ng-messages="pricingTab.parent.priceForm.price_7_days.$error" ng-show="pricingTab.parent.priceForm.price_7_days.$dirty">
+                  <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+                </div>
+              </md-input-container>
+            </div>
+          </div>
+          <div layout="row" layout-align="space-between center">
+            <div flex="45">
+              <md-input-container class="md-block">
+                <!-- don't use `hide-sm` here. causes issues in ipad split screen -->
+                <label hide-xs>{{'list.pricing.price_8_days_long' | translate}}</label>
+                <label hide-gt-xs>{{'list.pricing.price_8_days' | translate}}</label>
+                <input type="text" name="price_8_days" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                  maxlength="4" ng-model="pricingTab.parent.form.prices[pricingTab.parent.secondDayIndex + 6].price"
+                  ng-change="pricingTab.parent.disableDiscounts()" ng-model-options='{ debounce: 300 }'
+                  ng-disabled="!pricingTab.parent.form.custom_price" required>
+                <div ng-messages="pricingTab.parent.priceForm.price_8_days.$error" ng-show="pricingTab.parent.priceForm.price_8_days.$dirty">
+                  <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+                </div>
+              </md-input-container>
+            </div>
+            <div flex="45">
+              <md-input-container class="md-block">
+                <label>{{'list.pricing.price_30_days' | translate}}</label>
+                <input type="text" name="price_30_days" ng-pattern="/^\d+$/" placeholder="{{'list.pricing.set_custom_price' | translate}}"
+                  maxlength="4" ng-model="pricingTab.parent.form.prices[pricingTab.parent.secondDayIndex + 7].price"
+                  ng-change="pricingTab.parent.disableDiscounts()" ng-model-options='{ debounce: 300 }'
+                  ng-disabled="!pricingTab.parent.form.custom_price" required>
+                <div ng-messages="pricingTab.parent.priceForm.price_30_days.$error" ng-show="pricingTab.parent.priceForm.price_30_days.$dirty">
+                  <div ng-message="required">{{'list.pricing.validations.required.price' | translate}}</div>
+                </div>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Divider between Left and Right Columns -->
+      <md-divider hide-xs class="lnr-ml lnr-mr-x2"></md-divider>
+      <!-- Info Column -->
+      <div flex="50" hide-xs>
+        <h3 class="md-subhead">{{'list.pricing.info-description' | translate }}</h3>
+        <p class="md-body-1">{{ 'list.pricing.hint-para-1' | translate }}</p>
+        <p class="md-body-1">{{ 'list.pricing.hint-para-3' | translate }}</p>
+      </div>
+    </div>
+    <!-- Navigation Buttons -->
+    <div class="navigation" layout="row" layout-align="space-between center" layout-margin>
+      <md-button class="md-lined" ng-click="pricingTab.parent.previousTab()">
+        {{ 'list.back' | translate }}
+      </md-button>
+      <md-button ng-if="pricingTab.parent.isListMode" class="md-raised md-primary" ng-disabled="!pricingTab.parent.isPricingValid() || pricingTab.parent.submitDisabled"
+        ng-click="pricingTab.parent.onFormSubmit()">
+        {{ 'list.list-bike' | translate }}
+      </md-button>
+    </div>
+  </md-content>
+</md-tab>

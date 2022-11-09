@@ -1,0 +1,118 @@
+ <md-content class="single-column">
+
+  <!-- FAQs -->
+  <div class="content lnr-faqs" layout-padding>
+    <div style="margin: 60px auto" class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'help-and-service.header' | translate }}</h2>
+    </div>
+
+    <div class="md-body-1" layout="row" layout-padding layout-wrap>
+      <help-card
+        ng-repeat="i in [].constructor(8) track by $index"
+        ui-sref="faq({'group': $index+1})"
+        class="help__group-card"
+        layout="row"
+        flex="50"
+        flex-gt-xs="25">
+        <a flex layout="column" layout-align="none center">
+          <md-icon class="lnr-icn-mlrg" md-svg-src="app/assets/ui_icons/help/group-{{$index+1}}.svg"></md-icon>
+          <p class="md-subhead lnr-center" translate="help-and-service.faq.group-{{$index+1}}.title"></p>
+        </a>
+      </help-card>
+    </div>
+  </div>
+  <!-- end FAQs -->
+
+
+  <!-- TOP 10 FAQ -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'help-and-service.faq-header' | translate }}</h2>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-sm="row" layout-align="center none" layout-padding>
+      <div flex-gt-sm="45" layout="column">
+        <!-- FAQ_1 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="help1=!help1" ng-class="help1 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-1' | translate }}
+        </h3>
+        <div ng-show="help1">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-1"></p>
+        </div>
+        <!-- FAQ_2 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="help2=!help2" ng-class="help2 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-2' | translate }}
+        </h3>
+        <div ng-show="help2">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-2"></p>
+        </div>
+        <!-- FAQ_3 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="help3=!help3" ng-class="help3 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-3' | translate }}
+        </h3>
+        <div ng-show="help3">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-3"></p>
+        </div>
+        <!-- FAQ_4 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="help4=!help4" ng-class="help4 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-4' | translate }}
+        </h3>
+        <div ng-show="help4">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-4"></p>
+        </div>
+        <!-- FAQ_5 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left lnr-arrow-left--noborder" ng-click="help5=!help5" ng-class="help5 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-5' | translate }}
+        </h3>
+        <div ng-show="help5">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-5"></p>
+        </div>
+        <md-divider hide-gt-sm></md-divider>
+      </div>
+
+      <div flex-gt-sm="45" flex-gt-sm-offset="5" layout="column">
+        <!-- FAQ_6 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="help6=!help6" ng-class="help6 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-6' | translate }}
+        </h3>
+        <div ng-show="help6">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-6"></p>
+        </div>
+        <!-- FAQ_7 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="help7=!help7" ng-class="help7 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-7' | translate }}
+        </h3>
+        <div ng-show="help7">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-7"></p>
+        </div>
+        <!-- FAQ_8 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="help8=!help8" ng-class="help8 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-8' | translate }}
+        </h3>
+        <div ng-show="help8">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-8"></p>
+        </div>
+        <!-- FAQ_9 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left" ng-click="help9=!help9" ng-class="help9 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-9' | translate }}
+        </h3>
+        <div ng-show="help9">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-9"></p>
+        </div>
+        <!-- FAQ_10 -->
+        <h3 class="md-subhead lnr-clickable lnr-arrow-left lnr-arrow-left--noborder" ng-click="help10=!help10" ng-class="help10 ? 'accordion__tab--opened' : ''">
+          {{ 'help-and-service.faqs.top.question-10' | translate }}
+        </h3>
+        <div ng-show="help10">
+          <p class="md-body-1 accordion__text" translate="help-and-service.faqs.top.answer-10"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end TOP 10 FAQ -->
+
+  <lnr-support></lnr-support>
+
+  <footer></footer>
+</md-content>

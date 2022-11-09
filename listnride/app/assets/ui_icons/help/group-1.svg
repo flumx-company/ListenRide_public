@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>1_getting-started-01</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-Faq-/-Getting-Started" class="lnr-fill" fill-rule="nonzero">
+            <g id="1_getting-started-01">
+                <polygon id="Shape" points="6.627 10.276 15.047 10.276 12.054 13.27 12.903 14.119 17.344 9.676 12.903 5.235 12.054 6.084 15.047 9.076 6.627 9.076"></polygon>
+                <polygon id="Shape" points="11.362 24.595 14.692 21.266 11.362 17.937 10.514 18.784 12.396 20.666 7.712 20.666 7.712 21.865 12.396 21.865 10.514 23.747"></polygon>
+                <path d="M16,0.58 C8.424,0.58 1.867,6.222 0.75,13.704 L1.937,13.882 C2.966,6.982 9.013,1.78 16,1.78 C23.841,1.78 30.221,8.159 30.221,16 C30.221,23.841 23.841,30.221 16,30.221 C8.36,30.221 2.108,24.164 1.792,16.6 L25.255,16.6 L20.806,21.05 L21.654,21.898 L27.552,16 L21.654,10.102 L20.806,10.951 L25.255,15.4 L0.579,15.4 L0.579,16 C0.579,24.503 7.496,31.42 15.999,31.42 C24.502,31.42 31.419,24.503 31.419,16 C31.419,7.497 24.503,0.58 16,0.58 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

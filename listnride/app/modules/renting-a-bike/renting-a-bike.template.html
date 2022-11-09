@@ -1,0 +1,113 @@
+ <md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/static/lnr_rent_a_bike.jpg')" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'rent-a-bike.title' | translate }}</h1>
+    </div>
+  </div>
+
+  <!-- info -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'rent-a-bike.info-section.header' | translate }}</h2>
+      <h3 class="md-subhead">{{ 'rent-a-bike.info-section.subheader' | translate }}</h3>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_choice.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'rent-a-bike.info-section.choice-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'rent-a-bike.info-section.choice-content' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_price.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'rent-a-bike.info-section.price-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'rent-a-bike.info-section.price-content' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_easy.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'rent-a-bike.info-section.easy-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'rent-a-bike.info-section.easy-content' | translate }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- end info -->
+
+
+  <!-- search for a bike -->
+  <div id="listBike" class="section"  md-theme="lnr-dark" layout="column" layout-align="space-between none">
+    <div class="lnr-center md-color-white" flex layout="column" layout-align="center center">
+      <h2 class="md-display-1">{{ 'rent-a-bike.search-section.header' | translate }}</h2>
+      <p class="md-subhead">{{ 'rent-a-bike.search-section.subheader' | translate }}</p>
+    </div>
+
+    <div flex layout="column" layout-align="center center">
+      <form class="lnr-search-bar md-whiteframe-3dp" layout="row" md-theme="default">
+        <autocomplete
+          class="home-search"
+          autocomplete-id="home-search"
+          flex="75"
+          layout="column"
+          location="rentingABike.location"
+          placeholder-id="{{ 'autocomplete.default-placeholder' | translate }}"
+          place-changed="rentingABike.placeChanged(place)">
+        </autocomplete>
+        <md-button
+          class="md-raised md-primary"
+          id="submit"
+          flex="25"
+          ng-click="rentingABike.onSearchClick()"
+        >
+          {{ 'shared.search' | translate }}
+        </md-button>
+      </form>
+    </div>
+  </div>
+  <!-- end search for a bike -->
+
+
+  <!-- testmonials -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'rent-a-bike.testmonials-section.header' | translate }}</h2>
+      <p class="md-subhead">{{ 'rent-a-bike.testmonials-section.subheader' | translate }}</p>
+    </div>
+
+    <div layout="column" layout-wrap layout-gt-sm="row" layout-padding>
+      <div flex-gt-sm="50" class="lnr-comment" layout="row">
+        <img class="lnr-profile-md lnr-mr" ng-src="app/assets/ui_images/testmonials/testmonial_rider_1.jpg"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">David {{ 'shared.from-place' | translate }} Melbourne</p>
+          <p class="lnr-comment-content md-body-1">{{ 'testimonials.rider-1' | translate }}</p>
+        </div>
+      </div>
+
+      <div flex-gt-sm="50" class="lnr-comment" layout="row">
+        <img class="lnr-profile-md lnr-mr" ng-src="app/assets/ui_images/testmonials/testmonial_rider_2.jpg"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">Sarah {{ 'shared.from-place' | translate }} Stuttgart</p>
+          <p class="lnr-comment-content md-body-1">{{ 'testimonials.rider-2' | translate }}</p>
+        </div>
+      </div>
+
+      <div flex-gt-sm="50" class="lnr-comment" layout="row">
+        <img class="lnr-profile-md lnr-mr" ng-src="app/assets/ui_images/testmonials/testmonial_rider_3.jpg"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">Andrea {{ 'shared.from-place' | translate }} Rom</p>
+          <p class="lnr-comment-content md-body-1">{{ 'testimonials.rider-3' | translate }}</p>
+        </div>
+      </div>
+
+      <div flex-gt-sm="50" class="lnr-comment" layout="row">
+        <img class="lnr-profile-md lnr-mr" ng-src="app/assets/ui_images/testmonials/testmonial_rider_4.jpg"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">Jan {{ 'shared.from-place' | translate }} Berlin</p>
+          <p class="lnr-comment-content md-body-1">{{ 'testimonials.rider-4' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end testmonials -->
+   <footer></footer>
+</md-content>

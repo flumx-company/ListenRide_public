@@ -1,0 +1,432 @@
+<md-content class="single-column lnr-page-settings">
+  <div class="content lnr-page-margin" layout="column">
+    <div class="lnr-section-title lnr-center" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'settings.settings' | translate }}</h1>
+    </div>
+
+    <md-tabs flex md-dynamic-height md-no-ink md-no-ink-bars md-selected="list.selectedIndex" md-center-tabs="on">
+      <!-- profile -->
+      <md-tab class="profile" label="{{ 'settings.profile' | translate }}">
+        <br>
+        <div class="tab-content md-padding" layout="column" layout-align="space-between none" layout-padding>
+          <form name="settings.form">
+            <div layout="row" layout-xs="column">
+              <div flex-gt-xs layout-margin>
+                <div class="md-body-2">{{ 'forms.profile-picture' | translate }}</div>
+              </div>
+              <div flex-gt-xs="70" layout="column" layout-margin>
+                <div class="lnr-profile-figure">
+                  <div class="lnr-profile-lrg lnr-clickable"
+                    ng-style="{'display': settings.profilePicture ? 'none' : ''}"
+                    ngf-select name="ProfilePicture"
+                    ng-model="settings.profilePicture"
+                    ngf-accept="'image/*'"
+                    ngf-max-size="20MB"
+                    ngf-min-height="100"
+                    ngf-pattern="image/png,image/jpg,image/jpeg"
+                    ngf-fix-orientation="true"
+                    ngf-background="settings.user.profile_picture.profile_picture.url || settings.profilePicture || 'app/assets/ui_images/no-image.jpg'"
+                    ngf-as-background="true">
+                      <div class="lnr-profile-figure__change">
+                        {{ 'shared.change' | translate }}
+                      </div>
+                  </div>
+                </div>
+                <div
+                  ng-style="{'display': settings.profilePicture ? '' : 'none'}"
+                  ngf-drop ng-model="settings.profilePicture"
+                  ngf-max-size="20MB"
+                  ngf-min-height="100"
+                  ngf-pattern="image/png,image/jpg,image/jpeg"
+                  class="cropArea">
+                  <img-crop ng-style="{'display': settings.profilePicture ? '' : 'none'}" image="settings.profilePicture  | ngfDataUrl" result-image="settings.croppedDataUrl"
+                    ng-init="croppedDataUrl=''">
+                  </img-crop>
+                </div>
+                <p class="lnr-text-error md-caption lnr-error lnr-error--dimension">{{'forms.profile-picture-dimension-error' | translate}}</p>
+                <p class="lnr-text-error md-caption lnr-error lnr-error--max-size">{{'forms.profile-picture-size-error' | translate}}</p>
+                <p class="lnr-text-error md-caption lnr-error lnr-error--pattern">{{'forms.profile-picture-pattern-error' | translate}}</p>
+                <p class="lnr-mb-0" data-ng-bind-html="'forms.profile-picture-info' | translate"></p>
+                <p class="md-caption lnr-mt-0" data-ng-bind-html="'forms.profile-picture-info-policy' | translate"></p>
+              </div>
+            </div>
+
+            <br>
+            <md-divider></md-divider>
+            <br>
+
+            <div layout="row" layout-xs="column">
+              <div flex-gt-xs layout-margin>
+                <div class="md-body-2">{{ 'forms.general' | translate }}</div>
+              </div>
+              <div flex-gt-xs="70" layout="column" layout-margin>
+                <div layout="row" layout-xs="column">
+                  <md-input-container flex-gt-xs="45">
+                    <label>{{ 'forms.first-name' | translate }}</label>
+                    <input disabled name="firstName" ng-model="settings.user.first_name">
+                  </md-input-container>
+                  <span hide-xs flex></span>
+                  <md-input-container flex-gt-xs="45">
+                    <label>{{ 'forms.last-name' | translate }}</label>
+                    <input disabled name="lastName" ng-model="settings.user.last_name">
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-xs="column">
+                  <md-input-container flex>
+                    <label>{{ 'forms.email-address' | translate }}</label>
+                    <input disabled name="email" ng-model="settings.user.email">
+                  </md-input-container>
+                </div>
+                <p class="md-body-1" translate="settings.contact-to-update"></p>
+              </div>
+            </div>
+
+            <br>
+            <md-divider></md-divider>
+            <br>
+
+            <div layout="row" layout-xs="column">
+              <div flex-gt-xs layout-margin>
+                <div class="md-body-2">{{ 'forms.password' | translate }}</div>
+              </div>
+              <div flex-gt-xs="70" layout-margin>
+                <div layout="row" layout-xs="column">
+                  <md-input-container flex-gt-xs="45">
+                    <label>{{ 'forms.password' | translate }}</label>
+                    <input ng-disabled="true" placeholder="***********" name="password" type="password" ng-model="settings.password">
+                  </md-input-container>
+                  <span hide-xs flex></span>
+                  <md-input-container layout="row" flex-gt-xs="45" flex="100">
+                    <md-button flex class="md-raised md-primary lnr-btn-inline lnr-btn-mobile" ng-click="settings.changePassword($event)">
+                      {{ 'forms.update-password' | translate }}
+                    </md-button>
+                  </md-input-container>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <md-divider></md-divider>
+            <br>
+
+            <div layout="row" layout-xs="column">
+              <div flex-gt-xs layout-margin>
+                <div class="md-body-2">Contact</div>
+              </div>
+              <div flex-gt-xs="70" layout-margin>
+                <div layout="row" layout-xs="column">
+                  <md-input-container flex-gt-xs="45">
+                    <label>{{ 'shared.phone-number' | translate }}</label>
+                    <input name="phone_number" ng-disabled="true" placeholder="+49 175 12345678" ng-model="settings.user.phone_number_privatized">
+                  </md-input-container>
+                  <span hide-xs flex></span>
+                  <md-input-container layout="row" flex-gt-xs="45" flex="100">
+                    <md-button flex ng-if="!settings.sentConfirmationSms" class="md-raised md-primary lnr-btn-inline lnr-btn-mobile" ng-click="settings.changePhoneNumber($event)">
+                      {{ 'forms.update-contact' | translate }}
+                    </md-button>
+                  </md-input-container>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <md-divider></md-divider>
+            <br>
+
+            <div layout="row" layout-xs="column">
+              <div flex-gt-xs layout-margin>
+                <div class="md-body-2">{{ 'forms.address' | translate }}</div>
+              </div>
+              <div flex-gt-xs="70" layout-margin>
+                <div layout="row" layout-xs="column">
+                  <md-input-container flex-gt-xs="45">
+                    <label>{{ 'list.location.street-number' | translate }}</label>
+                    <input name="street" ng-model="settings.user.locations.primary.street" required>
+                  </md-input-container>
+                  <!--<autocomplete-->
+                    <!--autocomplete-id="settings"-->
+                    <!--layout="column"-->
+                    <!--required="true"-->
+                    <!--location="settings.user.locations.primary.street"-->
+                    <!--label-id="{{ 'list.location.street-number' | translate }}"-->
+                    <!--place-changed="settings.fillAddress(place)"-->
+                    <!--flex-gt-xs="45"-->
+                  <!--&gt;-->
+                  <!--</autocomplete>-->
+                  <span hide-xs flex></span>
+                  <md-input-container flex-gt-xs="45">
+                    <label>{{ 'forms.zip' | translate }}</label>
+                    <input name="zip" ng-model="settings.user.locations.primary.zip" required>
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-xs="column">
+                  <md-input-container flex-gt-xs="45">
+                    <label>{{ 'forms.city' | translate }}</label>
+                    <input name="city" ng-model="settings.user.locations.primary.city" required>
+                  </md-input-container>
+                  <span hide-xs flex></span>
+                  <md-input-container flex-gt-xs="45">
+                    <label>{{ 'forms.country' | translate }}</label>
+                    <input name="country" ng-model="settings.user.locations.primary.country" required>
+                  </md-input-container>
+                </div>
+                <p class="md-body-2">{{'settings.change-address-info' | translate}}</p>
+              </div>
+            </div>
+
+            <div layout="row" layout-xs="column">
+              <div flex-gt-xs layout-margin>
+                <div class="md-body-2">{{'settings.invoice-address' | translate}}</div>
+              </div>
+              <div flex-gt-xs="70" layout-margin>
+                <div ng-if="settings.user.has_billing">
+                  <div layout="row" layout-xs="column">
+                    <md-input-container flex-gt-xs="45">
+                      <label>{{ 'forms.first-name' | translate }}</label>
+                      <input name="firstName" ng-model="settings.user.locations.billing.first_name">
+                    </md-input-container>
+                    <span hide-xs flex></span>
+                    <md-input-container flex-gt-xs="45">
+                      <label>{{ 'forms.last-name' | translate }}</label>
+                      <input name="lastName" ng-model="settings.user.locations.billing.last_name">
+                    </md-input-container>
+                  </div>
+                  <div layout="row" layout-xs="column">
+                    <md-input-container flex-gt-xs="45">
+                      <label>{{ 'list.location.street-number' | translate }}</label>
+                      <input name="billingStreet" ng-model="settings.user.locations.billing.street" required>
+                    </md-input-container>
+                    <span hide-xs flex></span>
+                    <md-input-container flex-gt-xs="45">
+                      <label>{{ 'forms.zip' | translate }}</label>
+                      <input name="billingZip" ng-model="settings.user.locations.billing.zip" required>
+                    </md-input-container>
+                  </div>
+                  <div layout="row" layout-xs="column">
+                    <md-input-container flex-gt-xs="45">
+                      <label>{{ 'forms.city' | translate }}</label>
+                      <input name="billingCity" ng-model="settings.user.locations.billing.city" required>
+                    </md-input-container>
+                    <span hide-xs flex></span>
+                    <md-input-container flex-gt-xs="45">
+                      <label>{{ 'forms.country' | translate }}</label>
+                      <input name="billingCountry" ng-model="settings.user.locations.billing.country" required>
+                    </md-input-container>
+                  </div>
+                  <div layout="row" layout-xs="column">
+                    <md-input-container flex-gt-xs="45">
+                      <label>{{'settings.invoice-name' | translate}}</label>
+                      <input name="billingName" ng-model="settings.user.locations.billing.name">
+                    </md-input-container>
+                    <span hide-xs flex></span>
+                    <md-input-container flex-gt-xs="45">
+                      <label>{{'settings.vat' | translate}}</label>
+                      <input name="billingVat" ng-model="settings.user.locations.billing.vat">
+                    </md-input-container>
+                  </div>
+                </div>
+
+                <div class="lnr-link lnr-green-text" ng-if="!settings.user.has_billing" ng-click="settings.toggleBilling(true)">
+                  {{'settings.add-invoice-address' | translate}}
+                </div>
+                <div class="lnr-link lnr-green-text" ng-if="settings.user.has_billing" ng-click="settings.toggleBilling(false)">
+                  {{'settings.delete-invoice-address' | translate}}
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <md-divider></md-divider>
+            <br>
+
+            <div layout="row" layout-xs="column">
+              <div flex-gt-xs layout-margin>
+                <div class="md-body-2">{{ 'forms.description' | translate }}</div>
+              </div>
+              <div flex-gt-xs="70" layout="column" layout-margin>
+                <md-input-container flex md-no-float>
+                  <textarea
+                    required
+                    md-no-resize
+                    name="description"
+                    minlength="50"
+                    md-maxlength="800"
+                    ng-model="settings.user.description"
+                    rows="3"
+                  >
+                  </textarea>
+                  <div ng-messages="settings.form.description.$error" role="alert">
+                    <div ng-message="minlength">{{ 'forms.description_min_100' | translate }}</div>
+                  </div>
+                </md-input-container>
+              </div>
+            </div>
+            <div
+              class="navigation"
+              layout="row"
+              layout-align-xs="center stretch"
+              layout-align="space-between center"
+              layout-margin
+              flex-xs
+            >
+              <p class="md-caption" data-ng-bind-html="'forms.privacy-policy' | translate"></p>
+
+              <md-button
+                flex-xs
+                class="md-raised md-primary"
+                ng-click="settings.updateUser(settings.form)"
+                ng-disabled="!settings.form.$valid || !settings.form.$dirty"
+              >
+                {{ 'list.save-changes' | translate }}
+              </md-button>
+            </div>
+          </form>
+        </div>
+      </md-tab>
+      <!--end profile -->
+
+      <settings-account-tab></settings-account-tab>
+
+      <!-- hours -->
+      <md-tab class="hours" label="{{ 'settings.availability' | translate }}" layout="column">
+        <br>
+        <div class="tab-content md-padding" layout="column" layout-align="space-between none">
+          <div layout="row" layout-align="start center" layout-margin>
+            <p class="md-body-1">{{ 'settings.availability-description' | translate }}</p>
+          </div>
+          <div layout="row" layout-align="start center" layout-margin>
+            <div flex-gt-xs="10" flex="50">
+              <h3>{{ 'settings.availability' | translate }}</h3>
+            </div>
+            <span flex></span>
+            <div flex-gt-xs="80" flex="50">
+              <div layout="row" layout-align-gt-xs="start center" layout-align="end center">
+                <md-switch ng-model="settings.openingHoursEnabled" ng-change="settings.performOpeningHours(settings.openingHoursEnabled)">
+                </md-switch>
+                <div hide-xs ng-style="{'display': settings.completeClosed ? '' : 'none'}">
+                  ({{ 'settings.mark-as-closed' | translate }})
+                </div>
+              </div>
+            </div>
+          </div>
+          <div layout="row" layout-align="start center" layout-margin></div>
+          <form style="width:100%" name="hoursForm" ng-style="{'display': settings.openingHoursEnabled ? '' : 'none'}">
+            <div ng-repeat="day in settings.weekDays">
+
+              <!-- DESKTOP -->
+
+              <div hide-xs layout="row" layout-align="start center" layout-margin ng-class="{'form-error': settings.errorTime[day]}">
+                <div flex="15">
+                  <div ng-class="{'text-error': settings.errorTime[day]}">{{ 'shared.' + day | translate}}</div>
+                </div>
+                <div flex="15">
+                  <md-switch ng-model="settings.enabledTime[day]" ng-change="settings.performInputDay(day, settings.enabledTime[day])">
+                  </md-switch>
+                </div>
+                <div flex="70">
+                  <div layout="row" layout-align="start start">
+                    <div layout="column" layout-wrap>
+                      <div ng-repeat="range in settings.startTime[day] track by $index">
+                        <div flex ng-class="{'disabled': !settings.enabledTime[day]}">
+                          <div layout="row" layout-wrap layout-align="start center">
+                            <div flex="45">
+                              <md-input-container>
+                                <label>{{ 'settings.from' | translate }}</label>
+                                <md-select ng-change="settings.getInputDate(day, true, $index)" ng-model="settings.startTime[day][$index]" placeholder="{{ 'shared.from' | translate }}">
+                                  <md-option ng-repeat="i in [].constructor(17) track by $index" value="{{$index + 6}}">
+                                    {{ ($index + 6) + ":00" }}
+                                  </md-option>
+                                </md-select>
+                              </md-input-container>
+                            </div>
+                            <div flex="45">
+                              <md-input-container>
+                                <label>{{ 'settings.to' | translate }}</label>
+                                <md-select ng-change="settings.getInputDate(day, false, $index)" ng-model="settings.endTime[day][$index]" placeholder="{{ 'shared.to' | translate }}">
+                                  <md-option ng-repeat="i in [].constructor(17) track by $index" value="{{$index + 6}}">
+                                    {{ ($index + 6) + ":00" }}
+                                  </md-option>
+                                </md-select>
+                              </md-input-container>
+                            </div>
+                            <div flex="5">
+                              <md-button ng-style="{'display': $index == 0 ? 'none' : ''}" class="md-icon-button md-warn" ng-click="settings.removeInputDate(day, $index)">
+                                <md-icon md-font-icon="fa-times" class="fa"></md-icon>
+                              </md-button>
+
+                              <md-button ng-style="{'display': $index == 0 ? '' : 'none'}" class="md-icon-button md-primary" ng-click="settings.addChild(day)">
+                                <md-icon md-font-icon="fa-plus" class="fa"></md-icon>
+                              </md-button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MOBILE -->
+
+              <div hide-gt-xs layout="row" layout-align="space-between center" layout-margin ng-class="{'form-error': settings.errorTime[day]}">
+                <div flex="50">
+                  <div ng-class="{'text-error': settings.errorTime[day]}">{{ 'shared.' + day | translate}}</div>
+                </div>
+                <div flex="50" layout="row" layout-align="end center">
+                  <md-switch ng-model="settings.enabledTime[day]" ng-change="settings.performInputDay(day, settings.enabledTime[day])">
+                  </md-switch>
+                </div>
+              </div>
+              <div hide-gt-xs layout="row" layout-align="space-between center" layout-margin>
+                  <div layout="column" style="width:100%" layout-align="space-around stretch">
+                    <div ng-repeat="range in settings.startTime[day] track by $index">
+                      <div flex ng-class="{'disabled': !settings.enabledTime[day]}">
+                        <div layout="row" layout-align="start center">
+                          <div flex="40">
+                            <md-input-container>
+                              <label>{{ 'settings.from' | translate }}</label>
+                              <md-select ng-change="settings.getInputDate(day, true, $index)" ng-model="settings.startTime[day][$index]" placeholder="{{ 'shared.from' | translate }}">
+                                <md-option ng-repeat="i in [].constructor(17) track by $index" value="{{$index + 6}}">
+                                  {{ ($index + 6) + ":00" }}
+                                </md-option>
+                              </md-select>
+                            </md-input-container>
+                          </div>
+                          <div flex="40">
+                            <md-input-container>
+                              <label>{{ 'settings.to' | translate }}</label>
+                              <md-select ng-change="settings.getInputDate(day, false, $index)" ng-model="settings.endTime[day][$index]" placeholder="{{ 'shared.from' | translate }}">
+                                <md-option ng-repeat="i in [].constructor(17) track by $index" value="{{$index + 6}}">
+                                  {{ ($index + 6) + ":00" }}
+                                </md-option>
+                              </md-select>
+                            </md-input-container>
+                          </div>
+                          <div flex="20">
+                            <md-button ng-style="{'display': $index == 0 ? 'none' : ''}" class="md-icon-button md-warn" ng-click="settings.removeInputDate(day, $index)">
+                              <md-icon md-font-icon="fa-times" class="fa"></md-icon>
+                            </md-button>
+                            <md-button ng-style="{'display': $index == 0 ? '' : 'none'}" class="md-icon-button md-primary" ng-click="settings.addChild(day)">
+                              <md-icon md-font-icon="fa-plus" class="fa"></md-icon>
+                            </md-button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+            <div class="navigation" layout="row" layout-align="end center" layout-margin>
+              <md-button ng-click="settings.onSubmit()" class="md-raised md-primary" ng-disabled="settings.error">
+                {{ 'list.save-changes' | translate }}
+              </md-button>
+            </div>
+          </form>
+        </div>
+      </md-tab>
+      <!-- end hours -->
+    </md-tabs>
+  </div>
+  <footer></footer>
+</md-content>

@@ -1,0 +1,132 @@
+<md-toolbar class="lnr-header md-accent" layout="row" layout-align="left center" ng-hide="header.hideHeader">
+
+  <div class="md-toolbar-tools" ng-style="{'background-color': header.isStaging ? '#263238' : '#7ab2f8'}">
+    <md-button class="lnr-header-logo" ui-sref="home" md-no-ink ng-hide="!header.hideLogo()">
+      <md-icon class="md-color-white" md-svg-src="app/assets/ui_icons/lnr_logo_bold.svg"></md-icon>
+    </md-button>
+    <div ng-if="header.isStaging">  ⚠️ STAGING VERSION </div>
+    <div style="width: 30px;" hide-xs></div>
+
+    <autocomplete
+      class="header-search"
+      autocomplete-id="header-search"
+      layout="column"
+      location="header.location"
+      place-changed="header.search(place)"
+      required="false"
+      placeholder-id="{{'shared.search-placeholder' | translate}}"
+      flex="40"
+      flex-xs="80"
+      ng-if="header.showSearch"
+      ng-hide="header.hideSearch()">
+    </autocomplete>
+
+    <span flex></span>
+
+    <div hide show-xs ng-if="header.hideSearch() && header.showSearch">
+      <md-button ng-click="header.toggleSearch()" md-no-ink class="mobile">
+        <md-icon class="lnr-icn-sms md-color-white" md-svg-src="app/assets/ui_icons/search.svg"></md-icon>
+      </md-button>
+    </div>
+    <div hide show-xs ng-if="!header.hideSearch() && header.showSearch">
+      <md-button ng-click="header.toggleSearch()" md-no-ink class="mobile">
+        <md-icon class="lnr-icn-sm md-color-white" md-svg-src="app/assets/ui_icons/icn_close_24.svg"></md-icon>
+      </md-button>
+    </div>
+    <div hide-gt-sm>
+      <md-button ng-click="header.toggleSidebar()" md-no-ink class="mobile">
+        <md-icon class="lnr-icn-sm md-color-white" md-svg-src="app/assets/ui_icons/icn_menu.svg"></md-icon>
+      </md-button>
+    </div>
+
+    <div class="lnr-nav-menu" hide show-gt-sm>
+      <md-menu md-position-mode="target bottom">
+        <md-button class="md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">{{ 'shared.learn-more' | translate }}</md-button>
+        <md-menu-content width="2">
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="howItWorks">{{ 'shared.how-it-works' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="listingABike">{{ 'shared.listing-a-bike' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="rentingABike">{{ 'shared.renting-a-bike' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="trustAndSafety">{{  'shared.trust-and-safety' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="help">{{ 'shared.contact' | translate }}</md-button>
+          </md-menu-item>
+          <!-- The Blog link is temporarily deactivated -->
+          <!-- <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button md-no-ink href="http://journal.listnride.com" target="_blank">{{ 'shared.journal' | translate }}</md-button>
+          </md-menu-item> -->
+        </md-menu-content>
+      </md-menu>
+
+      <md-button class="md-underlined" ui-sref="listingABike" md-no-ink>{{ 'shared.list-a-bike' | translate }}</md-button>
+
+      <md-button
+        id="header-button-sign-up"
+        ng-if="!header.authentication.loggedIn()"
+        md-no-ink
+        ng-click="header.authentication.showSignupDialog()">
+        {{ 'forms.sign-up' | translate }}
+      </md-button>
+      <md-button
+        id="header-button-log-in"
+        ng-if="!header.authentication.loggedIn()"
+        md-no-ink
+        ng-click="header.authentication.showLoginDialog()">
+        {{ 'forms.log-in' | translate }}
+      </md-button>
+      <md-button ng-if="header.authentication.loggedIn()" md-no-ink ui-sref="requests">
+        <!-- <div class="notification-bubble" ng-if="header.authentication.unreadMessages()">{{header.authentication.unreadMessages()}}</div> -->
+        {{ 'shared.requests' | translate }}</md-button>
+      <md-menu md-position-mode="target bottom" ng-if="header.authentication.loggedIn()">
+        <md-button ng-click="$mdOpenMenu($event)" class="md-img">
+          <img class="lnr-profile-sm" ng-src="{{header.authentication.profilePicture()}}"></img>
+        </md-button>
+
+        <md-menu-content class="header__menu">
+          <md-menu-item>
+            <md-button ui-sref="user({userId: header.authentication.userId()})">
+              {{ 'settings.profile' | translate }}
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="requests">{{ 'shared.requests' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-item ng-if="header.isUserBusiness()">
+            <md-button md-no-ink ui-sref="bookingCalendar">{{ 'shared.booking-calendar' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="listings">{{ 'listings.my-bikes' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="settings">{{ 'settings.settings' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="invite">{{ 'settings.invite' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button md-no-ink ui-sref="invoices">{{ 'invoices.billing' | translate }}</md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button
+              id="header-button-burger-log-out"
+              md-no-ink
+              ng-click="header.authentication.logout()">{{ 'forms.log-out' | translate }}
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
+    </div>
+  </div>
+</md-toolbar>

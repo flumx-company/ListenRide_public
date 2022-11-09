@@ -1,0 +1,1110 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://s3.eu-central-1.amazonaws.com/listnride-cdn/lnr-shop-integration_staging.min.css" rel="stylesheet" data-eqcss-read="true">
+</head>
+
+<body>
+    <!-- ***** S3 script for production ***** 
+  <script type="text/javascript" src="https://s3.eu-central-1.amazonaws.com/listnride-cdn/lnr-shop-integration.min.js"></script>
+  
+  <!--  ***** Local un-minified scripts ***** -->
+    <script src="scripts/lnr-shop-integration.constants.js"></script>
+    <script src="scripts/lnr-shop-integration.helper.js"></script>
+    <script type="text/javascript" src="scripts/lnr-shop-integration.js"></script>
+    <script type="text/javascript" src="scripts/lnr-shop-integration.vendor.js"></script>
+    <!---->
+
+    <!-- ***** local minified scripts *****
+  <script src="dist/lnr-shop-integration.min.js"></script>
+  <!-->
+
+    <!-- used for demo. user id and language can be provided manually for testing -->
+    <!-- <div style="margin:12px;">
+      <form>
+        <input placeholder="user id" name="user_id" id="user_demo_id">
+        <input placeholder="user lang" name="user_lang" id="user_demo_lang">
+        <button type="button" onclick="lnrHelper.renderBikes(0, 0, true)">Go</button>
+      </form>
+  </div> -->
+
+    <!-- single user mode -->
+    <!-- <div id="listnride" data-user="1002" data-lang="de"></div> -->
+
+    <!-- multi user mode -->
+    <div id="listnride">
+        <div data-user="1002" data-lang="de" id="1002">
+            <div class="mdl-grid mdl-grid--no-spacing" style="margin-top:32px;margin-bottom:32px">
+                <div class="mdl-cell mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone lnr-dropdown-parent">
+                    <div style="margin-left:8px; margin-right:8px;">
+                        <button type="button" style="color: black;" id="1002-lnr-size-button" onclick="lnrHelper.openSizeSelector(1002)" class="md-accent md-raised md-button md-ink-ripple lnr-back-button lnr-dropdown-button">Alle Größen
+                            <div class="dropdown-caret" style="float: right"></div>
+                        </button>
+                        <div id="1002-lnr-size-dropdown" class="dropdown-content" style="float: right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-grid mdl-grid--no-spacing" id="1002-lnr-grid">
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/544/small_1484913588-IMG_9035.JPG">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-544" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(544)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 544)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-544" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">TrippleX ladies</p>
+                                            </div>
+                                            <p>Sehr schönes Damenrad und fast nagelneu. 3 Gänge, bequemen Sattel und gerade
+                                                Sitzhaltung also perfekt für die Stadt </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Giant, Hollandrad</span>
+                                    <span>Für 165 - 175 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">12€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/1051/small_1497345172-VELLO_Urbano2_lr.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-1051" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(1051)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 1051)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-1051" class="rent-description" style="display: none">
+                                    <p class="md-subhead">Urbano</p>
+                                    <p>DESIGN UND KOMFORT FÜR EINE ENTSPANNTE FAHRT Mit seinen 8-Gängen erobert das VELLO Urbano
+                                        die Stadt. Ausgestattet mit einem komfortablen Sattel und Moustache-Lenker mit gepolsterten
+                                        Griffen sorgt das Urbano für entspanntes Fahrvergnügen. RAHMEN: Multisize, unisex,
+                                        Chrom-Molybdän Stahlrahmen LENKER, GRIFFE: Satori Melange (Moustache) SATTELSTÜTZE:
+                                        Satori Aluminium 30.9 mm x 400 mm VORBAU: Volljustierbar (VELLO Design) SCHALTWERK:
+                                        Shimano Claris 8-Gang-Kettenschaltung SCHALTHEBEL: Shimano Claris Rapid Fire 8-Gang
+                                        (rechts) VORDERES KETTENBLATT: 54 Z Kettenschutzring KASSETTE: 11-32 Z BREMSANLAGE:
+                                        V-Brake Tektro RX6 mit quick release BREMSHEBEL: Tektro CL530-RS REIFEN: 20 Zoll
+                                        Schwalbe Citizen 1.6 PEDALE: Faltpedale GEWICHT: 12.5 kg FALTMAß: H: 65 cm x L: 72
+                                        cm x B: 25 cm
+                                    </p>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Vello, Faltrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">20€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/379/small_1475137282-11475137269.jpeg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-379" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(379)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 379)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-379" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Champion Mondial</p>
+                                            </div>
+                                            <p>Sehr schönes Rennrad aus Anfang der 90-er. Komplett restauriert mit neuen Laufräder,
+                                                Shimano Kassette, komplett Shimano 600. 16-Gang. Einfach ein geiles Teil!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Gazelle, Rennrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">19€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/2/small_1436550735-152006_3186.JPG">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-2" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(2)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 2)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-2" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Pick-up City</p>
+                                            </div>
+                                            <p>Sehr robustes Fahrrad für die City. 7-Gang Schaltung mit vorderer Transportausrüstung
+                                                für einen entspannten Fahrt</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Sparta, Hollandrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">15€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/105/small_1439970896-01439970891.jpeg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-105" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(105)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 105)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-105" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Black Speed </p>
+                                            </div>
+                                            <p>sehr schönes Alu-Rennrad der Marke Alan. Campo Athena Schaltung, Look clickies,
+                                                Fulcrum Laufräder, insgesamt 8,5KG. Rahmengröße 55.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Alan, Rennrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">29€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/368/small_1473444192-21473444185.jpeg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-368" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(368)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 368)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-368" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Tripple X</p>
+                                            </div>
+                                            <p>Schönes Damenrad mit Rücktrittbremse und 3-Gang Schaltung. Perfekt für das Cruisen
+                                                in der City!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Giant, Hollandrad</span>
+                                    <span>Für 165 - 175 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">14€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/1052/small_1497529654-2_vello.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-1052" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(1052)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 1052)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-1052" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Bike +</p>
+                                            </div>
+                                            <p>Mit dem VELLO BIKE+ werden neue Maßstäbe gesetzt: Mithilfe von vier elektronischen
+                                                Sensoren kommt der Energiezufluss optimal zum Einsatz, und zwar nur, wenn
+                                                man es braucht. RAHMEN: Multisize, unisex, Chrom-Molybdän Stahlrahmen LENKER,
+                                                GRIFFE: Satori Melange (Moustache) SATTELSTÜTZE: Satori Aluminium 30.9 mm
+                                                x 400 mm VORBAU: Volljustierbar (VELLO Design) SCHALTWERK: Shimano Claris
+                                                8-Gang-Kettenschaltung SCHALTHEBEL: Shimano Claris Rapid Fire 8-Gang (rechts)
+                                                VORDERES KETTENBLATT: 54 Z Kettenschutzring KASSETTE: 11-32 Z BREMSANLAGE:
+                                                V-Brake Tektro RX6 mit quick release BREMSHEBEL: Tektro CL530-RS REIFEN:
+                                                20 Zoll Schwalbe Citizen 1.6 PEDALE: Faltpedale GEWICHT: 12.5 kg FALTMAß:
+                                                H: 65 cm x L: 72 cm x B: 25 cm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Vello, Pedelec</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">25€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/426/small_1477640637-IMG_8808.JPG">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-426" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(426)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 426)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-426" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Bilberry Ladies S</p>
+                                            </div>
+                                            <p>An elegant and comfortable town bike that combines a great ride with a classic
+                                                look. It’s a trustworthy companion for your daily rides, making them something
+                                                to look forward to. Equipped with 9-gears, hydraulic disc brakes and full
+                                                fenders, the Bilberry ready to tackle nearly all situations. Precision torque
+                                                sensor and a smart motor control introduces augmented cycling experience,
+                                                the bike looks like a regular bike, but has the most advanced e-bike technologies
+                                                integrated into the frame. Reaching 50-60 km on one battery charge. Re-charging
+                                                by empty battery 3 hours.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Ampler, Pedelec</span>
+                                    <span>Für 165 - 175 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">19€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/428/small_1515149991-299DA4A1-89A0-4872-981A-60FB8385880B.jpeg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-428" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(428)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 428)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-428" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Hawk Men M</p>
+                                            </div>
+                                            <p>Ampler Hawk is a fast, light and aggressive-looking urban commuter with smart
+                                                electric assist. The 14 kg single-speed bike features a carbon belt drive,
+                                                a carbon fork and is equipped with hydraulic disc brakes. Precision torque
+                                                sensor and a smart motor control introduces augmented cycling experience,
+                                                the bike looks like a regular bike, but has the most advanced e-bike technologies
+                                                integrated into the frame. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Ampler, Touringrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">19€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/387/small_1494918914-DSC03866.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-387" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(387)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1002, 387)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-387" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Super Cross scandium M</p>
+                                            </div>
+                                            <p>Ein fast nagelneues Crosser von italienischen Hersteller Alan. Rahmenhöhe ist
+                                                55cm, ideal für Körpergröße 175-180cm. - Ausgestattet mit campognolo veloce
+                                                und Fulcrum Laufräder.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Alan, Rennrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">25€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+            </div>
+        </div>
+        <div data-user="1013" data-lang="de" id="1013">
+            <div class="mdl-grid mdl-grid--no-spacing" style="margin-top:32px;margin-bottom:32px">
+                <div class="mdl-cell mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone lnr-dropdown-parent">
+                    <div style="margin-left:8px; margin-right:8px;">
+                        <button type="button" style="color: black;" id="1013-lnr-size-button" onclick="lnrHelper.openSizeSelector(1013)" class="md-accent md-raised md-button md-ink-ripple lnr-back-button lnr-dropdown-button">Alle Größen
+                            <div class="dropdown-caret" style="float: right"></div>
+                        </button>
+                        <div id="1013-lnr-size-dropdown" class="dropdown-content" style="float: right"></div>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col-desktop mdl-cell--2-col-tablet mdl-cell--2-col-phone lnr-dropdown-parent">
+                    <div style="margin-left:8px; margin-right:8px;">
+                        <button type="button" style="color: black;" id="1013-lnr-location-button" onclick="lnrHelper.openLocationSelector(1013)"
+                            class="md-accent md-raised md-button md-ink-ripple lnr-back-button lnr-dropdown-button">Alle Standorte
+                            <div class="dropdown-caret" style="float: right"></div>
+                        </button>
+                        <div id="1013-lnr-location-dropdown" class="dropdown-content" style="float: right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-grid mdl-grid--no-spacing" id="1013-lnr-grid">
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/77/small_1437600261-31437600247.jpeg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-77" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(77)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 77)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-77" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Ludwig</p>
+                                            </div>
+                                            <p>Stadt und Landrad der Marke Vorbauer, mit 5-Gang Fichtel und Sachs Kettenschaltung
+                                                mit Freilauf. Verblasste Dekors und untypische Komponenten formen dieses
+                                                Rad.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Vorbauer, Touringrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">8€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/35/small_1436633406-LnR_how_to_photograph_your_bike_02.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-35" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(35)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 35)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-35" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">2013 Jake the Snake</p>
+                                            </div>
+                                            <p>Robuster Alu-Crosser mit Carbongabel, Shimano 105er Ausstattung und Schwalbe
+                                                Marathon Bereifung. Laufruhe und angenehme Sitzposition, aber renntauglicher
+                                                Ausstattung für Langstrecke, im Gelände oder für die City. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Kona, Cyclocross</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">18€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/36/small_1436634312-152506_3262.JPG">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-36" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(36)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 36)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-36" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Taiga</p>
+                                            </div>
+                                            <p>Sportlicher, raceorientierter Mountainbike Rahmen. Shimano XT Ausstattung, Rock
+                                                Shox Gabele. Angenehme Sitzposition und gute Fahreigenschaften besonders
+                                                gut für längere Crosscountry Fahrten. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Steppenwolf, Enduro</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">20€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/34/small_1436632663-150207_3298.JPG">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-34" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(34)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 34)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-34" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">1998 Quantum Race</p>
+                                            </div>
+                                            <p>Ein wunderschöner und extrem leichter Klassiker. Gut erhaltenes Klein Quantum
+                                                Race Baujahr 1998 Rennrad mit kompletter Dura Ace Ausstattung, Syncros Vorbau
+                                                und Mavic Ksyrium Elite S Laufrädern. Flite Tintanium Sattel und Look Pedale.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Klein, Rennrad</span>
+                                    <span>Für 185 - 195 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">50€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/659/small_1487247379-Brompton_H6RD__02.JPG">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-659" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(659)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 659)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-659" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">H6RD Grey</p>
+                                            </div>
+                                            <p>Brompton H6RD grey mit Vollausstattung - mit dem Brompton H-Lenker für bequemes,
+                                                aufrechtes Fahren und für größere Fahrer. Das Brompton ist das ideale Fahrrad
+                                                für alle Situationen, in denen flexible Mobilität gefragt ist. - 6 Gang-Schaltung
+                                                Brompton Wide Range - Teleskopsattelstütze für große Fahrer - Lichtanlage
+                                                mit Shimano Nabendynamo - Einstiegshöhe: ca. 58 cm - Packmaß: 57 x 59 x 27
+                                                cm - Gewicht: 12,7 kg - Erhöhter Lenker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Brompton, Faltrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">14€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/253/small_1461496311-21461496285.jpeg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-253" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(253)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 253)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-253" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Diverge DSW CEN</p>
+                                            </div>
+                                            <p>Made for all-day rides over the roughest tracks out there, the Diverge Comp DSW
+                                                features exclusive welding technology that allows for the frame to be lighter
+                                                and more prepared for rugged rides than its peers. It's also been built-up
+                                                with the value-packed 105 groupset and hydraulic brakes. Frame Size: 61 Cassette:
+                                                Shimano 105, 11-speed, 11-32 Fork: Specialized FACT carbon Break: Shimano
+                                                BR-785, hydraulic disc Tires: Specialized Roubaix Pro, 120TPI 28
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Specialized, Cyclocross</span>
+                                    <span>Für 185 - 195 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">35€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/272/small_1465656483-21465656466.jpeg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-272" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(272)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 272)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-272" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">WOOM 1</p>
+                                            </div>
+                                            <p>Laufrad 12" | 1,5-3,5 Jahre | 82-100cm | 3,5kg Das Laufrad WOOM 1 ist der ideale
+                                                Partner um den ersten Kontakt zu den zwei Rädern herzustellen, die den Erlebnishorizont
+                                                unserer Kleinsten wie kein anderes Spielzeug erweitert. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">WOOM, Stadt</span>
+                                    <span>Für 85 - 95 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">1€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/3948/small_1517402143-IMG_7618_01.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-3948" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(3948)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 3948)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-3948" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">City High</p>
+                                            </div>
+                                            <p>Das rethink City Low ist mit einem binova flow E-Antrieb ausgestattet, der perfekt
+                                                auf die individuellen Anforderungen mit verschiedenen Fahrprofilen abgestimmt
+                                                werden kann. Fahrprofile: - City Intuitiv bedient, entspannt ans Ziel. -
+                                                Tour Verschleißarm auch auf langen Touren. - Hill Dynamischer Antritt, auch
+                                                am Berg. - Cargo Schwere Lasten, ab jetzt kein Problem. - Special Immer individuell.
+                                                Merkmale: - Größe: Small/Medium, Körpergröße 157 - 170 cm - Sportliche Kettenschaltung
+                                                - Nachhaltiger Stahlrahmen - Hochwertige Komponenten</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">rethink, Pedelec</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">25€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/3950/small_1517402438-IMG_7592.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-3950" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(3950)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 3950)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-3950" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Longtail</p>
+                                            </div>
+                                            <p>Das Longtail ist einem herkömmlichen Rad sehr ähnlich aber nach hinten verlängert.
+                                                Die Verlängerung besteht aus einem überlangen Gepäckträger, geeignet als
+                                                Ladefläche oder zur Befestigung Kindersitzen und andere Sitzgelegenheiten.
+                                                Das rethink Longtail ist mit einem binova flow E-Antrieb ausgestattet, der
+                                                perfekt auf die individuellen Anforderungen mit verschiedenen Fahrprofilen
+                                                abgestimmt werden kann. Fahrprofile: - City Intuitiv bedient, entspannt ans
+                                                Ziel. - Tour Verschleißarm auch auf langen Touren. - Hill Dynamischer Antritt,
+                                                auch am Berg. - Cargo Schwere Lasten, ab jetzt kein Problem. - Special Immer
+                                                individuell. Merkmale: - Größe: One Size, Körpergröße 165- 190 cm - Sportliche
+                                                Kettenschaltung - Nachhaltiger Stahlrahmen - Hochwertige Komponenten</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">rethink, Pedelec</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">25€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/3949/small_1517402227-IMG_7625_01.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-3949" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(3949)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 3949)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-3949" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">City Low</p>
+                                            </div>
+                                            <p>Das rethink City Low ist mit einem binova flow E-Antrieb ausgestattet, der perfekt
+                                                auf die individuellen Anforderungen mit verschiedenen Fahrprofilen abgestimmt
+                                                werden kann. Fahrprofile: - City Intuitiv bedient, entspannt ans Ziel. -
+                                                Tour Verschleißarm auch auf langen Touren. - Hill Dynamischer Antritt, auch
+                                                am Berg. - Cargo Schwere Lasten, ab jetzt kein Problem. - Special Immer individuell.
+                                                Merkmale: - Größe: Small/Medium, Körpergröße 157 - 170 cm - Sportliche Kettenschaltung
+                                                - Nachhaltiger Stahlrahmen - Hochwertige Komponenten</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">rethink, Pedelec</span>
+                                    <span>Für 155 - 165 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">25€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/2077/small_1511901563-Franklin_pure_XT_wei__01.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-2077" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(2077)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 2077)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-2077" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Franklin Pure XT | L</p>
+                                            </div>
+                                            <p>Franklin ist ein urbanes Trekking Fahrrad. Ein Fahrrad mit neuartigem, patentiertem
+                                                cyfly-Antrieb und einem ganz besonderen Rahmen. Das Material des MÖVE franklin
+                                                ist sehr hochwertiges und zugfestes 7020-Aluminium. Die Rahmen- Geometrie
+                                                ist voll auf Effizienz bei gleichzeitigem Komfort ausgelegt. • Rahmen: Aluminium
+                                                7020 • Gabel: Kinesis Alumiunium • Vorbau: Syntace F149 • Lenker: Syntace
+                                                Vector High 20 12° • Sattelstütze: Syntace P6 30,9 x 400 mm • Sattel: Möve
+                                                mit Bezug aus Nappaleder • Bremsen: Shimano Deore XT BR-T8000 • Schaltgriff:
+                                                Shimano Deore XT SL-M8000 • Schaltwerk: Shimano Deore XT RD-M8000 • Kurbel:
+                                                Cyfly • Kettenblatt: Möve by Kappstein, 46 Zähne • Felgen: Mavic XM824, 24-622
+                                                mm • Reifen: Continental Top Contact II • Sicherheitsschließsystem: Hexlox
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Möve, Touringrad</span>
+                                    <span>Für 175 - 185 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">29€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+                    <bike-card>
+                        <md-card class="lnr-bike-card _md">
+                            <a style="cursor:default" class="image-container lnr-links">
+                                <img src="https://listnride.s3.eu-central-1.amazonaws.com/uploads/ride/image_file_1/2083/small_1511901638-franklin_pro_rohloff_schwarz_01.jpg">
+                                <div class="info-button">
+                                    <span class="info-icon"></span>
+                                </div>
+                                <div id="rent-element-default-2083" class="rent-element">
+                                    <span style="position:absolute">
+                                        <div class="info-button" onclick="lnrHelper.toggleElements(2083)">
+                                            <span class="info-icon"></span>
+                                        </div>
+                                    </span>
+                                    <span class="content">
+                                        <button onclick="lnrHelper.spawnWizard(1013, 2083)" class="md-button rent-button">Jetzt mieten</button>
+                                    </span>
+                                </div>
+                                <div id="rent-element-description-2083" class="rent-description" style="display: none">
+                                    <div class="mdl-grid mdl-grid--no-spacing" style="max-height:100%">
+                                        <div class="content mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                                            <div>
+                                                <p class="md-subhead">Franklin Pro Rohloff | M</p>
+                                            </div>
+                                            <p>Franklin ist ein urbanes Trekking Fahrrad. Ein Fahrrad mit neuartigem, patentiertem
+                                                cyfly-Antrieb und einem ganz besonderen Rahmen. Das Material des MÖVE franklin
+                                                ist sehr hochwertiges und zugfestes 7020-Aluminium. Die Rahmen- Geometrie
+                                                ist voll auf Effizienz bei gleichzeitigem Komfort ausgelegt. • Rahmen: Aluminium
+                                                7020 • Gabel: Kinesis Alumiunium • Vorbau: Syntace F149 • Lenker: Syntace
+                                                Vector High 20 12° • Sattelstütze: Syntace P6 30,9 x 400 mm • Sattel: Möve
+                                                mit Bezug aus Nappaleder • Bremsen: Shimano Deore XT BR-T8000 • Bremsscheiben:
+                                                Shimano Deore SM-RT54 180 mm / Rohloff 160 mm • Nabenschaltung: Rohloff Speedhub
+                                                500-14 • Kurbel: Cyfly • Kettenblatt: Möve by Kappstein, 46 Zähne • Felgen:
+                                                Mavic XM824, 24-622 mm • Reifen: Continental Top Contact II • Sicherheitsschließsystem:
+                                                Hexlox
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <md-card-title layout="row" class="layout-row">
+                                <md-card-title-text class="layout-align-space-around-start layout-column">
+                                    <span class="md-subhead">Möve, Touringrad</span>
+                                    <span>Für 165 - 175 cm</span>
+                                </md-card-title-text>
+                                <div layout="column" class="layout-align-space-around-center layout-column">
+                                    <span style="text-align: center">ab</span>
+                                    <span class="md-headline">34€</span>
+                                </div>
+                            </md-card-title>
+                        </md-card>
+                    </bike-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--
+  <div class="rent-element" style="display: none;">
+    <span style="position:absolute">
+      <div class="info-button"><span class="info-icon"></span></div>
+    </span>
+    <span class="content"><p>Bitch</p></span>
+  </div>
+  -->
+</body>
+
+</html>

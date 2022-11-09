@@ -1,0 +1,17 @@
+<md-menu md-position-mode="target bottom" ng-if="false">
+  <md-button class="md-right-arrow lnr-md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">Sort</md-button>
+  <md-menu-content width="2">
+    <md-menu-item>
+      <md-button ng-click="bikeSorter.locationSorter()">Closest to Location</md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button ng-click="bikeSorter.priceSorter(false)">Highest Price</md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button ng-click="bikeSorter.priceSorter(true)">Lowest Price</md-button>
+    </md-menu-item>
+    <md-menu-item  ng-if="false"><!-- lister id missing in rides api -->
+      <md-button>Location with multiple bikes</md-button>
+    </md-menu-item>
+  </md-menu-content>
+</md-menu>

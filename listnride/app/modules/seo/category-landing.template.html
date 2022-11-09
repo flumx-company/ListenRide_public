@@ -1,0 +1,389 @@
+<div ng-show="categoryLanding.loading" flex layout="column" class="lnr-city-landing-loader" layout-align="center center">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+
+<md-content class="single-column lnr-city-landing"
+            ng-hide="categoryLanding.loading">
+  <section layout="row"
+           class="lnr-city-landing-bg lnr-p-0">
+      <div flex-gt-xs="50"
+           flex="100"
+           layout-gt-xs="row"
+           layout-align="end none"
+           layout-padding class="lnr-city-landing-promo">
+        <div layout="column"
+             layout-padding
+             class="lnr-city-landing-col">
+          <div flex-gt-xs="90"
+               flex="100"
+               layout="column"
+               layout-align="center none">
+            <h1 class="lnr-city-landing__title lnr-p-0">
+              {{categoryLanding.data.explore.title}}
+            </h1>
+            <p class="lnr-city-landing__descr lnr-p-0">
+              {{categoryLanding.data.explore.description}}
+            </p>
+            <form class="lnr-search-bar lnr-search-bar_city-landing"
+                  md-whiteframe="3"
+                  layout="row"
+                  md-theme="default">
+              <autocomplete autocomplete-id="home"
+                            flex="auto"
+                            layout="column"
+                            location="categoryLanding.location"
+                            placeholder-id="{{ 'autocomplete.default-placeholder' | translate }}"
+                            place-changed="categoryLanding.placeChanged(place)">
+              </autocomplete>
+              <md-button ng-click="categoryLanding.onSearchClick()"
+                         class="md-raised md-primary lnr-city-landing__button"
+                         id="submit"
+                         flex="20"
+                         flex-gt-xs="40">
+                <span hide-xs>
+                  {{ 'shared.search' | translate }}
+                </span>
+                <md-icon class="lnr-icn-sm"
+                         md-svg-src="app/assets/ui_icons/search.svg"
+                         hide show-xs
+                ></md-icon>
+              </md-button>
+            </form>
+
+            <div ng-if="categoryLanding.mobileScreen"
+                 id="bikes-list"
+                 class="swiper-container lnr-bikes-slider"
+                 hide
+                 show-xs>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"
+                     ng-repeat="bike in categoryLanding.data.blocks[0].bikes">
+                  <a ui-sref="bike({bikeId: bike.id})"
+                     layout="row"
+                     class="lnr-bikes-slider-content">
+                    <div flex="30"
+                         class="lnr-bikes-slider-image">
+                      <img src="{{bike.image_file}}"
+                           alt="Bike image"
+                      />
+                    </div>
+                    <div flex="45"
+                         layout="column"
+                         layout-align="center start"
+                         class="lnr-bikes-slider-title">
+                      <h5 class="md-title">
+                        {{bike.brand}}
+                      </h5>
+                      <span class="md-subhead">
+                        {{bike.name}}
+                      </span>
+                    </div>
+                    <div flex="25"
+                         layout="column"
+                         layout-align="center center"
+                         class="lnr-bikes-slider-price">
+                      <span>{{ 'shared.from2' | translate }}</span>
+                      <span class="md-headline">
+                        {{ bike.price_from | number:0}}€
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <breadcrumbs data="categoryLanding.breadcrumbs"
+                       class="lnr-city-landing-breadcrumbs"
+          ></breadcrumbs>
+        </div>
+      </div>
+
+    <div ng-if="!categoryLanding.mobileScreen"
+         flex-gt-xs="50"
+         flex
+         flex-order-xs="1"
+         layout="column"
+         hide-xs
+         style="position: relative">
+      <div ng-class="categoryLanding.mapLoading ? 'hidden' : ''" class="lnr-city-landing-map">
+        <ng-map
+                id="searchMap"
+                default-style="false"
+                center="[{{categoryLanding.mapOptions.lat}},
+                {{categoryLanding.mapOptions.lng}}]"
+                zoom="{{categoryLanding.mapOptions.zoom}}"
+                on-click="categoryLanding.onMapClick(event)"
+                draggable="true"
+                map-type-control="false"
+                street-view-control="false"
+                styles="{{categoryLanding.colorScheme}}"
+        >
+          <info-window id="searchMapWindow">
+            <div ng-non-bindable="">
+              <bike-card
+                      bike="categoryLanding.selectedBike"
+                      url-params="categoryLanding.urlParams"
+              ></bike-card>
+            </div>
+          </info-window>
+        </ng-map>
+      </div>
+
+      <div ng-show="categoryLanding.mapLoading"
+           flex layout="column"
+           class="lnr-city-landing-loader" layout-align="center center">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+    </div>
+    </section>
+
+  <section ng-if="categoryLanding.data.blocks[0].bikes.length"
+           layout="column"
+           layout-align="start center"
+           layout-padding>
+    <bike-cards-list
+      bikes-title="categoryLanding.data.blocks[0].title"
+      subtitle="categoryLanding.data.blocks[0].description"
+      bikes="categoryLanding.data.blocks[0].bikes"
+      btn-text="categoryLanding.data.blocks[0].btn_text"
+      city="categoryLanding.city"
+      subcategories="categoryLanding.data.blocks[0].subcategories">
+    </bike-cards-list>
+  </section>
+  <section layout="row"
+           class="lnr-city-landing-bg lnr-city-landing-info lnr-p-0"
+           ng-if="categoryLanding.data.info_block.info.length">
+    <div flex-gt-sm="50"
+         hide-sm
+         style="background-image: url('{{ categoryLanding.data.info_block.image}}');
+          background-size: cover; background-position: center;">
+    </div>
+    <div layout="row"
+         layout-align="center center"
+         flex-gt-sm="50"
+         flex="100"
+         layout-padding>
+      <ul class="lnr-city-landing-info-blocks" layout-padding>
+        <li layout-gt-xs="row"
+            layout="column"
+            layout-align-gt-xs="start center"
+            layout-align="center center"
+            ng-repeat="item in categoryLanding.data.info_block.info track by $index">
+          <md-icon md-svg-src="app/assets/ui_icons/{{item.icon}}.svg"
+                   class="lnr-icn-big-rounded md-color-primary">
+          </md-icon>
+          <div flex="70">
+            <h3 class="lnr-city-landing__title">
+              {{item.title}}
+            </h3>
+            <p class="lnr-city-landing__descr"
+               ng-bind-html="item.description">
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section ng-if="categoryLanding.data.blocks[1].bikes.length"
+           layout="column"
+           layout-align="start center"
+           layout-padding
+  >
+    <bike-cards-list
+      bikes-title="categoryLanding.data.blocks[1].title"
+      subtitle="categoryLanding.data.blocks[1].description"
+      bikes="categoryLanding.data.blocks[1].bikes"
+      btn-text="categoryLanding.data.blocks[1].btn_text"
+      city="categoryLanding.city"
+      subcategories="categoryLanding.data.blocks[1].subcategories">
+    </bike-cards-list>
+  </section>
+
+  <section ng-if="categoryLanding.data.brands_block.brands.length"
+           layout="column"
+           layout-align="center center"
+           layout-padding
+           class="lnr-city-landing-bg min-height-400">
+    <h2 class="lnr-city-landing__title lnr-center">
+      {{categoryLanding.data.brands_block.title}}
+    </h2>
+    <div class="lnr-city-landing-content swiper-container lnr-slider-default"
+         id="bikes-brands">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"
+             ng-repeat="brand in categoryLanding.data.brands_block.brands">
+          <a ui-sref="search({location: categoryLanding.data.city, brand: brand})"
+             layout-padding
+             layout="column"
+             layout-align="center center"
+             rel="nofollow"
+          >
+            <h3 class="md-title">{{ brand }}</h3>
+          </a>
+        </div>
+      </div>
+      <button class="swiper-button swiper-button-prev">
+        <md-icon
+                class="lnr-icn-xs"
+                md-svg-src="app/assets/ui_icons/icn_chevron_left.svg"
+        ></md-icon>
+      </button>
+      <button class="swiper-button swiper-button-next">
+        <md-icon
+                class="lnr-icn-xs"
+                md-svg-src="app/assets/ui_icons/icn_chevron_right.svg"
+        ></md-icon>
+      </button>
+    </div>
+  </section>
+  <section ng-if="categoryLanding.data.blocks[2].bikes.length"
+           layout="column"
+           layout-align="start center"
+           layout-padding>
+    <bike-cards-list
+      bikes-title="categoryLanding.data.blocks[2].title"
+      subtitle="categoryLanding.data.blocks[2].description"
+      bikes="categoryLanding.data.blocks[2].bikes"
+      btn-text="categoryLanding.data.blocks[2].btn_text"
+      city="categoryLanding.city"
+      subcategories="categoryLanding.data.blocks[2].subcategories">
+    </bike-cards-list>
+  </section>
+
+  <section layout="column"
+           layout-align="center center"
+           layout-padding
+           class="lnr-city-landing-bg"
+           ng-if="categoryLanding.data.testimonials_block.testimonials.length">
+    <h2 class="lnr-city-landing__title lnr-center">
+      {{categoryLanding.data.testimonials_block.title}}
+    </h2>
+    <div class="lnr-city-landing-content">
+      <div class="swiper-container lnr-testimonials" id="testimonials-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide lnr-testimonials-card"
+               ng-repeat="testimonial in categoryLanding.data.testimonials_block.testimonials">
+            <div class="lnr-testimonials-card-content">
+              <a href="" class="lnr-testimonials-card__avatar">
+                <img ng-src="{{testimonial.picture || categoryLanding.defaultProfilePicture}}"
+                     alt="">
+              </a>
+              <h3 class="lnr-testimonials-card__title">
+                {{testimonial.fullname}}
+              </h3>
+              <div class="lnr-testimonials-card__subtitle">
+                {{testimonial.description}}
+              </div>
+              <p class="lnr-testimonials-card__text">
+                {{testimonial.text}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section ng-if="categoryLanding.data.blocks[3].bikes.length"
+           layout="column"
+           layout-align="start center"
+           layout-padding>
+    <bike-cards-list
+      bikes-title="categoryLanding.data.blocks[3].title"
+      subtitle="categoryLanding.data.blocks[3].description"
+      bikes="categoryLanding.data.blocks[3].bikes"
+      btn-text="categoryLanding.data.blocks[3].btn_text"
+      city="categoryLanding.city"
+      subcategories="categoryLanding.data.blocks[3].subcategories">
+    </bike-cards-list>
+  </section>
+
+  <section layout="column"
+           ayout-align="center center"
+           layout-padding
+           class="lnr-city-landing-bg"
+           ng-if="categoryLanding.data.categories_block.categories">
+    <h2 class="lnr-city-landing__title lnr-center">
+      {{categoryLanding.data.categories_block.title}}
+    </h2>
+    <div class="lnr-city-landing-content">
+      <md-grid-list
+              class="md-color-white"
+              md-cols-xs="1"
+              md-cols-sm="2"
+              md-cols="4"
+              md-gutter="16px"
+              md-row-height="2:1"
+              md-row-height-gt-sm="1.2:1"
+      >
+        <md-grid-tile
+                ng-repeat="category in categoryLanding.categories track by $index"
+                class="lnr-city-landing__category-tile"
+                ng-class="{'lnr-city-landing__category-tile__disabled' : categoryLanding.data.categories_block.categories[category.formattedName] == 0}"
+                style="background-image: url({{category.imgFilePathNew}})"
+                md-colspan-gt-sm="{{categoryLanding.tileColspan($index)}}"
+                md-rowspan-gt-sm="{{categoryLanding.tileRowspan($index)}}">
+          <a
+            ui-sref="{location: cityLanding.lowerCaseCity, category: category.url}"
+            layout="column"
+            layout-align="center center"
+          >
+            <h3 class="lnr-city-landing__category-title">
+              {{ category.name }}
+            </h3>
+            <div class="status-labels lnr-mt">
+              <div class="status-labels__item lnr-enlarge">
+                <span>
+                  {{categoryLanding.data.categories_block.categories[category.formattedName]}}
+                </span>
+                <span translate="shared.available"></span>
+              </div>
+            </div>
+          </a>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+  </section>
+
+  <section ng-if="categoryLanding.data.blocks[4].bikes.length"
+           layout="column"
+           layout-align="start center"
+           layout-padding>
+    <bike-cards-list
+      bikes-title="categoryLanding.data.blocks[4].title"
+      subtitle="categoryLanding.data.blocks[4].description"
+      bikes="categoryLanding.data.blocks[4].bikes"
+      btn-text="categoryLanding.data.blocks[4].btn_text"
+      city="categoryLanding.city">
+    </bike-cards-list>
+  </section>
+
+  <section layout="column"
+           layout-align="center center"
+           layout-padding
+           class="lnr-city-landing-bg min-height-400"
+           ng-if="categoryLanding.data.table.info.length">
+    <h2 class="lnr-city-landing__title lnr-center">
+      {{categoryLanding.data.table.title}}
+    </h2>
+    <div class="lnr-m lnr-city-landing-hints">
+      <md-grid-list
+              md-cols="2"
+              md-cols-gt-sm="3"
+              md-row-height="1.5:1"
+              md-row-height-gt-xs="3:1"
+              md-row-height-gt-sm="2:1">
+        <md-grid-tile ng-repeat="hint in categoryLanding.data.table.info"
+                      class="lnr-city-landing-hints-tile">
+          <div>
+            <h3 class="md-title">{{hint.value}}</h3>
+            <h3 class="md-subhead">{{hint.key}}</h3>
+          </div>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+  </section>
+  <footer></footer>
+</md-content>

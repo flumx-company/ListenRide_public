@@ -1,0 +1,38 @@
+<md-dialog>
+
+  <md-toolbar class="md-accent">
+    <div class="md-toolbar-tools" layout-align="center center">
+      <md-button class="md-icon-button">
+        <md-icon></md-icon>
+      </md-button>
+      <span flex></span>
+      <h2 class="md-headline">{{ 'bike.rent-bike' | translate }}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="calendarDialog.hide()">
+        <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <calendar
+      bike="calendarDialog.bike.data"
+      bike-cluster="calendarDialog.bike.cluster"
+      bike-id="calendarDialog.bike.data.id"
+      user-id="calendarDialog.bike.data.user.id"
+      price-half-day="calendarDialog.bike.data.price_half_daily"
+      price-day="calendarDialog.bike.data.price_daily"
+      bike-family="calendarDialog.bike.data.family"
+      price-week="calendarDialog.bike.data.price_weekly"
+      prices="calendarDialog.bike.data.prices"
+      requests="calendarDialog.bike.data.requests"
+      bike-availabilities="calendarDialog.bike.data.availabilities"
+      coverage-total="calendarDialog.bike.data.coverage_total"
+      country-code="calendarDialog.bike.data.country_code"
+      bike-size="calendarDialog.bike.defaultSize"
+      cluster="calendarDialog.bike.cluster"
+      bike-variations="calendarDialog.bike.bikeVariations"
+    ></calendar>
+  </md-dialog-content>
+
+</md-dialog>

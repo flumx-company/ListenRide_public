@@ -1,0 +1,105 @@
+<div id="requestOverview" layout="column" layout-align="center stretch" layout-padding>
+  <div layout="row" layout-align="space-between center" ng-if="calendar.bikeFamily != 2">
+    <div layout="row" layout-align="start center">
+      <span>{{ 'shared.duration' | translate }}</span>
+      <md-icon ng-if="!receipt.withoutCalendar" class="lnr-icn-xs md-color-black" md-svg-src="app/assets/ui_icons/icn_info.svg"></md-icon>
+      <md-tooltip md-direction="right" ng-if="!receipt.withoutCalendar">
+        <span translate="calendar.info"></span>
+      </md-tooltip>
+    </div>
+    <span>{{ receipt.displayableDuration }}</span>
+  </div>
+
+  <md-divider class="lnr-p-0 lnr-mv lnr-mh-x2"></md-divider>
+
+  <div ng-if="!receipt.freeBike"class="lnr-p-0" layout-padding>
+    <div layout="row" layout-align="space-between center">
+      <div layout="row" layout-align="start center">
+        <span ng-if="receipt.durationDays >= 1 && !receipt.isHalfDayBook">
+          {{receipt.durationDays}} {{ 'shared.days' | translate }} x
+          {{ receipt.specialPriceLowerThanBase ? receipt.prices[0].price : receipt.specialPriceDaily  | currency:"€":0 }}
+        </span>
+        <span ng-if="receipt.durationDays >= 1 && receipt.isHalfDayBook">
+          {{ 'list.half-day-price' | translate }}
+        </span>
+        <span ng-if="!receipt.durationDays">0 {{ 'shared.days' | translate }} x
+          {{ receipt.prices[0].price | currency:"€":0 }}</span>
+        <div ng-if="!(receipt.durationDays >= 1 && receipt.isHalfDayBook)">
+          <md-icon class="lnr-icn-xs md-color-black" md-svg-src="app/assets/ui_icons/icn_info.svg"></md-icon>
+          <md-tooltip md-direction="right"><span translate="calendar.info-subtotal"></span></md-tooltip>
+        </div>
+      </div>
+      <span>{{ receipt.specialPriceLowerThanBase ? receipt.subtotal : receipt.subtotalDiscounted | currency:"€":2 }}</span>
+    </div>
+
+    <div layout="row" layout-align="space-between center" ng-if="receipt.discount && receipt.specialPriceLowerThanBase">
+      <div class="lnr-dark-green-text" layout="row" layout-align="start center">
+        {{ 'shared.discount' | translate }} {{receipt.durationDays}} {{ 'shared.days' | translate }} x {{ receipt.discountRelative | currency:"€":2 }}
+        <md-icon class="lnr-icn-xs md-color-black" md-svg-src="app/assets/ui_icons/icn_info.svg"></md-icon>
+        <md-tooltip md-direction="right"><span translate="calendar.info-discount"></span></md-tooltip>
+      </div>
+      <span class="lnr-dark-green-text">-{{ receipt.discount | currency:"€":2 }}</span>
+    </div>
+
+    <div
+      ng-if="!receipt.isShop || receipt.isShop && receipt.insuranceAllowed()"
+      layout="row"
+      layout-align="space-between center">
+      <div layout="row" layout-align="start center">
+        <div
+          layout="row"
+          style="width:170px;">
+          <span ng-if="!receipt.insuranceAllowed()">{{ 'shared.lnr-fee' | translate }}</span>
+          <span ng-if="!receipt.isShop && receipt.insuranceAllowed()">{{ 'shared.basic-fee' | translate }}</span>
+          <span ng-if="receipt.isShop && receipt.insuranceAllowed()">{{ 'shared.basic-insurance-fee' | translate }}</span>
+          <div ng-if="!receipt.isShop">
+            <md-icon class="lnr-icn-xs md-color-black" md-svg-src="app/assets/ui_icons/icn_info.svg"></md-icon>
+            <md-tooltip md-direction="right">
+              <span translate="calendar.info-service-fee"></span>
+            </md-tooltip>
+          </div>
+        </div>
+      </div>
+      <div>{{ receipt.lnrFee | currency:"€":2 }}</div>
+    </div>
+
+    <div
+      ng-if="receipt.isPremiumCoverage"
+      layout="row"
+      layout-align="space-between center">
+      <div layout="row" layout-align="start center">
+        {{ 'booking.overview.premium-insurance' | translate }}
+      </div>
+      <div>{{ receipt.premiumCoverage | currency:"€":2 }}</div>
+    </div>
+
+    <div layout="row" layout-align="space-between center" ng-if="receipt.balance > 0">
+      <div layout="row" layout-align="start center">
+        {{ 'shared.voucher' | translate }}
+      </div>
+      <div>- {{ receipt.balance | currency:"€":2 }}</div>
+    </div>
+
+    <div layout="row" layout-align="space-between center">
+      <div class="md-body-2">{{ 'shared.total' | translate }}</div>
+      <div class="md-body-2">{{ receipt.total | currency:"€":2 }}</div>
+    </div>
+  </div>
+
+  <div ng-if="receipt.freeBike" class="lnr-p-0 lnr-center lnr-mt-x2 lnr-bold" layout-padding>
+    {{ 'bike.for-free' | translate }}
+  </div>
+
+
+  <!-- ERRORS -->
+  <div class="text-error md-caption"
+      ng-if="calendar.bikeFamily != 2 && calendar.isDateInvalid()"
+      layout-padding>
+    {{ 'calendar.invalid-date' | translate }}
+  </div>
+  <div class="text-error md-caption"
+      ng-if="calendar.owner">
+    {{ 'calendar.own-bike' | translate }}
+  </div>
+
+</div>

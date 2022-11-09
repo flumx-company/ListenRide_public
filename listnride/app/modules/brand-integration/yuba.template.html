@@ -1,0 +1,89 @@
+<md-content class="single-column">
+
+  <div id="slideshow" md-theme="lnr-dark" layout="column" layout-align="center center">
+    <!-- BRAND SLIDER -->
+    <ul class="cb-slideshow cb-slideshow--brand cb-slideshow--3">
+      <li ng-repeat="slide in yuba.cbSlider track by $index">
+        <span style="background-image: url('{{slide}}')"></span>
+      </li>
+    </ul>
+    <!-- END BRAND SLIDER -->
+
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.yuba.title' | translate }}</h1>
+      <h2 class="md-subhead" translate="brand-integration.yuba.description"></h2>
+    </div>
+
+    <!-- BRAND PAGE FEATURES -->
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/yuba/lnr_yuba_top_columns_image_01.png" alt="yuba feature 1">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.yuba.item1-title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.yuba.item1-description"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/yuba/lnr_yuba_top_columns_image_02.png" alt="yuba feature 2">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.yuba.item2-title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.yuba.item2-description"></p>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin class="lnr-m-0">
+        <img class="md-card-image" src="app/assets/ui_images/brand-integration/yuba/lnr_yuba_top_columns_image_03.png" alt="yuba feature 3">
+        <h3 class="md-subhead lnr-center">{{ 'brand-integration.yuba.item3-title' | translate }}</h3>
+        <p class="lnr-center" translate="brand-integration.yuba.item3-description"></p>
+      </div>
+    </div>
+    <!-- END BRAND PAGE FEATURES -->
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+    <!-- BRAND BIKES -->
+    <!-- <h2 class="md-headline lnr-center">{{ 'brand-integration.yuba.test-bike' | translate }}</h2> -->
+    <div ng-if="!yuba.isEmpty(yuba.cities)">
+      <h2 class="md-subhead lnr-center">{{ 'brand-integration.shared.choose-location' | translate }}</h2>
+
+      <div class="lnr-section-title" layout="column" layout-align="center center">
+        <md-menu md-position-mode="target bottom">
+          <md-button class="md-right-arrow" md-no-ink ng-click="$mdOpenMenu($event)">
+            <p class="md-right-arrow md-headline lnr-m-0">&nbsp;&nbsp;{{ yuba.currentShop.cityName }}</p>
+          </md-button>
+          <md-menu-content width="3">
+            <md-menu-item ng-repeat="(city, v) in yuba.cities">
+              <md-button ng-disabled="!v.bikes.length" md-no-ink ng-click="yuba.currentShop = yuba.cities[city]">
+                <p class="md-subhead lnr-m-0">{{ v.cityName }}</p>
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+
+      <md-content ng-if="yuba.currentShop.bikes && yuba.currentShop.bikes.length !==0">
+        <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+          <bike-card ng-repeat="bike in yuba.currentShop.bikes" bike="bike" show-labels="true" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+        </div>
+      </md-content>
+
+
+      <div ng-if="!yuba.currentShop.bikes.length">
+        <p class="md-subhead lnr-center">{{'shared.no-bikes-found' | translate}}</p>
+      </div>
+      <!-- END BRAND BIKES -->
+
+      <md-divider class="lnr-mv lnr-mh-x2"></md-divider>
+    </div>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'brand-integration.yuba.find-out-more' | translate }}</h1>
+      <h2 class="md-subhead" translate="brand-integration.yuba.order-online"></h2>
+    </div>
+
+    <div class="lnr-mh-x2"></div>
+  </div>
+  <footer></footer>
+</md-content>

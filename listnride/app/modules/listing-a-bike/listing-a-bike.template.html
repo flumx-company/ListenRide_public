@@ -1,0 +1,157 @@
+ <md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/static/lnr_list_a_bike.jpg')" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'list-a-bike.title' | translate }}</h1>
+      <div class="lnr-mh-x2">
+        <md-button
+          ng-if="listingABike.authentication.loggedIn()"
+          ui-sref="list"
+          class="md-raised md-primary md-lrg"
+        >
+          {{ 'list.list-your-bike' | translate }}
+        </md-button>
+        <md-button
+          ng-if="!listingABike.authentication.loggedIn()"
+          ng-click="listingABike.authentication.showSignupDialog()"
+          class="md-raised md-primary md-lrg"
+        >
+          {{ 'list-a-bike.list-section.sign-up' | translate }}
+        </md-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- calculator -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'list-a-bike.calculator-section.header' | translate }}</h2>
+      <p class="md-subhead">{{ 'list-a-bike.calculator-section.subheader' | translate }}</p>
+    </div>
+
+    <div class="md-body-1 lnr-calculator" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="45" layout="column" layout-margin>
+        <span class="md-subhead">{{ 'list-a-bike.calculator-section.market-price' | translate }}</span>
+        <md-slider-container>
+          <span class="md-subhead lnr-slider-info">{{ calculator.price }} €</span>
+          <md-slider flex ng-model="calculator.price" ng-init="calculator.price=1000" step="1" min="1" max="7000" aria-label="price" class="md-primary">
+          </md-slider>
+        </md-slider-container>
+
+        <span class="md-subhead">{{ 'list-a-bike.calculator-section.days-per-month' | translate }}</span>
+        <md-slider-container>
+          <span class="md-subhead lnr-slider-info">{{ calculator.days }}</span>
+          <md-slider flex ng-model="calculator.days" ng-init="calculator.days=5" step="1" min="1" max="30" aria-label="days" class="md-primary">
+          </md-slider>
+        </md-slider-container>
+      </div>
+
+      <div flex-gt-xs="45" flex-order-xs="-1" layout="column" layout-margin>
+        <span class="md-subhead">{{ 'list-a-bike.calculator-section.could-earn' | translate }}</span>
+        <span class="md-display-4 md-color-primary lnr-money">
+          {{ ( calculator.price * 0.01 + 5 ) * calculator.days * 12 | number:0 }} €
+        </span>
+        <span class="md-subhead lnr-right">{{ 'list-a-bike.calculator-section.per-year' | translate }}</span>
+      </div>
+    </div>
+  </div>
+  <!-- end calculator -->
+
+
+  <!-- safety -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'list-a-bike.info-section.header' | translate }}</h2>
+      <p class="md-subhead">{{ 'list-a-bike.info-section.subheader' | translate }}</p>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="25" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_covered.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'list-a-bike.info-section.precautions-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'list-a-bike.info-section.precautions-content' | translate }}</p>
+      </div>
+
+      <div flex-gt-xs="25" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_control.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'list-a-bike.info-section.control-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'list-a-bike.info-section.control-content' | translate }}
+        </p>
+      </div>
+
+      <div flex-gt-xs="25" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_safe.svg"></md-icon>
+         <h3 class="md-subhead lnr-center">{{ 'list-a-bike.info-section.covered-title' | translate }}</h3>
+         <p class="lnr-center" translate="list-a-bike.info-section.covered-content">
+         <a class="lnr-link" ui-sref="terms">{{ 'shared.learn-more' | translate }}</a></p>
+     </div>
+
+      <div flex-gt-xs="25" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_notalone.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">{{ 'list-a-bike.info-section.help-title' | translate }}</h3>
+        <p class="lnr-center">{{ 'list-a-bike.info-section.help-content' | translate }}
+        <a class="lnr-link" ui-sref="help">{{ 'shared.learn-more' | translate }}</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- end safety -->
+
+
+  <!-- list a bike -->
+  <div id="listBike" class="section"  md-theme="lnr-dark" layout="column" layout-align="space-between none">
+    <div class="lnr-center md-color-white" flex layout="column" layout-align="center center">
+      <h2 class="md-display-1">{{ 'list-a-bike.list-section.header' | translate }}</h2>
+      <p class="md-subhead">{{ 'list-a-bike.list-section.subheader' | translate }}</p>
+    </div>
+
+    <div flex layout="column" layout-align="center center">
+        <md-button ng-if="listingABike.authentication.loggedIn()" ui-sref="list" class="md-raised md-primary md-lrg">{{ 'list.list-your-bike' | translate }}</md-button>
+        <md-button ng-if="!listingABike.authentication.loggedIn()" ng-click="listingABike.authentication.showSignupDialog()" class="md-raised md-primary md-lrg">{{ 'list-a-bike.list-section.sign-up' | translate }}</md-button>
+    </div>
+  </div>
+  <!-- end list a bike -->
+
+
+  <!-- testmonials -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'list-a-bike.testmonials-section.header' | translate }}</h2>
+      <p class="md-subhead">{{ 'list-a-bike.testmonials-section.subheader' | translate }}</p>
+    </div>
+
+    <div layout="column" layout-wrap layout-gt-sm="row" layout-padding>
+      <div flex-gt-sm="50"  class="lnr-comment" layout="row">
+        <img class="lnr-profile-md lnr-mr" ng-src="app/assets/ui_images/testmonials/testmonial_lister_1.jpg"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">Paul {{ 'shared.from-place' | translate }} Berlin</p>
+          <p class="lnr-comment-content md-body-1">{{ 'testimonials.lister-1' | translate }}</p>
+        </div>
+      </div>
+
+      <div flex-gt-sm="50" class="lnr-comment" layout="row">
+        <img class="lnr-profile-md lnr-mr" ng-src="app/assets/ui_images/testmonials/testmonial_lister_2.jpg"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">Frederick {{ 'shared.from-place' | translate }} Steglitz</p>
+          <p class="lnr-comment-content md-body-1">{{ 'testimonials.lister-2' | translate }}</p>
+        </div>
+      </div>
+
+      <div flex-gt-sm="50"  class="lnr-comment" layout="row">
+        <img class="lnr-profile-md lnr-mr" ng-src="app/assets/ui_images/testmonials/jetske_amsterdam.jpg"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">Jetske {{ 'shared.from-place' | translate }} Amsterdam</p>
+          <p class="lnr-comment-content md-body-1">{{ 'testimonials.jetske-amsterdam' | translate }}</p>
+        </div>
+      </div>
+
+      <div flex-gt-sm="50"  class="lnr-comment" layout="row">
+        <img class="lnr-profile-md lnr-mr" ng-src="app/assets/ui_images/testmonials/john_potsdam.jpg"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">John {{ 'shared.from-place' | translate }} Potsdam</p>
+          <p class="lnr-comment-content md-body-1">{{ 'testimonials.john-potsdam' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end testmonials -->
+ <footer></footer>
+</md-content>

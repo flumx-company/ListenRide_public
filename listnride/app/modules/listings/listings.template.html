@@ -1,0 +1,180 @@
+<md-content flex="100" layout="column" layout-fill>
+  <div class="listings-header" layout="column">
+    <div layout="row" class="lnr-ph-x2" flex layout-fill layout-align="space-between center">
+      <md-input-container flex="25" hide-xs hide-sm>
+        <label style="display: none"></label>
+        <input
+          placeholder="{{ 'shared.search-bikes' | translate }}"
+          ng-model="listings.input"
+        />
+      </md-input-container>
+      <div class="lnr-pl-x2" layout="row" flex flex-gt-md="75" layout-align="end center">
+        <!-- Duplication information -->
+        <div ng-if="listings.status" style="margin-right: auto;" class="lnr-pr-x2" hide-xs hide-sm>
+          <h3>{{'listings.duplicate.duplication-status' | translate }}: {{listings.status}}</h3>
+        </div>
+        <div layout="row" layout-align="center center" layout-align-gt-sm="end center">
+          <!-- ACTION BUTTONS -->
+          <div class="listings__actions" layout="row" layout-align="center center">
+            <md-button
+              md-no-ink
+              flex
+              class="md-icon-button"
+              ng-disabled="!listings.canMerge()"
+              ng-click="listings.mergeBikesToCluster()">
+              <md-tooltip>{{ 'listings.merge' | translate }}</md-tooltip>
+              <md-icon md-svg-icon="app/assets/ui_icons/icn_merge.svg"></md-icon>
+            </md-button>
+            <md-button
+              md-no-ink
+              flex
+              class="md-icon-button"
+              ng-if="false"
+              ng-disabled="!listings.canDeactivateMulti()"
+              ng-click="listings.deactivateMulti()">
+              <md-tooltip>{{ 'listingCard.deactivate' | translate }}</md-tooltip>
+              <md-icon md-svg-icon="app/assets/ui_icons/turn-visibility-off-button.svg"></md-icon>
+            </md-button>
+          </div>
+          <!-- VIEW SWITCHER -->
+          <h3 class="lnr-pr-x2" hide-xs hide-sm>{{'listings.show-as-list' | translate}}</h3>
+          <md-switch
+            hide-xs hide-sm
+            ng-model="listings.listView"
+            ng-change="listings.changeListingMode(listings.listView)"
+          >
+          </md-switch>
+          <!-- PAGINATION -->
+          <ul
+            ng-if="listings.pagination.total_pages > 1"
+            class="lnr-pagination listing__pagination lnr-list-no-style lnr-pl-0"
+            layout="row"
+            layout-align="none center">
+            <li>
+              <md-button
+                class="md-fab md-mini lnr-md-blue-bordered"
+                aria-label="{{ 'shared.previous' | translate }}"
+                ng-click="listings.changePage(listings.currentPageIndex - 1)"
+                ng-disabled="listings.currentPageIndex === 1 || !listings.pagination.prev_page">
+                <i class="fa fa-angle-left"></i>
+              </md-button>
+            </li>
+            <li
+              class="lnr-pagination__item"
+              ng-class="listings.currentPageIndex === $index + 1 ? 'active' : ''"
+              ng-repeat="i in [].constructor(listings.pagination.total_pages) track by $index"
+              ng-hide="!listings.isPaginationInRange($index+1)">
+              <span
+                class="lnr-pagination__divider"
+                ng-show="$index+1 === listings.pagination.total_pages && listings.pagination.total_pages - listings.currentPageIndex > 2">
+                ...
+              </span>
+              <md-button
+                class="md-fab md-mini lnr-md-blue-bordered lnr-m-0"
+                aria-label="go to page {{ $index+1 }}"
+                ng-click="listings.changePage($index+1)">
+                {{ $index + 1 }}
+              </md-button>
+              <span
+                class="lnr-pagination__divider"
+                ng-show="$index+1 === 1 && listings.currentPageIndex - 1 > 2">
+                ...
+              </span>
+            </li>
+            <li>
+              <md-button
+                class="md-fab md-mini lnr-md-blue-bordered"
+                aria-label="{{ 'shared.next' | translate }}"
+                ng-click="listings.changePage(listings.currentPageIndex+1)"
+                ng-disabled="listings.currentPageIndex === listings.pagination.total_pages || !listings.pagination.next_page">
+                <i class="fa fa-angle-right"></i>
+              </md-button>
+            <li>
+          </ul>
+          <!-- LIST A BIKE TRIGGER -->
+          <md-button class="md-primary md-confirm-button lnr-mr-0" ng-click="listings.listBike()">
+            {{'listings.list-a-bike' | translate}}
+          </md-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <md-progress-linear
+    class="md-accent"
+    ng-if="listings.isDuplicating"
+    md-mode="query"
+  >
+  </md-progress-linear>
+  <md-divider></md-divider>
+
+  <!-- Layout for the List View -->
+
+  <md-content id="list-view" ng-if="listings.listView">
+    <div layout-align="center center">
+      <list-view
+        ng-if="listings.listView"
+        bikes="listings.bikes"
+        status="listings.status"
+        edit="listings.edit"
+        view="listings.view"
+        duplicate="listings.duplicate"
+        delete="listings.delete"
+        change-bike-available-to="listings.changeBikeAvailableTo"
+        is-duplicating="listings.isDuplicating"
+        change-availability="listings.changeAvailability"
+        show-labels="true"
+        is-check-mode-on="listings.isCheckMode()"
+        on-bike-tile-check="listings.checkBikeTile"
+        is-checked="listings.isCheckedBike"
+        is-selectable="true"
+        unmerge="listings.unmergeCluster">
+      </list-view>
+    </div>
+    <div ng-if="listings.bikes !== undefined && listings.bikes.length == 0"  class="lnr-no-rental">
+      <h2>{{ 'listings.no-bikes' | translate }}</h2>
+    </div>
+  </md-content>
+
+  <!-- Layout for the Tile View -->
+
+  <md-content ng-if="!listings.listView" >
+    <div layout-align="center center">
+      <div ng-if="listings.bikes !== undefined && listings.bikes.length == 0"  class="lnr-no-rental">
+        <h2>{{ 'listings.no-bikes' | translate }}</h2>
+      </div>
+
+      <div flex-gt-xs layout="row" layout-wrap layout-padding layout-align="center center">
+        <listing-card
+          ng-repeat="bike in listings.bikes track by '['+bike.id+']'+'['+bike.is_cluster+']'"
+          flex="100"
+          flex-gt-xs="50"
+          flex-gt-sm="25"
+          flex-lg="20"
+          flex-gt-lg="14"
+          bike-id="bike.id"
+          bike="bike"
+          name="bike.name"
+          brand="bike.brand"
+          category="bike.category"
+          price="bike.price_from"
+          image-url="bike.image_file"
+          available="bike.available"
+          status="listings.status"
+          edit="listings.edit"
+          view="listings.view"
+          duplicate="listings.duplicate"
+          delete="listings.delete"
+          is-duplicating="listings.isDuplicating"
+          change-availability="listings.changeAvailability"
+          show-labels="true"
+          is-check-mode-on="listings.isCheckMode()"
+          on-bike-tile-check="listings.checkBikeTile"
+          is-checked="listings.isCheckedBike(bike.id)"
+          is-selectable="true"
+          unmerge="listings.unmergeCluster">
+        </listing-card>
+      </div>
+    </div>
+  </md-content>
+</md-content>

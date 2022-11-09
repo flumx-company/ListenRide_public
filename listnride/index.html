@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" ng-app="listnride" ng-strict-di>
+<head>
+  <title ng-bind="ngMeta.title"></title>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="{{ngMeta.description}}">
+  <meta name="prerender-status-code" content="{{ngMeta['prerender-status-code']}}" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="fragment" content="!">
+  <meta property="og:image" content="{{ngMeta['og:image'] ? ngMeta['og:image'] : 'app/assets/ui_images/opengraph/landing.jpg'}}" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="534" />
+  <meta property="og:description" content="{{ngMeta.description}}" />
+  <meta property="og:type" content="website" />
+  <meta lnr-meta-robots ng-if="ngMeta['noindex']">
+  <meta name="google-site-verification" content="lB3xim7eWl8jGbKuULkwxqXkbW5qElBocQbyBcR6u9o" />
+  <link rel="alternate" href="https://www.listnride.com{{location.path()}}" hreflang="x-default" />
+  <link rel="alternate" href="https://www.listnride.de{{location.path()}}" hreflang="de" />
+  <link rel="alternate" href="https://www.listnride.nl{{location.path()}}" hreflang="nl" />
+  <link rel="alternate" href="https://www.listnride.it{{location.path()}}" hreflang="it" />
+  <link rel="alternate" href="https://www.listnride.es{{location.path()}}" hreflang="es" />
+  <link rel="icon" type="image/png" href="app/assets/ui_images/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="app/assets/ui_images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="app/assets/ui_images/favicon-96x96.png" sizes="96x96">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,400italic">
+  <link rel="stylesheet" href="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/3.1.0/adyen.css" />
+  <!-- CDN LIBRARIES -->
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<%= LNR_API_KEY_GOOGLE_MAPS %>"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=<%= LNR_API_RECAPTCHA_V3_PUBLIC %>"></script>
+  <script src="https://js.braintreegateway.com/web/3.44.1/js/client.min.js"></script>
+  <script src="https://js.braintreegateway.com/web/3.44.1/js/three-d-secure.min.js"></script>
+  <script src="https://js.braintreegateway.com/web/3.44.1/js/paypal-checkout.js"></script>
+  <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+  <script src="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/3.1.0/adyen.js"></script>
+  <!-- ORG SCHEMA -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "listnride",
+      "legalName": "List and Ride GmbH",
+      "description": "The perfect bike. Simply rent it. Join listnride and find the bike that is right for you.",
+      "foundingDate": "2016",
+      "founders": [{
+          "@type": "Person",
+          "name": "Gert-Jan van Wijk"
+        },
+        {
+          "@type": "Person",
+          "name": "Johannes Stuhler"
+        }
+      ],
+      "url": "https://www.listnride.com",
+      "logo": "http://cdn.listnride.com/assets/listnride-logo-blue.jpg",
+      "sameAs": [
+        "https://www.facebook.com/listnride",
+        "https://instagram.com/listnride"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://www.listnride.com/help"
+      }]
+    }
+  </script>
+  <!-- end organizational schema.org -->
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window,
+      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '<%= LNR_API_KEY_FACEBOOK_PIXEL %>'); // Insert your pixel ID here.
+    // fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=<%= LNR_API_KEY_FACEBOOK_PIXEL %>&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- DO NOT MODIFY -->
+  <!-- End Facebook Pixel Code -->
+  <!-- Crisp Chat Integration -->
+  <!-- <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="d77eb9c0-eeb6-4985-a6e5-51f56c51616e";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script> -->
+  <!-- End Crisp Chat Integration -->
+</head>
+<body layout="column">
+  <!-- hidden image for some social which don't recognize og:image -->
+  <img style="display: none" ng-src="{{ngMeta['og:image'] ? ngMeta['og:image'] : 'app/assets/ui_images/opengraph/landing.jpg'}}" alt="Page main image">
+
+  <!-- IE BROWSER MODAL -->
+  <div id="ie-warning" style="display: none" class="lnr-IE-warning-overlay">
+    <table class="lnr-IE-warning-content">
+      <tr>
+        <td>
+          <button class="lnr-IE-close-button" type="button" onclick="document.getElementById('ie-warning').style.display = 'none';">×</button>
+          <img class="lnr-icn-mlrg" src="app/assets/ui_images/ie/ie_logo.png" />
+          <h2 class="md-headline lnr-margin-top-double">You are using Internet Explorer.<br>
+            Unfortunately we are not. And we do not support it.
+          </h2>
+          <p>If you continue browsing listnride with Internet Explorer, we cannot guarantee the full functionality of our
+            platform. Some services may not be available at all.</p>
+          <p class="lnr-padding-top-double">To have the full listnride experience, we recommend you switch
+            to a web conform browser such as:</p>
+          <div>
+            <a href="http://www.mozilla.org/en-US/firefox/new" target="_blank">Mozilla Firefox</a>,
+            <a href="http://www.google.com/chrome" target="_blank">Google Chrome</a>
+            , or Apple's pre-installed
+            <a href="http://www.apple.com/lae/safari" target="_blank">Safari</a>
+            browser.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    function isBrowserIE() {
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf("MSIE ");
+      // If Internet Explorer up to 11
+      return msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./);
+    }
+    if (isBrowserIE()) {
+      var IeModal = document.getElementById('ie-warning');
+      IeModal.style.display = 'block';
+    }
+  </script>
+  <!-- END IE BROWSER MODAL -->
+<header></header>
+<sidebar layout="row" header="header"></sidebar>
+<ui-view flex="auto"></ui-view>
+<privacy-bar></privacy-bar>
+
+<!-- Analytics Opt-Out Script -->
+<script type="text/javascript">// <![CDATA[
+var gaProperty = '<%= LNR_API_KEY_GOOGLE_ANALYTICS %>';
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+  window[disableStr] = true;
+}
+function gaOptout() {
+  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+  window[disableStr] = true;
+}
+</script>
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '<%= LNR_API_KEY_GOOGLE_ANALYTICS %>', 'auto');
+  ga(function(tracker) {
+  var clientId = tracker.get('clientId');
+  });
+  ga('set', 'anonymizeIp', true);
+  ga('require', 'ecommerce');
+  ga('send', 'pageview');
+</script>
+
+<!--Coview implementation -->
+<script>
+  (function(c,o,v,i,e,w){c[v]=c[v]||function(){(c[v].a=c[v].a||[]).push(arguments)};var s=o.createElement(i);s.src=e;s.async=1;var h=o.getElementsByTagName(i)[0];h.parentNode.insertBefore(s,h);c.addEventListener('error',function(err){c[v]('error',err)});c.addEventListener('message',function(msg){c[v]('message',msg)})})(window,document,'coview','script','https://cdn.coview.com/coview.js')
+  coview('start', {
+    'projectKey':'<%= LNR_API_KEY_COVIEW %>',
+    'bindConsole': false
+  });
+</script>
+</body>
+</html>

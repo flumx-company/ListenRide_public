@@ -1,0 +1,200 @@
+<md-tab ng-disabled="detailsTab.parent.isListMode" class="details" label="{{ 'list.details.label' | translate }} {{ detailsTab.parent.tabCompleted(1) }}" layout="row">
+  <md-content class="md-padding" layout="column">
+    <div class="tab-content" layout="row" layout-align="space-between none" layout-padding>
+      <div class="lnr-list-form" layout="column">
+        <div class="lnr-list-title">
+          <h3 class="md-subhead">{{ 'list.details.header' | translate }}</h3>
+        </div>
+        <div layout-gt-xs="row">
+          <div layout="column" flex-gt-xs="50">
+            <md-input-container>
+              <label>{{ 'list.details.brand' | translate }}</label>
+              <input name="brand" required ng-model="detailsTab.parent.form.brand" maxlength="25">
+            </md-input-container>
+            <md-input-container>
+              <label>{{ 'list.details.name' | translate }}</label>
+              <input required ng-model="detailsTab.parent.form.name" maxlength="25">
+            </md-input-container>
+          </div>
+
+          <div hide-xs class="spacer-horizontal lnr-pl-x2"></div>
+
+          <md-input-container flex-gt-xs="50" layout="column">
+            <label>{{ 'list.details.description' | translate }}</label>
+            <textarea flex="auto" required md-no-resize minlength="100" md-maxlength="800" name="description" ng-model="detailsTab.parent.form.description" rows="2"></textarea>
+            <div ng-messages="listBike.description.$error" role="alert">
+              <div ng-message="minlength">
+                {{ 'list.details.min-length-warning' | translate }}
+              </div>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div class="spacer-xs"></div>
+
+        <div class="lnr-list-title ">
+          <h3 class="md-subhead">{{ 'list.details.variations-header' | translate }}</h3>
+        </div>
+
+        <!-- PRIMARY BIKE FIELDS -->
+        <div
+          layout="row"
+          layout-align="space-between center"
+          class="lnr-details-step"
+          ng-class="detailsTab.parent.form.available ? '': 'available-disabled'"
+          layout-wrap>
+          <span class="lnr-badge-rounded lnr-badge-default">1</span>
+
+          <md-input-container flex="100" flex-gt-sm="25" flex-gt-xs="50" class="lnr-ph">
+            <label>{{ 'list.details.size' | translate }}</label>
+            <md-select required ng-model="detailsTab.parent.form.size">
+              <md-option ng-repeat="size in detailsTab.parent.sizeOptions" value="{{ size.value }}">
+                {{ size.label }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container flex="100" flex-gt-sm="25" flex-gt-xs="50" class="lnr-ph">
+            <label>{{ 'list.details.frame-size' | translate }}</label>
+            <input name="frame_size" ng-model="detailsTab.parent.form.frame_size" maxlength="25">
+          </md-input-container>
+
+          <md-input-container flex="100" flex-gt-sm="25" flex-gt-xs="50" class="lnr-ph">
+            <label>{{ 'list.details.bicycle-number' | translate }}</label>
+            <input name="bicycle_number" ng-model="detailsTab.parent.form.bicycle_number" maxlength="25">
+          </md-input-container>
+
+          <md-input-container flex="100" flex-gt-sm="25" flex-gt-xs="50" class="lnr-ph">
+            <label>{{ 'list.details.frame-number' | translate }}</label>
+            <input name="frame_number" ng-model="detailsTab.parent.form.frame_number" maxlength="25">
+          </md-input-container>
+
+          <!-- ACTIVATE / DEACTIVATE BUTTONS -->
+            <md-button
+              hide-xs
+              hide-sm
+              class="lnr-group-activate md-icon-button"
+              ng-click="detailsTab.parent.form.available = !detailsTab.parent.form.available"
+            >
+              <md-tooltip>{{ detailsTab.parent.form.available ? 'listingCard.deactivate' : 'listingCard.activate' | translate }}</md-tooltip>
+              <md-icon md-svg-icon="{{ 'app/assets/ui_icons/' + (detailsTab.parent.form.available ? 'turn-visibility-off-button.svg' : 'visibility-button.svg')}}"></md-icon>
+            </md-button>
+
+            <a
+              hide-gt-sm
+              class="lnr-group-close lnr-link lnr-mt"
+              ng-class="detailsTab.parent.form.available ? 'md-warn' : ''"
+              ng-click="detailsTab.parent.form.available = !detailsTab.parent.form.available"
+            >
+              {{ detailsTab.parent.form.available ? 'listingCard.deactivate' : 'listingCard.activate' | translate }}
+            </a>
+        </div>
+
+        <!-- CLUSTER VARIATIONS  -->
+        <div ng-repeat="input in detailsTab.parent.variations">
+          <!-- dividers -->
+          <div hide-gt-sm class="lnr-pb-x2"></div>
+          <md-divider hide-gt-sm class="lnr-mh-x2 lnr-pb"></md-divider>
+
+          <div
+            class="lnr-details-step"
+            ng-class="input.available ? '': 'available-disabled'"
+            layout="row"
+            layout-align="space-between center"
+            layout-wrap>
+            <span class="lnr-badge-rounded lnr-badge-default">{{$index+2}}</span>
+
+            <md-input-container flex="100" flex-gt-sm="25" flex-gt-xs="50" class="lnr-ph">
+              <label>{{ 'list.details.size' | translate }}</label>
+              <md-select required ng-model="input.size">
+                <md-option ng-repeat="size in detailsTab.parent.sizeOptions" value="{{ size.value }}">
+                  {{ size.label }}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+            <md-input-container flex="100" flex-gt-sm="25" flex-gt-xs="50" class="lnr-ph">
+              <label>{{ 'list.details.frame-size' | translate }}</label>
+              <input name="frame_size" ng-model="input.frame_size" maxlength="25">
+            </md-input-container>
+
+            <md-input-container flex="100" flex-gt-sm="25" flex-gt-xs="50" class="lnr-ph">
+              <label>{{ 'list.details.bicycle-number' | translate }}</label>
+              <input name="bicycle_number" ng-model="input.bicycle_number" maxlength="25">
+            </md-input-container>
+
+            <md-input-container flex="100" flex-gt-sm="25" flex-gt-xs="50" class="lnr-ph">
+              <label>{{ 'list.details.frame-number' | translate }}</label>
+              <input name="frame_number" ng-model="input.frame_number" maxlength="25">
+            </md-input-container>
+
+
+            <!-- ACTIVATE / DEACTIVATE BUTTONS -->
+            <md-button
+              hide-xs
+              hide-sm
+              class="lnr-group-activate md-icon-button"
+              ng-click="input.available = !input.available"
+            >
+              <md-tooltip>{{ input.available ? 'listingCard.deactivate' : 'listingCard.activate' | translate }}</md-tooltip>
+              <md-icon md-svg-icon="{{ 'app/assets/ui_icons/' + (input.available ? 'turn-visibility-off-button.svg' : 'visibility-button.svg')}}"></md-icon>
+            </md-button>
+
+            <a
+              hide-gt-sm
+              class="lnr-group-close lnr-link lnr-mt"
+              ng-class="input.available ? 'md-warn' : ''"
+              ng-click="input.available = !input.available"
+            >
+              {{ input.available ? 'listingCard.deactivate' : 'listingCard.activate' | translate }}
+            </a>
+
+            <!-- REMOVE BUTTON -->
+            <!-- ONLY IN LIST MODE -->
+            <md-button
+              hide-xs
+              hide-sm
+              class="lnr-group-close md-icon-button md-warn"
+              ng-if="detailsTab.parent.isListMode"
+              ng-click="detailsTab.parent.removeInput($index)">
+              <md-icon md-font-icon="fa-times" class="fa fa--lh20"></md-icon>
+            </md-button>
+            <a
+              hide-gt-sm
+              ng-if="detailsTab.parent.isListMode"
+              class="lnr-group-close lnr-group-close_next lnr-link md-warn lnr-mt"
+              ng-click="detailsTab.parent.removeInput($index)">
+                {{ 'shared.remove' | translate }}
+            </a>
+          </div>
+        </div>
+
+        <div
+          layout="row"
+          layout-align="end none">
+          <a
+            class="lnr-link lnr-m"
+            ng-if="detailsTab.parent.isListMode"
+            ng-click="detailsTab.parent.addInput()">
+            {{ 'list.details.variations-add' | translate}}
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="navigation" layout="row" layout-align="space-between center" layout-margin>
+      <md-button class="md-lined" ng-click="detailsTab.parent.previousTab()">
+        {{ 'list.back' | translate }}
+      </md-button>
+      <md-button
+              class="md-raised md-primary"
+              ng-disabled="!detailsTab.parent.isDetailsValid()"
+              ng-click="detailsTab.parent.nextTab()">
+        {{ 'list.next' | translate }}
+      </md-button>
+    </div>
+  </md-content>
+</md-tab>

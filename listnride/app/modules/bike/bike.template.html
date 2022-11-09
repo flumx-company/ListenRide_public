@@ -1,0 +1,254 @@
+<md-content class="single-column">
+  <div
+    id="hero-shot"
+    class="lnr-preload-bg"
+    layout="row"
+    layout-align="space-between end"
+    ng-click="bike.showGalleryDialog($event)"
+    ng-style="{'background-image': 'url(' + bike.data.image_file + ')'}"
+  >
+    <md-button
+      class="md-raised"
+      ng-click="bike.showGalleryDialog($event)"
+      md-no-ink
+    >
+      {{ 'bike.view-pictures' | translate }}
+    </md-button>
+    <md-button
+      ng-if="bike.is_owner"
+      ng-click="$event.stopPropagation();"
+      class="md-raised lnr-btn-ico m-b-auto"
+      md-no-ink
+      ui-sref="edit({bikeId: bike.data.id})"
+    >
+      <md-icon md-svg-icon="app/assets/ui_icons/pencil-edit-button.svg"></md-icon>
+      <span>{{ 'listingCard.edit-bike' | translate }}</span>
+    </md-button>
+  </div>
+
+  <div class="content" layout="column">
+    <div flex layout="row" layout-xs="column" layout-align="space-between none" layout-gt-sm-align="start none" layout-padding>
+      <div flex-sm="55" layout="row" layout-align="start center">
+        <md-icon
+          ng-if="bike.data.category"
+          class="lnr-mr lnr-icn-mlrg md-color-foreground lnr-p-0"
+          md-svg-src="app/assets/ui_icons/biketype_{{ bike.data.category | limitTo: 1 }}.svg"
+        ></md-icon>
+        <div flex layout="column">
+          <h1 class="md-title">{{ bike.data.brand }}, {{ bike.category }}</h1>
+          <h2 class="md-subhead">{{ bike.data.name }}</h2>
+        </div>
+      </div>
+
+      <!--TODO: REMOVE family check after event calendar refactoring -->
+      <!-- Don't show detailed price for 2-hours Event Bikes -->
+      <div
+        ng-if="!bike.isOnSlotableEvent"
+        class="bike__prices"
+        layout="row"
+        flex-sm="45"
+        flex-gt-sm="30"
+        layout-align="space-between center"
+      >
+        <div ng-if="bike.hasTimeSlots" class="bike__prices-item" flex="20" layout="column" layout-align="center center">
+          <div layout="row" layout-align="center center">
+            <span class="md-headline">{{ bike.prices['1/2'] | number : 0 }}€</span>
+          </div>
+          <span class="md-caption">{{ 'list.half-day-price' | translate }}</span>
+        </div>
+        <div class="bike__prices-item" flex="20" layout="column" layout-align="center center">
+          <div layout="row" layout-align="center center">
+            <span class="md-headline">{{ bike.prices['1'] | number : 0 }}€</span>
+          </div>
+          <span class="md-caption">{{ 'bike.per-day' | translate }}</span>
+        </div>
+        <div ng-if="!bike.hasTimeSlots" class="bike__prices-item" flex="20" layout="column" layout-align="center center">
+          <div layout="row" layout-align="center center">
+            <span class="md-headline">{{ bike.prices['2'] | number : 0 }}€</span>
+            <span class="md-caption per-day" layout layout-align="end end">&nbsp;{{ 'shared.pd' | translate }}</span>
+          </div>
+          <span class="md-caption">{{ 'bike.from-2-days' | translate }}</span>
+        </div>
+        <div flex="20" layout="column" layout-align="center center" class="lnr-dark-green-text bike__prices-item">
+          <div layout="row" layout-align="center center">
+            <span class="md-headline">{{ bike.prices['7'] | number : 0 }}€</span>
+            <span class="md-caption per-day" layout layout-align="end end">&nbsp;{{ 'shared.pd' | translate }}</span>
+          </div>
+          <span class="md-caption">{{ 'bike.from-week' | translate }}</span>
+        </div>
+      </div>
+
+
+      <!-- Price view for 2-hours Events -->
+      <div
+        ng-if="bike.isOnSlotableEvent"
+        class="bike__prices"
+        flex-sm="45" flex-gt-sm="30" layout="row" layout-align="center center"
+      >
+        <div class="bike__prices-item" layout="column" layout-align="center center">
+          <div layout="row" layout-align="center center">
+            <span ng-if="bike.data.prices[0].price > 0" class="md-headline">{{ bike.data.prices[0].price | number : 0 }}€</span>
+            <span ng-if="bike.data.prices[0].price <= 0" class="md-headline">{{ 'bike.for-free' | translate }}</span>
+          </div>
+          <span ng-if="bike.isTwoHoursEventBike" class="md-caption">{{ 'bike.two-hours' | translate }}</span>
+          <!-- TODO: Fill hoursSlot value from Backend -->
+          <span
+            ng-if="bike.isThreeHoursEventBike"
+            class="md-caption"
+            translate="shared.for-count-hours"
+            translate-values="{hoursSlot: 3}">
+            {{ 'shared.for' | translate }}
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <md-button class="md-raised md-primary lnr-mv lnr-mh-x2" hide show-xs show-sm ng-click="bike.showCalendarDialog()">
+      {{ 'bike.rent-bike' | translate }}
+    </md-button>
+
+    <md-divider></md-divider>
+
+    <div flex layout="row">
+      <div flex layout="column" layout-padding>
+        <div layout="row" layout-xs="column">
+          <div flex-gt-xs="25">
+            <h3 class="md-body-2">{{ 'forms.description' | translate }}</h3>
+          </div>
+          <div flex-gt-xs="75">
+            <p class="md-body-1 white-space-pre-line break-word">{{ bike.data.description }}</p>
+          </div>
+        </div>
+
+        <div layout="row" layout-xs="column">
+          <div flex-gt-xs="25">
+            <h3 class="md-body-2">{{ 'forms.city' | translate }}</h3>
+          </div>
+          <div flex-gt-xs>
+            <p class="md-body-1">{{ bike.data.city }}, {{ bike.data.country }}</p>
+          </div>
+        </div>
+
+        <div
+          ng-if="bike.hasAccessories()"
+          layout="row" layout-xs="column" layout-align-gt-xs="center center">
+          <div flex-gt-xs="25">
+            <h3 class="md-body-2">{{ 'list.accessories.label' | translate }}</h3>
+          </div>
+          <div flex-gt-xs>
+            <md-icon
+              ng-repeat="(key, value) in bike.data.accessories"
+              class="lnr-icn-md lnr-mr"
+              ng-if="bike.data.accessories[key]"
+              md-svg-src="app/assets/ui_icons/accessoire_{{key}}.svg">
+              <md-tooltip md-direction="top">{{ 'list.accessories.' + key | translate }}</md-tooltip>
+            </md-icon>
+          </div>
+        </div>
+
+        <div layout="row" layout-xs="column">
+          <div flex-gt-xs="25">
+            <h3 class="md-body-2">{{ 'list.details.label' | translate }}</h3>
+          </div>
+          <div class="lnr-compact-details" layout="column" flex-gt-xs>
+            <div layout="row" layout-align="start center">
+              <p flex="30" class="md-body-2">{{ 'list.details.brand' | translate }}</p>
+              <p class="md-body-1">{{ bike.data.brand }}</p>
+            </div>
+            <div layout="row" layout-align="start center">
+              <p flex="30" class="md-body-2">{{ 'list.category.label' | translate }}</p>
+              <p class="md-body-1">{{ bike.data.category | category | translate  }}</p>
+            </div>
+            <div
+              layout="row"
+              layout-align="start center"
+              ng-if="bike.showAttribute(bike.data.frame_size)"
+              ng-hide="bike.data.is_cluster"
+            >
+              <p flex="30" class="md-body-2">{{ 'list.details.frame_size' | translate }}</p>
+              <p class="md-body-1">{{ bike.data.frame_size }}</p>
+            </div>
+            <div ng-show="bike.is_owner">
+              <div layout="row" layout-align="start center" ng-if="bike.showAttribute(bike.data.bicycle_number)">
+                <p flex="30" class="md-body-2">{{ 'list.details.bicycle_number' | translate }}</p>
+                <p class="md-body-1">{{ bike.data.bicycle_number}}</p>
+              </div>
+              <div layout="row" layout-align="start center" ng-if="bike.showAttribute(bike.data.frame_number)">
+                <p flex="30" class="md-body-2">{{ 'list.details.frame_number' | translate }}</p>
+                <p class="md-body-1">{{ bike.data.frame_number}}</p>
+              </div>
+              <div layout="row" layout-align="start center" ng-if="bike.showAttribute(bike.data.details)">
+                <p flex="30" class="md-body-2">{{ 'list.details.notes' | translate }}</p>
+                <p flex="70" class="md-body-1" style="word-break: break-word;">{{ bike.data.details}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div layout="row" layout-xs="column">
+          <div flex-gt-xs="25">
+            <h3 class="md-body-2">{{ 'shared.lister' | translate }}</h3>
+          </div>
+          <div flex-gt-xs layout="row" layout-align="start center">
+            <a ui-sref="user({userId: bike.data.user.id})">
+              <img class="lnr-profile-md lnr-mr lnr-clickable" ng-src="{{bike.owner.picture}}"></img>
+            </a>
+            <p class="md-subhead lnr-ml lnr-clickable" flex-offset="2" ui-sref="user({userId: bike.data.user.id})">{{bike.owner.display_name}}</p>
+          </div>
+        </div>
+        <div class="lnr-static-map lnr-mt-x2">
+          <img
+            ng-if="bike.data !== undefined"
+            ng-src="https://maps.googleapis.com/maps/api/staticmap?center={{bike.mapOptions.lat}},{{bike.mapOptions.lng}}&zoom={{bike.mapOptions.zoom}}&size=1280x400&scale=2&markers=icon:{{bike.mapOptions.icon}}|{{bike.mapOptions.lat}},{{bike.mapOptions.lng}}&key={{bike.mapOptions.key}}"
+            alt="Google Map"
+          >
+        </div>
+
+        <md-divider class="lnr-p-0 lnr-mv lnr-mh-x2" ng-if="bike.data.ratings.length > 0"></md-divider>
+
+        <!-- reviews -->
+        <div layout="row" layout-xs="column" ng-if="bike.data.ratings.length > 0">
+          <div flex-gt-xs="25">
+            <p class="md-body-2">{{ 'shared.reviews' | translate }}</p>
+          </div>
+
+          <div flex-gt-xs>
+            <rating ng-repeat="rating in bike.data.ratings" data="rating" index="$index" show-all="bike.showAll"></rating>
+            <div layout="row" layout-align="end center">
+            <md-button class="md-no-focus" ng-if="bike.data.ratings.length > 3 && false === bike.showAll" ng-click="bike.showAll = true">{{'shared.show-more' | translate}} {{'shared.reviews' | translate}}</md-button>
+            <md-button class="md-no-focus" ng-if="bike.data.ratings.length > 3 && true === bike.showAll" ng-click="bike.showAll = false">{{'shared.show-less' | translate}} {{'shared.reviews' | translate}}</md-button>
+            </div>
+          </div>
+        </div>
+        <!-- end reviews -->
+
+      </div>
+
+      <md-divider hide-sm hide-xs class="lnr-ml lnr-mr"></md-divider>
+
+      <div flex="30" hide-sm hide-xs>
+        <calendar
+          ng-if="!bike.isMobileCalendarView()"
+          bike="bike.data"
+          bike-cluster="bike.cluster"
+          bike-id="bike.data.id"
+          bike-size="bike.defaultSize"
+          price-half-day="bike.data.price_half_daily"
+          price-day="bike.data.price_daily"
+          price-week="bike.data.price_weekly"
+          prices="bike.data.prices"
+          bike-family="bike.data.family"
+          requests="bike.data.requests"
+          user-id="bike.data.user.id"
+          bike-availabilities="bike.data.availabilities"
+          coverage-total="bike.data.coverage_total"
+          country-code="bike.data.country_code"
+          cluster="bike.cluster"
+          bike-variations="bike.bikeVariations"
+        ></calendar>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</md-content>

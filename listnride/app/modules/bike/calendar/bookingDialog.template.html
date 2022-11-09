@@ -1,0 +1,98 @@
+<md-dialog>
+
+  <md-toolbar class="md-accent">
+    <div class="md-toolbar-tools" layout-align="center center">
+      <md-button class="md-icon-button">
+        <md-icon></md-icon>
+      </md-button>
+      <span flex></span>
+      <h2 class="md-headline">{{ 'requests.booking-overview' | translate }}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="bookingDialog.cancel()">
+        <md-icon md-svg-src="app/assets/ui_icons/icn_close_24.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content layout="column">
+    <div class="md-dialog-content" layout="column">
+
+      <div ng-style="{'display': bookingDialog.errors[0] == undefined ? 'none' : ''}">
+        <div class="text-error">
+          <p class="md-subhead">
+            <md-icon md-font-icon="fa-exclamation-triangle" class="lnr-icn-sm md-color-disabled lnr-mr fa"></md-icon>
+            {{ 'requests.booking-failed' | translate }}
+          </p>
+          <ul>
+            <div ng-repeat="error in bookingDialog.errors" class="text-error">
+              <li>{{error.detail}}</li>
+            </div>
+          </ul>
+        </div>
+        <br>
+        <span class="md-body-2">{{ 'shared.contact-us' | translate }} <a href="mailto:contact@listnride">email</a></span>
+        <br>
+      </div>
+
+      <h3 class="md-title">{{ 'requests.booking' | translate }}</h3>
+      <div layout="row" layout-align="space-between center">
+        <span class="md-body-2">{{ 'shared.from' | translate }}</span>
+        <span class="md-body-1">{{ bookingDialog.calendar.startDate | date: "dd.MM.yyyy, HH:mm" }}</span>
+      </div>
+      <div layout="row" layout-align="space-between center">
+        <span class="md-body-2">{{ 'shared.to' | translate }}</span>
+        <span class="md-body-1">{{ bookingDialog.calendar.endDate | date: "dd.MM.yyyy, HH:mm" }}</span>
+      </div>
+      <div layout="row" layout-align="space-between center">
+        <span class="md-body-2">{{ 'shared.duration' | translate }}</span>
+        <span class="md-body-1">{{ bookingDialog.calendar.duration }}</span>
+      </div>
+
+      <md-divider class="lnr-p-0 lnr-mt-x2 lnr-mb-x2"></md-divider>
+
+      <h3 class="md-title">{{ 'requests.price' | translate }}</h3>
+      <div layout="row" layout-align="space-between center">
+        <span class="md-body-2">{{ bookingDialog.calendar.durationDays }} {{ 'shared.days' | translate }} x {{ bookingDialog.calendar.prices[0].price | currency:"€":2 }}</span>
+        <span class="md-body-1">{{ bookingDialog.calendar.subtotal | currency: '€' }}</span>
+      </div>
+      <div layout="row" layout-align="space-between center" ng-if="bookingDialog.calendar.discount">
+        <span class="md-body-2 lnr-dark-green-text">{{ 'shared.discount' | translate }} {{bookingDialog.calendar.durationDays}} {{ 'shared.days' | translate }} x {{ bookingDialog.calendar.discountRelative | currency:"€":2 }}</span>
+        <span class="md-body-1 lnr-dark-green-text">-{{ bookingDialog.calendar.discount | currency: '€' }}</span>
+      </div>
+      <div layout="row" layout-align="space-between center">
+        <div ng-if="!calendar.insuranceCountry()">{{ 'shared.lnr-fee' | translate }}</div>
+        <div ng-if="calendar.insuranceCountry()">{{ 'shared.basic-fee' | translate }}</div>
+        <span class="md-body-1">{{ bookingDialog.calendar.lnrFee | currency: '€' }}</span>
+      </div>
+      <div layout="row" layout-align="space-between center" ng-if="bookingDialog.balance">
+        <span class="md-body-2">{{ 'shared.balance' | translate }}</span>
+        <span class="md-body-1">{{ bookingDialog.balance | currency: '€' }}</span>
+      </div>
+      <div layout="row" layout-align="space-between center">
+        <span class="md-body-2">{{ 'shared.total' | translate }}</span>
+        <span class="md-body-2">{{ bookingDialog.total | currency: '€' }}</span>
+      </div>
+
+      <p class="md-caption lnr-center">{{ 'shared.booking-accept-tac' | translate }} <a ui-sref="terms" target="_blank">{{ 'shared.tac' | translate }}</a></p >
+
+      <div class="md-dialog-buttons" layout="row" layout-align="space-between center">
+        <md-button
+          class="md-lined md-warn"
+          ng-click="bookingDialog.cancel()"
+          ng-disabled="bookingDialog.inProcess"
+        >
+          {{ 'shared.cancel' | translate }}
+        </md-button>
+        <span flex></span>
+        <md-button
+          class="md-raised md-primary"
+          ng-click="bookingDialog.book()"
+          ng-disabled="bookingDialog.inProcess"
+        >
+          {{ 'requests.book' | translate }}
+        </md-button>
+      </div>
+    </div>
+  </md-dialog-content>
+
+</md-dialog>

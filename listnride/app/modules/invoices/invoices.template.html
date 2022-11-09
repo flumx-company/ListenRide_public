@@ -1,0 +1,316 @@
+<md-content class="single-column">
+  <md-progress-linear class="md-accent" ng-if="invoices.loadingRequests" md-mode="query"></md-progress-linear>
+
+  <div class="content lnr-page-margin lnr-billing-page" layout="column">
+    <div class="lnr-section-title lnr-center" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'invoices.billing' | translate }}</h1>
+    </div>
+
+
+    <div flex layout="row" layout-align="space-around center">
+      <section layout="row" layout-align="space-around center">
+        <md-button md-no-ink
+                   ng-class="{'request-filter-switch-active':invoices.filtersType == 'lister'}"
+                   class="request-filter-switch left"
+                   ng-click="invoices.filterInvoices('lister')">
+          {{ 'invoices.as-lister' | translate }}
+        </md-button>
+        <md-button md-no-ink
+                   ng-class="{'request-filter-switch-active':invoices.filtersType == 'rider'}"
+                   class="request-filter-switch middle"
+                   ng-click="invoices.filterInvoices('rider')">
+          {{ 'invoices.as-rider' | translate }}
+        </md-button>
+        <md-button md-no-ink
+                   ng-class="{'request-filter-switch-active':invoices.filtersType == 'settlement'}"
+                   class="request-filter-switch right"
+                   ng-click="invoices.filterInvoices('settlement')">
+          {{ 'invoice.settlement_history' | translate }}
+        </md-button>
+      </section>
+    </div>
+
+    <div ng-style="{'display': invoices.filtersType == 'lister' ? '' : 'none'}" >
+      <div hide show-gt-xs flex>
+        <!--TABLE START HERE-->
+        <md-list>
+
+          <div class="lnr-billing-table-head">
+            <md-list-item class="md-2-line">
+              <div class="md-list-item-text" layout="row" layout-align="start center">
+                <span flex="10">{{ 'invoices.request_id' | translate }}</span>
+                <span flex="10">{{ 'invoices.invoice_number' | translate }}</span>
+                <span flex="20">{{ 'invoices.bike' | translate }}</span>
+                <span flex="10">{{ 'invoices.start_date' | translate }}</span>
+                <span flex="10">{{ 'invoices.end_date' | translate }}</span>
+                <span flex="15">{{ 'shared.rider' | translate }}</span>
+                <span flex="10" layout="row" layout-align="end center">{{ 'invoices.payout' | translate }}</span>
+                <span flex layout="row" layout-align="center center">{{ 'invoices.credit-notes' | translate }}</span>
+              </div>
+            </md-list-item>
+          </div>
+
+          <div ng-style="{'display': invoices.ridesAsListerAny ? 'none' : ''}" class="lnr-no-rental">
+            <h2>{{ 'invoices.no-rentals' | translate }}</h2>
+          </div>
+
+          <div class="repeated-billing-items" ng-repeat="year in invoices.yearsLister" ng-style="{'display': invoices.ridesAsListerAny ? '' : 'none'}">
+            <h1>{{year}}</h1>
+            <md-list-item class="secondary-button-padding lnr-billing-list-item" ng-click="doPrimaryAction($event)" ng-repeat="item in invoices.asLister[year]">
+              <span flex="10" class="lnr-list-button">
+                <md-button md-no-ink ui-sref="requests({requestId: item.request_id})"> {{item.request_id}} </md-button>
+              </span>
+              <span flex="10">{{item.id}}</span>
+              <span flex="20" class="lnr-list-button billing-bike-title">
+                  <md-button md-no-ink ui-sref="bike({bikeId: item.bike_id})"> {{item.bike}} </md-button>
+                </span>
+              <span flex="10">{{invoices.parseDate(item.start_date)}}</span>
+              <span flex="10">{{invoices.parseDate(item.end_date)}}</span>
+              <span flex="15">{{item.lister}}</span>
+              <span flex="10" layout="row" layout-align="end center">{{invoices.parseAmount(item.payout)}}</span>
+              <span flex class="lnr-list-button" layout="row" layout-align="center center">
+                <md-button
+                  md-no-ink
+                  class="md-primary lnr-green-text"
+                  ng-click="invoices.getPdf(item.id, 'lister')"
+                >
+                  {{ 'shared.download' | translate }}
+                </md-button>
+              </span>
+            </md-list-item>
+          </div>
+        </md-list>
+
+        <div class="lnr-csv-button">
+          <md-button
+            md-no-ink
+            class="md-primary lnr-green-text"
+            ng-click="invoices.getCsv('lister')"
+            ng-style="{'display': invoices.ridesAsListerAny ? '' : 'none'}"
+          >
+            {{ 'invoices.download-csv'  | translate }}
+          </md-button>
+        </div>
+        <!--TABLE END HERE-->
+      </div>
+
+      <div hide show-xs flex class='lnr-mobile-billing'>
+        <div ng-style="{'display': invoices.ridesAsListerAny ? 'none' : ''}" class="lnr-no-rental">
+          <h2>{{ 'invoices.no-rentals' | translate }}</h2>
+        </div>
+        <div class="repeated-mobile-items" ng-repeat="year in invoices.yearsLister" ng-style="{'display': invoices.ridesAsListerAny ? '' : 'none'}">
+          <h1>{{year}}</h1>
+          <md-list-item class="md-3-line"  ng-repeat="item in invoices.asLister[year]">
+            <div class="md-list-item-text">
+              <div layout="row" layout-align="space-between center" flex>
+                <div ui-sref="requests({requestId: item.request_id})" class="lnr-green-text">
+                  <h4>#{{item.request_id}}</h4>
+                </div>
+                <div>
+                  <span flex class="lnr-list-button" layout="row" layout-align="center center">
+                    <md-button md-no-ink class="md-primary lnr-green-text" ng-click="invoices.getPdf(item.id, 'lister')">
+                      {{ 'invoices.download-pdf' | translate }}
+                    </md-button>
+                  </span>
+                </div>
+              </div>
+              <p>{{ 'invoices.invoice_number' | translate }}: {{item.id}}</p>
+              <p>{{invoices.parseDate(item.start_date)}} - {{invoices.parseDate(item.end_date)}}</p>
+              <div layout="row" layout-align="space-between center" flex>
+                <div ui-sref="bike({bikeId: item.bike_id})" class="lnr-green-text lnr-mobile-bike">
+                  <h3><b>{{item.bike}}</b></h3>
+                </div>
+                <div><h3><b>{{invoices.parseAmount(item.payout)}}</b></h3></div>
+              </div>
+            </div>
+            <md-divider></md-divider>
+          </md-list-item>
+        </div>
+      </div>
+    </div>
+
+    <div ng-style="{'display': invoices.filtersType == 'rider' ? '' : 'none'}">
+      <div hide show-gt-xs flex>
+        <!--TABLE START HERE-->
+        <md-list>
+          <div class="lnr-billing-table-head">
+            <md-list-item class="md-2-line">
+              <div class="md-list-item-text" layout="row" layout-align="start center">
+                <span flex="10">{{ 'invoices.request_id' | translate }}</span>
+                <span flex="10">{{ 'invoices.invoice_number' | translate }}</span>
+                <span flex="20">{{ 'invoices.bike' | translate }}</span>
+                <span flex="10">{{ 'invoices.start_date' | translate }}</span>
+                <span flex="10">{{ 'invoices.end_date' | translate }}</span>
+                <span flex="15">{{ 'shared.lister' | translate }}</span>
+                <span flex="10" layout="row" layout-align="end center">{{ 'invoices.you_paid' | translate }}</span>
+                <span flex layout="row" layout-align="center center">{{ 'invoices.invoice' | translate }}</span>
+              </div>
+            </md-list-item>
+          </div>
+
+          <div ng-style="{'display': invoices.ridesAsRiderAny ? 'none' : ''}" class="lnr-no-rental">
+            <h2>{{ 'invoices.no-rides' | translate }}</h2>
+          </div>
+
+          <div class="repeated-billing-items" ng-repeat="year in invoices.yearsRider" ng-style="{'display': invoices.ridesAsRiderAny ? '' : 'none'}">
+            <h1>{{year}}</h1>
+            <md-list-item class="secondary-button-padding lnr-billing-list-item" ng-click="doPrimaryAction($event)" ng-repeat="item in invoices.asRider[year]">
+              <span flex="10" class="lnr-list-button">
+                <md-button md-no-ink ui-sref="requests({requestId: item.request_id})"> {{item.request_id}} </md-button>
+              </span>
+              <span flex="10">{{item.id}}</span>
+              <span flex="20" class="lnr-list-button billing-bike-title">
+                <md-button md-no-ink ui-sref="bike({bikeId: item.bike_id})"> {{item.bike}} </md-button>
+              </span>
+              <span flex="10">{{invoices.parseDate(item.start_date)}}</span>
+              <span flex="10">{{invoices.parseDate(item.end_date)}}</span>
+              <span flex="15">{{item.lister}}</span>
+              <span flex="10" layout="row" layout-align="end center">{{invoices.parseAmount(item.payout)}}</span>
+              <span flex class="lnr-list-button" layout="row" layout-align="center center">
+                <md-button md-no-ink class="md-primary lnr-green-text" ng-click="invoices.getPdf(item.id, 'rider')">{{ 'shared.download' | translate }}</md-button>
+              </span>
+            </md-list-item>
+          </div>
+        </md-list>
+
+        <div class="lnr-csv-button lnr-green-text">
+          <md-button
+                  md-no-ink
+                  class="md-primary"
+                  ng-click="invoices.getCsv('rider')"
+                  ng-style="{'display': invoices.ridesAsRiderAny ? '' : 'none'}"
+          >
+            {{ 'invoices.download-csv' | translate }}
+          </md-button>
+        </div>
+        <!--TABLE END HERE-->
+      </div>
+
+      <div hide show-xs flex class='lnr-mobile-billing'>
+        <div ng-style="{'display': invoices.ridesAsRiderAny ? 'none' : ''}" class="lnr-no-rental">
+          <h2>{{ 'invoices.no-rides' | translate }}</h2>
+        </div>
+        <div class="repeated-mobile-items" ng-repeat="year in invoices.yearsRider" ng-style="{'display': invoices.ridesAsRiderAny ? '' : 'none'}">
+          <h1>{{year}}</h1>
+          <md-list-item class="md-3-line"  ng-repeat="item in invoices.asRider[year]">
+            <div class="md-list-item-text">
+              <div layout="row" layout-align="space-between center" flex>
+                <div ui-sref="requests({requestId: item.request_id})" class="lnr-green-text">
+                  <h4>#{{item.request_id}}</h4>
+                </div>
+                <div>
+                  <span flex class="lnr-list-button" layout="row" layout-align="center center">
+                    <md-button md-no-ink class="md-primary lnr-green-text" ng-click="invoices.getPdf(item.id, 'rider')">
+                      {{ 'invoices.download-pdf' | translate }}
+                    </md-button>
+                  </span>
+                </div>
+              </div>
+              <p>{{ 'invoices.invoice_number' | translate }}: {{item.id}}</p>
+              <p>{{invoices.parseDate(item.start_date)}} - {{invoices.parseDate(item.end_date)}}</p>
+              <div layout="row" layout-align="space-between center" flex>
+                <div ui-sref="bike({bikeId: item.bike_id})" class="lnr-green-text lnr-mobile-bike"><h3><b>{{item.bike}}</b></h3></div>
+                <div><h3><b>{{invoices.parseAmount(item.payout)}}</b></h3></div>
+              </div>
+            </div>
+            <md-divider></md-divider>
+          </md-list-item>
+        </div>
+      </div>
+    </div>
+
+    <div ng-style="{'display': invoices.filtersType == 'settlement' ? '' : 'none'}" >
+
+      <div hide show-gt-xs flex>
+        <!--TABLE START HERE-->
+        <md-list>
+
+          <div class="lnr-billing-table-head">
+            <md-list-item class="md-2-line">
+              <div class="md-list-item-text" layout="row" layout-align="start center">
+                <span flex="20">{{ 'invoices.date' | translate }}</span>
+                <span flex="20">{{ 'invoices.batch' | translate }}</span>
+                <span flex="10" layout="row" layout-align="end center">{{ 'invoices.payout' | translate }}</span>
+                <span flex="40" layout="row" layout-align="end center">
+                  {{ 'shared.download' | translate }}
+                </span>
+              </div>
+            </md-list-item>
+          </div>
+
+          <div class="repeated-billing-items"
+               ng-repeat="year in invoices.yearsSettlement">
+            <h1>{{year}}</h1>
+            <md-list-item class="secondary-button-padding lnr-billing-list-item"
+                          ng-click="doPrimaryAction($event)"
+                          ng-repeat="item in invoices.settlementHistory[year]">
+              <span flex="20">{{invoices.parseDate(item.paid_out_at)}}</span>
+              <span flex="20">{{item.batch_id}}</span>
+              <span flex="10" layout="row" layout-align="end center">
+                {{invoices.parseAmount(item.amount)}}
+              </span>
+              <span flex="40"
+                    class="lnr-list-button"
+                    layout="row"
+                    layout-align="end center">
+                <md-button
+                        md-no-ink
+                        class="md-primary lnr-green-text"
+                        ng-click="invoices.getSettlementCsv(item.batch_id, 'settlement')"
+                >
+                  {{ 'shared.download' | translate }}
+                </md-button>
+              </span>
+            </md-list-item>
+            <md-list-item class="secondary-button-padding lnr-billing-list-item">
+              <span flex="40"><b>{{'shared.total' | translate}}</b></span>
+              <span flex="10" layout="row" layout-align="end center">
+                <b>{{invoices.parseAmount(invoices.getTotal(invoices.settlementHistory[year]))}}</b>
+              </span>
+            </md-list-item>
+          </div>
+
+        </md-list>
+
+        <!--TABLE END HERE-->
+      </div>
+
+      <div hide show-xs flex class='lnr-mobile-billing'>
+        <div class="repeated-mobile-items"
+             ng-repeat="year in invoices.yearsSettlement">
+          <h1>{{year}}</h1>
+          <md-list-item class="md-3-line"
+                        ng-repeat="item in invoices.settlementHistory[year]">
+            <div class="md-list-item-text">
+              <div layout="row" layout-align="space-between center" flex>
+                <div>
+                  <h4>{{ 'invoices.batch' | translate }}: {{item.batch_id}}</h4>
+                </div>
+                <div>
+                  <span flex class="lnr-list-button" layout="row" layout-align="center center">
+                    <md-button md-no-ink class="md-primary lnr-green-text"
+                               ng-click="invoices.getSettlementCsv(item.batch_id, 'settlement')">
+                      {{ 'shared.download' | translate }}
+                    </md-button>
+                  </span>
+                </div>
+              </div>
+              <div layout="row" layout-align="space-between center" flex>
+                <div><h3><b>{{invoices.parseDate(item.paid_out_at)}}</b></h3></div>
+                <div><h3><b>{{invoices.parseAmount(item.amount)}}</b></h3></div>
+              </div>
+            </div>
+            <md-divider></md-divider>
+          </md-list-item>
+          <div class="wrap-total">
+            <h3 flex="85">{{'shared.total' | translate}}</h3>
+            <span><b>{{invoices.parseAmount(invoices.getTotal(invoices.settlementHistory[year]))}}</b></span>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer></footer>
+</md-content>

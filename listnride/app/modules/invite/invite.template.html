@@ -1,0 +1,58 @@
+ <md-content class="single-column">
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/lnr_invite.jpg')" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <h1 class="md-display-1">{{ 'invite.title' | translate }}</h1>
+    </div>
+  </div>
+
+  <!-- info -->
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 class="md-headline">{{ 'invite.info-section.header' | translate }}</h2>
+      <h3 class="md-subhead">{{ 'invite.info-section.subheader' | translate }}</3>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center none" layout-padding>
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_uebergabe_delivery.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">1. {{ 'invite.info-section.invite-friends' | translate }}</h3>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_notalone.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">2. {{ 'invite.info-section.community' | translate }}</h3>
+      </div>
+
+      <div flex-gt-xs="33" layout="column" layout-align="none center" layout-margin>
+        <md-icon class="lnr-icn-mlrg md-color-primary" md-svg-src="app/assets/ui_icons/icn_covered.svg"></md-icon>
+        <h3 class="md-subhead lnr-center">3. {{ 'invite.info-section.earn-credit' | translate }}</h3>
+      </div>
+    </div>
+  </div>
+  <!-- end info -->
+
+  <!-- invitation form -->
+  <referral-link header="'invite.invite-form.header'" sub-header="'invite.invite-form.subheader'" show-login="true"></referral-link>
+  <br>
+  <!-- end invitation form -->
+
+  <!-- referral-link responses -->
+  <div ng-if="invite.invitedFriends !== undefined && invite.invitedFriends.length > 0" class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h2 translate="invite.invitations.header" translate-value-credit="{{invite.totalCredit}}" class="md-headline"></h2>
+    </div>
+
+    <div layout="column" layout-wrap layout-gt-xs="row" layout-padding>
+      <div flex-gt-xs="50" class="lnr-comment" layout="row" ng-repeat="friend in invite.invitedFriends">
+        <img class="lnr-profile-md" ng-src="{{friend.profile_picture}}"></img>
+        <div flex class="lnr-ml">
+          <p class="lnr-comment-name md-body-2">{{friend.full_name}}</p>
+          <p class="lnr-comment-content md-body-1">{{ 'invite.invitations.status.' + friend.status | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end referral-link responses -->
+
+  <footer></footer>
+</md-content>

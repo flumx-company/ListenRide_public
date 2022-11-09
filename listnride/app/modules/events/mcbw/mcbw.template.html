@@ -1,0 +1,86 @@
+ <md-content class="single-column"> 
+  <div id="hero-shot" class="lnr-preload-bg" style="background-image: url('app/assets/ui_images/events/mcbw.jpg')" layout="row" layout-align="center center">
+    <div class="lnr-page-title md-color-white" flex layout="column" layout-align="center center">
+      <!-- <h1 class="md-display-1">{{ 'events.mcbw.title' | translate }}</h1> -->
+      <img hide show-gt-xs ng-src="app/assets/ui_images/events/mcbw-logo.png" style="width: 35%"></img>
+      <img hide show-xs ng-src="app/assets/ui_images/events/mcbw-logo.png" style="width: 50%"></img>
+    </div>
+  </div>
+
+  <div class="content" layout-padding>
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'events.mcbw.description' | translate }}</h1>
+      <h3 class="md-subhead">{{ 'events.mcbw.subdescription' | translate }}</h3>
+    </div>
+
+    <div class="md-body-1" layout="column" layout-gt-xs="row" layout-align="center" layout-padding>
+      <div layout="column" flex-gt-xs="45">
+        <h3 class="md-subhead">{{ 'events.mcbw.subhead-1' | translate }}</h3>
+        <p translate="events.mcbw.text-1"></p>
+      </div>
+      <div layout="row" flex-gt-xs="10" layout-align="center">
+        <md-divider></md-divider>
+      </div>
+      <div layout="column" flex-gt-xs="45">
+        <h3 class="md-subhead">{{ 'events.mcbw.subhead-2' | translate }}</h3>
+        <p translate="events.mcbw.text-2"></p>        
+      </div>
+    </div>
+
+    <div class="lnr-section-title" layout="column" layout-align="center center">
+      <h1 class="md-headline">{{ 'events.mcbw.location-description' | translate }}</h1>
+      <p class="lnr-center" translate="events.mcbw.location-text"></p>
+
+    </div>
+
+    <md-tabs md-no-pagination md-dynamic-height md-no-ink md-no-ink-bars md-center-tabs="on">
+      <md-tab label="①">
+        <md-content>
+          <div flex-gt-xs layout="row" layout-wrap layout-padding>
+            <bike-card ng-repeat="bike in mcbw.bikes1" bike="bike" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+          </div>
+        </md-content>
+      </md-tab>
+      <md-tab label="②">
+        <md-content>
+          <div flex-gt-xs layout="row" layout-wrap layout-padding>
+            <bike-card ng-repeat="bike in mcbw.bikes2" bike="bike" ng-if="bike.city == 'München'" flex="100" flex-gt-xs="50" flex-gt-sm="33"></bike-card>
+          </div>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+
+    <br>
+    <md-divider></md-divider>
+    <br>
+
+  </div>
+
+  <ng-map ng-if="true" default-style="false" style="height: 350px" center="[{{mcbw.mapOptions.lat}},{{mcbw.mapOptions.lng}}]" zoom="{{mcbw.mapOptions.zoom}}" scrollwheel="false">
+    <marker
+      position="[48.1313605,11.5971843]"
+      on-click="map.showInfoWindow(event, 'window1')">
+    </marker>
+    <marker
+      position="[48.1631905,11.5850364]"
+      on-click="map.showInfoWindow(event, 'window2')">
+    </marker>
+    <info-window id="window1" close-box-margin="0">
+        <div ng-non-bindable="">
+          <div style="background-color: #ffffff; padding: 15px">
+            <h3>① Munix Finest Bicycles</h3>
+            <p>Wörthstraße 4</p>
+          </div>
+        </div>
+    </info-window>
+    <info-window id="window2" close-box-margin="0">
+        <div ng-non-bindable="">
+          <div style="background-color: #ffffff; padding: 15px">
+            <h3>② listnride</h3>
+            <p>Pündterplatz 1</p>
+          </div>
+        </div>
+    </info-window>
+  </ng-map>
+   <footer></footer>
+</md-content>
